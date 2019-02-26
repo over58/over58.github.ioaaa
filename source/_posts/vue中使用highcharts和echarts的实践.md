@@ -1,6 +1,7 @@
 ---
 layout: post
 title: vue中使用highcharts和echarts的实践
+author: 徐勇超
 tag: [vue, highcharts, echarts]
 ---
 

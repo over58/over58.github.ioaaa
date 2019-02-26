@@ -29,6 +29,12 @@
       <% } %>
     <% } %>
 
+    <% if(post.author){ %>
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;<%= post.author%>
+      </span>
+    <% } %>
+
     <% if(post.date && (!post.meta || post.meta.date != false)){ %>
       <time class="metatag time">
         <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<%= date(post.date, config.date_format) %>
