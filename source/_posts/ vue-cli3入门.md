@@ -4,12 +4,6 @@ author: 蒲建国
 tag: [vue]
 ---
 
-[TOC]
-
----
-
-<!-- more -->
-
 [官方文档](https://cli.vuejs.org/zh/guide/)
 
 ### 1. vue-cli3实现分环境打包步骤
