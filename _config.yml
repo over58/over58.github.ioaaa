@@ -110,10 +110,10 @@ widgets:
       icon: fas fa-arrow-right
       url: http://nevis.sina.com.cn/
     rows:
-      - name: test
-        desc: 云服务器
+      - name: 百度
+        desc: baidu
         icon: fas fa-cube
-        url: 
+        url: https:www.baidu.com/
   - widget: list
     icon: fas fa-link
     title: 特别链接
