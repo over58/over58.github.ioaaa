@@ -4,11 +4,11 @@
 
 
 ############################### 基本信息 ###############################
-info:
-  name: Material X
-  docs: https://xaoxuu.com/wiki/material-x/
-  # 主题的CDN地址。如需启用CDN，请在主目录的config中设置，详见文档。
-  cdn: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.2.21/
+# info:
+#   name: Material X
+#   docs: https://xaoxuu.com/wiki/material-x/
+#   # 主题的CDN地址。如需启用CDN，请在主目录的config中设置，详见文档。
+#   cdn: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.2.21/
 
 
 ############################### 主题样式 ###############################
@@ -30,13 +30,13 @@ services:
   popular_posts: true   # 需要安装插件  hexo-related-popular-posts
   comments: true
   volantis: true
-  music: true
+  music: false
   share: true
   qrcode: true    # 需要安装插件  npm i -S hexo-helper-qrcode
 
 
 # 友链页头像占位图
-loading_img: https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/img/qq/亲亲.gif
+# loading_img: https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/img/qq/亲亲.gif
 
 # 推荐文章
 recommended_posts:
@@ -72,16 +72,16 @@ search:
 less:
   compress: true
 
-nav_menu:
-  - name: home
-    icon: fas fa-home
-    url: https://xaoxuu.com/
-  - name: blogs
-    icon: fas fa-rss
-    url: /
-  - name: archives
-    icon: fas fa-archive
-    url: archives/
-  - name: friends
-    icon: fas fa-users
-    url: friends/
+# nav_menu:
+#   - name: home
+#     icon: fas fa-home
+#     url: https://xaoxuu.com/
+#   - name: blogs
+#     icon: fas fa-rss
+#     url: /
+#   - name: archives
+#     icon: fas fa-archive
+#     url: archives/
+#   - name: friends
+#     icon: fas fa-users
+#     url: friends/

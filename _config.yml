@@ -89,7 +89,7 @@ deploy:
 
 widgets:
   - widget: author
-    avatar: https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/avatar/avatar.png
+    avatar: avatar.png
     jinrishici: true
     social: true
   - widget: plain

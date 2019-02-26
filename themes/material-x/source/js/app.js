@@ -137,8 +137,8 @@ var customSearch;
             key = window.event.keyCode;
             ev = window.event;
           } else { //火狐浏览器
-            key = e.which;
-            ev = e;
+            key = event.which;
+            ev = event;
           }
           if (key == 9) { //IE浏览器
             if (isie) {
