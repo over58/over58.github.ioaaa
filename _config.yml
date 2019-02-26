@@ -78,6 +78,7 @@ theme: material-x
 social:
   - icon: fas fa-envelope
     url: mailto:sce@staff.sina.com.cn
+    text: sce新浪弹性云平台
  
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -94,17 +95,19 @@ widgets:
     icon: fas fa-bullhorn
     title: 注意啦～
     body: '这是新浪弹性云平台部门Nevis项目的官方博客，喜欢Nevis的朋友可以阅读文档进行使用，超喜欢的话还可以安利给身边的朋友哦～'
-    more:
-      icon: fas fa-question-circle
-      url: https://xaoxuu.com/wiki/material-x/
+    # more:
+    #   icon: fas fa-question-circle
+    #   url: https://xaoxuu.com/wiki/material-x/front-matter/index.html
+    #   title: 写markdown文章的语法
   - widget: category
   - widget: tagcloud
+  - widget: toc
   - widget: list
     icon: fas fa-medal
     title: 精选项目
     more:
       icon: fas fa-arrow-right
-      url: https://xaoxuu.com/projects/
+      url: http://console.pre.nevis.sina.com.cn/
     rows:
       - name: SCE
         desc: 云服务器
@@ -126,6 +129,9 @@ widgets:
     icon: fas fa-link
     title: 特别链接
     rows:
-      - name: GitHub
-        icon: fab fa-github
-        url: http://git.staff.sina.com.cn/nevis.io/ui/blog.git
+      - name: GitLab
+        icon: fab fa-gitlab
+        url: http://git.staff.sina.com.cn/nevis.io/blog.git
+      - name: 如何写文章(相关语法)
+        icon: fas fa-question-circle
+        url: https://xaoxuu.com/wiki/material-x/front-matter/index.html

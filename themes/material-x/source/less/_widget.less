@@ -146,12 +146,15 @@
       }
       .social-wrapper{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: wrap;
         padding: 4px @gap/2;
         a{
           color: fade(@color_text_main, 70%);
           .enable-trans();
+          i{
+            padding-right: 5px;
+          }
           &:hover{
             color: @color_text_highlight;
           }
@@ -159,8 +162,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 32px;
-            height: 32px;
             margin: 4px;
             border-radius: 100px;
             &:hover {
