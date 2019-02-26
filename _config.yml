@@ -101,6 +101,7 @@ widgets:
     #   title: 写markdown文章的语法
   - widget: category
   - widget: tagcloud
+  - widget: toc
   - widget: list
     icon: fas fa-medal
     title: 精选项目
