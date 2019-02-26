@@ -13,7 +13,7 @@ timezone: UTC
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.pre.nevis.sina.com.cn
+url: http://blog.nevis.sina.com.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -78,13 +78,13 @@ theme: material-x
 social:
   - icon: fas fa-envelope
     url: mailto:sce@staff.sina.com.cn
-    text: sce新浪弹性云平台
+    text: 新浪弹性云平台
  
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@git.staff.sina.com.cn:nevis.io/ui/blog.git
+  repo: git@git.staff.sina.com.cn:nevis.io/blog.git
 
 widgets:
   - widget: author
@@ -107,20 +107,20 @@ widgets:
     title: 精选项目
     more:
       icon: fas fa-arrow-right
-      url: http://console.pre.nevis.sina.com.cn/
+      url: http://nevis.sina.com.cn/
     rows:
       - name: SCE
         desc: 云服务器
         icon: fas fa-cube
-        url: http://sce.pre.nevis.sina.com.cn/
+        url: http://sce.nevis.sina.com.cn/
       - name: 负载均衡
         desc: 
         icon: fas fa-cube
-        url: http://slb.pre.nevis.sina.com.cn
+        url: http://slb.nevis.sina.com.cn
       - name: SCA
         desc: 云应用
         icon: fas fa-heartbeat
-        url: http://sca.pre.nevis.sina.com.cn/
+        url: http://sca.nevis.sina.com.cn/
       - name: 容器服务
         desc: 
         icon: fas fa-cube
