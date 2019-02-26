@@ -12,6 +12,7 @@ tag: [vue]
 
 为了消除这种差异，可以使用其他变量比如 `process.env.VUE_APP_TITLE` 来区分环境。
 
+<!-- more -->
 
 需求：
 > 打包一个测试环境alpha，该环境的打包和production一样，只是开发中用到的一些变量需要区分环境
