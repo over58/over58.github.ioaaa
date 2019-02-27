@@ -1,0 +1,17 @@
+restart:
+	git pull origin master
+	hexo generate
+	docker rm -f blog
+	docker rmi blog:latest
+	docker build -t blog:latest  .
+	docker run -d -p 8080:80 --name blog blog:latest
+
+start:
+	git pull origin master
+	hexo generate
+	docker build -t blog:latest  .
+	docker run -d -p 8080:80 --name blog blog:latest
+rm:	
+	docker rm -f blog
+rmi:
+	docker rmi blog:latest
