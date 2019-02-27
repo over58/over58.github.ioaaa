@@ -20,6 +20,8 @@ author: 徐勇超
     多行元素居中：
 组合使用display:table-cell和vertical-align:middle属性来定义需要居中的元素的父容器元素生成效果
 
+<!-- more -->
+
 ### 4.垂直居中（未知块状元素高度）
 
 ```
