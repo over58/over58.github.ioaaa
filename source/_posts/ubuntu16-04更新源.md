@@ -14,6 +14,9 @@ vim /etc/apt/sources.list
 ```
 复制章节3中的源内容到sources.list文件并保存
 ### 3.国内主流的更新源
+
+<!-- more -->
+
 ```
 #sohu shangdong
 deb http://mirrors.sohu.com/ubuntu/ trusty main restricted universe multiverse
