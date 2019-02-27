@@ -11,7 +11,7 @@ tag: [vue]
 通过改变 `process.env.NODE_ENV` 值区分打包环境，但是webpack打包时针对`process.env.NODE_ENV==='production'` 和其他情况打出来的包结构和大小都不一样；
 
 为了消除这种差异，可以使用其他变量比如 `process.env.VUE_APP_TITLE` 来区分环境。
-
+XXXXx
 <!-- more -->
 
 需求：
