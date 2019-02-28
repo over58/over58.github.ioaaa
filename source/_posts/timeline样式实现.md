@@ -1,7 +1,7 @@
 ---
 title: timeline样式实现
 date: 2019-02-28 14:59:51
-tags: css components
+tags: [css, components]
 ---
 
 ```
