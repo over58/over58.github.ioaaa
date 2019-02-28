@@ -15,3 +15,11 @@ rm:
 	docker rm -f blog
 rmi:
 	docker rmi blog:latest
+commit-update:
+	git add .
+	git commit -m 'update article'
+	git push origin master
+commit-add:
+	git add .
+	git commit -m 'add article'
+	git push origin master
