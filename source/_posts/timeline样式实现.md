@@ -40,4 +40,4 @@ tags: [css, components]
 	padding-left:5px;
 }
 ```
-![timeline](images/timeline.png)
+![timeline](/images/timeline.png)
