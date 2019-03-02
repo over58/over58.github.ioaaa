@@ -13,6 +13,8 @@ tags: css bfc float
   4、display 为 inline-block、table-cells、flex
   5、overflow 除了 visible 以外的值 (hidden、auto、scroll) 
 
+<!-- more -->
+
 **浮动元素产生了浮动流**
 
   所有产生了浮动流的元素，块级元素看不到他们，产生了bfc的元素和文本类属性（inline）的元素以及文本都能看到浮动元素。
