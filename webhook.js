@@ -57,5 +57,5 @@ var deployServer = http.createServer(function(request, response) {
   }
 })
 deployServer.listen(PORT, function(){
-	console.log('start service')
+	console.log('start service!')
 })
