@@ -17,7 +17,7 @@ git push
 git reset
 git tag
 ```
-
+<!-- more -->
 ### 常见的场景
 #### 版本需要回退到旧版本
 ```
