@@ -4,22 +4,22 @@ const nodemailer = require('nodemailer');
 
 const PORT = 9988
 let transporter = nodemailer.createTransport({
-  // host: 'smtp.ethereal.email',
-  service: 'qq', // 使用了内置传输发送邮件 查看支持列表：https://nodemailer.com/smtp/well-known/
+  host: 'smtp.163.com',
+  service: 'smtp.163.com', // 使用了内置传输发送邮件 查看支持列表：https://nodemailer.com/smtp/well-known/
   port: 465, // SMTP 端口
   secureConnection: true, // 使用了 SSL
   auth: {
-    user: '2658553345@qq.com',
+    user: '13639628276@163.com',
     // 这里密码不是qq密码，是你设置的smtp授权码
     pass: 'hello@230058',
   }
 });
-function getEmailContent(){
+function getEmailContent(content){
   return {
-    from: '"yongchao blog" <2658553345@qq.com>', // sender address
-    to: '13639628276@163.com', // list of receivers
+    from: '"yongchao blog" <13639628276@163.com>', // sender address
+    to: '2658553345@qq.com', // list of receivers
     subject: '博客部署任务', // Subject line
-    html: '<b>Hello world?</b>'
+    html: '<b>'+ content +'</b>'
   };
 }
  
