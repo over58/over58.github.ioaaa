@@ -1,7 +1,7 @@
 ---
 title: css实现单行、多行文本溢出
 date: 2019-02-28 15:09:23
-tags: [css, ellipsiss]
+tags: [css]
 ---
 
 ###　单行：
