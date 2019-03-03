@@ -6,6 +6,7 @@
     "version": "3.8.0"
   },
   "dependencies": {
+    "exec": "^0.2.1",
     "hexo": "^3.8.0",
     "hexo-autoprefixer": "^2.0.0",
     "hexo-generator-archive": "^0.1.5",
