@@ -1,7 +1,7 @@
 ---
 title: bfc/float
 date: 2019-03-02 17:17:26
-tags: [css,bfcs,float]
+tags: [css]
 ---
 
 ### block format context 特点是内部子元素绝不会影响外部的元素

@@ -1,7 +1,7 @@
 ---
 title: js/jquery判断是否包含类
 date: 2019-03-02 17:09:29
-tags: jquery
+tags: [jquery]
 ---
 
 ```
