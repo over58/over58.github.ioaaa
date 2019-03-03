@@ -130,6 +130,22 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
 
 
@@ -149,7 +165,7 @@
   <div class="meta" id="header-meta">
     
       <h2 class="title">
-          <a href="/2019/02/27/vue中使用highcharts和echarts的实践/">
+          <a href="/2019/02/28/vue中使用highcharts和echarts的实践/">
               
                   vue中使用highcharts和echarts的实践
               
@@ -165,7 +181,7 @@
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-27
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
       </time>
     
 
@@ -184,7 +200,7 @@
     <section class="article typo">
         <p>  我从事云平台前端的开发，由于项目的需要，写了一个云监控Monitor项目。起初，我选择了 Echarts， 原因很简单，中文文档，定制化能力也比较好。事实上，使用了一年多来，用的也是蛮顺手的。但是，这是一个监控项目,里面存在大量的图，每个图有着巨量的数据，而且每条line的名字也超长。带来的问题就是，页面及其卡顿，即使是我限制了每个图中的数据量，仍然无法降低，页面无操作的情况下，CPU仍然占据20%以上（八个图，每个图平均10条line）。网上找了一通，都指向z_render()函数，echarts会不停的执行这个函数。实在是不堪忍受这样的卡顿，在进行了充分调研的情况下,果断换了highcharts。</p>
 <p>  经过实际项目测试：同等数量的情况下，highcharts和echarts 所占的内存相近，但CPU占比很低。举一个栗子，一个页面上有八个图，每个图平均大概10条线，当页面渲染完成，无任何鼠标点击的时候，echarts的CPU占比稳定在20%左右，highcharts始终在1%以下。</p>
-<p><img src="images/highcharts-q.png" alt="highcharts"><br><img src="images/echarts-q.png" alt="echarts"></p>
+<p><img src="/images/highcharts-q.png" alt="highcharts"><br><img src="/images/echarts-q.png" alt="echarts"></p>
 
         
 
@@ -305,7 +321,7 @@
 </header>
 
     <div class="content pure">
-      <a href="/tags/css/" style="font-size: 14px; color: #999">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a>
+      <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 19px; color: #777">vue</a>
     </div>
   </section>
 

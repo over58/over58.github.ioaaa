@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: css | yongchao&#39;s blog</title>
+  <title>timeline样式实现 | yongchao&#39;s blog</title>
   
   <meta name="keywords" content="blog,vue,js,css,html">
   
@@ -109,191 +109,15 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
-            
-    <script>
-        window.subData= { title:'标签 : css'}
-    </script>
-
-
-
-
-  <section class="post-list">
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-
-
-
-      
-
-      
-
-      
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
+            <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+  
 <section class="meta">
   
   <div class="meta" id="header-meta">
     
-      <h2 class="title">
-          <a href="/2019/03/03/bfc-float/">
-              
-                  bfc/float
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-02
-      </time>
-    
-
-    
       
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <h3 id="block-format-context-特点是内部子元素绝不会影响外部的元素"><a href="#block-format-context-特点是内部子元素绝不会影响外部的元素" class="headerlink" title="block format context 特点是内部子元素绝不会影响外部的元素"></a>block format context 特点是内部子元素绝不会影响外部的元素</h3><h3 id="如何触发一个盒子的bfc"><a href="#如何触发一个盒子的bfc" class="headerlink" title="如何触发一个盒子的bfc ?"></a>如何触发一个盒子的bfc ?</h3><p>  1、body 根元素<br>  2、浮动元素：float 除 none 以外的值<br>  3、绝对定位元素：position (absolute、fixed)<br>  4、display 为 inline-block、table-cells、flex<br>  5、overflow 除了 visible 以外的值 (hidden、auto、scroll) </p>
-        
-            <div class="readmore">
-                <a href="/2019/03/03/bfc-float/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/03/overflow-x-overflow-y一个为visible-一个为非visible时候的怪异行为/">
-              
-                  overflow-x/overflow-y一个为visible,一个为非visible时候的怪异行为
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-02
-      </time>
-    
-
-    
+          <h1 class="title">timeline样式实现</h1>
       
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>MDN的官方解释：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The computed values of ‘overflow-x’ and ‘overflow-y’ are the same as their specified values, except that some combinations with ‘visible’ are not possible: if one is specified as ‘visible’ and the other is ‘scroll’ or ‘auto’, then ‘visible’ is set to ‘auto’. The computed value of ‘overflow’ is equal to the computed value of ‘overflow-x’ if ‘overflow-y’ is the same; otherwise it is the pair of computed values of ‘overflow-x’ and ‘overflow-y’.</span><br></pre></td></tr></table></figure>
-<p>overflow-x 和overflow-y的计算值和它们指定的值是相同的，除了某些与visible组合的是不可能的。</p>
-<ol>
-<li>如果一个为visible, 另一个被指定为scroll、 auto 、hidden(实际测试所得) ，那么visible 将被设置为auto</li>
-<li>如果overflow的指定值和overflow-x相等的话（如果overflow-y相同的话）</li>
-</ol>
-<p>其余情况，overflow-x 和overflow-y的值和指定的值相同</p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/02/28/css实现单行、多行文本溢出/">
-              
-                  css实现单行、多行文本溢出
-              
-          </a>
-      </h2>
     
 
     
@@ -310,61 +134,11 @@
     
 
     
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>###　单行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">overflow: hidden;</span><br><span class="line">text-overflow:ellipsis;</span><br><span class="line">white-space: nowrap;</span><br></pre></td></tr></table></figure></p>
-<p>###　多行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">display: -webkit-box;</span><br><span class="line">-webkit-box-orient: vertical;</span><br><span class="line">-webkit-line-clamp: 3;</span><br><span class="line">overflow: hidden;</span><br></pre></td></tr></table></figure></p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/02/28/timeline样式实现/">
-              
-                  timeline样式实现
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
-      </time>
-    
-
-    
       
-
-    
-
+        <div class="metatag browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+          &nbsp;<span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </div>
+      
     
 
     
@@ -373,113 +147,106 @@
 </section>
 
     <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li&gt;</span><br><span class="line">		&lt;div class=&quot;head&quot;&gt;</span><br><span class="line">			&lt;span class=&quot;title&quot;&gt;标题1&lt;/span&gt;</span><br><span class="line">		    &lt;span class=&quot;extra&quot;&gt;2019/01/03&lt;/span&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;content&quot;&gt;内容内容内容内容内容内容内容内容内容内容内容内容内容&lt;/div&gt;</span><br><span class="line">	&lt;/li&gt;</span><br><span class="line"> </span><br><span class="line">	&lt;li&gt;</span><br><span class="line">      &lt;div class=&quot;head&quot;&gt;</span><br><span class="line">        &lt;span class=&quot;title&quot;&gt;标题2&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;extra&quot;&gt;2019/01/04&lt;/span&gt;</span><br><span class="line">	   &lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内</span><br><span class="line">	&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">.head&#123;</span><br><span class="line">	overflow:hidden;</span><br><span class="line">	height:25px;</span><br><span class="line">	line-height:25px;</span><br><span class="line">	padding:0 5px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.extra&#123;</span><br><span class="line">	float:right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.content&#123;</span><br><span class="line">	border-left:solid 3px #333;</span><br><span class="line">	padding-left:5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/timeline.png" alt="timeline"></p>
 
+      </div>
+        
+          <section class="meta" id="footer-meta">
+            
+              <time class="metatag time" itemprop="dateUpdated" datetime="2019-02-28T23:45:29+08:00" content="2019-02-28"><i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>
+                &nbsp;2019-02-28
+              </time>
+            
+            
+                
+                <div class="metatag tags"><a class="tag" href="/tags/css/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;css</a></div> <div class="metatag tags"><a class="tag" href="/tags/components/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;components</a></div>
+            
+            
+          </section>
         
 
         
-            <div class="full-width auto-padding tags">
+            <div class="prev-next">
                 
-                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2019/02/28/css实现单行、多行文本溢出/" rel="prev" title="css实现单行、多行文本溢出">
+                                  
+                                      css实现单行、多行文本溢出
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/css/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>css</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
                 
-                    <a href="/tags/components/"><i class="fas fa-hashtag fa-fw"></i>components</a>
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/02/28/如何搭建hexo博客/" rel="prev" title="如何搭建hexo博客">
+                                    
+                                        如何搭建hexo博客
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/hexo/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>hexo</a> <a class="tag" href="/tags/blog/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>blog</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
                 
             </div>
         
+
     </section>
+
 </article>
 
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/02/27/css各种情况下的居中/">
-              
-                  css各种情况下的居中
-              
-          </a>
-      </h2>
-    
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
-    
-      <span class="metatag time">
-        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
-      </span>
-    
 
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-27
-      </time>
-    
+<br>
 
-    
-      
+<!-- 显示推荐文章和评论 -->
 
-    
 
-    
 
-    
-
-  </div>
-</section>
-
+  <article class="post white-box comments">
     <section class="article typo">
-        <h3 id="1-水平居中行内元素"><a href="#1-水平居中行内元素" class="headerlink" title="1.水平居中行内元素"></a>1.水平居中行内元素</h3><p>只需要把行内元素包裹在一个属性display为block的父层元素中，并且把父层元素添加text-align: center即可。<br>适用元素：文字，链接，及其其它inline或者inline-*类型元素（inline-block，inline-table，inline-flex )</p>
-<h3 id="2-水平居中-多个块状元素居中"><a href="#2-水平居中-多个块状元素居中" class="headerlink" title="2.水平居中(多个块状元素居中)"></a>2.水平居中(多个块状元素居中)</h3><pre><code>1. 如果页面里有多个块状元素需要水平排列居中，可以将元素的display属性设置为inline-block，并且把父元素的text-align属性设置为center即可实现。
-
-2. 使用flex布局解决，父元素定义display:flex;
-</code></pre><h3 id="3-垂直居中（单行、多行的元素居中）"><a href="#3-垂直居中（单行、多行的元素居中）" class="headerlink" title="3.垂直居中（单行、多行的元素居中）"></a>3.垂直居中（单行、多行的元素居中）</h3><pre><code>当一个行内元素，即inline，inline-*类型的元素需要居中的话，可以将它的height和line-height同时设置为父元素的高度即可实现垂直居中效果。
-多行元素居中：
-</code></pre><p>组合使用display:table-cell和vertical-align:middle属性来定义需要居中的元素的父容器元素生成效果</p>
-        
-            <div class="readmore">
-                <a href="/2019/02/27/css各种情况下的居中/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
       
+      
+        <div class="recommended_posts">
+    <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;相关文章</h4>
+    <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/02/27/css各种情况下的居中/" title="css各种情况下的居中" rel="bookmark">css各种情况下的居中</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/02/28/css实现单行、多行文本溢出/" title="css实现单行、多行文本溢出" rel="bookmark">css实现单行、多行文本溢出</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/03/03/bfc-float/" title="bfc/float" rel="bookmark">bfc/float</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/03/03/overflow-x-overflow-y一个为visible-一个为非visible时候的怪异行为/" title="overflow-x/overflow-y一个为visible,一个为非visible时候的怪异行为" rel="bookmark">overflow-x/overflow-y一个为visible,一个为非visible时候的怪异行为</a></h3></div></li></ul>
+</div>
 
-  </section>
+      
+      
+    </section>
+  </article>
 
 
 
-
-
-
-  
-
-  <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-  
-
-  
-
+<script>
+    window.subData = {
+        title: 'timeline样式实现',
+        tools: true
+    }
+</script>
 
 
         </div>
