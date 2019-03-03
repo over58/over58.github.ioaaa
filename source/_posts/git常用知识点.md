@@ -46,3 +46,4 @@ git commit -m 'message' --amend
 #### 忽略对某个文件或者文件夹的的修改
 将文件或者文件夹的名字添加到.gitignore文件
 
+#### 剩下的以后会逐渐添加
