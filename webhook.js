@@ -30,5 +30,5 @@ var deployServer = http.createServer(function(request, response) {
 
   }
 })
-
+console.log('test')
 deployServer.listen(PORT)
