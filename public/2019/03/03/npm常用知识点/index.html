@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>css各种情况下的居中 | yongchao&#39;s blog</title>
+  <title>npm常用知识点 | yongchao&#39;s blog</title>
   
   <meta name="keywords" content="blog,vue,js,css,html">
   
@@ -116,19 +116,15 @@
   <div class="meta" id="header-meta">
     
       
-          <h1 class="title">css各种情况下的居中</h1>
+          <h1 class="title">npm常用知识点</h1>
       
     
 
     
-      <span class="metatag time">
-        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
-      </span>
-    
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-27
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-03
       </time>
     
 
@@ -152,59 +148,43 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h3 id="1-水平居中行内元素"><a href="#1-水平居中行内元素" class="headerlink" title="1.水平居中行内元素"></a>1.水平居中行内元素</h3><p>只需要把行内元素包裹在一个属性display为block的父层元素中，并且把父层元素添加text-align: center即可。<br>适用元素：文字，链接，及其其它inline或者inline-*类型元素（inline-block，inline-table，inline-flex )</p>
-<h3 id="2-水平居中-多个块状元素居中"><a href="#2-水平居中-多个块状元素居中" class="headerlink" title="2.水平居中(多个块状元素居中)"></a>2.水平居中(多个块状元素居中)</h3><pre><code>1. 如果页面里有多个块状元素需要水平排列居中，可以将元素的display属性设置为inline-block，并且把父元素的text-align属性设置为center即可实现。
-
-2. 使用flex布局解决，父元素定义display:flex;
-</code></pre><h3 id="3-垂直居中（单行、多行的元素居中）"><a href="#3-垂直居中（单行、多行的元素居中）" class="headerlink" title="3.垂直居中（单行、多行的元素居中）"></a>3.垂直居中（单行、多行的元素居中）</h3><pre><code>当一个行内元素，即inline，inline-*类型的元素需要居中的话，可以将它的height和line-height同时设置为父元素的高度即可实现垂直居中效果。
-多行元素居中：
-</code></pre><p>组合使用display:table-cell和vertical-align:middle属性来定义需要居中的元素的父容器元素生成效果</p>
+        <h3 id="更新到最新正式版本"><a href="#更新到最新正式版本" class="headerlink" title="更新到最新正式版本"></a>更新到最新正式版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install npm@latest -g</span><br></pre></td></tr></table></figure>
+<h3 id="更新到未来将会释放的版本"><a href="#更新到未来将会释放的版本" class="headerlink" title="更新到未来将会释放的版本"></a>更新到未来将会释放的版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install npm@next -g</span><br></pre></td></tr></table></figure>
+<h3 id="列出某个包的所有历史banbe"><a href="#列出某个包的所有历史banbe" class="headerlink" title="列出某个包的所有历史banbe"></a>列出某个包的所有历史banbe</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm view &lt;package&gt; versions</span><br></pre></td></tr></table></figure>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init or npm init --yes(直接使用默认的设置)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="4-垂直居中（未知块状元素高度）"><a href="#4-垂直居中（未知块状元素高度）" class="headerlink" title="4.垂直居中（未知块状元素高度）"></a>4.垂直居中（未知块状元素高度）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.item&#123;</span><br><span class="line">  top: 50%;</span><br><span class="line">  position: absolute;</span><br><span class="line">  transform: translateY(-50%); /* 这里我们使用css3的transform来达到类似效果 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="5-水平垂直居中（使用flex布局实现）"><a href="#5-水平垂直居中（使用flex布局实现）" class="headerlink" title="5.水平垂直居中（使用flex布局实现）"></a>5.水平垂直居中（使用flex布局实现）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.parent&#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content:center;</span><br><span class="line">  align-items: center;</span><br><span class="line">  </span><br><span class="line">  /* 注意这里需要设置高度来查看垂直居中效果 */</span><br><span class="line">  background: #AAA;</span><br><span class="line">  height: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="6-水平垂直居中-已知高度和宽度的元素解决方案"><a href="#6-水平垂直居中-已知高度和宽度的元素解决方案" class="headerlink" title="6.水平垂直居中(已知高度和宽度的元素解决方案)"></a>6.水平垂直居中(已知高度和宽度的元素解决方案)</h3><pre><code>设置元素定位为absolute，并且设置top, left绝对值为50%，margin-top和margin-left为元素高度一半的负值即可，如下：
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.item&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  left: 50%;</span><br><span class="line">  margin-top: -75px;</span><br><span class="line">  margin-left: -75px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="7-水平垂直居中（未知高度和宽度元素解决方案）"><a href="#7-水平垂直居中（未知高度和宽度元素解决方案）" class="headerlink" title="7.水平垂直居中（未知高度和宽度元素解决方案）"></a>7.水平垂直居中（未知高度和宽度元素解决方案）</h3><pre><code>使用类似的transform属性来定义，即可实现，如下：
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  left: 50%;</span><br><span class="line">  transform: translate(-50%, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="8-水平居中总结"><a href="#8-水平居中总结" class="headerlink" title="8.水平居中总结"></a>8.水平居中总结</h3><ol>
-<li>水平居中之inline-block+text-align</li>
-</ol>
-<ul>
-<li>兼容性非常好</li>
-<li>inline+zoom:1  //兼容IE8以下</li>
-<li>child会继承text-align:center，需要对子元素进行reset</li>
+<h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install package  or npm i package</span><br></pre></td></tr></table></figure>
+<h4 id="安装包之-–save"><a href="#安装包之-–save" class="headerlink" title="安装包之 –save"></a>安装包之 –save</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install package --save 安装包并将包的信息写入package.json中的dependencies</span><br></pre></td></tr></table></figure>
+<h4 id="安装包之-–save-dev"><a href="#安装包之-–save-dev" class="headerlink" title="安装包之 –save-dev"></a>安装包之 –save-dev</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install package --save-dev 安装包并将包的信息写入package.json中的devDependencies</span><br></pre></td></tr></table></figure>
+<h3 id="安装包之-指定版本"><a href="#安装包之-指定版本" class="headerlink" title="安装包之 指定版本"></a>安装包之 指定版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install package@version</span><br></pre></td></tr></table></figure>
+<h3 id="全局包"><a href="#全局包" class="headerlink" title="全局包"></a>全局包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">安装：npm install package -g</span><br><span class="line">查看那些全局包过期： npm outdated -g --depth=0</span><br><span class="line">更新某个全局包：npm update package -g</span><br><span class="line">更新所有的全局包： npm update -g</span><br><span class="line">卸载全局包： npm uninstall package -g</span><br></pre></td></tr></table></figure>
+<h3 id="semver-package的版本问题"><a href="#semver-package的版本问题" class="headerlink" title="semver package的版本问题"></a>semver package的版本问题</h3><p>  semver的格式： 主版本号.次版本号.修订号</p>
+<h4 id="range"><a href="#range" class="headerlink" title="range"></a>range</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt; </span><br><span class="line">&lt;= </span><br><span class="line">&gt; </span><br><span class="line">&gt;=</span><br><span class="line">=</span><br></pre></td></tr></table></figure>
+<h4 id="Advanceed-Range-Syntax"><a href="#Advanceed-Range-Syntax" class="headerlink" title="Advanceed Range Syntax"></a>Advanceed Range Syntax</h4><ul>
+<li>1.2.3 - 2.3.4 := &gt;=1.2.3 &lt;=2.3.4</li>
+<li>1.2.3 - 2.3   := &gt;=1.2.3 &lt;2.4.0</li>
+<li>1.2.3 - 2     := &gt;=1.2.3 &lt;3.0.0</li>
 </ul>
-<ol start="2">
-<li>水平居中之table+margin</li>
-</ol>
-<ul>
-<li>table元素宽度为内容宽度</li>
-<li>只需要设置child ,IE6 7可以child可以采用table的方式如th tr来实现</li>
+<h4 id="X-Ranges"><a href="#X-Ranges" class="headerlink" title="X-Ranges"></a>X-Ranges</h4><ul>
+<li><ul>
+<li>:= &gt;=0.0.0 (Any version satisfies)</li>
 </ul>
-<ol start="3">
-<li>水平居中之absolute+transform</li>
-</ol>
-<ul>
-<li>脱离文档流 不会对其他元素产生影响</li>
-<li>不兼容低版本IE</li>
+</li>
+<li>1.x := &gt;=1.0.0 &lt;2.0.0 (Matching major version)</li>
+<li>1.2.x := &gt;=1.2.0 &lt;1.3.0 (Matching major and minor versions)</li>
 </ul>
-<ol start="4">
-<li>水平居中之flex+justify-content</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.child&#123;</span><br><span class="line">    margin: 0 auto</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>-不兼容低版本IE</p>
 
       </div>
         
           <section class="meta" id="footer-meta">
             
-              <time class="metatag time" itemprop="dateUpdated" datetime="2019-02-27T19:20:10+08:00" content="2019-02-27"><i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>
-                &nbsp;2019-02-27
+              <time class="metatag time" itemprop="dateUpdated" datetime="2019-03-03T21:19:53+08:00" content="2019-03-03"><i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>
+                &nbsp;2019-03-03
               </time>
             
             
                 
-                <div class="metatag tags"><a class="tag" href="/tags/css/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;css</a></div>
+                <div class="metatag tags"><a class="tag" href="/tags/npm/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;npm</a></div>
             
             
           </section>
@@ -217,16 +197,16 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2019/02/28/ubuntu16-04更新源/" rel="prev" title="ubuntu16.04更新源">
+                                <a href="/2019/03/04/git常用知识点/" rel="prev" title="git常用知识点">
                                   
-                                      ubuntu16.04更新源
+                                      git常用知识点
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/ubuntu/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>ubuntu</a>
+                                    <a class="tag" href="/tags/git/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>git</a>
                                 </h6>
                             
                         </span>
@@ -237,16 +217,16 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2019/02/27/ vue-cli3入门/" rel="prev" title="vue-cli3 入门">
+                                <a href="/2019/03/03/bfc-float/" rel="prev" title="bfc/float">
                                     
-                                        vue-cli3 入门
+                                        bfc/float
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/vue/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>vue</a>
+                                    <a class="tag" href="/tags/css/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>css</a>
                                 </h6>
                             
                         </span>
@@ -274,7 +254,7 @@
       
         <div class="recommended_posts">
     <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;相关文章</h4>
-    <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/02/28/css实现单行、多行文本溢出/" title="css实现单行、多行文本溢出" rel="bookmark">css实现单行、多行文本溢出</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/02/28/timeline样式实现/" title="timeline样式实现" rel="bookmark">timeline样式实现</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/03/03/bfc-float/" title="bfc/float" rel="bookmark">bfc/float</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/03/03/overflow-x-overflow-y一个为visible-一个为非visible时候的怪异行为/" title="overflow-x/overflow-y一个为visible,一个为非visible时候的怪异行为" rel="bookmark">overflow-x/overflow-y一个为visible,一个为非visible时候的怪异行为</a></h3></div></li></ul>
+    
 </div>
 
       
@@ -286,7 +266,7 @@
 
 <script>
     window.subData = {
-        title: 'css各种情况下的居中',
+        title: 'npm常用知识点',
         tools: true
     }
 </script>
@@ -396,7 +376,7 @@
 </header>
 
     <div class="content pure">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-水平居中行内元素"><span class="toc-text">1.水平居中行内元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-水平居中-多个块状元素居中"><span class="toc-text">2.水平居中(多个块状元素居中)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-垂直居中（单行、多行的元素居中）"><span class="toc-text">3.垂直居中（单行、多行的元素居中）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-垂直居中（未知块状元素高度）"><span class="toc-text">4.垂直居中（未知块状元素高度）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-水平垂直居中（使用flex布局实现）"><span class="toc-text">5.水平垂直居中（使用flex布局实现）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-水平垂直居中-已知高度和宽度的元素解决方案"><span class="toc-text">6.水平垂直居中(已知高度和宽度的元素解决方案)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-水平垂直居中（未知高度和宽度元素解决方案）"><span class="toc-text">7.水平垂直居中（未知高度和宽度元素解决方案）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-水平居中总结"><span class="toc-text">8.水平居中总结</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#更新到最新正式版本"><span class="toc-text">更新到最新正式版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新到未来将会释放的版本"><span class="toc-text">更新到未来将会释放的版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列出某个包的所有历史banbe"><span class="toc-text">列出某个包的所有历史banbe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化"><span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装包"><span class="toc-text">安装包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装包之-–save"><span class="toc-text">安装包之 –save</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装包之-–save-dev"><span class="toc-text">安装包之 –save-dev</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装包之-指定版本"><span class="toc-text">安装包之 指定版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全局包"><span class="toc-text">全局包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#semver-package的版本问题"><span class="toc-text">semver package的版本问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#range"><span class="toc-text">range</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Advanceed-Range-Syntax"><span class="toc-text">Advanceed Range Syntax</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-Ranges"><span class="toc-text">X-Ranges</span></a></li></ol></li></ol>
     </div>
   </section>
 
