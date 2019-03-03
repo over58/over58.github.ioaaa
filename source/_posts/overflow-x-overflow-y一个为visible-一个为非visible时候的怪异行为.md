@@ -1,7 +1,7 @@
 ---
 title: 'overflow-x/overflow-y一个为visible,一个为非visible时候的怪异行为'
 date: 2019-03-02 17:12:50
-tags: css overflow
+tags: [css, overflow]
 ---
 
 MDN的官方解释：

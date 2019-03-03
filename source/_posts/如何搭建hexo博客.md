@@ -2,7 +2,7 @@
 layout: hexo
 title: 如何搭建hexo博客
 date: 2019-02-28 09:48:34
-tags: hexo blog
+tags: [hexo, blog]
 ---
 
 ### 准备开发环境（默认已安装好node、git）

@@ -2,7 +2,7 @@
 title: ubuntu16.04更新源
 date: 2019-02-27 17:48:39
 author: 徐勇超
-tags: ubuntu
+tags: [ubuntu]
 ---
 
 ### 1.备份source.list
