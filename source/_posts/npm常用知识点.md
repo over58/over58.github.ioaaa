@@ -73,4 +73,4 @@ npm install package@version
 - * := >=0.0.0 (Any version satisfies)
 - 1.x := >=1.0.0 <2.0.0 (Matching major version)
 - 1.2.x := >=1.2.0 <1.3.0 (Matching major and minor versions)
-```
+
