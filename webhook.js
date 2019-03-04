@@ -1,7 +1,6 @@
-var express = require('express')
-const nodemailer = require('nodemailer')
-const app = express()
-var exec = require('exec');
+var http = require('http')
+  , exec = require('exec')
+
 
 const PORT = process.env.PORT || 9988
 
@@ -24,23 +23,40 @@ let defaultOpions = {
   html: '<b>blog deploy success !</b>'
 }
 
-app.get('/deploy', (req, res) => {
-  exec(['make restart'], function(err, info) {
-      if(err) {
-          console.error(err)
-      }else{
-        transporter.sendMail(defaultOpions, (err, info) => {
-            if(err) {
-                    console.error(err)
-            }else{
-                console.log(err, info)
-            }
-            res.send()
-        })
-    
+var deployServer = http.createServer(function(request, response) {
+  if (request.url.search(/deploy\/?$/i) > 0) {
+ 
+    var commands = [
+      'make restart'
+    ].join(' && ')
+ 
+    exec(commands, function(err, out, code) {
+      if (err instanceof Error) {
+        response.writeHead(500)
+        response.end('Server Internal Error.')
+        throw err
       }
+      process.stderr.write(err)
+      process.stdout.write(out)
+      response.writeHead(200)
+      response.end('Deploy Done.')
+      transporter.sendMail(defaultOpions, (err, info) => {
+          if(err) {
+                  console.error(err)
+          }else{
+              console.log(err, info)
+          }
+      })
     })
+ 
+  } else {
+ 
+    response.writeHead(404)
+    response.end('Not Found.')
+ 
+  }
 })
-app.listen(PORT, () => {
-    console.log('start service' + PORT)
+deployServer.listen(PORT, () => {
+  console.log('start service' + PORT)
 })
+
