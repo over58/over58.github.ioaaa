@@ -147,6 +147,26 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
 
 
@@ -156,6 +176,63 @@
       
 
       
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/02/28/button样式的实现/">
+              
+                  button样式的实现
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>使用stylus 编写<br>工具函数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vendor(prop,value)</span><br><span class="line">  -webkit-&#123;prop&#125; value</span><br><span class="line">  -moz-&#123;prop&#125; value</span><br><span class="line">  &#123;prop&#125; value</span><br><span class="line"></span><br><span class="line">border-radius(n = 5px)</span><br><span class="line">  vendor(border-radius,n)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.btn</span><br><span class="line">  padding: 0 40px</span><br><span class="line">  border:none</span><br><span class="line">  height:40px</span><br><span class="line">  border-radius(5px)</span><br><span class="line">  background-color: #5df</span><br><span class="line">  cursor pointer</span><br><span class="line">  transition: all .5s ease</span><br><span class="line">  &amp;:hover</span><br><span class="line">    background-color #666</span><br><span class="line">    color #fff</span><br><span class="line">    transition: all .5s ease</span><br><span class="line">  &amp;:focus</span><br><span class="line">    outline: none</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.btn-3d</span><br><span class="line">  position relative</span><br><span class="line">  top 0</span><br><span class="line">  box-shadow: 0 7px 0 rgba(0,0,0,.2), 0 8px 3px #333</span><br><span class="line">  transition: all .15s ease</span><br><span class="line">  &amp;:active</span><br><span class="line">    position relative</span><br><span class="line">    top 5px</span><br><span class="line">    box-shadow: 0 2px 0 rgba(0,0,0,.2), 0 3px 3px #333</span><br><span class="line">    transition: all .3s ease</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.btn-glowing</span><br><span class="line">  animation:  glowing 3s infinite;</span><br><span class="line"></span><br><span class="line">@keyframes glowing </span><br><span class="line">  from</span><br><span class="line">    box-shadow: 0 0 0 rgba(44, 154, 219, 0.3)</span><br><span class="line">  50%</span><br><span class="line">    box-shadow: 0 0 20px rgba(44, 154, 219, 0.8)</span><br><span class="line">  to</span><br><span class="line">    box-shadow: 0 0 0 rgba(44, 154, 219, 0.3)</span><br></pre></td></tr></table></figure>
+<p>按钮菜单<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">.btn-dropdown</span><br><span class="line">  position relative</span><br><span class="line">  overflow visible</span><br><span class="line">  display inline-block</span><br><span class="line">  &amp;:hover,&amp;:active</span><br><span class="line">    .btn-dropdown-list</span><br><span class="line">      display inline-block</span><br><span class="line">.btn-dropdown-list</span><br><span class="line">  display none</span><br><span class="line">  position absolute</span><br><span class="line">  top 100%</span><br><span class="line">  left 0</span><br><span class="line">  margin 0</span><br><span class="line">  padding 0</span><br><span class="line">  z-index 1000</span><br><span class="line">  min-width 100%</span><br><span class="line">  list-style-type: none</span><br><span class="line">  background: rgba(255, 255, 255, 0.95)</span><br><span class="line">  border-style: solid</span><br><span class="line">  border-width: 1px</span><br><span class="line">  border-color: #d4d4d4</span><br><span class="line">  font-family: &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif</span><br><span class="line">  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2)</span><br><span class="line">  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2)</span><br><span class="line">  border-radius: 3px</span><br><span class="line">  -webkit-box-sizing: border-box</span><br><span class="line">  -moz-box-sizing: border-box</span><br><span class="line">  box-sizing: border-box</span><br><span class="line">  &amp;:hover</span><br><span class="line">    display inline-block</span><br><span class="line"></span><br><span class="line">.btn-dropdown-list&gt;li</span><br><span class="line">  padding: 0</span><br><span class="line">  margin: 0</span><br><span class="line">  display: block</span><br><span class="line">.btn-dropdown-list&gt;li&gt;a</span><br><span class="line">  display: block</span><br><span class="line">  line-height: 40px</span><br><span class="line">  font-size: 12.8px</span><br><span class="line">  padding: 5px 10px</span><br><span class="line">  float: none</span><br><span class="line">  color: #666</span><br><span class="line">  text-decoration: none</span><br><span class="line">  &amp;:hover</span><br><span class="line">    color: #5e5e5e</span><br><span class="line">    background: #f6f6f6</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.btn-group</span><br><span class="line">  position relative</span><br><span class="line">  display inline-block</span><br><span class="line">  &amp;:after</span><br><span class="line">    content: &apos;&apos;</span><br><span class="line">    display block</span><br><span class="line">    clear both</span><br><span class="line">.btn-group .btn</span><br><span class="line">  border-radius: 0</span><br><span class="line">  float: left</span><br><span class="line">  border: solid 1px #333</span><br><span class="line">  &amp;:first-child</span><br><span class="line">    border-top-left-radius: 5px</span><br><span class="line">    border-bottom-left-radius: 5px</span><br><span class="line">  &amp;:last-child</span><br><span class="line">    border-top-right-radius: 5px</span><br><span class="line">    border-bottom-right-radius: 5px</span><br><span class="line">  &amp;:not(:last-child)</span><br><span class="line">    border-right none</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.btn-raised</span><br><span class="line">  border-color: #e1e1e1</span><br><span class="line">  border-style: solid</span><br><span class="line">  border-width: 1px</span><br><span class="line">  line-height: 38px</span><br><span class="line">  background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#e1e1e1))</span><br><span class="line">  background: linear-gradient(#333, #e1e1e1)</span><br><span class="line">  -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15)</span><br><span class="line">  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.btn-wrap</span><br><span class="line">  display inline-block</span><br><span class="line">  padding 9px</span><br><span class="line">  border-radius 200px</span><br><span class="line">  border solid 1px #e3e3e3</span><br><span class="line">  background linear-gradient(#f2f2f2,#fff)</span><br><span class="line">  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04)</span><br><span class="line">  &amp; .btn</span><br><span class="line">    border-radius: 200px</span><br></pre></td></tr></table></figure>
+
+        
+
+        
+    </section>
+</article>
+
+            </div>
+          
         
           
             <div class="post-wrapper">
@@ -773,7 +850,7 @@
 </header>
 
     <div class="content pure">
-      <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 19px; color: #777">vue</a>
+      <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 19px; color: #777">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a>
     </div>
   </section>
 

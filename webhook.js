@@ -26,6 +26,7 @@ let defaultOpions = {
 
 app.get('/deploy', (req, res) => {
   exec(['make restart'], function(err, info) {
+	console.log(err, info)
       if(err) {
           console.error(err)
       }else{
@@ -42,5 +43,5 @@ app.get('/deploy', (req, res) => {
     })
 })
 app.listen(PORT, () => {
-    console.log('start service')
+    console.log('start service' + PORT)
 })

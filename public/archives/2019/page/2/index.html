@@ -138,23 +138,19 @@
   <div class="meta" id="header-meta">
     
       <h2 class="title">
-          <a href="/2019/02/27/css各种情况下的居中/">
+          <a href="/2019/03/03/bfc-float/">
               
-                  css各种情况下的居中
+                  bfc/float
               
           </a>
       </h2>
     
 
     
-      <span class="metatag time">
-        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
-      </span>
-    
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-27
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-02
       </time>
     
 
@@ -171,16 +167,10 @@
 </section>
 
     <section class="article typo">
-        <h3 id="1-水平居中行内元素"><a href="#1-水平居中行内元素" class="headerlink" title="1.水平居中行内元素"></a>1.水平居中行内元素</h3><p>只需要把行内元素包裹在一个属性display为block的父层元素中，并且把父层元素添加text-align: center即可。<br>适用元素：文字，链接，及其其它inline或者inline-*类型元素（inline-block，inline-table，inline-flex )</p>
-<h3 id="2-水平居中-多个块状元素居中"><a href="#2-水平居中-多个块状元素居中" class="headerlink" title="2.水平居中(多个块状元素居中)"></a>2.水平居中(多个块状元素居中)</h3><pre><code>1. 如果页面里有多个块状元素需要水平排列居中，可以将元素的display属性设置为inline-block，并且把父元素的text-align属性设置为center即可实现。
-
-2. 使用flex布局解决，父元素定义display:flex;
-</code></pre><h3 id="3-垂直居中（单行、多行的元素居中）"><a href="#3-垂直居中（单行、多行的元素居中）" class="headerlink" title="3.垂直居中（单行、多行的元素居中）"></a>3.垂直居中（单行、多行的元素居中）</h3><pre><code>当一个行内元素，即inline，inline-*类型的元素需要居中的话，可以将它的height和line-height同时设置为父元素的高度即可实现垂直居中效果。
-多行元素居中：
-</code></pre><p>组合使用display:table-cell和vertical-align:middle属性来定义需要居中的元素的父容器元素生成效果</p>
+        <h3 id="block-format-context-特点是内部子元素绝不会影响外部的元素"><a href="#block-format-context-特点是内部子元素绝不会影响外部的元素" class="headerlink" title="block format context 特点是内部子元素绝不会影响外部的元素"></a>block format context 特点是内部子元素绝不会影响外部的元素</h3><h3 id="如何触发一个盒子的bfc"><a href="#如何触发一个盒子的bfc" class="headerlink" title="如何触发一个盒子的bfc ?"></a>如何触发一个盒子的bfc ?</h3><p>  1、body 根元素<br>  2、浮动元素：float 除 none 以外的值<br>  3、绝对定位元素：position (absolute、fixed)<br>  4、display 为 inline-block、table-cells、flex<br>  5、overflow 除了 visible 以外的值 (hidden、auto、scroll) </p>
         
             <div class="readmore">
-                <a href="/2019/02/27/css各种情况下的居中/" class="flat-box">
+                <a href="/2019/03/03/bfc-float/" class="flat-box">
                     <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
                     阅读全文
                 </a>
@@ -209,9 +199,477 @@
   <div class="meta" id="header-meta">
     
       <h2 class="title">
-          <a href="/2019/02/27/ vue-cli3入门/">
+          <a href="/2019/03/03/overflow-x-overflow-y一个为visible-一个为非visible时候的怪异行为/">
               
-                  vue-cli3 入门
+                  overflow-x/overflow-y一个为visible,一个为非visible时候的怪异行为
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-02
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>MDN的官方解释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The computed values of ‘overflow-x’ and ‘overflow-y’ are the same as their specified values, except that some combinations with ‘visible’ are not possible: if one is specified as ‘visible’ and the other is ‘scroll’ or ‘auto’, then ‘visible’ is set to ‘auto’. The computed value of ‘overflow’ is equal to the computed value of ‘overflow-x’ if ‘overflow-y’ is the same; otherwise it is the pair of computed values of ‘overflow-x’ and ‘overflow-y’.</span><br></pre></td></tr></table></figure>
+<p>overflow-x 和overflow-y的计算值和它们指定的值是相同的，除了某些与visible组合的是不可能的。</p>
+<ol>
+<li>如果一个为visible, 另一个被指定为scroll、 auto 、hidden(实际测试所得) ，那么visible 将被设置为auto</li>
+<li>如果overflow的指定值和overflow-x相等的话（如果overflow-y相同的话）</li>
+</ol>
+<p>其余情况，overflow-x 和overflow-y的值和指定的值相同</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/03/js-jquery判断是否包含类/">
+              
+                  js/jquery判断是否包含类
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-02
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">新版本jQuery</span><br><span class="line">  hasClass(&quot;className&quot;) </span><br><span class="line">  is(&quot;.className&quot;)</span><br><span class="line"></span><br><span class="line">原生js </span><br><span class="line">      element.classList.contains(className)</span><br><span class="line"></span><br><span class="line">旧版jQuery:</span><br><span class="line">  hasClass(&quot;.className&quot;)</span><br></pre></td></tr></table></figure>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/jquery/"><i class="fas fa-hashtag fa-fw"></i>jquery</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/01/双层边框样式/">
+              
+                  双层边框样式
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>outline用于创建两个边框的时候<br>好处:  outline的样式是可变的，<br>缺点: 是border如果是圆角，outline仍然是矩形，经测试，outline只对right bottom占据空间，对left top不产生影响</p>
+<p>box-shadow可以用于产生多个边框<br>好处: border是什么样，投影就是什么样，完美贴合<br>缺点: 指定描绘实线阴影，不能改变阴影的样式color  inset</p>
+<p>box-shadow: h-shadow(水平偏移)  v-shadow(垂直偏移) blur(模糊距离) spread(阴影尺寸) color  inset(边框类型) </p>
+<div class="box shadow-box"></div><br><div class="box outline-box"></div>    
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">    height:50px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background: #666;</span><br><span class="line">    border: solid 5px yellowgreen;</span><br><span class="line">    border-radius: 10px;</span><br><span class="line">    margin: 30px;</span><br><span class="line">&#125;</span><br><span class="line">.outline-box&#123;</span><br><span class="line">    outline: red 10px solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.shadow-box&#123;</span><br><span class="line">    box-shadow: 0 0 0 10px red;</span><br></pre></td></tr></table></figure>
+        
+
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/02/28/button样式的实现/">
+              
+                  button样式的实现
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>使用stylus 编写<br>工具函数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vendor(prop,value)</span><br><span class="line">  -webkit-&#123;prop&#125; value</span><br><span class="line">  -moz-&#123;prop&#125; value</span><br><span class="line">  &#123;prop&#125; value</span><br><span class="line"></span><br><span class="line">border-radius(n = 5px)</span><br><span class="line">  vendor(border-radius,n)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.btn</span><br><span class="line">  padding: 0 40px</span><br><span class="line">  border:none</span><br><span class="line">  height:40px</span><br><span class="line">  border-radius(5px)</span><br><span class="line">  background-color: #5df</span><br><span class="line">  cursor pointer</span><br><span class="line">  transition: all .5s ease</span><br><span class="line">  &amp;:hover</span><br><span class="line">    background-color #666</span><br><span class="line">    color #fff</span><br><span class="line">    transition: all .5s ease</span><br><span class="line">  &amp;:focus</span><br><span class="line">    outline: none</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.btn-3d</span><br><span class="line">  position relative</span><br><span class="line">  top 0</span><br><span class="line">  box-shadow: 0 7px 0 rgba(0,0,0,.2), 0 8px 3px #333</span><br><span class="line">  transition: all .15s ease</span><br><span class="line">  &amp;:active</span><br><span class="line">    position relative</span><br><span class="line">    top 5px</span><br><span class="line">    box-shadow: 0 2px 0 rgba(0,0,0,.2), 0 3px 3px #333</span><br><span class="line">    transition: all .3s ease</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.btn-glowing</span><br><span class="line">  animation:  glowing 3s infinite;</span><br><span class="line"></span><br><span class="line">@keyframes glowing </span><br><span class="line">  from</span><br><span class="line">    box-shadow: 0 0 0 rgba(44, 154, 219, 0.3)</span><br><span class="line">  50%</span><br><span class="line">    box-shadow: 0 0 20px rgba(44, 154, 219, 0.8)</span><br><span class="line">  to</span><br><span class="line">    box-shadow: 0 0 0 rgba(44, 154, 219, 0.3)</span><br></pre></td></tr></table></figure>
+<p>按钮菜单<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">.btn-dropdown</span><br><span class="line">  position relative</span><br><span class="line">  overflow visible</span><br><span class="line">  display inline-block</span><br><span class="line">  &amp;:hover,&amp;:active</span><br><span class="line">    .btn-dropdown-list</span><br><span class="line">      display inline-block</span><br><span class="line">.btn-dropdown-list</span><br><span class="line">  display none</span><br><span class="line">  position absolute</span><br><span class="line">  top 100%</span><br><span class="line">  left 0</span><br><span class="line">  margin 0</span><br><span class="line">  padding 0</span><br><span class="line">  z-index 1000</span><br><span class="line">  min-width 100%</span><br><span class="line">  list-style-type: none</span><br><span class="line">  background: rgba(255, 255, 255, 0.95)</span><br><span class="line">  border-style: solid</span><br><span class="line">  border-width: 1px</span><br><span class="line">  border-color: #d4d4d4</span><br><span class="line">  font-family: &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif</span><br><span class="line">  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2)</span><br><span class="line">  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2)</span><br><span class="line">  border-radius: 3px</span><br><span class="line">  -webkit-box-sizing: border-box</span><br><span class="line">  -moz-box-sizing: border-box</span><br><span class="line">  box-sizing: border-box</span><br><span class="line">  &amp;:hover</span><br><span class="line">    display inline-block</span><br><span class="line"></span><br><span class="line">.btn-dropdown-list&gt;li</span><br><span class="line">  padding: 0</span><br><span class="line">  margin: 0</span><br><span class="line">  display: block</span><br><span class="line">.btn-dropdown-list&gt;li&gt;a</span><br><span class="line">  display: block</span><br><span class="line">  line-height: 40px</span><br><span class="line">  font-size: 12.8px</span><br><span class="line">  padding: 5px 10px</span><br><span class="line">  float: none</span><br><span class="line">  color: #666</span><br><span class="line">  text-decoration: none</span><br><span class="line">  &amp;:hover</span><br><span class="line">    color: #5e5e5e</span><br><span class="line">    background: #f6f6f6</span><br><span class="line">    text-decoration: none</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.btn-group</span><br><span class="line">  position relative</span><br><span class="line">  display inline-block</span><br><span class="line">  &amp;:after</span><br><span class="line">    content: &apos;&apos;</span><br><span class="line">    display block</span><br><span class="line">    clear both</span><br><span class="line">.btn-group .btn</span><br><span class="line">  border-radius: 0</span><br><span class="line">  float: left</span><br><span class="line">  border: solid 1px #333</span><br><span class="line">  &amp;:first-child</span><br><span class="line">    border-top-left-radius: 5px</span><br><span class="line">    border-bottom-left-radius: 5px</span><br><span class="line">  &amp;:last-child</span><br><span class="line">    border-top-right-radius: 5px</span><br><span class="line">    border-bottom-right-radius: 5px</span><br><span class="line">  &amp;:not(:last-child)</span><br><span class="line">    border-right none</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.btn-raised</span><br><span class="line">  border-color: #e1e1e1</span><br><span class="line">  border-style: solid</span><br><span class="line">  border-width: 1px</span><br><span class="line">  line-height: 38px</span><br><span class="line">  background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#e1e1e1))</span><br><span class="line">  background: linear-gradient(#333, #e1e1e1)</span><br><span class="line">  -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15)</span><br><span class="line">  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.15)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.btn-wrap</span><br><span class="line">  display inline-block</span><br><span class="line">  padding 9px</span><br><span class="line">  border-radius 200px</span><br><span class="line">  border solid 1px #e3e3e3</span><br><span class="line">  background linear-gradient(#f2f2f2,#fff)</span><br><span class="line">  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04)</span><br><span class="line">  &amp; .btn</span><br><span class="line">    border-radius: 200px</span><br></pre></td></tr></table></figure>
+
+        
+
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/02/28/vue中使用highcharts和echarts的实践/">
+              
+                  vue中使用highcharts和echarts的实践
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>  我从事云平台前端的开发，由于项目的需要，写了一个云监控Monitor项目。起初，我选择了 Echarts， 原因很简单，中文文档，定制化能力也比较好。事实上，使用了一年多来，用的也是蛮顺手的。但是，这是一个监控项目,里面存在大量的图，每个图有着巨量的数据，而且每条line的名字也超长。带来的问题就是，页面及其卡顿，即使是我限制了每个图中的数据量，仍然无法降低，页面无操作的情况下，CPU仍然占据20%以上（八个图，每个图平均10条line）。网上找了一通，都指向z_render()函数，echarts会不停的执行这个函数。实在是不堪忍受这样的卡顿，在进行了充分调研的情况下,果断换了highcharts。</p>
+<p>  经过实际项目测试：同等数量的情况下，highcharts和echarts 所占的内存相近，但CPU占比很低。举一个栗子，一个页面上有八个图，每个图平均大概10条线，当页面渲染完成，无任何鼠标点击的时候，echarts的CPU占比稳定在20%左右，highcharts始终在1%以下。</p>
+<p><img src="/images/highcharts-q.png" alt="highcharts"><br><img src="/images/echarts-q.png" alt="echarts"></p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                
+                    <a href="/tags/highcharts/"><i class="fas fa-hashtag fa-fw"></i>highcharts</a>
+                
+                    <a href="/tags/echarts/"><i class="fas fa-hashtag fa-fw"></i>echarts</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/02/28/css实现单行、多行文本溢出/">
+              
+                  css实现单行、多行文本溢出
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>###　单行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">overflow: hidden;</span><br><span class="line">text-overflow:ellipsis;</span><br><span class="line">white-space: nowrap;</span><br></pre></td></tr></table></figure></p>
+<p>###　多行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">display: -webkit-box;</span><br><span class="line">-webkit-box-orient: vertical;</span><br><span class="line">-webkit-line-clamp: 3;</span><br><span class="line">overflow: hidden;</span><br></pre></td></tr></table></figure></p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/02/28/timeline样式实现/">
+              
+                  timeline样式实现
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li&gt;</span><br><span class="line">		&lt;div class=&quot;head&quot;&gt;</span><br><span class="line">			&lt;span class=&quot;title&quot;&gt;标题1&lt;/span&gt;</span><br><span class="line">		    &lt;span class=&quot;extra&quot;&gt;2019/01/03&lt;/span&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;content&quot;&gt;内容内容内容内容内容内容内容内容内容内容内容内容内容&lt;/div&gt;</span><br><span class="line">	&lt;/li&gt;</span><br><span class="line"> </span><br><span class="line">	&lt;li&gt;</span><br><span class="line">      &lt;div class=&quot;head&quot;&gt;</span><br><span class="line">        &lt;span class=&quot;title&quot;&gt;标题2&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;extra&quot;&gt;2019/01/04&lt;/span&gt;</span><br><span class="line">	   &lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">          内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内</span><br><span class="line">	&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">.head&#123;</span><br><span class="line">	overflow:hidden;</span><br><span class="line">	height:25px;</span><br><span class="line">	line-height:25px;</span><br><span class="line">	padding:0 5px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.extra&#123;</span><br><span class="line">	float:right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.content&#123;</span><br><span class="line">	border-left:solid 3px #333;</span><br><span class="line">	padding-left:5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/timeline.png" alt="timeline"></p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
+                
+                    <a href="/tags/components/"><i class="fas fa-hashtag fa-fw"></i>components</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/02/28/如何搭建hexo博客/">
+              
+                  如何搭建hexo博客
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="准备开发环境（默认已安装好node、git）"><a href="#准备开发环境（默认已安装好node、git）" class="headerlink" title="准备开发环境（默认已安装好node、git）"></a>准备开发环境（默认已安装好node、git）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">cd blog</span><br><span class="line">npm install hexo-autoprefixer hexo-generator-feed hexo-generator-json-content hexo-generator-search hexo-helper-qrcode hexo-related-popular-posts hexo-renderer-less hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
+<p>此时是如下目录结构</p>
+<blockquote>
+</blockquote>
+<p>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes</p>
+<h3 id="更换配置"><a href="#更换配置" class="headerlink" title="更换配置"></a>更换配置</h3><p>更改项目根目录下的_config.ymal中的url、author、keywords等参数</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/hexo/"><i class="fas fa-hashtag fa-fw"></i>hexo</a>
+                
+                    <a href="/tags/blog/"><i class="fas fa-hashtag fa-fw"></i>blog</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/02/28/ubuntu16-04更新源/">
+              
+                  ubuntu16.04更新源
               
           </a>
       </h2>
@@ -242,12 +700,13 @@
 </section>
 
     <section class="article typo">
-        <p><a href="https://cli.vuejs.org/zh/guide/" target="_blank" rel="noopener">官方文档</a></p>
-<h3 id="1-vue-cli3实现分环境打包步骤"><a href="#1-vue-cli3实现分环境打包步骤" class="headerlink" title="1. vue-cli3实现分环境打包步骤"></a>1. vue-cli3实现分环境打包步骤</h3><p>通过改变 <code>process.env.NODE_ENV</code> 值区分打包环境，但是webpack打包时针对<code>process.env.NODE_ENV===&#39;production&#39;</code> 和其他情况打出来的包结构和大小都不一样；</p>
-<p>为了消除这种差异，可以使用其他变量比如 <code>process.env.VUE_APP_TITLE</code> 来区分环境。<br>XXXXx<br>
+        <h3 id="1-备份source-list"><a href="#1-备份source-list" class="headerlink" title="1.备份source.list"></a>1.备份source.list</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/apt/source.list /etc/apt/source.list.bak</span><br></pre></td></tr></table></figure>
+<h3 id="2-打开source-list文件，删除全部内容"><a href="#2-打开source-list文件，删除全部内容" class="headerlink" title="2.打开source.list文件，删除全部内容"></a>2.打开source.list文件，删除全部内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<p>复制章节3中的源内容到sources.list文件并保存</p>
+<h3 id="3-国内主流的更新源"><a href="#3-国内主流的更新源" class="headerlink" title="3.国内主流的更新源"></a>3.国内主流的更新源</h3>
         
             <div class="readmore">
-                <a href="/2019/02/27/ vue-cli3入门/" class="flat-box">
+                <a href="/2019/02/28/ubuntu16-04更新源/" class="flat-box">
                     <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
                     阅读全文
                 </a>
@@ -257,68 +716,7 @@
         
             <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-            </div>
-        
-    </p></section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/02/26/MySQL常见错误码/">
-              
-                  MySQL常见错误码
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-26
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>0101 属于其他进程的专用标志。<br><br>0102 标志已经设置，无法关闭。<br><br>0103 无法再次设置该标志。<br><br>0104 中断时无法请求专用标志。<br></p>
-        
-            <div class="readmore">
-                <a href="/2019/02/26/MySQL常见错误码/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/mysql/"><i class="fas fa-hashtag fa-fw"></i>mysql</a>
+                    <a href="/tags/ubuntu/"><i class="fas fa-hashtag fa-fw"></i>ubuntu</a>
                 
             </div>
         
@@ -349,8 +747,14 @@
                   </a>
               
               <p class="current">
-                  2 / 2
+                  2 / 3
               </p>
+              
+                  <a class="next" rel="next" href="/archives/2019/page/3/">
+                      <section class="post next">
+                          &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
+                      </section>
+                  </a>
               
 
           </div>
@@ -454,7 +858,7 @@
 </header>
 
     <div class="content pure">
-      <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 19px; color: #777">vue</a>
+      <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 19px; color: #777">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a>
     </div>
   </section>
 
