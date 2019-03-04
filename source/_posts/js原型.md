@@ -42,7 +42,7 @@ Book.resetTime = function(){}
 var book = new Book('adf2323','js设计模式', 232)
 console.log(book.name, book.price, book.id)
 console.log(book.getNum())
-``` 
+```
 
 ###　New的作用
 
@@ -103,6 +103,7 @@ function SubClass(id){
 
 缺点：只继承了父类构造函数中的公有属性。如果一个函数后者变量想要被继承么，就必须放在父类构造函数中，这样创建的每个实例都会单独拥有一份而不能共用，这样违背了代码复用的原则。为了综合这两种模式的有点，后来有了组合式继承。
 ```
+
 #### 组合式继承
 ```
 function SuperClass(id){
@@ -127,6 +128,7 @@ SubClass.prototype.getTime = function(){
 SuperClass.call(this, id)执行了一次父类构造函数
 new SuperClass()又执行了一次父类构造函数
 ```
+
 #### 寄生组合式继承
 ```
 function SuperClass(id){
