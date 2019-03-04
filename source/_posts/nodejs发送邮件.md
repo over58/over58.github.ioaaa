@@ -4,6 +4,7 @@ date: 2019-03-04 10:44:17
 tags: [nodejs]
 ---
 
+使用nodemailer包实现发送邮件
 <!-- more -->
 
 ```
