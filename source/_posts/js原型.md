@@ -43,7 +43,9 @@ var book = new Book('adf2323','js设计模式', 232)
 console.log(book.name, book.price, book.id)
 console.log(book.getNum())
 ``` 
+
 ###　New的作用
+
 ```
 Function Book(id, name , price) {
     Var this = {}
