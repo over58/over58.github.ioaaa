@@ -153,7 +153,7 @@ function inherit(subClass, superClass){
 }
 ```
 
-#### 补充：inherit函数test
+#### 补充：inherit函数
 ```
 function inherit(p){
     if(p === null) throw TypeError
