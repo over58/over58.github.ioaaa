@@ -18,7 +18,7 @@ let transporter = nodemailer.createTransport({
 });
 
 let defaultOpions = {
-  from: '13639628276@163.com',
+  from: 'yongchao blog <13639628276@163.com>',
   to: '2658553345@qq.com',
   subject: 'yongchao blog',
   html: '<b>blog deploy success !</b>'
@@ -26,7 +26,6 @@ let defaultOpions = {
 
 app.get('/deploy', (req, res) => {
   exec(['make restart'], function(err, info) {
-	console.log(err, info)
       if(err) {
           console.error(err)
       }else{
