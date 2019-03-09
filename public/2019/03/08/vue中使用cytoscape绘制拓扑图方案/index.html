@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Archives: 2019 | yongchao&#39;s blog</title>
+  <title>vue中使用cytoscape绘制拓扑图方案 | yongchao&#39;s blog</title>
   
   <meta name="keywords" content="blog,vue,js,css,html">
   
@@ -109,97 +109,15 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
-            
-	
-    <script>
-        window.subData= { title:'year : 2019'}
-    </script>
-
-
-
-
-  <section class="post-list">
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-
-
-
-      
-
-      
-
-      
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
+            <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+  
 <section class="meta">
   
   <div class="meta" id="header-meta">
     
-      <h2 class="title">
-          <a href="/2019/03/08/vue中使用cytoscape绘制拓扑图方案/">
-              
-                  vue中使用cytoscape绘制拓扑图方案
-              
-          </a>
-      </h2>
+      
+          <h1 class="title">vue中使用cytoscape绘制拓扑图方案</h1>
+      
     
 
     
@@ -216,6 +134,12 @@
     
 
     
+      
+        <div class="metatag browse busuanzi"><i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+          &nbsp;<span id="busuanzi_value_page_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+        </div>
+      
+    
 
     
 
@@ -223,621 +147,87 @@
 </section>
 
     <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
         <p>有一个需求需要绘制拓扑图，然后选图表库选择了cytoscape,看了官方文档<a href="http://js.cytoscape.org，感觉和network.js很像，包括两种element,一种是node（描述其相关信息），另一种是" target="_blank" rel="noopener">http://js.cytoscape.org，感觉和network.js很像，包括两种element,一种是node（描述其相关信息），另一种是</a> edge(描述node之间的关系， 通过指明source, target确定指向)，其余的都是一些样式配置和事件的监听，可以说是非常的清晰明了了。此外文档的Extensions部分提供了各种的UI插件和API插件，拓展性也不错。</p>
 <h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">nodes: [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"a"</span>,//required</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"demo"</span>,//optional</span><br><span class="line">    // ...</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"b"</span>,//required</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"demo"</span>,//optional</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">edges: [</span><br><span class="line">  //描述了 a--&gt;b</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"aadsfasdf"</span>, //optional</span><br><span class="line">    <span class="string">"source"</span>: <span class="string">"a"</span>, //required, <span class="built_in">source</span>-node-id</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"b"</span>,  //required target-node-id</span><br><span class="line">  &#125;,</span><br><span class="line">  //描述了 a--&gt;a,会出现一个指向自己的圆，不过想要实现这一点需要cytoscape-edgehandles插件</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"aadsfasdf"</span>, //optional</span><br><span class="line">    <span class="string">"source"</span>: <span class="string">"a"</span>, //required, <span class="built_in">source</span>-node-id</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"a"</span>,  //required target-node-id</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <h3 id="实际栗子"><a href="#实际栗子" class="headerlink" title="实际栗子"></a>实际栗子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;cy&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import cytoscape from &apos;cytoscape&apos;</span><br><span class="line">&lt;!--为edge添加事件和二维的布局 --&gt;</span><br><span class="line">import edgehandles from &apos;cytoscape-edgehandles&apos;</span><br><span class="line"></span><br><span class="line">&lt;!-- 提供类似于tooltip的提示框 --&gt;</span><br><span class="line">import popper from &apos;cytoscape-popper&apos;</span><br><span class="line">import tippy from &apos;tippy.js&apos;</span><br><span class="line"></span><br><span class="line">&lt;!-- 引入data --&gt;</span><br><span class="line">import data from &apos;./data.js&apos;</span><br><span class="line"></span><br><span class="line">&lt;!-- 使用插件 --&gt;</span><br><span class="line">cytoscape.use(edgehandles)</span><br><span class="line">cytoscape.use(popper)</span><br><span class="line"></span><br><span class="line">&lt;!-- 可以使用自己选的配色 --&gt;</span><br><span class="line">let colors = [&apos;#FFFFCC&apos;, &apos;#CCFFFF&apos;, &apos;#FFCCCC&apos;, &apos;#FFFF99&apos;, &apos;#CCCCFF&apos;, &apos;#FF9966&apos;, &apos;#FF6666&apos;, &apos;#FFCC99&apos;, &apos;#CCFF99&apos;, &apos;#CCCCCC&apos;, &apos;#CCFFCC&apos;, &apos;#99CC99&apos;, &apos;#99CCCC&apos;]</span><br><span class="line">let colors1 = [&apos;#FF6666&apos;, &apos;#006699&apos;, &apos;#FF9966&apos;, &apos;#0066CC&apos;, &apos;#339933&apos;, &apos;#FFCC33&apos;, &apos;#FF9900&apos;, &apos;#FFFFCC&apos;, &apos;#CC6600&apos;, &apos;#CCCC44&apos;, &apos;#99CC33&apos;, &apos;#0099CC&apos;, &apos;#99CCCC&apos;, &apos;#FF0033&apos;, &apos;#333399&apos;, &apos;#CCCC00&apos;, &apos;#33CC99&apos;, &apos;#FFFF00&apos;, &apos;#336699&apos;]</span><br><span class="line">let colors2 = [&apos;#CCFF99&apos;, &apos;#99CCFF&apos;, &apos;#99CCCC&apos;, &apos;#CCFFCC&apos;, &apos;#66CCCC&apos;, &apos;#CCCCFF&apos;, &apos;#FFFFCC&apos;, &apos;#CCFFFF&apos;, &apos;#66CCFF&apos;, &apos;#6699CC&apos;]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let vm = null</span><br><span class="line">export default &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      tippyInstance: null</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    draw () &#123;</span><br><span class="line">      let nodes = data.nodes</span><br><span class="line">      let edges = data.edges</span><br><span class="line">      nodes.map((x, i) =&gt; &#123;</span><br><span class="line">        x.data.color = colors[i % 13]</span><br><span class="line">        // x.data.color = colors1[i % 19]</span><br><span class="line">        x.data.color = colors2[i % 10]</span><br><span class="line">        return x</span><br><span class="line">      &#125;)</span><br><span class="line">      let cy = cytoscape(&#123;</span><br><span class="line">        container: document.getElementById(&apos;cy&apos;),</span><br><span class="line">        layout: &#123;</span><br><span class="line">          name: &apos;grid&apos;,</span><br><span class="line">          concentric: function (n) &#123; return n.id() === &apos;j&apos; ? 200 : 0 &#125;,</span><br><span class="line">          levelWidth: function (nodes) &#123; return 100 &#125;,</span><br><span class="line">          minNodeSpacing: 100</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        style: [</span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;node&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;content&apos;: &apos;data(name)&apos;,</span><br><span class="line">              &apos;width&apos;: &apos;mapData(size, 0, 1.0, 40, 60)&apos;,</span><br><span class="line">              &apos;height&apos;: &apos;mapData(size, 0, 1.0, 40, 60)&apos;,</span><br><span class="line">              &apos;background-color&apos;: &apos;data(color)&apos;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;edge&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;curve-style&apos;: &apos;unbundled-bezier&apos;,</span><br><span class="line">              &apos;target-arrow-shape&apos;: &apos;triangle&apos;,</span><br><span class="line">              &apos;target-arrow-color&apos;: &apos;data(colour)&apos;,</span><br><span class="line">              &apos;line-color&apos;: &apos;data(colour)&apos;,</span><br><span class="line">              &apos;width&apos;: &apos;mapData(width, 0, 1.0, 1, 3)&apos;,</span><br><span class="line">              // &apos;label&apos;: &apos;data(info)&apos;</span><br><span class="line">              &apos;control-point-distances&apos;: [40, -40],</span><br><span class="line">              &apos;control-point-weights&apos;: [0.25, 0.75]</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          // some style for the extension</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-handle&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;background-color&apos;: &apos;red&apos;,</span><br><span class="line">              &apos;width&apos;: 12,</span><br><span class="line">              &apos;height&apos;: 12,</span><br><span class="line">              &apos;shape&apos;: &apos;ellipse&apos;,</span><br><span class="line">              &apos;overlay-opacity&apos;: 0,</span><br><span class="line">              &apos;border-width&apos;: 12, // makes the handle easier to hit</span><br><span class="line">              &apos;border-opacity&apos;: 0</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-hover&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;background-color&apos;: &apos;red&apos;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-source&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;border-width&apos;: 2,</span><br><span class="line">              &apos;border-color&apos;: &apos;red&apos;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-target&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;border-width&apos;: 2,</span><br><span class="line">              &apos;border-color&apos;: &apos;red&apos;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-preview, .eh-ghost-edge&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;background-color&apos;: &apos;red&apos;,</span><br><span class="line">              &apos;line-color&apos;: &apos;red&apos;,</span><br><span class="line">              &apos;target-arrow-color&apos;: &apos;red&apos;,</span><br><span class="line">              &apos;source-arrow-color&apos;: &apos;red&apos;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-ghost-edge.eh-preview-active&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;opacity&apos;: 0</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.edge-out-highlight&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;line-color&apos;: &apos;black&apos;,</span><br><span class="line">              &apos;target-arrow-color&apos;: &apos;black&apos;,</span><br><span class="line">              width: 3</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.edge-in-highlight&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;line-color&apos;: &apos;purple&apos;,</span><br><span class="line">              &apos;target-arrow-color&apos;: &apos;purple&apos;,</span><br><span class="line">              width: 3</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        ],</span><br><span class="line"></span><br><span class="line">        elements: &#123;</span><br><span class="line">          nodes: nodes,</span><br><span class="line">          edges: edges</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">      // edge添加事件</span><br><span class="line">      cy.on(&apos;tap&apos;, &apos;edge&apos;, function (evt) &#123;</span><br><span class="line">        var node = evt.target</span><br><span class="line">        if (vm.tippyInstance) &#123;</span><br><span class="line">          vm.tippyInstance.hide()</span><br><span class="line">          vm.tippyInstance.destroy()</span><br><span class="line">        &#125;</span><br><span class="line">        vm.makeTippy(node)</span><br><span class="line">        vm.tippyInstance.show()</span><br><span class="line">      &#125;)</span><br><span class="line">      </span><br><span class="line">      // node 添加事件</span><br><span class="line">      cy.on(&apos;tap&apos;, &apos;edge&apos;, function (evt) &#123;</span><br><span class="line">        var node = evt.target</span><br><span class="line">        if (vm.tippyInstance) &#123;</span><br><span class="line">          vm.tippyInstance.hide()</span><br><span class="line">          vm.tippyInstance.destroy()</span><br><span class="line">        &#125;</span><br><span class="line">        vm.makeTippy(node)</span><br><span class="line">        vm.tippyInstance.show()</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">      cy.on(&apos;tap&apos;, &apos;node&apos;, function (evt) &#123;</span><br><span class="line">        var node = evt.target</span><br><span class="line">        node.incomers(&apos;edge&apos;).toggleClass(&apos;edge-in-highlight&apos;)</span><br><span class="line">        node.edgesWith(&apos;*&apos;).toggleClass(&apos;edge-out-highlight&apos;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    makeTippy (node) &#123;</span><br><span class="line">      &lt;!-- 点击edge出现一个弹框，显示一些额外的信息 --&gt;</span><br><span class="line">      this.tippyInstance = tippy(node.popperRef(), &#123;</span><br><span class="line">        content: function () &#123;</span><br><span class="line">          var div = document.createElement(&apos;div&apos;)</span><br><span class="line">          div.innerHTML = `&lt;p style=&quot;text-align:left;padding-top:8px;&quot;&gt;$&#123;node._private.data.info&#125;&lt;/p&gt;`</span><br><span class="line">          return div</span><br><span class="line">        &#125;,</span><br><span class="line">        trigger: &apos;manual&apos;,</span><br><span class="line">        arrow: true,</span><br><span class="line">        placement: &apos;bottom&apos;,</span><br><span class="line">        hideOnClick: false,</span><br><span class="line">        multiple: true,</span><br><span class="line">        sticky: true</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line">    vm = this</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted () &#123;</span><br><span class="line">    this.$nextTick(() =&gt; &#123;</span><br><span class="line">      this.draw()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-                    <a href="/tags/graph/"><i class="fas fa-hashtag fa-fw"></i>graph</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/07/cytoscape的简单使用/">
-              
-                  cytoscape的简单使用
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-07
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <h3 id="cy实例对象常用操作"><a href="#cy实例对象常用操作" class="headerlink" title="cy实例对象常用操作"></a>cy实例对象常用操作</h3><h4 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h4><pre><code>cy.add(eleObj/eleObjs/eles)
-</code></pre><h4 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h4><pre><code>cy.remove(elems/selector)
-</code></pre><h4 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h4><pre><code>cy.colleciton 返回一个new empty collection
-cy.getElementById() or  cy.$id()   return one element
-cy.$(selector)、cy.elements(selector)  return  elements
-cy.nodes(selector)
-cy.edges(selector)
-cy.filter(selector) return elements
-cy.filter(function(ele, i, eles))
-  - ele The current element under consideration for filtering.
-  - i The counter used for iteration over the elements in the graph.
-  - eles The collection of elements being filtered
-</code></pre><blockquote>
-<p>ps: cy.nodes(‘[weight &gt; 50]’);</p>
-</blockquote>
-<h4 id="批量修改-能够有效的减少渲染成本"><a href="#批量修改-能够有效的减少渲染成本" class="headerlink" title="批量修改(能够有效的减少渲染成本)"></a>批量修改(能够有效的减少渲染成本)</h4><pre><code>cy.batch()
-cy.satrtBatch()
-cy.endBatch()
-</code></pre><blockquote>
-<p>demo如下<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cy.startBatch();</span><br><span class="line"></span><br><span class="line">&lt;!-- 多次的样式修改操作 --&gt;</span><br><span class="line">cy.$(&apos;#j&apos;)</span><br><span class="line">  .data(&apos;weight&apos;, &apos;70&apos;)</span><br><span class="line">  .addClass(&apos;funny&apos;)</span><br><span class="line">  .removeClass(&apos;serious&apos;)</span><br><span class="line"></span><br><span class="line">cy.endBatch();</span><br><span class="line">能够减少中间的redraw的成本，和jquery中将一系列修改样式的操作合并到一个类中，对这个类进行操作一个道理。</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h4 id="create"><a href="#create" class="headerlink" title="create"></a>create</h4><pre><code>cy.mount()
-cy.unmount()
-</code></pre><h4 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h4><pre><code>cy.destroy() 有利于gc
-</code></pre><h4 id="临时数据操作"><a href="#临时数据操作" class="headerlink" title="临时数据操作"></a>临时数据操作</h4><pre><code>cy.scratch([namespace], [value])
-cy.removeScratch()
-</code></pre><h3 id="全局函数：-cytoscape在调试过程中在console中打印一些错"><a href="#全局函数：-cytoscape在调试过程中在console中打印一些错" class="headerlink" title="全局函数： cytoscape在调试过程中在console中打印一些错"></a>全局函数： cytoscape在调试过程中在console中打印一些错</h3><ul>
-<li>cytoscape.warnings(false) 禁止报错</li>
-<li>cytoscape.warnings(true)  开启报错</li>
-<li>cytoscape.warnings()      得到当前状态</li>
-</ul>
-<h3 id="collection的一些操作"><a href="#collection的一些操作" class="headerlink" title="collection的一些操作"></a>collection的一些操作</h3>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/graph/"><i class="fas fa-hashtag fa-fw"></i>graph</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/06/post和get的区别/">
-              
-                  post和get的区别
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-05
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>首先， GET、POST 都是htt请求的的方法。它们本质上并无差别。HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加上request body，给POST带上url参数，技术上是完全行的通的 。</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>那么， 问题来了。<br>1、”GET请求在URL中传送的参数是有长度限制的，而POST没有”是什么鬼？。<br>  答： url长度限制都是浏览器设置的；而GET也可以在request body中传递参数，只不过不同的服务器对这些数据的处理方式不同，有些接受，有些忽略。</p>
-<p>2、GET和POST还有一个重大区别，简单的说：GET产生一个TCP数据包；POST产生两个TCP数据包。长的说：对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。<br>  答： 1. GET与POST都有自己的语义，不能随便混用。</p>
-<pre><code>2. 据研究，在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。
-3. 并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。
-</code></pre>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/http/"><i class="fas fa-hashtag fa-fw"></i>http</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/05/webhook-demo/">
-              
-                  webhook-demo
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-05
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;)</span><br><span class="line">  , exec = require(&apos;exec&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const PORT = process.env.PORT || 9988</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let transporter = nodemailer.createTransport(&#123;</span><br><span class="line">  service: &apos;smpt.163.com&apos;,</span><br><span class="line">  host: &apos;smtp.163.com&apos;,</span><br><span class="line">  secureConnection: true,</span><br><span class="line">  port:    465,</span><br><span class="line">  auth: &#123;</span><br><span class="line">    user: &apos;XXX@163.com&apos;,</span><br><span class="line">    pass: &apos;XXXXXXX&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">let defaultOpions = &#123;</span><br><span class="line">  from: &apos;yongchao blog &lt;XXX@163.com&gt;&apos;,</span><br><span class="line">  to: &apos;XXXX@qq.com&apos;,</span><br><span class="line">  subject: &apos;yongchao blog&apos;,</span><br><span class="line">  html: &apos;&lt;b&gt;blog deploy success !&lt;/b&gt;&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var deployServer = http.createServer(function(request, response) &#123;</span><br><span class="line">  if (request.url.search(/deploy\/?$/i) &gt; 0) &#123;</span><br><span class="line"> </span><br><span class="line">    var commands = [</span><br><span class="line">      &apos;make restart&apos; //这是我自定义的重新部署的代码</span><br><span class="line">    ].join(&apos; &amp;&amp; &apos;)</span><br><span class="line"> </span><br><span class="line">    exec(commands, function(err, out, code) &#123;</span><br><span class="line">      if (err instanceof Error) &#123;</span><br><span class="line">        response.writeHead(500)</span><br><span class="line">        response.end(&apos;Server Internal Error.&apos;)</span><br><span class="line">        throw err</span><br><span class="line">      &#125;</span><br><span class="line">      process.stderr.write(err)</span><br><span class="line">      process.stdout.write(out)</span><br><span class="line">      response.writeHead(200)</span><br><span class="line">      response.end(&apos;Deploy Done.&apos;)</span><br><span class="line">      transporter.sendMail(defaultOpions, (err, info) =&gt; &#123;</span><br><span class="line">          if(err) &#123;</span><br><span class="line">                  console.error(err)</span><br><span class="line">          &#125;else&#123;</span><br><span class="line">              console.log(err, info)</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line"> </span><br><span class="line">  &#125; else &#123;</span><br><span class="line"> </span><br><span class="line">    response.writeHead(404)</span><br><span class="line">    response.end(&apos;Not Found.&apos;)</span><br><span class="line"> </span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">deployServer.listen(PORT, () =&gt; &#123;</span><br><span class="line">  console.log(&apos;start service&apos; + PORT)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-        
-
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/05/vue-directive/">
-              
-                  vue-directive
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <h3 id="vue-directive-的几个钩子函数"><a href="#vue-directive-的几个钩子函数" class="headerlink" title="vue-directive 的几个钩子函数"></a>vue-directive 的几个钩子函数</h3><ul>
-<li>bind  指令第一次被绑定到元素时调用，只调用一次</li>
-<li>inserted 被绑定元素插入到父节点时调用</li>
-<li>update 被绑定元素所在模版更新时调用，不论绑定值是否变化都调用</li>
-<li>componentUpdated 被绑定元素所在模版在完成一次更新周期时调用</li>
-<li>unbind 元素解绑时调用，只调用一次</li>
-</ul>
-        
-            <div class="readmore">
-                <a href="/2019/03/05/vue-directive/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/05/对于echarts图表随着浏览器窗口resize的优化/">
-              
-                  对于echarts图表随着浏览器窗口resize的优化
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>说明： 有时候项目中会显示一些图表，而且width可能并不是固定的（可能100%），那么当浏览器窗口变化的时候，图表的大小应该跟随着变大或变小，称之为resize</p>
-        
-            <div class="readmore">
-                <a href="/2019/03/05/对于echarts图表随着浏览器窗口resize的优化/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/05/覆盖ui框架css原生样式/">
-              
-                  覆盖ui框架css原生样式
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <ul>
-<li><p>加scoped</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">/deep/.rootName .className&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">or </span><br><span class="line"></span><br><span class="line">.rootName &gt;&gt;&gt; .className&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>不加scoped<br>原理：在组件中添加了父css类, 在修改的样式作用域限定为父css类，减小css的影响范围</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.rootName .className&#123;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/05/vue-intro使用方法及注意点/">
-              
-                  vue-intro使用方法及注意点
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>1、使用时必须引入intro.js<br>2、let intro=Intro.intro()<br>3、intro.setOptions({}).start().oncomplete().onskip(function)<br>4、intro这个插件只能提示一些静态的页面上已经有的一些元素，异步的或者是后来动态显示的元素无法加上提示.</p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/05/vue中定时器问题/">
-              
-                  vue中定时器问题
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>Vue中使用了定时器后在关闭页面后必须手动清理</p>
-        
-            <div class="readmore">
-                <a href="/2019/03/05/vue中定时器问题/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/04/js的灵活/">
-              
-                  js的灵活
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <h3 id="js是超级灵活的语言"><a href="#js是超级灵活的语言" class="headerlink" title="js是超级灵活的语言"></a>js是超级灵活的语言</h3><h4 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var checkObj = function () &#123;&#125;</span><br><span class="line">    checkObj.prototype.checkName = function()&#123;</span><br><span class="line">    console.log(&apos;checkName&apos;)</span><br><span class="line">&#125;</span><br><span class="line">checkObj.prototype.checkEmail = function()&#123;</span><br><span class="line">    console.log(&apos;checkEmail&apos;)</span><br><span class="line">&#125;</span><br><span class="line">checkObj.prototype.checkPassword = function()&#123;</span><br><span class="line">    console.log(&apos;checkPassword&apos;)</span><br><span class="line">&#125;</span><br><span class="line">var a = new checkObj()</span><br><span class="line">a.checkName()</span><br><span class="line">a.checkEmail()</span><br><span class="line">a.checkPassword()</span><br></pre></td></tr></table></figure>
-        
-            <div class="readmore">
-                <a href="/2019/03/04/js的灵活/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-      
-
-  </section>
-
-
-
-
-
-
-  
-      <br>
-      <div class="prev-next">
-          <div class="prev-next">
-              
-              <p class="current">
-                  1 / 3
-              </p>
-              
-                  <a class="next" rel="next" href="/archives/2019/page/2/">
-                      <section class="post next">
-                          &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-                      </section>
-                  </a>
-              
-
-          </div>
       </div>
+        
+          <section class="meta" id="footer-meta">
+            
+              <time class="metatag time" itemprop="dateUpdated" datetime="2019-03-09T17:13:19+08:00" content="2019-03-09"><i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>
+                &nbsp;2019-03-09
+              </time>
+            
+            
+                
+                <div class="metatag tags"><a class="tag" href="/tags/vue/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;vue</a></div> <div class="metatag tags"><a class="tag" href="/tags/graph/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;graph</a></div>
+            
+            
+          </section>
+        
 
-  
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/03/07/cytoscape的简单使用/" rel="prev" title="cytoscape的简单使用">
+                                    
+                                        cytoscape的简单使用
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/graph/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>graph</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
 
-  <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-  
+    </section>
 
-  
+</article>
 
-
-
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
 
-<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+<br>
+
+<!-- 显示推荐文章和评论 -->
 
 
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      
+      
+        <div class="recommended_posts">
+    <h4><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;相关文章</h4>
+    <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/02/27/ vue-cli3入门/" title="vue-cli3 入门" rel="bookmark">vue-cli3 入门</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/02/28/vue中使用highcharts和echarts的实践/" title="vue中使用highcharts和echarts的实践" rel="bookmark">vue中使用highcharts和echarts的实践</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/03/05/vue-intro使用方法及注意点/" title="vue-intro使用方法及注意点" rel="bookmark">vue-intro使用方法及注意点</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/03/05/vue中定时器问题/" title="vue中定时器问题" rel="bookmark">vue中定时器问题</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/03/05/对于echarts图表随着浏览器窗口resize的优化/" title="对于echarts图表随着浏览器窗口resize的优化" rel="bookmark">对于echarts图表随着浏览器窗口resize的优化</a></h3></div></li></ul>
+</div>
+
+      
+      
+    </section>
+  </article>
+
+
+
+<script>
+    window.subData = {
+        title: 'vue中使用cytoscape绘制拓扑图方案',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -934,6 +324,20 @@ cy.removeScratch()
       
       
         
+  <section class="toc-wrapper">
+    
+<header class="pure">
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目录</div>
+  
+    <div class="wrapper"><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class="content pure">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据结构"><span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实际栗子"><span class="toc-text">实际栗子</span></a></li></ol>
+    </div>
+  </section>
+
 
       
     

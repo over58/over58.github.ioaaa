@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>双层边框样式 | yongchao&#39;s blog</title>
+  <title>webhook-demo | yongchao&#39;s blog</title>
   
   <meta name="keywords" content="blog,vue,js,css,html">
   
@@ -116,7 +116,7 @@
   <div class="meta" id="header-meta">
     
       
-          <h1 class="title">双层边框样式</h1>
+          <h1 class="title">webhook-demo</h1>
       
     
 
@@ -124,7 +124,7 @@
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-05
       </time>
     
 
@@ -148,18 +148,13 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>outline用于创建两个边框的时候<br>好处:  outline的样式是可变的，<br>缺点: 是border如果是圆角，outline仍然是矩形，经测试，outline只对right bottom占据空间，对left top不产生影响</p>
-<p>box-shadow可以用于产生多个边框<br>好处: border是什么样，投影就是什么样，完美贴合<br>缺点: 指定描绘实线阴影，不能改变阴影的样式color  inset</p>
-<p>box-shadow: h-shadow(水平偏移)  v-shadow(垂直偏移) blur(模糊距离) spread(阴影尺寸) color  inset(边框类型) </p>
-<div class="box shadow-box"></div><br><div class="box outline-box"></div>    
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">    height:50px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background: #666;</span><br><span class="line">    border: solid 5px yellowgreen;</span><br><span class="line">    border-radius: 10px;</span><br><span class="line">    margin: 30px;</span><br><span class="line">&#125;</span><br><span class="line">.outline-box&#123;</span><br><span class="line">    outline: red 10px solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.shadow-box&#123;</span><br><span class="line">    box-shadow: 0 0 0 10px red;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;)</span><br><span class="line">  , exec = require(&apos;exec&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const PORT = process.env.PORT || 9988</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let transporter = nodemailer.createTransport(&#123;</span><br><span class="line">  service: &apos;smpt.163.com&apos;,</span><br><span class="line">  host: &apos;smtp.163.com&apos;,</span><br><span class="line">  secureConnection: true,</span><br><span class="line">  port:    465,</span><br><span class="line">  auth: &#123;</span><br><span class="line">    user: &apos;XXX@163.com&apos;,</span><br><span class="line">    pass: &apos;XXXXXXX&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">let defaultOpions = &#123;</span><br><span class="line">  from: &apos;yongchao blog &lt;XXX@163.com&gt;&apos;,</span><br><span class="line">  to: &apos;XXXX@qq.com&apos;,</span><br><span class="line">  subject: &apos;yongchao blog&apos;,</span><br><span class="line">  html: &apos;&lt;b&gt;blog deploy success !&lt;/b&gt;&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var deployServer = http.createServer(function(request, response) &#123;</span><br><span class="line">  if (request.url.search(/deploy\/?$/i) &gt; 0) &#123;</span><br><span class="line"> </span><br><span class="line">    var commands = [</span><br><span class="line">      &apos;make restart&apos; //这是我自定义的重新部署的代码</span><br><span class="line">    ].join(&apos; &amp;&amp; &apos;)</span><br><span class="line"> </span><br><span class="line">    exec(commands, function(err, out, code) &#123;</span><br><span class="line">      if (err instanceof Error) &#123;</span><br><span class="line">        response.writeHead(500)</span><br><span class="line">        response.end(&apos;Server Internal Error.&apos;)</span><br><span class="line">        throw err</span><br><span class="line">      &#125;</span><br><span class="line">      process.stderr.write(err)</span><br><span class="line">      process.stdout.write(out)</span><br><span class="line">      response.writeHead(200)</span><br><span class="line">      response.end(&apos;Deploy Done.&apos;)</span><br><span class="line">      transporter.sendMail(defaultOpions, (err, info) =&gt; &#123;</span><br><span class="line">          if(err) &#123;</span><br><span class="line">                  console.error(err)</span><br><span class="line">          &#125;else&#123;</span><br><span class="line">              console.log(err, info)</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line"> </span><br><span class="line">  &#125; else &#123;</span><br><span class="line"> </span><br><span class="line">    response.writeHead(404)</span><br><span class="line">    response.end(&apos;Not Found.&apos;)</span><br><span class="line"> </span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">deployServer.listen(PORT, () =&gt; &#123;</span><br><span class="line">  console.log(&apos;start service&apos; + PORT)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
       </div>
         
           <section class="meta" id="footer-meta">
             
-              <time class="metatag time" itemprop="dateUpdated" datetime="2019-03-04T22:55:35+08:00" content="2019-03-04"><i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>
-                &nbsp;2019-03-04
+              <time class="metatag time" itemprop="dateUpdated" datetime="2019-03-05T09:48:40+08:00" content="2019-03-05"><i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>
+                &nbsp;2019-03-05
               </time>
             
             
@@ -174,16 +169,16 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2019/03/03/js-jquery判断是否包含类/" rel="prev" title="js/jquery判断是否包含类">
+                                <a href="/2019/03/06/post和get的区别/" rel="prev" title="post和get的区别">
                                   
-                                      js/jquery判断是否包含类
+                                      post和get的区别
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/jquery/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>jquery</a>
+                                    <a class="tag" href="/tags/http/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>http</a>
                                 </h6>
                             
                         </span>
@@ -194,12 +189,17 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2019/02/28/button样式的实现/" rel="prev" title="button样式的实现">
+                                <a href="/2019/03/05/vue-directive/" rel="prev" title="vue-directive">
                                     
-                                        button样式的实现
+                                        vue-directive
                                     
                                 </a>
                             </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/vue/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>vue</a>
+                                </h6>
                             
                         </span>
                     </section>
@@ -238,7 +238,7 @@
 
 <script>
     window.subData = {
-        title: '双层边框样式',
+        title: 'webhook-demo',
         tools: true
     }
 </script>
