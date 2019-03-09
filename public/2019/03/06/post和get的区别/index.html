@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>双层边框样式 | yongchao&#39;s blog</title>
+  <title>post和get的区别 | yongchao&#39;s blog</title>
   
   <meta name="keywords" content="blog,vue,js,css,html">
   
@@ -116,7 +116,7 @@
   <div class="meta" id="header-meta">
     
       
-          <h1 class="title">双层边框样式</h1>
+          <h1 class="title">post和get的区别</h1>
       
     
 
@@ -124,7 +124,7 @@
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-05
       </time>
     
 
@@ -148,20 +148,23 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>outline用于创建两个边框的时候<br>好处:  outline的样式是可变的，<br>缺点: 是border如果是圆角，outline仍然是矩形，经测试，outline只对right bottom占据空间，对left top不产生影响</p>
-<p>box-shadow可以用于产生多个边框<br>好处: border是什么样，投影就是什么样，完美贴合<br>缺点: 指定描绘实线阴影，不能改变阴影的样式color  inset</p>
-<p>box-shadow: h-shadow(水平偏移)  v-shadow(垂直偏移) blur(模糊距离) spread(阴影尺寸) color  inset(边框类型) </p>
-<div class="box shadow-box"></div><br><div class="box outline-box"></div>    
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">    height:50px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background: #666;</span><br><span class="line">    border: solid 5px yellowgreen;</span><br><span class="line">    border-radius: 10px;</span><br><span class="line">    margin: 30px;</span><br><span class="line">&#125;</span><br><span class="line">.outline-box&#123;</span><br><span class="line">    outline: red 10px solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.shadow-box&#123;</span><br><span class="line">    box-shadow: 0 0 0 10px red;</span><br></pre></td></tr></table></figure>
+        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>首先， GET、POST 都是htt请求的的方法。它们本质上并无差别。HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加上request body，给POST带上url参数，技术上是完全行的通的 。</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>那么， 问题来了。<br>1、”GET请求在URL中传送的参数是有长度限制的，而POST没有”是什么鬼？。<br>  答： url长度限制都是浏览器设置的；而GET也可以在request body中传递参数，只不过不同的服务器对这些数据的处理方式不同，有些接受，有些忽略。</p>
+<p>2、GET和POST还有一个重大区别，简单的说：GET产生一个TCP数据包；POST产生两个TCP数据包。长的说：对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。<br>  答： 1. GET与POST都有自己的语义，不能随便混用。</p>
+<pre><code>2. 据研究，在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。
+3. 并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。
+</code></pre>
       </div>
         
           <section class="meta" id="footer-meta">
             
-              <time class="metatag time" itemprop="dateUpdated" datetime="2019-03-04T22:55:35+08:00" content="2019-03-04"><i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>
-                &nbsp;2019-03-04
+              <time class="metatag time" itemprop="dateUpdated" datetime="2019-03-08T16:02:15+08:00" content="2019-03-08"><i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>
+                &nbsp;2019-03-08
               </time>
             
+            
+                
+                <div class="metatag tags"><a class="tag" href="/tags/http/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>&nbsp;http</a></div>
             
             
           </section>
@@ -174,16 +177,16 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2019/03/03/js-jquery判断是否包含类/" rel="prev" title="js/jquery判断是否包含类">
+                                <a href="/2019/03/07/cytoscape的简单使用/" rel="prev" title="cytoscape的简单使用">
                                   
-                                      js/jquery判断是否包含类
+                                      cytoscape的简单使用
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/jquery/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>jquery</a>
+                                    <a class="tag" href="/tags/graph/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>graph</a>
                                 </h6>
                             
                         </span>
@@ -194,9 +197,9 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2019/02/28/button样式的实现/" rel="prev" title="button样式的实现">
+                                <a href="/2019/03/05/webhook-demo/" rel="prev" title="webhook-demo">
                                     
-                                        button样式的实现
+                                        webhook-demo
                                     
                                 </a>
                             </h4>
@@ -238,7 +241,7 @@
 
 <script>
     window.subData = {
-        title: '双层边框样式',
+        title: 'post和get的区别',
         tools: true
     }
 </script>
@@ -338,6 +341,20 @@
       
       
         
+  <section class="toc-wrapper">
+    
+<header class="pure">
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目录</div>
+  
+    <div class="wrapper"><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class="content pure">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li></ol>
+    </div>
+  </section>
+
 
       
     

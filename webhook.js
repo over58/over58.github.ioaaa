@@ -1,7 +1,7 @@
 var http = require('http')
   , exec = require('exec')
 
-
+const nodemailer = require('nodemailer');
 const PORT = process.env.PORT || 9988
 
 
@@ -24,13 +24,14 @@ let defaultOpions = {
 }
 
 var deployServer = http.createServer(function(request, response) {
-  if (request.url.search(/deploy\/?$/i) > 0) {
+  if (request.url.search(/deploy$/) > 0) {
  
     var commands = [
       'make restart'
     ].join(' && ')
  
     exec(commands, function(err, out, code) {
+	console.log(err, out)
       if (err instanceof Error) {
         response.writeHead(500)
         response.end('Server Internal Error.')
@@ -38,13 +39,12 @@ var deployServer = http.createServer(function(request, response) {
       }
       process.stderr.write(err)
       process.stdout.write(out)
-      response.writeHead(200)
-      response.end('Deploy Done.')
       transporter.sendMail(defaultOpions, (err, info) => {
           if(err) {
                   console.error(err)
           }else{
-              console.log(err, info)
+		response.writeHead(200)
+      		response.end('Deploy Done.')
           }
       })
     })
