@@ -35,6 +35,8 @@ edges: [
 ]
 
 ```
+<!-- more -->
+
 ### 实际栗子
 ``` vue
 <template>
