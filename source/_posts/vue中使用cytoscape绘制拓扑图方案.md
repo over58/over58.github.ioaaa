@@ -175,6 +175,22 @@ export default {
             style: {
               'opacity': 0
             }
+          },
+          {
+            selector: '.edge-out-highlight',
+            style: {
+              'line-color': 'black',
+              'target-arrow-color': 'black',
+              width: 3
+            }
+          },
+          {
+            selector: '.edge-in-highlight',
+            style: {
+              'line-color': 'purple',
+              'target-arrow-color': 'purple',
+              width: 3
+            }
           }
         ],
 
@@ -196,9 +212,20 @@ export default {
       })
       
       // node 添加事件
+      cy.on('tap', 'edge', function (evt) {
+        var node = evt.target
+        if (vm.tippyInstance) {
+          vm.tippyInstance.hide()
+          vm.tippyInstance.destroy()
+        }
+        vm.makeTippy(node)
+        vm.tippyInstance.show()
+      })
+
       cy.on('tap', 'node', function (evt) {
         var node = evt.target
-        console.log('current node:', node)
+        node.incomers('edge').toggleClass('edge-in-highlight')
+        node.edgesWith('*').toggleClass('edge-out-highlight')
       })
     },
     makeTippy (node) {
