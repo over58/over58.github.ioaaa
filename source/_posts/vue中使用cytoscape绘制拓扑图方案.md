@@ -6,32 +6,31 @@ tags: [vue, graph]
 
 有一个需求需要绘制拓扑图，然后选图表库选择了cytoscape,看了官方文档http://js.cytoscape.org，感觉和network.js很像，包括两种element,一种是node（描述其相关信息），另一种是 edge(描述node之间的关系， 通过指明source, target确定指向)，其余的都是一些样式配置和事件的监听，可以说是非常的清晰明了了。此外文档的Extensions部分提供了各种的UI插件和API插件，拓展性也不错。
 ### 数据结构
-```
+``` json
 nodes: [
   {
-    id: 'a',//required
-    name: 'demo',//optional
-    ...
+    "id": "a",//required
+    "name": "demo",//optional
+    // ...
   },
   {
-    id: 'b',//required
-    name: 'demo',//optional
-    ...
+    "id": "b",//required
+    "name": "demo",//optional
   }
 ]
 
 edges: [
   //描述了 a-->b
   {
-    id: 'aadsfasdf', //optional
-    source: 'a', //required, source-node-id
-    target: 'b,  //required target-node-id
+    "id": "aadsfasdf", //optional
+    "source": "a", //required, source-node-id
+    "target": "b",  //required target-node-id
   },
   //描述了 a-->a,会出现一个指向自己的圆，不过想要实现这一点需要cytoscape-edgehandles插件
   {
-    id: 'aadsfasdf', //optional
-    source: 'a', //required, source-node-id
-    target: 'a,  //required target-node-id
+    "id": "aadsfasdf", //optional
+    "source": "a", //required, source-node-id
+    "target": "a",  //required target-node-id
   }
 ]
 
@@ -257,11 +256,5 @@ export default {
 
 </script>
 
-<style lang="less">
-#cy{
-  width: 100%;
-  height: 100%;
-}
-</style>
 
 ```
