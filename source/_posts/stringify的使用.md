@@ -37,7 +37,7 @@ JOSN.stringify(person)
 
 code:
 ```
-JOSN.stringify(person, null, 2)
+JSON.stringify(person, null, 2)
 ```
 运行结果：
 ```
