@@ -115,6 +115,8 @@ modal是位于用户主窗口之上的一个元素，当它打开的时候，主
 
 ```
 
+### !!!!完整的代码链接 https://codepen.io/xuyongchaos/pen/aMGXLy?editors=1010
+
 ### 使用到的东西
 1. 闭包
 2. DocumentFragment
