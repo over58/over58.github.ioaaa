@@ -162,29 +162,6 @@
     
     
     <entry>
-      <title>vue中使用highcharts和echarts的实践</title>
-      <link href="/2019/03/07/vue%E4%B8%AD%E4%BD%BF%E7%94%A8highcharts%E5%92%8Cecharts%E7%9A%84%E5%AE%9E%E8%B7%B5/"/>
-      <url>/2019/03/07/vue%E4%B8%AD%E4%BD%BF%E7%94%A8highcharts%E5%92%8Cecharts%E7%9A%84%E5%AE%9E%E8%B7%B5/</url>
-      
-        <content type="html"><![CDATA[<p>  我从事云平台前端的开发，由于项目的需要，写了一个云监控Monitor项目。起初，我选择了 Echarts， 原因很简单，中文文档，定制化能力也比较好。事实上，使用了一年多来，用的也是蛮顺手的。但是，这是一个监控项目,里面存在大量的图，每个图有着巨量的数据，而且每条line的名字也超长。带来的问题就是，页面及其卡顿，即使是我限制了每个图中的数据量，仍然无法降低，页面无操作的情况下，CPU仍然占据20%以上（八个图，每个图平均10条line）。网上找了一通，都指向z_render()函数，echarts会不停的执行这个函数。实在是不堪忍受这样的卡顿，在进行了充分调研的情况下,果断换了highcharts。</p><p>  经过实际项目测试：同等数量的情况下，highcharts和echarts 所占的内存相近，但CPU占比很低。举一个栗子，一个页面上有八个图，每个图平均大概10条线，当页面渲染完成，无任何鼠标点击的时候，echarts的CPU占比稳定在20%左右，highcharts始终在1%以下。</p><p><img src="/images/highcharts-q.png" alt="highcharts"><br><img src="/images/echarts-q.png" alt="echarts"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> vue </tag>
-            
-            <tag> highcharts </tag>
-            
-            <tag> echarts </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>post和get的区别</title>
       <link href="/2019/03/06/post%E5%92%8Cget%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
       <url>/2019/03/06/post%E5%92%8Cget%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
@@ -484,6 +461,29 @@
     
     
     <entry>
+      <title>vue中使用highcharts和echarts的实践</title>
+      <link href="/2019/02/28/vue%E4%B8%AD%E4%BD%BF%E7%94%A8highcharts%E5%92%8Cecharts%E7%9A%84%E5%AE%9E%E8%B7%B5/"/>
+      <url>/2019/02/28/vue%E4%B8%AD%E4%BD%BF%E7%94%A8highcharts%E5%92%8Cecharts%E7%9A%84%E5%AE%9E%E8%B7%B5/</url>
+      
+        <content type="html"><![CDATA[<p>  我从事云平台前端的开发，由于项目的需要，写了一个云监控Monitor项目。起初，我选择了 Echarts， 原因很简单，中文文档，定制化能力也比较好。事实上，使用了一年多来，用的也是蛮顺手的。但是，这是一个监控项目,里面存在大量的图，每个图有着巨量的数据，而且每条line的名字也超长。带来的问题就是，页面及其卡顿，即使是我限制了每个图中的数据量，仍然无法降低，页面无操作的情况下，CPU仍然占据20%以上（八个图，每个图平均10条line）。网上找了一通，都指向z_render()函数，echarts会不停的执行这个函数。实在是不堪忍受这样的卡顿，在进行了充分调研的情况下,果断换了highcharts。</p><p>  经过实际项目测试：同等数量的情况下，highcharts和echarts 所占的内存相近，但CPU占比很低。举一个栗子，一个页面上有八个图，每个图平均大概10条线，当页面渲染完成，无任何鼠标点击的时候，echarts的CPU占比稳定在20%左右，highcharts始终在1%以下。</p><p><img src="/images/highcharts-q.png" alt="highcharts"><br><img src="/images/echarts-q.png" alt="echarts"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> highcharts </tag>
+            
+            <tag> echarts </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>css实现单行、多行文本溢出</title>
       <link href="/2019/02/28/css%E5%AE%9E%E7%8E%B0%E5%8D%95%E8%A1%8C%E3%80%81%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA/"/>
       <url>/2019/02/28/css%E5%AE%9E%E7%8E%B0%E5%8D%95%E8%A1%8C%E3%80%81%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA/</url>
@@ -584,8 +584,8 @@
     
     <entry>
       <title>vue-cli3 入门</title>
-      <link href="/2019/02/26/%20vue-cli3%E5%85%A5%E9%97%A8/"/>
-      <url>/2019/02/26/%20vue-cli3%E5%85%A5%E9%97%A8/</url>
+      <link href="/2019/02/27/%20vue-cli3%E5%85%A5%E9%97%A8/"/>
+      <url>/2019/02/27/%20vue-cli3%E5%85%A5%E9%97%A8/</url>
       
         <content type="html"><![CDATA[<p><a href="https://cli.vuejs.org/zh/guide/" target="_blank" rel="noopener">官方文档</a></p><h3 id="1-vue-cli3实现分环境打包步骤"><a href="#1-vue-cli3实现分环境打包步骤" class="headerlink" title="1. vue-cli3实现分环境打包步骤"></a>1. vue-cli3实现分环境打包步骤</h3><p>通过改变 <code>process.env.NODE_ENV</code> 值区分打包环境，但是webpack打包时针对<code>process.env.NODE_ENV===&#39;production&#39;</code> 和其他情况打出来的包结构和大小都不一样；</p><p>为了消除这种差异，可以使用其他变量比如 <code>process.env.VUE_APP_TITLE</code> 来区分环境。<br>XXXXx<br><a id="more"></a></p><p>需求：</p><blockquote><p>打包一个测试环境alpha，该环境的打包和production一样，只是开发中用到的一些变量需要区分环境</p></blockquote><p>说明：</p><ul><li>打包时判断环境还是用<code>process.env.NODE_ENV</code>，我们不用处理</li><li>项目中用到的区分环境的变量我们自己定义</li></ul><p>实施：</p><ol><li><p>package.json中打包命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">···</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;serve&quot;: &quot;vue-cli-service serve&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;vue-cli-service build&quot;,</span><br><span class="line">    &quot;alpha&quot;: &quot;vue-cli-service build --mode alpha&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>在项目根目录添加文件.env.alpha”，其内容为：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NODE_ENV=production</span><br><span class="line">VUE_APP_TITLE=alpha</span><br></pre></td></tr></table></figure></li><li><p>区分环境:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">通过env判断环境</span><br><span class="line">var env = process.env.VUE_APP_TITLE === &apos;alpha&apos; ? &apos;alpha&apos;</span><br><span class="line">      : process.env.NODE_ENV === &apos;production&apos; ? &apos;production&apos; : &apos;development&apos;</span><br></pre></td></tr></table></figure></li></ol><h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h3><h4 id="2-1-基本配置"><a href="#2-1-基本配置" class="headerlink" title="2.1 基本配置"></a>2.1 基本配置</h4><p>默认 <code>baseUrl: &#39;/&#39;</code> , 再部署环境会报错，需要改成 <code>./</code></p><p>vue.config.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  baseUrl: process.env.NODE_ENV === &apos;production&apos; ? &apos;./&apos; : &apos;/&apos;,</span><br><span class="line">  productionSourceMap: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h4 id="2-2-配置alias"><a href="#2-2-配置alias" class="headerlink" title="2.2. 配置alias"></a>2.2. 配置alias</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">function resolve (dir) &#123;</span><br><span class="line">  return path.join(__dirname, dir)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  baseUrl: process.env.NODE_ENV === &apos;production&apos; ? &apos;./&apos; : &apos;/&apos;,</span><br><span class="line">  chainWebpack: (config) =&gt; &#123;</span><br><span class="line">    config.resolve.alias</span><br><span class="line">      .set(&apos;styles&apos;, resolve(&apos;src/assets/styles&apos;))</span><br><span class="line">      .set(&apos;components&apos;, resolve(&apos;src/components&apos;))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="2-3-设置启动端口"><a href="#2-3-设置启动端口" class="headerlink" title="2.3. 设置启动端口"></a>2.3. 设置启动端口</h4><p>默认是8080，被占用时依次累加。注意：mac上普通用户可设置的最小端口是1024，要配置小于1024的端口需要管理员权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">    port: 80</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
       
