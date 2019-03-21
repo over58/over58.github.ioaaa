@@ -170,6 +170,18 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
 
 
@@ -179,6 +191,436 @@
       
 
       
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/21/vue实现文件下载/">
+              
+                  vue实现文件下载
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-21
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;url&quot; download=&quot;文件名.后缀名&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="实际使用场景"><a href="#实际使用场景" class="headerlink" title="实际使用场景"></a>实际使用场景</h3><p>上面的原理中适合开放的资源下载，http请求中无需验证时使用。在实际使用过程中，a标签中的url中直接设置header比较麻烦且不安全，<br>而且从开发规范上api一般上要封装一下（header中需要一些特定设置），放到统一的文件。</p>
+<p>解决办法：下载相关和api responseType设置为blob(!!!重要)，在以blob形式获取到文件之后js创建一个a标签，设置url和downlaod后并触发，最后释放url资源并删除创建的a标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">api:</span><br><span class="line">downloadFile (url) =&gt; &#123;</span><br><span class="line">  axios.get(url, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    headers: &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    // 重要</span><br><span class="line">    responseType: &apos;blob&apos;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">html: </span><br><span class="line">&lt;button @click=&quot;download&quot;&gt;下载&lt;/button&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">js: </span><br><span class="line">  function downlaod (param)&#123;</span><br><span class="line">    api.downloadFile(param).then(data =&gt; &#123;</span><br><span class="line">      if (!data) &#123;</span><br><span class="line">        this.$Message.error(&apos;下载内容为空&apos;)</span><br><span class="line">        return</span><br><span class="line">      &#125;</span><br><span class="line">      let url = window.URL.createObjectURL(new Blob([data]))</span><br><span class="line">      let link = document.createElement(&apos;a&apos;)</span><br><span class="line">      link.style.display = &apos;none&apos;</span><br><span class="line">      link.href = url</span><br><span class="line">      link.setAttribute(&apos;download&apos;, etcdCluster + &apos;.zip&apos;)</span><br><span class="line">        </span><br><span class="line">      document.body.appendChild(link)</span><br><span class="line">      link.click()</span><br><span class="line">      //释放URL对象所占资源</span><br><span class="line">      window.URL.revokeObjectURL(url)</span><br><span class="line">      //用完即删</span><br><span class="line">      document.body.removeChild(link)</span><br><span class="line">    &#125;).catch(err =&gt; &#123;</span><br><span class="line">      console.log(&apos;err: &apos;, err)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="MDN相关链接"><a href="#MDN相关链接" class="headerlink" title="MDN相关链接"></a>MDN相关链接</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/URL/revokeObjectURL" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/URL/revokeObjectURL</a></p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/18/js自定义modal框/">
+              
+                  js自定义modal框
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-17
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>作为一个Web开发而言，modal模态框一定不会陌生。本文将简单的讲一下如何使用js自定义一个modal框，当然了，本文的重点并不是教你如何构建一个modal框，而是希望能够教你如何构建一个组件的思路。好了，废话不多说，正文开始。</p>
+<h3 id="modal是什么，有什么功能"><a href="#modal是什么，有什么功能" class="headerlink" title="modal是什么，有什么功能"></a>modal是什么，有什么功能</h3><p>modal是位于用户主窗口之上的一个元素，当它打开的时候，主窗口无法操作，位于主窗口之上的modal框内可以操作。一个modal至少包含以下几个功能：</p>
+<ol>
+<li>模态框的蒙版 .modal-overlay</li>
+<li>头部  .modal-header</li>
+<li>主体 .modal-body</li>
+<li>脚步 .modal-footer</li>
+<li>关闭按钮 .modal-close</li>
+</ol>
+<blockquote>
+<p>关闭按钮包括多种方式：取消按钮（footer中）、关闭按钮(右上角)、ESC按键、点击模态框主体外的蒙版的区域</p>
+</blockquote>
+<h3 id="构建插件"><a href="#构建插件" class="headerlink" title="构建插件"></a>构建插件</h3><p>1.首先选择iife。这里使用了闭包的知识，因为闭包可以创建一个私有域。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">  var 私有变量 = 值</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<p>2.设置选项（options）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 设置一个windo中可以访问的函数 --&gt;</span><br><span class="line">this.Modal = function() &#123;</span><br><span class="line">  this.modal = null; // 模态弹出框</span><br><span class="line">  this.overlay = null; //蒙板</span><br><span class="line">  this.closeButton = null; // 右上角关闭按钮</span><br><span class="line">  this.footerCloseButton = null //footer关闭按钮</span><br><span class="line">  this.options = &#123;</span><br><span class="line">    className: &apos;fade-and-drop&apos;,</span><br><span class="line">    content: &apos;这是一个自定义的模态框&apos;,</span><br><span class="line">    minHeight: &apos;300px&apos;,</span><br><span class="line">    maxHeight: &apos;600px&apos;,</span><br><span class="line">    closable: true, // 是否可关闭，决定着是否有关闭按钮</span><br><span class="line">    overlay: true</span><br><span class="line">  &#125;;</span><br><span class="line">  //  合并默认设置和用户自定义设置，用户自定义配置&gt;默认配置</span><br><span class="line">  if (arguments[0] &amp;&amp; typeof arguments[0] === &apos;object&apos;) &#123;</span><br><span class="line">    this.options = mergeOptions(this.options, arguments[0]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//合并对象属性的工具方法</span><br><span class="line">function mergeOptions(target, source) &#123;</span><br><span class="line">  for (let property in source) &#123;</span><br><span class="line">    if (source.hasOwnProperty(property)) &#123;</span><br><span class="line">      target[property] = source[property];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.　核心功能</p>
+<p>现在我们对模态框的插件架构有了一定的了解，它包括了：构造函数、选项和公共方法。但它还不能做什么？接下来我们就要给他们添加相应的核心功能。所以我们再来看看，一个模态框应该做什么：</p>
+<ul>
+<li>构建一个模态元素并将其添加到页面中</li>
+<li>将选项（options）中的className指定一个类名，并将其添加到模态元素中</li>
+<li>如果选项中的closeButton为true，则添加关闭按钮</li>
+<li>如果选项中的content是 HTML 字符串，则将其设置为模态元素中的内容</li>
+<li>如果选项中的content是domNode，则将其内部内容设置为模态元素的内容</li>
+<li>分别设置模态的maxWidth和minWidth</li>
+<li>如果选项中的overlay为true，则给模态框添加一个蒙层</li>
+<li>当模态框显示时，添加一个scotch-open类名，可以在 CSS 中使用它来定义一个open状态</li>
+<li>当模态框关闭时，删除scotch-open类名</li>
+<li>如果模态框的高度超过视窗的高度，还可以添加一个scotch-anchored类，这样就可以处理这个场景的样式展示</li>
+</ul>
+<h3 id="代码思路"><a href="#代码思路" class="headerlink" title="代码思路"></a>代码思路</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">  //构造函数</span><br><span class="line">  this.Modal = function () &#123;</span><br><span class="line">    // 初始化默认option，　</span><br><span class="line">    this.options = &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    //合并用户自定义配置和默认配置，并赋值给options, 每个实例都可能不一样，所有不能放在prototype上，同时在其它函数中又要引用它，所有定义为公有属性</span><br><span class="line">    </span><br><span class="line">    this.options = mergeOptions(this.options, arguments[0])</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  // 打开Modal的方法,每个实例中的这个方法都是一样的,定义在prototype上</span><br><span class="line">  Modal.prototype.open = function()&#123;</span><br><span class="line"></span><br><span class="line">    // 初始化Dom</span><br><span class="line">    1.overlay蒙版元素</span><br><span class="line">    2.modal元素&#123;</span><br><span class="line">      close按钮</span><br><span class="line">      content</span><br><span class="line">      footer</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 初始化Event</span><br><span class="line">    包括：&#123;</span><br><span class="line">      close事件</span><br><span class="line">      transitionEnd事件(关闭按钮中Css使用了过渡动画，等过渡动画完成之后才能移除dom)，需要注意的就是不同的的浏览器中这个时间的名字可能不一样</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //关闭方法</span><br><span class="line">  Modal.prototype.close = function()&#123;</span><br><span class="line">    //移除Dom</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<h3 id="完整的代码链接-https-codepen-io-xuyongchaos-pen-aMGXLy-editors-1010"><a href="#完整的代码链接-https-codepen-io-xuyongchaos-pen-aMGXLy-editors-1010" class="headerlink" title="!!!!完整的代码链接 https://codepen.io/xuyongchaos/pen/aMGXLy?editors=1010"></a>!!!!完整的代码链接 <a href="https://codepen.io/xuyongchaos/pen/aMGXLy?editors=1010" target="_blank" rel="noopener">https://codepen.io/xuyongchaos/pen/aMGXLy?editors=1010</a></h3><h3 id="使用到的东西"><a href="#使用到的东西" class="headerlink" title="使用到的东西"></a>使用到的东西</h3><ol>
+<li>闭包</li>
+<li>DocumentFragment</li>
+<li>如何减少浏览器回流</li>
+<li>DOM操作</li>
+<li>DOM事件</li>
+<li>this相关call, bind</li>
+<li>css样式</li>
+</ol>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>编写一个简单的插件需要的知识还是挺多的，没事的话可以自己编写一下，不仅锻炼了模块化编程思维，还可以对以前的知识进行查缺补漏。fighting!!!</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/18/自定义js模态框插件/">
+              
+                  自定义js模态框插件
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-17
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>作为一个web开发ren yuan er ye an</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/16/从js的属性描述符浦西vue-js的响应式视图/">
+              
+                  从js的属性描述符浦西vue.js的响应式视图
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-15
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>JavaScript 的对象，拥有任意数量的唯一键，键可以是字符串（String）类型或标记（Symbol，ES6 新增的基本数据类型）类型，每个键对应一个值，值可以是任意类型的任意值。对于对象内的属性，JavaScript 提供了一个属性描述器接口 PropertyDescriptor</p>
+<h3 id="定义对象的属性"><a href="#定义对象的属性" class="headerlink" title="定义对象的属性"></a>定义对象的属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">  name: &apos;Tom&apos;,</span><br><span class="line">  sex: &apos;man</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line">var obj = &#123;&#125;</span><br><span class="line">obj.name = &apos;Tom&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty()"></a>Object.defineProperty()</h3><p>上面使用的方式不能对属性描述符的操作，需要使用 Object.ddefineProperty(obj, prop, descriptor)</p>
+<h4 id="当使用-defineProperty-方法操作属性的时候，描述符的默认值为："><a href="#当使用-defineProperty-方法操作属性的时候，描述符的默认值为：" class="headerlink" title="当使用 defineProperty()方法操作属性的时候，描述符的默认值为："></a>当使用 defineProperty()方法操作属性的时候，描述符的默认值为：</h4><ol>
+<li>value: undefined</li>
+<li>set: undefined</li>
+<li>get: undefined</li>
+<li>writable: false</li>
+<li>enumerable: false</li>
+<li>configable: false</li>
+</ol>
+<h4 id="不使用该方法定义属性，默认值为："><a href="#不使用该方法定义属性，默认值为：" class="headerlink" title="不使用该方法定义属性，默认值为："></a>不使用该方法定义属性，默认值为：</h4><ol>
+<li>value: undefined</li>
+<li>set: undefined</li>
+<li>get: undefined</li>
+<li>writable: true</li>
+<li>enumerable: true</li>
+<li>configable: true</li>
+</ol>
+<h4 id="还支持批量修改对象属性以及描述对象"><a href="#还支持批量修改对象属性以及描述对象" class="headerlink" title="还支持批量修改对象属性以及描述对象"></a>还支持批量修改对象属性以及描述对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperties(obj, &#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    value: &apos;Tom&apos;,</span><br><span class="line">    configable: true</span><br><span class="line">  &#125;,</span><br><span class="line">  sex: &#123;</span><br><span class="line">    value: &apos;man&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        
+            <div class="readmore">
+                <a href="/2019/03/16/从js的属性描述符浦西vue-js的响应式视图/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/13/stringify的使用/">
+              
+                  stringify的使用
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-13
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>这篇文章的由来是这样的：前两天遇到这样一个场景，接口返回了一个json对象，要求我进行格式化显示（显示出json对象的结构）。那么我就想了，一个对象要想显示出来，得转成string 类型的，于是我就使用了JSON.stringify(),但是转成字符串之后并没有缩进，显示出来的是一个长长的字符串。难道我还要自己人为的遍历对象,自己拼接一个带缩进的字符串么？太TM扯了！于是查看了stringify的官方文档，发现了很多有意思的东西，这个函数的作用远远不止是将json对象转成string那么简单，下面是我列举的stringify的几个小功能:</p>
+<ol>
+<li>json格式化，带缩进</li>
+<li>过滤掉无效的字段</li>
+<li>对符合某种条件的字段做操作</li>
+</ol>
+<p>原始数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">person = &#123;</span><br><span class="line">    sex: &apos;man&apos;,</span><br><span class="line">    name: &apos;Tom&apos;,</span><br><span class="line">    telphones: [</span><br><span class="line">        &quot;234123423&quot;,</span><br><span class="line">        &quot;2345234523&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一、原始情况，直接显示json字符串</p>
+<p>code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JOSN.stringify(person)</span><br></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;sex&quot;:&quot;man&quot;,&quot;name&quot;:&quot;Tom&quot;,&quot;age&quot;:22,&quot;telphones&quot;:[&quot;2341234123&quot;,&quot;3452345&quot;]&#125;</span><br></pre></td></tr></table></figure></p>
+<p>二、将一个json对象格式化显示出来</p>
+<p>code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify(person, null, 2)</span><br></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    sex: &apos;man&apos;,</span><br><span class="line">    name: &apos;Tom&apos;,</span><br><span class="line">    telphones: [</span><br><span class="line">        &quot;234123423&quot;,</span><br><span class="line">        &quot;2345234523&quot;</span><br><span class="line">    ]   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>三、不显示某些字段（哪些字段不需要显示就返回undefined）</p>
+<p>code</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JOSN.stringify(person, function(k, v)&#123;</span><br><span class="line">    if (k === &apos;telphones&apos;)&#123;</span><br><span class="line">        return undefined</span><br><span class="line">    &#125;</span><br><span class="line">    return v</span><br><span class="line">&#125;, 2)</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    sex: &apos;man&apos;,</span><br><span class="line">    name: &apos;Tom&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>四、只显示某些字段</p>
+<p>code</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JOSN.stringify(person, [&apos;sex&apos;], 2)</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    sex: &apos;man&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>更多详情<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify</a></p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/JSON-js/"><i class="fas fa-hashtag fa-fw"></i>JSON js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/10/将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组/">
+              
+                  将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-09
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];</span><br></pre></td></tr></table></figure>
+<h3 id="解决方法1"><a href="#解决方法1" class="headerlink" title="解决方法1"></a>解决方法1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[...new Set(arr.flat(Infinity).sort((a,b) =&gt; a-b))]</span><br></pre></td></tr></table></figure>
+<h3 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[...new Set(arr.toString().split(&apos;,&apos;).map(Number).sort((a,b) =&gt; a-b))]</span><br><span class="line">or</span><br><span class="line">Arrary.froms(new Set(arr.toString().split(&apos;,&apos;).map(Number).sort((a,b) =&gt; a-b)))</span><br></pre></td></tr></table></figure>
+        
+            <div class="readmore">
+                <a href="/2019/03/10/将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
         
           
             <div class="post-wrapper">
@@ -220,7 +662,13 @@
     <section class="article typo">
         <p>有一个需求需要绘制拓扑图，然后选图表库选择了cytoscape,看了官方文档<a href="http://js.cytoscape.org，感觉和network.js很像，包括两种element,一种是node（描述其相关信息），另一种是" target="_blank" rel="noopener">http://js.cytoscape.org，感觉和network.js很像，包括两种element,一种是node（描述其相关信息），另一种是</a> edge(描述node之间的关系， 通过指明source, target确定指向)，其余的都是一些样式配置和事件的监听，可以说是非常的清晰明了了。此外文档的Extensions部分提供了各种的UI插件和API插件，拓展性也不错。</p>
 <h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">nodes: [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"a"</span>,//required</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"demo"</span>,//optional</span><br><span class="line">    // ...</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"b"</span>,//required</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"demo"</span>,//optional</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">edges: [</span><br><span class="line">  //描述了 a--&gt;b</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"aadsfasdf"</span>, //optional</span><br><span class="line">    <span class="string">"source"</span>: <span class="string">"a"</span>, //required, <span class="built_in">source</span>-node-id</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"b"</span>,  //required target-node-id</span><br><span class="line">  &#125;,</span><br><span class="line">  //描述了 a--&gt;a,会出现一个指向自己的圆，不过想要实现这一点需要cytoscape-edgehandles插件</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"aadsfasdf"</span>, //optional</span><br><span class="line">    <span class="string">"source"</span>: <span class="string">"a"</span>, //required, <span class="built_in">source</span>-node-id</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"a"</span>,  //required target-node-id</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h3 id="实际栗子"><a href="#实际栗子" class="headerlink" title="实际栗子"></a>实际栗子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;cy&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import cytoscape from &apos;cytoscape&apos;</span><br><span class="line">&lt;!--为edge添加事件和二维的布局 --&gt;</span><br><span class="line">import edgehandles from &apos;cytoscape-edgehandles&apos;</span><br><span class="line"></span><br><span class="line">&lt;!-- 提供类似于tooltip的提示框 --&gt;</span><br><span class="line">import popper from &apos;cytoscape-popper&apos;</span><br><span class="line">import tippy from &apos;tippy.js&apos;</span><br><span class="line"></span><br><span class="line">&lt;!-- 引入data --&gt;</span><br><span class="line">import data from &apos;./data.js&apos;</span><br><span class="line"></span><br><span class="line">&lt;!-- 使用插件 --&gt;</span><br><span class="line">cytoscape.use(edgehandles)</span><br><span class="line">cytoscape.use(popper)</span><br><span class="line"></span><br><span class="line">&lt;!-- 可以使用自己选的配色 --&gt;</span><br><span class="line">let colors = [&apos;#FFFFCC&apos;, &apos;#CCFFFF&apos;, &apos;#FFCCCC&apos;, &apos;#FFFF99&apos;, &apos;#CCCCFF&apos;, &apos;#FF9966&apos;, &apos;#FF6666&apos;, &apos;#FFCC99&apos;, &apos;#CCFF99&apos;, &apos;#CCCCCC&apos;, &apos;#CCFFCC&apos;, &apos;#99CC99&apos;, &apos;#99CCCC&apos;]</span><br><span class="line">let colors1 = [&apos;#FF6666&apos;, &apos;#006699&apos;, &apos;#FF9966&apos;, &apos;#0066CC&apos;, &apos;#339933&apos;, &apos;#FFCC33&apos;, &apos;#FF9900&apos;, &apos;#FFFFCC&apos;, &apos;#CC6600&apos;, &apos;#CCCC44&apos;, &apos;#99CC33&apos;, &apos;#0099CC&apos;, &apos;#99CCCC&apos;, &apos;#FF0033&apos;, &apos;#333399&apos;, &apos;#CCCC00&apos;, &apos;#33CC99&apos;, &apos;#FFFF00&apos;, &apos;#336699&apos;]</span><br><span class="line">let colors2 = [&apos;#CCFF99&apos;, &apos;#99CCFF&apos;, &apos;#99CCCC&apos;, &apos;#CCFFCC&apos;, &apos;#66CCCC&apos;, &apos;#CCCCFF&apos;, &apos;#FFFFCC&apos;, &apos;#CCFFFF&apos;, &apos;#66CCFF&apos;, &apos;#6699CC&apos;]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let vm = null</span><br><span class="line">export default &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      tippyInstance: null</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    draw () &#123;</span><br><span class="line">      let nodes = data.nodes</span><br><span class="line">      let edges = data.edges</span><br><span class="line">      nodes.map((x, i) =&gt; &#123;</span><br><span class="line">        x.data.color = colors[i % 13]</span><br><span class="line">        // x.data.color = colors1[i % 19]</span><br><span class="line">        x.data.color = colors2[i % 10]</span><br><span class="line">        return x</span><br><span class="line">      &#125;)</span><br><span class="line">      let cy = cytoscape(&#123;</span><br><span class="line">        container: document.getElementById(&apos;cy&apos;),</span><br><span class="line">        layout: &#123;</span><br><span class="line">          name: &apos;grid&apos;,</span><br><span class="line">          concentric: function (n) &#123; return n.id() === &apos;j&apos; ? 200 : 0 &#125;,</span><br><span class="line">          levelWidth: function (nodes) &#123; return 100 &#125;,</span><br><span class="line">          minNodeSpacing: 100</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        style: [</span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;node&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;content&apos;: &apos;data(name)&apos;,</span><br><span class="line">              &apos;width&apos;: &apos;mapData(size, 0, 1.0, 40, 60)&apos;,</span><br><span class="line">              &apos;height&apos;: &apos;mapData(size, 0, 1.0, 40, 60)&apos;,</span><br><span class="line">              &apos;background-color&apos;: &apos;data(color)&apos;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;edge&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;curve-style&apos;: &apos;unbundled-bezier&apos;,</span><br><span class="line">              &apos;target-arrow-shape&apos;: &apos;triangle&apos;,</span><br><span class="line">              &apos;target-arrow-color&apos;: &apos;data(colour)&apos;,</span><br><span class="line">              &apos;line-color&apos;: &apos;data(colour)&apos;,</span><br><span class="line">              &apos;width&apos;: &apos;mapData(width, 0, 1.0, 1, 3)&apos;,</span><br><span class="line">              // &apos;label&apos;: &apos;data(info)&apos;</span><br><span class="line">              &apos;control-point-distances&apos;: [40, -40],</span><br><span class="line">              &apos;control-point-weights&apos;: [0.25, 0.75]</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          // some style for the extension</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-handle&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;background-color&apos;: &apos;red&apos;,</span><br><span class="line">              &apos;width&apos;: 12,</span><br><span class="line">              &apos;height&apos;: 12,</span><br><span class="line">              &apos;shape&apos;: &apos;ellipse&apos;,</span><br><span class="line">              &apos;overlay-opacity&apos;: 0,</span><br><span class="line">              &apos;border-width&apos;: 12, // makes the handle easier to hit</span><br><span class="line">              &apos;border-opacity&apos;: 0</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-hover&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;background-color&apos;: &apos;red&apos;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-source&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;border-width&apos;: 2,</span><br><span class="line">              &apos;border-color&apos;: &apos;red&apos;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-target&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;border-width&apos;: 2,</span><br><span class="line">              &apos;border-color&apos;: &apos;red&apos;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-preview, .eh-ghost-edge&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;background-color&apos;: &apos;red&apos;,</span><br><span class="line">              &apos;line-color&apos;: &apos;red&apos;,</span><br><span class="line">              &apos;target-arrow-color&apos;: &apos;red&apos;,</span><br><span class="line">              &apos;source-arrow-color&apos;: &apos;red&apos;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line"></span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.eh-ghost-edge.eh-preview-active&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;opacity&apos;: 0</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.edge-out-highlight&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;line-color&apos;: &apos;black&apos;,</span><br><span class="line">              &apos;target-arrow-color&apos;: &apos;black&apos;,</span><br><span class="line">              width: 3</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            selector: &apos;.edge-in-highlight&apos;,</span><br><span class="line">            style: &#123;</span><br><span class="line">              &apos;line-color&apos;: &apos;purple&apos;,</span><br><span class="line">              &apos;target-arrow-color&apos;: &apos;purple&apos;,</span><br><span class="line">              width: 3</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        ],</span><br><span class="line"></span><br><span class="line">        elements: &#123;</span><br><span class="line">          nodes: nodes,</span><br><span class="line">          edges: edges</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">      // edge添加事件</span><br><span class="line">      cy.on(&apos;tap&apos;, &apos;edge&apos;, function (evt) &#123;</span><br><span class="line">        var node = evt.target</span><br><span class="line">        if (vm.tippyInstance) &#123;</span><br><span class="line">          vm.tippyInstance.hide()</span><br><span class="line">          vm.tippyInstance.destroy()</span><br><span class="line">        &#125;</span><br><span class="line">        vm.makeTippy(node)</span><br><span class="line">        vm.tippyInstance.show()</span><br><span class="line">      &#125;)</span><br><span class="line">      </span><br><span class="line">      // node 添加事件</span><br><span class="line">      cy.on(&apos;tap&apos;, &apos;edge&apos;, function (evt) &#123;</span><br><span class="line">        var node = evt.target</span><br><span class="line">        if (vm.tippyInstance) &#123;</span><br><span class="line">          vm.tippyInstance.hide()</span><br><span class="line">          vm.tippyInstance.destroy()</span><br><span class="line">        &#125;</span><br><span class="line">        vm.makeTippy(node)</span><br><span class="line">        vm.tippyInstance.show()</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">      cy.on(&apos;tap&apos;, &apos;node&apos;, function (evt) &#123;</span><br><span class="line">        var node = evt.target</span><br><span class="line">        node.incomers(&apos;edge&apos;).toggleClass(&apos;edge-in-highlight&apos;)</span><br><span class="line">        node.edgesWith(&apos;*&apos;).toggleClass(&apos;edge-out-highlight&apos;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    makeTippy (node) &#123;</span><br><span class="line">      &lt;!-- 点击edge出现一个弹框，显示一些额外的信息 --&gt;</span><br><span class="line">      this.tippyInstance = tippy(node.popperRef(), &#123;</span><br><span class="line">        content: function () &#123;</span><br><span class="line">          var div = document.createElement(&apos;div&apos;)</span><br><span class="line">          div.innerHTML = `&lt;p style=&quot;text-align:left;padding-top:8px;&quot;&gt;$&#123;node._private.data.info&#125;&lt;/p&gt;`</span><br><span class="line">          return div</span><br><span class="line">        &#125;,</span><br><span class="line">        trigger: &apos;manual&apos;,</span><br><span class="line">        arrow: true,</span><br><span class="line">        placement: &apos;bottom&apos;,</span><br><span class="line">        hideOnClick: false,</span><br><span class="line">        multiple: true,</span><br><span class="line">        sticky: true</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line">    vm = this</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted () &#123;</span><br><span class="line">    this.$nextTick(() =&gt; &#123;</span><br><span class="line">      this.draw()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+        
+            <div class="readmore">
+                <a href="/2019/03/08/vue中使用cytoscape绘制拓扑图方案/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
         
 
         
@@ -430,367 +878,6 @@ cy.removeScratch()
             </div>
           
         
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/05/vue-directive/">
-              
-                  vue-directive
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <h3 id="vue-directive-的几个钩子函数"><a href="#vue-directive-的几个钩子函数" class="headerlink" title="vue-directive 的几个钩子函数"></a>vue-directive 的几个钩子函数</h3><ul>
-<li>bind  指令第一次被绑定到元素时调用，只调用一次</li>
-<li>inserted 被绑定元素插入到父节点时调用</li>
-<li>update 被绑定元素所在模版更新时调用，不论绑定值是否变化都调用</li>
-<li>componentUpdated 被绑定元素所在模版在完成一次更新周期时调用</li>
-<li>unbind 元素解绑时调用，只调用一次</li>
-</ul>
-        
-            <div class="readmore">
-                <a href="/2019/03/05/vue-directive/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/05/对于echarts图表随着浏览器窗口resize的优化/">
-              
-                  对于echarts图表随着浏览器窗口resize的优化
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>说明： 有时候项目中会显示一些图表，而且width可能并不是固定的（可能100%），那么当浏览器窗口变化的时候，图表的大小应该跟随着变大或变小，称之为resize</p>
-        
-            <div class="readmore">
-                <a href="/2019/03/05/对于echarts图表随着浏览器窗口resize的优化/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/05/覆盖ui框架css原生样式/">
-              
-                  覆盖ui框架css原生样式
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <ul>
-<li><p>加scoped</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">/deep/.rootName .className&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">or </span><br><span class="line"></span><br><span class="line">.rootName &gt;&gt;&gt; .className&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>不加scoped<br>原理：在组件中添加了父css类, 在修改的样式作用域限定为父css类，减小css的影响范围</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.rootName .className&#123;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/05/vue-intro使用方法及注意点/">
-              
-                  vue-intro使用方法及注意点
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>1、使用时必须引入intro.js<br>2、let intro=Intro.intro()<br>3、intro.setOptions({}).start().oncomplete().onskip(function)<br>4、intro这个插件只能提示一些静态的页面上已经有的一些元素，异步的或者是后来动态显示的元素无法加上提示.</p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/05/vue中定时器问题/">
-              
-                  vue中定时器问题
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>Vue中使用了定时器后在关闭页面后必须手动清理</p>
-        
-            <div class="readmore">
-                <a href="/2019/03/05/vue中定时器问题/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/04/js的灵活/">
-              
-                  js的灵活
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <h3 id="js是超级灵活的语言"><a href="#js是超级灵活的语言" class="headerlink" title="js是超级灵活的语言"></a>js是超级灵活的语言</h3><h4 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var checkObj = function () &#123;&#125;</span><br><span class="line">    checkObj.prototype.checkName = function()&#123;</span><br><span class="line">    console.log(&apos;checkName&apos;)</span><br><span class="line">&#125;</span><br><span class="line">checkObj.prototype.checkEmail = function()&#123;</span><br><span class="line">    console.log(&apos;checkEmail&apos;)</span><br><span class="line">&#125;</span><br><span class="line">checkObj.prototype.checkPassword = function()&#123;</span><br><span class="line">    console.log(&apos;checkPassword&apos;)</span><br><span class="line">&#125;</span><br><span class="line">var a = new checkObj()</span><br><span class="line">a.checkName()</span><br><span class="line">a.checkEmail()</span><br><span class="line">a.checkPassword()</span><br></pre></td></tr></table></figure>
-        
-            <div class="readmore">
-                <a href="/2019/03/04/js的灵活/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-    </section>
-</article>
-
-            </div>
-          
-        
       
 
   </section>
@@ -806,7 +893,7 @@ cy.removeScratch()
           <div class="prev-next">
               
               <p class="current">
-                  1 / 3
+                  1 / 4
               </p>
               
                   <a class="next" rel="next" href="/page/2/">
@@ -911,7 +998,7 @@ cy.removeScratch()
 </header>
 
     <div class="content pure">
-      <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 17.33px; color: #828282">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a>
+      <a href="/tags/JSON-js/" style="font-size: 14px; color: #999">JSON js</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 19px; color: #777">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 16.5px; color: #888">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 21.5px; color: #666">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a>
     </div>
   </section>
 

@@ -138,6 +138,367 @@
   <div class="meta" id="header-meta">
     
       <h2 class="title">
+          <a href="/2019/03/05/vue-directive/">
+              
+                  vue-directive
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="vue-directive-的几个钩子函数"><a href="#vue-directive-的几个钩子函数" class="headerlink" title="vue-directive 的几个钩子函数"></a>vue-directive 的几个钩子函数</h3><ul>
+<li>bind  指令第一次被绑定到元素时调用，只调用一次</li>
+<li>inserted 被绑定元素插入到父节点时调用</li>
+<li>update 被绑定元素所在模版更新时调用，不论绑定值是否变化都调用</li>
+<li>componentUpdated 被绑定元素所在模版在完成一次更新周期时调用</li>
+<li>unbind 元素解绑时调用，只调用一次</li>
+</ul>
+        
+            <div class="readmore">
+                <a href="/2019/03/05/vue-directive/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/05/对于echarts图表随着浏览器窗口resize的优化/">
+              
+                  对于echarts图表随着浏览器窗口resize的优化
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>说明： 有时候项目中会显示一些图表，而且width可能并不是固定的（可能100%），那么当浏览器窗口变化的时候，图表的大小应该跟随着变大或变小，称之为resize</p>
+        
+            <div class="readmore">
+                <a href="/2019/03/05/对于echarts图表随着浏览器窗口resize的优化/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/05/覆盖ui框架css原生样式/">
+              
+                  覆盖ui框架css原生样式
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <ul>
+<li><p>加scoped</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">/deep/.rootName .className&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">or </span><br><span class="line"></span><br><span class="line">.rootName &gt;&gt;&gt; .className&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不加scoped<br>原理：在组件中添加了父css类, 在修改的样式作用域限定为父css类，减小css的影响范围</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.rootName .className&#123;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/05/vue-intro使用方法及注意点/">
+              
+                  vue-intro使用方法及注意点
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>1、使用时必须引入intro.js<br>2、let intro=Intro.intro()<br>3、intro.setOptions({}).start().oncomplete().onskip(function)<br>4、intro这个插件只能提示一些静态的页面上已经有的一些元素，异步的或者是后来动态显示的元素无法加上提示.</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/05/vue中定时器问题/">
+              
+                  vue中定时器问题
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>Vue中使用了定时器后在关闭页面后必须手动清理</p>
+        
+            <div class="readmore">
+                <a href="/2019/03/05/vue中定时器问题/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/04/js的灵活/">
+              
+                  js的灵活
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-04
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="js是超级灵活的语言"><a href="#js是超级灵活的语言" class="headerlink" title="js是超级灵活的语言"></a>js是超级灵活的语言</h3><h4 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var checkObj = function () &#123;&#125;</span><br><span class="line">    checkObj.prototype.checkName = function()&#123;</span><br><span class="line">    console.log(&apos;checkName&apos;)</span><br><span class="line">&#125;</span><br><span class="line">checkObj.prototype.checkEmail = function()&#123;</span><br><span class="line">    console.log(&apos;checkEmail&apos;)</span><br><span class="line">&#125;</span><br><span class="line">checkObj.prototype.checkPassword = function()&#123;</span><br><span class="line">    console.log(&apos;checkPassword&apos;)</span><br><span class="line">&#125;</span><br><span class="line">var a = new checkObj()</span><br><span class="line">a.checkName()</span><br><span class="line">a.checkEmail()</span><br><span class="line">a.checkPassword()</span><br></pre></td></tr></table></figure>
+        
+            <div class="readmore">
+                <a href="/2019/03/04/js的灵活/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
           <a href="/2019/03/04/js原型/">
               
                   js的封装和继承
@@ -377,236 +738,6 @@
             </div>
           
         
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/03/bfc-float/">
-              
-                  bfc/float
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-02
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <h3 id="block-format-context-特点是内部子元素绝不会影响外部的元素"><a href="#block-format-context-特点是内部子元素绝不会影响外部的元素" class="headerlink" title="block format context 特点是内部子元素绝不会影响外部的元素"></a>block format context 特点是内部子元素绝不会影响外部的元素</h3><h3 id="如何触发一个盒子的bfc"><a href="#如何触发一个盒子的bfc" class="headerlink" title="如何触发一个盒子的bfc ?"></a>如何触发一个盒子的bfc ?</h3><p>  1、body 根元素<br>  2、浮动元素：float 除 none 以外的值<br>  3、绝对定位元素：position (absolute、fixed)<br>  4、display 为 inline-block、table-cells、flex<br>  5、overflow 除了 visible 以外的值 (hidden、auto、scroll) </p>
-        
-            <div class="readmore">
-                <a href="/2019/03/03/bfc-float/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/03/overflow-x-overflow-y一个为visible-一个为非visible时候的怪异行为/">
-              
-                  overflow-x/overflow-y一个为visible,一个为非visible时候的怪异行为
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-02
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>MDN的官方解释：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The computed values of ‘overflow-x’ and ‘overflow-y’ are the same as their specified values, except that some combinations with ‘visible’ are not possible: if one is specified as ‘visible’ and the other is ‘scroll’ or ‘auto’, then ‘visible’ is set to ‘auto’. The computed value of ‘overflow’ is equal to the computed value of ‘overflow-x’ if ‘overflow-y’ is the same; otherwise it is the pair of computed values of ‘overflow-x’ and ‘overflow-y’.</span><br></pre></td></tr></table></figure>
-<p>overflow-x 和overflow-y的计算值和它们指定的值是相同的，除了某些与visible组合的是不可能的。</p>
-<ol>
-<li>如果一个为visible, 另一个被指定为scroll、 auto 、hidden(实际测试所得) ，那么visible 将被设置为auto</li>
-<li>如果overflow的指定值和overflow-x相等的话（如果overflow-y相同的话）</li>
-</ol>
-<p>其余情况，overflow-x 和overflow-y的值和指定的值相同</p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/03/js-jquery判断是否包含类/">
-              
-                  js/jquery判断是否包含类
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-02
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">新版本jQuery</span><br><span class="line">  hasClass(&quot;className&quot;) </span><br><span class="line">  is(&quot;.className&quot;)</span><br><span class="line"></span><br><span class="line">原生js </span><br><span class="line">      element.classList.contains(className)</span><br><span class="line"></span><br><span class="line">旧版jQuery:</span><br><span class="line">  hasClass(&quot;.className&quot;)</span><br></pre></td></tr></table></figure>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/jquery/"><i class="fas fa-hashtag fa-fw"></i>jquery</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/01/双层边框样式/">
-              
-                  双层边框样式
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-02-28
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>outline用于创建两个边框的时候<br>好处:  outline的样式是可变的，<br>缺点: 是border如果是圆角，outline仍然是矩形，经测试，outline只对right bottom占据空间，对left top不产生影响</p>
-<p>box-shadow可以用于产生多个边框<br>好处: border是什么样，投影就是什么样，完美贴合<br>缺点: 指定描绘实线阴影，不能改变阴影的样式color  inset</p>
-<p>box-shadow: h-shadow(水平偏移)  v-shadow(垂直偏移) blur(模糊距离) spread(阴影尺寸) color  inset(边框类型) </p>
-<div class="box shadow-box"></div><br><div class="box outline-box"></div>    
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">    height:50px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background: #666;</span><br><span class="line">    border: solid 5px yellowgreen;</span><br><span class="line">    border-radius: 10px;</span><br><span class="line">    margin: 30px;</span><br><span class="line">&#125;</span><br><span class="line">.outline-box&#123;</span><br><span class="line">    outline: red 10px solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.shadow-box&#123;</span><br><span class="line">    box-shadow: 0 0 0 10px red;</span><br></pre></td></tr></table></figure>
-        
-
-        
-    </section>
-</article>
-
-            </div>
-          
-        
       
 
   </section>
@@ -628,8 +759,14 @@
                   </a>
               
               <p class="current">
-                  2 / 2
+                  2 / 3
               </p>
+              
+                  <a class="next" rel="next" href="/archives/2019/03/page/3/">
+                      <section class="post next">
+                          &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
+                      </section>
+                  </a>
               
 
           </div>
@@ -733,7 +870,7 @@
 </header>
 
     <div class="content pure">
-      <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 17.33px; color: #828282">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a>
+      <a href="/tags/JSON-js/" style="font-size: 14px; color: #999">JSON js</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 19px; color: #777">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 16.5px; color: #888">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 21.5px; color: #666">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a>
     </div>
   </section>
 
