@@ -2,7 +2,6 @@ restart:
 	git pull origin master
 	cnpm install
 	hexo generate
-	make commit-update
 	docker rm -f blog
 	docker rmi blog:latest
 	docker build -t blog:latest  .
