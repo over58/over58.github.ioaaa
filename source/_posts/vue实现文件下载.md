@@ -7,7 +7,6 @@ tags: [js, vue]
 ### 原理
 ```
 <a href="url" download="文件名.后缀名">
-
 ```
 
 ### 实际使用场景
