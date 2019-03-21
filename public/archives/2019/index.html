@@ -785,71 +785,6 @@ cy.removeScratch()
   <div class="meta" id="header-meta">
     
       <h2 class="title">
-          <a href="/2019/03/07/vue中使用highcharts和echarts的实践/">
-              
-                  vue中使用highcharts和echarts的实践
-              
-          </a>
-      </h2>
-    
-
-    
-      <span class="metatag time">
-        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
-      </span>
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-07
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>  我从事云平台前端的开发，由于项目的需要，写了一个云监控Monitor项目。起初，我选择了 Echarts， 原因很简单，中文文档，定制化能力也比较好。事实上，使用了一年多来，用的也是蛮顺手的。但是，这是一个监控项目,里面存在大量的图，每个图有着巨量的数据，而且每条line的名字也超长。带来的问题就是，页面及其卡顿，即使是我限制了每个图中的数据量，仍然无法降低，页面无操作的情况下，CPU仍然占据20%以上（八个图，每个图平均10条line）。网上找了一通，都指向z_render()函数，echarts会不停的执行这个函数。实在是不堪忍受这样的卡顿，在进行了充分调研的情况下,果断换了highcharts。</p>
-<p>  经过实际项目测试：同等数量的情况下，highcharts和echarts 所占的内存相近，但CPU占比很低。举一个栗子，一个页面上有八个图，每个图平均大概10条线，当页面渲染完成，无任何鼠标点击的时候，echarts的CPU占比稳定在20%左右，highcharts始终在1%以下。</p>
-<p><img src="/images/highcharts-q.png" alt="highcharts"><br><img src="/images/echarts-q.png" alt="echarts"></p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-                    <a href="/tags/highcharts/"><i class="fas fa-hashtag fa-fw"></i>highcharts</a>
-                
-                    <a href="/tags/echarts/"><i class="fas fa-hashtag fa-fw"></i>echarts</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
           <a href="/2019/03/06/post和get的区别/">
               
                   post和get的区别
@@ -893,6 +828,54 @@ cy.removeScratch()
                     <a href="/tags/http/"><i class="fas fa-hashtag fa-fw"></i>http</a>
                 
             </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/05/webhook-demo/">
+              
+                  webhook-demo
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-05
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;)</span><br><span class="line">  , exec = require(&apos;exec&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const PORT = process.env.PORT || 9988</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let transporter = nodemailer.createTransport(&#123;</span><br><span class="line">  service: &apos;smpt.163.com&apos;,</span><br><span class="line">  host: &apos;smtp.163.com&apos;,</span><br><span class="line">  secureConnection: true,</span><br><span class="line">  port:    465,</span><br><span class="line">  auth: &#123;</span><br><span class="line">    user: &apos;XXX@163.com&apos;,</span><br><span class="line">    pass: &apos;XXXXXXX&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">let defaultOpions = &#123;</span><br><span class="line">  from: &apos;yongchao blog &lt;XXX@163.com&gt;&apos;,</span><br><span class="line">  to: &apos;XXXX@qq.com&apos;,</span><br><span class="line">  subject: &apos;yongchao blog&apos;,</span><br><span class="line">  html: &apos;&lt;b&gt;blog deploy success !&lt;/b&gt;&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var deployServer = http.createServer(function(request, response) &#123;</span><br><span class="line">  if (request.url.search(/deploy\/?$/i) &gt; 0) &#123;</span><br><span class="line"> </span><br><span class="line">    var commands = [</span><br><span class="line">      &apos;make restart&apos; //这是我自定义的重新部署的代码</span><br><span class="line">    ].join(&apos; &amp;&amp; &apos;)</span><br><span class="line"> </span><br><span class="line">    exec(commands, function(err, out, code) &#123;</span><br><span class="line">      if (err instanceof Error) &#123;</span><br><span class="line">        response.writeHead(500)</span><br><span class="line">        response.end(&apos;Server Internal Error.&apos;)</span><br><span class="line">        throw err</span><br><span class="line">      &#125;</span><br><span class="line">      process.stderr.write(err)</span><br><span class="line">      process.stdout.write(out)</span><br><span class="line">      response.writeHead(200)</span><br><span class="line">      response.end(&apos;Deploy Done.&apos;)</span><br><span class="line">      transporter.sendMail(defaultOpions, (err, info) =&gt; &#123;</span><br><span class="line">          if(err) &#123;</span><br><span class="line">                  console.error(err)</span><br><span class="line">          &#125;else&#123;</span><br><span class="line">              console.log(err, info)</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line"> </span><br><span class="line">  &#125; else &#123;</span><br><span class="line"> </span><br><span class="line">    response.writeHead(404)</span><br><span class="line">    response.end(&apos;Not Found.&apos;)</span><br><span class="line"> </span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">deployServer.listen(PORT, () =&gt; &#123;</span><br><span class="line">  console.log(&apos;start service&apos; + PORT)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        
+
         
     </section>
 </article>
