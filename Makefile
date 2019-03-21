@@ -1,6 +1,6 @@
 restart:
 	git pull origin master
-	rm -rf node_module
+	rm -rf node_modules
 	cnpm install
 	hexo generate
 	docker rm -f blog
