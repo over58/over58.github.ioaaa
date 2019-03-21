@@ -1,8 +1,8 @@
 restart:
 	git pull origin master
-	# rm -rf node_modules
-	# cnpm install
-	# hexo generate
+	rm -rf node_modules
+	cnpm install
+	hexo generate
 	docker rm -f blog
 	docker rmi blog:latest
 	docker build -t blog:latest  .
@@ -10,7 +10,9 @@ restart:
 
 start:
 	git pull origin master
-	# hexo generate
+	rm -rf node_modules
+	cnpm install
+	hexo generate
 	docker build -t blog:latest  .
 	docker run -d -p 8080:80 --name blog blog:latest
 rm:	
@@ -18,16 +20,10 @@ rm:
 rmi:
 	docker rmi blog:latest
 commit-update:
-	rm -rf node_modules
-	cnpm install
-	hexo generate
 	git add .
 	git commit -m 'update article'
 	git push origin master
 commit-add:
-	rm -rf node_modules
-	cnpm install
-	hexo generate
 	git add .
 	git commit -m 'add article'
 	git push origin master
