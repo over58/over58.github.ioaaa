@@ -1,6 +1,5 @@
 restart:
 	git pull origin master
-	make commit-update
 	hexo generate
 	docker rm -f blog
 	docker rmi blog:latest
