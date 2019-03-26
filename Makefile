@@ -11,7 +11,6 @@ start:
 	git pull origin master
 	#cnpm install
 	hexo generate
-	make commit-update
 	docker build -t blog:latest  .
 	docker run -d -p 8080:80 --name blog blog:latest
 rm:	
