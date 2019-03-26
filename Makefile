@@ -1,6 +1,7 @@
 restart:
 	git pull origin master
 	#cnpm install
+	hexo clean
 	hexo generate
 	docker rm -f blog
 	docker rmi blog:latest
@@ -10,6 +11,7 @@ restart:
 start:
 	git pull origin master
 	#cnpm install
+	hexo clean
 	hexo generate
 	docker build -t blog:latest  .
 	docker run -d -p 8080:80 --name blog blog:latest
