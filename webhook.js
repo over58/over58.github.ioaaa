@@ -36,17 +36,18 @@ var deployServer = http.createServer(function(request, response) {
         response.writeHead(500)
         response.end('Server Internal Error.')
         throw err
-      }
-      process.stderr.write(err)
-      process.stdout.write(out)
-      transporter.sendMail(defaultOpions, (err, info) => {
+      }else{
+      	process.stderr.write(err)
+      	process.stdout.write(out)
+      	transporter.sendMail(defaultOpions, (err, info) => {
           if(err) {
                   console.error(err)
           }else{
 		response.writeHead(200)
       		response.end('Deploy Done.')
           }
-      })
+      	})
+      }
     })
  
   } else {
