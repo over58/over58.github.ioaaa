@@ -1,7 +1,7 @@
 ---
 title: nodejs发送邮件
 date: 2019-03-04 10:44:17
-tags: [nodejs]
+tags: [node]
 ---
 
 使用nodemailer包实现发送邮件
