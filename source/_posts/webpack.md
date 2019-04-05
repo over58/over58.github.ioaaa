@@ -59,6 +59,8 @@ module.exports = {
 };
 ```
 
+<!-- more -->
+
 ### 将css文件单独抽取出来作为一个css文件
 ```
 const path = require('path');
@@ -166,4 +168,27 @@ module.exports = {
     ]
   }
 };
+```
+
+### 生产环境压缩css,js
+
+```
+const OptimizeCss = require('optimize-css-assets-webpack-plugin');
+const UglifyWebpackplugin = require('uglifyjs-webpack-plugin')
+
+module.exports = {
+  optimization: {
+    minimizer: [
+      new UglifyWebpackplugin({
+        test: /\.js(\?.*)?$/i,
+        cache: true,
+        // 是否并行处理
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCss()
+    ]
+  },
+  mode: 'production'
+}
 ```
