@@ -192,3 +192,38 @@ module.exports = {
   mode: 'production'
 }
 ```
+
+### 将引入的第三方插件暴露到global环境中
+1.在require中引入变量
+```
+ require("expose-loader?$!jquery");
+```
+
+2. 在配置文件中将变量暴露到global中
+```
+module.exports = {
+  module:{
+    loader: [
+      {
+        test: require.resolve("jquery"),
+        loader: "expose-loader?$"
+      },
+      
+      {
+        test: require.resolve("jquery"),
+        laoder: "expose-loader?$!expose-loader?jQuery"
+      },
+
+      {
+        test: require.resolve("jquery"),
+        options: "$"
+      },
+      {
+        test: require.resolve("jquery"),
+        options: "jQuery"
+      }
+    ]
+  }
+}
+```
+3.直接在template(index.html)引入
