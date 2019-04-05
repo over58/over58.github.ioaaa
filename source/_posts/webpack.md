@@ -208,7 +208,7 @@ module.exports = {
         test: require.resolve("jquery"),
         loader: "expose-loader?$"
       },
-      
+
       {
         test: require.resolve("jquery"),
         laoder: "expose-loader?$!expose-loader?jQuery"
@@ -227,3 +227,11 @@ module.exports = {
 }
 ```
 3.直接在template(index.html)引入
+```
+module.export = {
+  externals: {
+    jquery: "jQuery"
+    //如果要全局引用jQuery，不管你的jQuery有没有支持模块化，用externals就对了。
+  }
+}
+```
