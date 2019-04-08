@@ -31,6 +31,7 @@ function foo() {
 #### 2.隐式绑定
 
 当函数引用有上下文对象时，隐式绑定规则会把函数中的this绑定到这个上下文对象。对象属性引用链中只有上一层或者说最后一层在调用中起作用。
+1.作为对象的一个属性被调用
 ```
 function foo() {
     console.log( this.a );
@@ -41,6 +42,14 @@ var obj = {
 };
 obj.foo(); // 2
 ```
+2.给Dom元素绑定事件的时候
+```
+let dom = document.getElementById('btn')
+dom.addEventListener('click', function() {
+  console.log(this) //dom元素， 如果想要this指向dom元素，注意不要使用箭头函数，原因看下文。
+})
+```
+
 有趣的情况
 1.
 ```
