@@ -1,7 +1,7 @@
 ---
 title: vue中引入higcharts拓展模块
 date: 2019-04-12 19:01:37
-tags: [vue, highcharts]
+tags: [vue, graph]
 ---
 
 #### 场景
