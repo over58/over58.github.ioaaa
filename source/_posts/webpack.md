@@ -9,7 +9,7 @@ tags: [webpack]
 npm install webpack webpack-cli webpack-dev-server -D
 ```
 
-### 基本配置 webpack.config.js
+### 1.基本配置 webpack.config.js
 当在项目中直接运行webpack时，默认读取webpack.config.js中的配置，等同于运行 webpack webpack.config.js
 ```
 const path = require('path');
@@ -61,123 +61,112 @@ module.exports = {
 
 <!-- more -->
 
-### 将css文件单独抽取出来作为一个css文件
+### 2.html处理
+
+html-webpack-plugin: 可以指定模版生成html,并可以进行去除双引号、折叠空白符号之类的操作
 ```
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-// 将css抽取为单独的文件
-const MiniCss = require('mini-css-extract-plugin')
+plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+      minify: {
+        removeAttributeQuotes: true,
+        collapseInlineTagWhitespace: true
+      },
+      hash: true
+    })
+]
+```
+### 3.样式处理
 
-module.exports = {
-  module: {
+#### 3.1基本设置
+```
+module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [{
+          // 插入到style中
+          loader: 'style-loader',
+          options: {
+            insertAt: 'bottom'
+          }
+        }, 'css-loader']
+      },
+      {
+        test: /\.less$/,
+        use: ['style-loader', 'css-loader', 'less-loader']
+      }
+    ]
+}
+```
+#### 3.2 将所有的样式抽离到一个css文件
+```
+const MiniCssExtractPlugin= require('mini-css-extract-plugin')
+
+module: {
     rules: [
       {
         test: /\.css$/,
         use: [
-          // 'style-loader',
-          MiniCss.loader,
-          'css-loader'
-        ]
+          MiniCssExtractPlugin.loader,
+          'css-loader']
       },
       {
         test: /\.less$/,
-        use: [
-          // 'style-loader',
-          MiniCss.loader,
-          'css-loader',
-          'less-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
       }
     ]
-  },
-  plugins: [
-    //指定抽取出来的css文件名
-    new MiniCss({
-      filename: 'main.css'
-    })
-  ]
-};
+}
 ```
-
-### css自动补前缀
-
-postcss.config.js
+#### 3.3 将样式自动添加前缀
 ```
+cnpm install postcss-loader autoprefixer
+
+// webpack.config.js
+module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.less$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader']
+      }
+    ]
+}
+
+// postcss.config.js
 module.exports = {
   plugins: [
     require('autoprefixer')
   ]
 }
 ```
-
-webpack.config.js
+#### 3.4 production 压缩css
 ```
-module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          // 'style-loader',
-          MiniCss.loader,
-          'css-loader',
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          // 'style-loader',
-          MiniCss.loader,
-          'css-loader',
-
-          // 
-          'postcss-loader',
-          'less-loader'
-        ]
-      }
-    ]
-  }
-```
-
-
-### 解析js
-```
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCss = require('mini-css-extract-plugin')
-
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              // 指定es6的版本
-              presets: ['@babel/preset-env'],
-              plugins: [
-              ]
-            }
-          }
-        ]
-      }
-    ]
-  }
-};
-```
-
-### 生产环境压缩css,js
-
-```
-const OptimizeCss = require('optimize-css-assets-webpack-plugin');
-const UglifyWebpackplugin = require('uglifyjs-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin()
+    ]
+  },
+  mode: 'production', // production | development
+}
+```
+#### 3.5 production 压缩js
+```
+cnpm install uglifyjs-webpack-plugin -D 
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin'); //压缩js
+module.exports = {
+  optimization: { //优化项
     minimizer: [
       new UglifyWebpackplugin({
         test: /\.js(\?.*)?$/i,
@@ -185,53 +174,69 @@ module.exports = {
         // 是否并行处理
         parallel: true,
         sourceMap: true
-      }),
-      new OptimizeCss()
+      })
     ]
-  },
-  mode: 'production'
+  }
 }
 ```
+### 4. 转换es6语法以及校验
+```
+cnpm install babel-loader @babel/core @babel/preset-env -D
 
-### 将引入的第三方插件暴露到global环境中
-1.在require中引入变量
-```
- require("expose-loader?$!jquery");
-```
-
-2. 在配置文件中将变量暴露到global中
-```
 module.exports = {
-  module:{
-    loader: [
-      {
-        test: require.resolve("jquery"),
-        loader: "expose-loader?$"
-      },
-
-      {
-        test: require.resolve("jquery"),
-        laoder: "expose-loader?$!expose-loader?jQuery"
-      },
-
-      {
-        test: require.resolve("jquery"),
-        options: "$"
-      },
-      {
-        test: require.resolve("jquery"),
-        options: "jQuery"
-      }
-    ]
-  }
+    entry: ["@babel/polyfill", "./src/main.js"],
+    module:[
+    {
+        test: /\.js$/,
+        include: path.resolve(__dirname, 'src'),
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env'
+            ],
+            plugins: [
+              "@babel/plugin-proposal-class-properties",
+              "@babel/plugin-transform-runtime"
+              //根据自己的需求自行添加
+            ]
+          }
+        }
+    },
+    {
+        test: /\.js$/,
+        use: {
+            loader: 'eslint-loader',
+            options: {
+                enfore: 'pre'
+            }
+        }
+    }
+]
 }
+
 ```
-3.直接在template(index.html)引入
+### 5. 全局变量引入的问题(以jquery为例)
+- 全局loader  expose-loader
+- 前置loder   
+- 普通loader 
+- 内联loader  
+- 后置loader  postcss-loader
+
+#### 5.1 import $ from 'jquery' 时
 ```
-module.export = {
-  externals: {
-    jquery: "jQuery"
-    //如果要全局引用jQuery，不管你的jQuery有没有支持模块化，用externals就对了。
-  }
-}
+module = [
+    test: require.resove('jquery'),
+    use:'expose-loader?$'
+]
+```
+#### 5.2 将$注入到每一个模块中去，在模块中可以直接使用$
+```
+const webpack = require('webpack')
+plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery'
+    })
+],
 ```
