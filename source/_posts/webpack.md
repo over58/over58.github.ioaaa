@@ -240,3 +240,59 @@ plugins: [
     })
 ],
 ```
+### 6.处理图片
+#### 6.1 处理css，js中的图片引用
+```
+module: [
+     {
+        test: /.(jpg|jpeg|png|gif|svg)$/,
+        use:'file-loader'
+    }
+]
+```
+#### 6.2 处理html中引入的图片
+```
+module: [
+     {
+        test: /.html$/,
+        use:'html-withimg-loader'
+    }
+]
+```
+#### 6.3 将小的图片转成base64，减少http请求
+
+```
+module: [
+     {
+        loader: 'url-loader',
+        options: {
+          // 小于50k的图片转成base64
+          limit: 50 * 1024, // 50k
+          name: '[hash:8].[ext]',
+          outputPath: './images'
+        }
+    }
+]
+```
+
+### 打包文件分类
+```
+module: [
+     {
+        loader: 'url-loader',
+        options: {
+          // 小于50k的图片转成base64
+          limit: 50 * 1024, // 50k
+          name: '[hash:8].[ext]',
+          outputPath: '/images/',   //图片打包到images下
+          //打包后为图片的引入路径前添加url前缀，可以在需要将图片使用cdn的时候用（和其他文件的publicPath不同）
+          //publicPath: 'http://www.xxxcdn.com/'  
+        }
+    }
+]
+plugins: [
+  new MiniCss({
+      filename: 'css/main.css' // 会将css文件打包为  dist/css/main.css
+    }),
+]
+```
