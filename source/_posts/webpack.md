@@ -275,8 +275,9 @@ module: [
 ]
 ```
 
-### 打包文件分类
+### 7.打包文件分类
 ```
+//img
 module: [
      {
         loader: 'url-loader',
@@ -290,9 +291,15 @@ module: [
         }
     }
 ]
+//css
 plugins: [
   new MiniCss({
       filename: 'css/main.css' // 会将css文件打包为  dist/css/main.css
     }),
 ]
+
+// js
+output: {
+  filename: 'js/main.js'
+}
 ```
