@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: components | yongchao&#39;s blog</title>
+  <title>Tag: components | chao&#39;s blog</title>
   
   <meta name="keywords" content="blog,vue,js,css,html">
   
@@ -12,7 +12,7 @@
   <meta name="description" content="技术博客">
   
 
-  <link rel="alternate" href="/atom.xml" title="yongchao's blog">
+  <link rel="alternate" href="/atom.xml" title="chao's blog">
 
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -61,7 +61,7 @@
 		<div class="nav-main container container--flex">
       <a class="logo flat-box" href="/">
         
-          yongchao's blog
+          chao's blog
         
       </a>
 			<div class="menu">
@@ -188,6 +188,24 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
 
 
@@ -197,6 +215,190 @@
       
 
       
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/04/30/button-popup/">
+              
+                  button-popup
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-04-29
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="/../images/btn-popup-1.png" alt="btn-popup-1"><br><img src="/../images/btn-popup-2.png" alt="btn-popup-2"></p>
+        
+            <div class="readmore">
+                <a href="/2019/04/30/button-popup/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                
+                    <a href="/tags/components/"><i class="fas fa-hashtag fa-fw"></i>components</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/04/29/全屏显示组件/">
+              
+                  全屏显示组件
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-04-29
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;Button type=&quot;primary&quot; @click=&quot;toggle&quot;&gt;&#123;&#123;full ? &apos;退出全屏&apos; : &apos;全屏&apos;&#125;&#125;&lt;/Button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;FullScreen&apos;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    elem: &#123;</span><br><span class="line">      type: HTMLDivElement,</span><br><span class="line">      required: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      full: false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    toggle () &#123;</span><br><span class="line">      this.full = !this.full</span><br><span class="line">      if (this.full) &#123;</span><br><span class="line">        if (this.elem.requestFullscreen) &#123;</span><br><span class="line">          this.elem.requestFullscreen()</span><br><span class="line">        &#125; else if (this.elem.webkitRequestFullscreen) &#123;</span><br><span class="line">          this.elem.webkitRequestFullscreen()</span><br><span class="line">        &#125; else if (this.elem.mozRequestFullScreen) &#123;</span><br><span class="line">          this.elem.mozRequestFullScreen()</span><br><span class="line">        &#125; else if (this.elem.msRequestFullscreen) &#123;</span><br><span class="line">          this.elem.msRequestFullscreen()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        if (document.exitFullscreen) &#123;</span><br><span class="line">          document.exitFullscreen()</span><br><span class="line">        &#125; else if (document.webkitExitFullscreen) &#123;</span><br><span class="line">          document.webkitExitFullscreen()</span><br><span class="line">        &#125; else if (document.mozCancelFullScreen) &#123;</span><br><span class="line">          document.mozCancelFullScreen()</span><br><span class="line">        &#125; else if (document.msExitFullscreen) &#123;</span><br><span class="line">          document.msExitFullscreen()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      this.$emit(&apos;on-change&apos;, this.full)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.btn-con .ivu-tooltip-rel&#123;</span><br><span class="line">  height: 64px;</span><br><span class="line">  width: 64px;</span><br><span class="line">  line-height: 56px;</span><br><span class="line">&#125;</span><br><span class="line">.btn-con .ivu-tooltip-rel i &#123;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                
+                    <a href="/tags/components/"><i class="fas fa-hashtag fa-fw"></i>components</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/04/29/封装line和pie简单组件/">
+              
+                  封装line和pie简单组件
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-04-29
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图:"></a>效果图:</h3><p><img src="/images/chart-line-pie.png" alt="chart-line-pie"></p>
+        
+            <div class="readmore">
+                <a href="/2019/04/29/封装line和pie简单组件/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                
+                    <a href="/tags/components/"><i class="fas fa-hashtag fa-fw"></i>components</a>
+                
+                    <a href="/tags/highcharts/"><i class="fas fa-hashtag fa-fw"></i>highcharts</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
         
           
             <div class="post-wrapper">
@@ -294,7 +496,7 @@
         
         
         
-          <p><span id="jinrishici-sentence">yongchao's blog</span></p>
+          <p><span id="jinrishici-sentence">chao's blog</span></p>
           <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
@@ -305,7 +507,7 @@
           
             <a href="mailto:13639628276@163.com" class="social flat-btn" target="_blank" rel="external">
               <i class="social social-padding fas fa-envelope" aria-hidden="true"></i>
-              yongchao
+              chao
             </a>
           
         
@@ -356,7 +558,7 @@
 </header>
 
     <div class="content pure">
-      <a href="/tags/JSON-js/" style="font-size: 14px; color: #999">JSON js</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 19px; color: #777">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 16.5px; color: #888">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 21.5px; color: #666">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a>
+      <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 19px; color: #777">components</a> <a href="/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 17.33px; color: #828282">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 15.67px; color: #8e8e8e">highcharts</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 22.33px; color: #606060">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a>
     </div>
   </section>
 
