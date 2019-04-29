@@ -315,20 +315,23 @@ export default {
     }
   },
   computed: {
+    // resize () {
+    //   return this.$store.state.common.resize
+    // },
     option () {
       return {
         chart: {
           type: 'pie'
         },
         title: {
-          text: this.title,
+          text: this.simple ? this.title : '',
           style: {
             fontWeight: 'bold'
           }
         },
         credits: {
-          text: 'http://xxx.com.cn',
-          href: 'http://xxx.com.cn'
+          text: 'http://nevis.sina.com.cn',
+          href: 'http://nevis.sina.com.cn'
         },
         legend: {
           enabled: true,
@@ -353,8 +356,14 @@ export default {
         },
         exporting: {
           enabled: true,
-          contextButton: {
-          }
+          buttons: {
+            contextButton: {
+              menuItems: [
+                'viewFullscreen', 'downloadPNG', 'downloadJPEG', 'downloadPDF', 'downloadSVG'
+              ]
+            }
+          },
+          filename: this.title
         },
         series: [
           {
@@ -368,6 +377,9 @@ export default {
     }
   },
   watch: {
+    // resize () {
+    //   this.chartInstance && this.chartInstance.reflow()
+    // }
   },
   methods: {
     init () {
@@ -426,13 +438,15 @@ export default {
     text-align: right;
   }
   &-content {
-    height: 400px;
+    height: 300px;
+  }
+  .simple{
+    height: 346px;
   }
 }
 </style>
 
 ```
-
 
 ### 使用
 ```
