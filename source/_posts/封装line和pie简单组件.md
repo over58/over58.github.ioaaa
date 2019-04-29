@@ -253,7 +253,7 @@ export default {
 </style>
 
 ```
-
+<!-- more -->
 ### ChartPie.vue
 ```
 <template>
