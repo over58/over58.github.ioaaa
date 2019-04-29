@@ -4,6 +4,11 @@ date: 2019-04-29 10:13:37
 tags: [vue, components, highcharts]
 ---
 
+### 效果图:
+![chart-line-pie](/images/chart-line-pie.png)
+
+<!-- more -->
+
 ### ChartLine.vue
 ```
 <template>
@@ -253,7 +258,7 @@ export default {
 </style>
 
 ```
-<!-- more -->
+
 ### ChartPie.vue
 ```
 <template>
@@ -476,5 +481,3 @@ export default {
 </style>
 
 ```
-### 结果图:
-![chart-line-pie](/images/chart-line-pie.png)
