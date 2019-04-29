@@ -30,23 +30,12 @@ tags: [vue, components]
 </template>
 <script>
 /**
- * 数据格式
- *
- * [{
- *    label: '',
- *    value: ''
- * }]
- *
- * or
- *
- * [{
- *  label: ''
- * }]
+ * 数据格式:
+ * [{label: '', value: ''}]
  *
  * or
  *
  * ['XXX1', 'xxx2']
- *
  */
 export default {
   props: {
@@ -83,11 +72,8 @@ export default {
             value: item
           }
         } else if (typeof item === 'object') {
-          if ('value' in item) {
-            return {
-              label: item.value,
-              value: item.value
-            }
+          if (('value' in item) && ('label' in item)) {
+            return item
           }
         } else {
           throw new Error('data is valid')
