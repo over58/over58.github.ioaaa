@@ -14,7 +14,7 @@ tags: [vue, components]
 ### 代码
 ```
 <template>
-    <Poptip width="200" placement="bottom-start" trigger="click">
+    <Poptip :width="width" placement="bottom-start" trigger="click">
         <Button>{{title}}{{checkAll ? '(全选)' : ''}}</Button>
 
         <div class="content" slot="content">
@@ -61,6 +61,10 @@ export default {
     value: {
       type: Array,
       required: true
+    },
+    width: {
+      type: Number,
+      default: 100
     }
   },
   data () {
