@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: js | yongchao&#39;s blog</title>
+  <title>Tag: js | chao&#39;s blog</title>
   
   <meta name="keywords" content="blog,vue,js,css,html">
   
@@ -12,7 +12,7 @@
   <meta name="description" content="技术博客">
   
 
-  <link rel="alternate" href="/atom.xml" title="yongchao's blog">
+  <link rel="alternate" href="/atom.xml" title="chao's blog">
 
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -61,7 +61,7 @@
 		<div class="nav-main container container--flex">
       <a class="logo flat-box" href="/">
         
-          yongchao's blog
+          chao's blog
         
       </a>
 			<div class="menu">
@@ -188,6 +188,24 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
 
 
@@ -197,6 +215,206 @@
       
 
       
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/04/29/js的几种模块化方式/">
+              
+                  js的几种模块化方式
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-04-29
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>模块化的必要性：<br>为了提高代码的开发效率，方便代码的维护，重构。</p>
+<p>模块化与组件化的区别：<br>模块可以理解为分解的页面逻辑，比如一个网站的登录，用户管理等；<br>组件则是一个具体的功能。<br>具体来说一个下拉框是一个组件，一个登录功能一个模块。</p>
+<p>目前常见的模块化规范（排名不分先后）：</p>
+<ul>
+<li>AMD</li>
+<li>CMD</li>
+<li>CommonJS</li>
+<li>ES6</li>
+</ul>
+<h3 id="1-AMD"><a href="#1-AMD" class="headerlink" title="1. AMD"></a>1. AMD</h3><p>AMD与CMD类似，不同的是AMD推崇依赖前置，–requireJS 推广过程中出现的规范。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/** main.js中引入1.js及2.js **/</span><br><span class="line">// 执行基本操作</span><br><span class="line">define([&quot;1.js&quot;,&quot;2.js&quot;],function($,_)&#123;</span><br><span class="line">  // some code here</span><br><span class="line">&#125;);</span><br><span class="line">/** 如果1.js中又引入了3.js，那就会先广度优先，然后深度遍历。   </span><br><span class="line">请求1.js和2.js然后在1.js中进行3.js的请求，3.js返回结果后查看2.js是否已经返回，   </span><br><span class="line">如果已经返回则合并结果后返回给main.js</span><br><span class="line">**/</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-CMD"><a href="#2-CMD" class="headerlink" title="2. CMD"></a>2. CMD</h3><p>CMD推崇就近依赖。   –sea.js推广过程中出现的规范。<br>但是因为在AMD&amp;CMD都是在浏览器端使用，采用的是异步加载，其实CMD还是需要在一开始就请求需要的，只是写法上更方便了。（采用的是正则匹配来获得js文件名，所以注释掉的仍然会请求，并且只可以书写字符串，不可以使用表达式）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/** AMD写法 **/</span><br><span class="line">define([&quot;1&quot;, &quot;2&quot;], function(1, 2) &#123; </span><br><span class="line">     // 依赖前置</span><br><span class="line">  function foo()&#123;</span><br><span class="line">    lib.log(&apos;hello world!&apos;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return &#123;</span><br><span class="line">    foo: foo</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">/** CMD写法 **/</span><br><span class="line">define(function(require, exports, module) &#123;</span><br><span class="line">    var test = require(&apos;./1&apos;); //就近依赖</span><br><span class="line">    test.sayHi();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-CommonJS"><a href="#3-CommonJS" class="headerlink" title="3. CommonJS"></a>3. CommonJS</h3><p>大前端使用的Node即时CommonJS的实例。<br>与AMD&amp;CMD的不同之处在于CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。<br>require参数规则:</p>
+<p>3.1. 如果参数字符串以“/”开头，则表示加载的是一个位于绝对路径的模块文件。<br>比如，require(‘/home/marco/foo.js’)将加载/home/marco/foo.js。<br>3.2. 如果参数字符串以“./”开头，则表示加载的是一个位于相对路径（跟当前执行脚本的位置相比）的模块文件。<br>比如，require(‘./circle’)将加载当前脚本同一目录的circle.js。<br>3.3. 如果参数字符串不以“./“或”/“开头，则表示加载的是一个默认提供的核心模块（位于Node的系统安装目录中），<br>或者一个位于各级node_modules目录的已安装模块（全局安装或局部安装）。<br>3.4. 如果参数字符串不以“./“或”/“开头，而且是一个路径，比如require(‘example-module/path/to/file’)，<br>则将先找到example-module的位置，然后再以它为参数，找到后续路径。<br>3.5. 如果指定的模块文件没有发现，Node会尝试为文件名添加.js、.json、.node后，再去搜索。<br>.js件会以文本格式的JavaScript脚本文件解析，.json文件会以JSON格式的文本文件解析，<br>.node文件会以编译后的二进制文件解析。<br>3.6. 如果想得到require命令加载的确切文件名，使用require.resolve()方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const webpack = require(&apos;webpack&apos;);//引入</span><br><span class="line">const sayHi = function ()&#123;</span><br><span class="line">    console.log(&apos;haha&apos;);</span><br><span class="line">&#125;</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    sayHi:sayHi</span><br><span class="line">&#125;//导出</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-ES6"><a href="#4-ES6" class="headerlink" title="4. ES6"></a>4. ES6</h3><p>相对于以上的AMD&amp;CMD是用于浏览器端，CommonJS用于服务器端。ES6的模块化非常可喜可贺的是浏览器和服务器通用的模块解决方案。<br>那它是怎么做到的呢？<br>区别与以上三者需要在 进行时加载，ES6尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。<br>使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ES6使用import进行引入，export default(比export更友好)进行导出。</span><br><span class="line">import &#123; lastName as surname &#125; from &apos;./profile.js&apos;;</span><br><span class="line">function foo() &#123;</span><br><span class="line">  console.log(&apos;foo&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default foo;</span><br></pre></td></tr></table></figure></p>
+<p>作者：littleStar<br>链接：<a href="https://juejin.im/post/5cc5909d518825253f4a5a68" target="_blank" rel="noopener">https://juejin.im/post/5cc5909d518825253f4a5a68</a><br>来源：掘金<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/04/29/js的有趣应用/">
+              
+                  js的有趣应用
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-04-29
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="打乱数组"><a href="#打乱数组" class="headerlink" title="打乱数组"></a>打乱数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let fn = (arr) =&gt; arr.slice().sort(() =&gt; Math.random() - 0.5)</span><br></pre></td></tr></table></figure>
+<h3 id="生成随机的十六进制颜色"><a href="#生成随机的十六进制颜色" class="headerlink" title="生成随机的十六进制颜色"></a>生成随机的十六进制颜色</h3><h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;#&apos; + Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, &apos;0&apos;)</span><br></pre></td></tr></table></figure>
+<h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Array.from(&#123;length:6&#125;,()=&gt;Math.floor(Math.random()*16).toString(16)).join(&quot;&quot;)</span><br><span class="line">// Array.from()的第一个参数指定了第二个参数的运行次数</span><br></pre></td></tr></table></figure>
+<h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[new Set(arr)]</span><br></pre></td></tr></table></figure>
+<h3 id="获取URL的查询参数"><a href="#获取URL的查询参数" class="headerlink" title="获取URL的查询参数"></a>获取URL的查询参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">q=&#123;&#125;;location.search.replace(/([^?&amp;=]+)=([^&amp;]+)/g,(_,k,v)=&gt;q[k]=v);q;</span><br></pre></td></tr></table></figure>
+<h3 id="返回一个键盘"><a href="#返回一个键盘" class="headerlink" title="返回一个键盘"></a>返回一个键盘</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 用字符串返回一个键盘图形</span><br><span class="line">(_=&gt;[...&quot;`1234567890-=~~QWERTYUIOP[]\\~ASDFGHJKL;&apos;~~ZXCVBNM,./~&quot;].map(x=&gt;(o+=`/$&#123;b=&apos;_&apos;.repeat(w=x&lt;y?2:&apos; 667699&apos;[x=[&quot;BS&quot;,&quot;TAB&quot;,&quot;CAPS&quot;,&quot;ENTER&quot;][p++]||&apos;SHIFT&apos;,p])&#125;\\|`,m+=y+(x+&apos;    &apos;).slice(0,w)+y+y,n+=y+b+y+y,l+=&apos; __&apos;+b)[73]&amp;&amp;(k.push(l,m,n,o),l=&apos;&apos;,m=n=o=y),m=n=o=y=&apos;|&apos;,p=l=k=[])&amp;&amp;k.join``)()</span><br></pre></td></tr></table></figure>
+<p>来源 <a href="https://juejin.im/post/5cc55eb5e51d456e577f93f0" target="_blank" rel="noopener">https://juejin.im/post/5cc55eb5e51d456e577f93f0</a></p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/04/09/js中的this机制/">
+              
+                  js中的this机制
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-04-08
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>this是函数 ( 运行时,即指的是被调用时 )的上下文， 指向调用它的 (最近的上下文)。</p>
+<h3 id="绑定规则"><a href="#绑定规则" class="headerlink" title="绑定规则"></a>绑定规则</h3><ol>
+<li>函数绑定</li>
+<li>new绑定 </li>
+<li>箭头函数绑定</li>
+</ol>
+        
+            <div class="readmore">
+                <a href="/2019/04/09/js中的this机制/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
         
           
             <div class="post-wrapper">
@@ -414,62 +632,7 @@
   <div class="meta" id="header-meta">
     
       <h2 class="title">
-          <a href="/2019/03/18/自定义js模态框插件/">
-              
-                  自定义js模态框插件
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-17
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>作为一个web开发ren yuan er ye an</p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/16/从js的属性描述符浦西vue-js的响应式视图/">
+          <a href="/2019/03/16/从js的属性描述符描述vue-js的响应式视图/">
               
                   从js的属性描述符浦西vue.js的响应式视图
               
@@ -520,7 +683,7 @@
 <h4 id="还支持批量修改对象属性以及描述对象"><a href="#还支持批量修改对象属性以及描述对象" class="headerlink" title="还支持批量修改对象属性以及描述对象"></a>还支持批量修改对象属性以及描述对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperties(obj, &#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    value: &apos;Tom&apos;,</span><br><span class="line">    configable: true</span><br><span class="line">  &#125;,</span><br><span class="line">  sex: &#123;</span><br><span class="line">    value: &apos;man&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
         
             <div class="readmore">
-                <a href="/2019/03/16/从js的属性描述符浦西vue-js的响应式视图/" class="flat-box">
+                <a href="/2019/03/16/从js的属性描述符描述vue-js的响应式视图/" class="flat-box">
                     <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
                     阅读全文
                 </a>
@@ -533,6 +696,84 @@
                     <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
                 
                     <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class="post-wrapper">
+              <article class="post reveal ">
+    
+<section class="meta">
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/03/13/stringify的使用/">
+              
+                  stringify的使用
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-13
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>这篇文章的由来是这样的：前两天遇到这样一个场景，接口返回了一个json对象，要求我进行格式化显示（显示出json对象的结构）。那么我就想了，一个对象要想显示出来，得转成string 类型的，于是我就使用了JSON.stringify(),但是转成字符串之后并没有缩进，显示出来的是一个长长的字符串。难道我还要自己人为的遍历对象,自己拼接一个带缩进的字符串么？太TM扯了！于是查看了stringify的官方文档，发现了很多有意思的东西，这个函数的作用远远不止是将json对象转成string那么简单，下面是我列举的stringify的几个小功能:</p>
+<ol>
+<li>json格式化，带缩进</li>
+<li>过滤掉无效的字段</li>
+<li>对符合某种条件的字段做操作</li>
+</ol>
+<p>原始数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">person = &#123;</span><br><span class="line">    sex: &apos;man&apos;,</span><br><span class="line">    name: &apos;Tom&apos;,</span><br><span class="line">    telphones: [</span><br><span class="line">        &quot;234123423&quot;,</span><br><span class="line">        &quot;2345234523&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一、原始情况，直接显示json字符串</p>
+<p>code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JOSN.stringify(person)</span><br></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;sex&quot;:&quot;man&quot;,&quot;name&quot;:&quot;Tom&quot;,&quot;age&quot;:22,&quot;telphones&quot;:[&quot;2341234123&quot;,&quot;3452345&quot;]&#125;</span><br></pre></td></tr></table></figure></p>
+<p>二、将一个json对象格式化显示出来</p>
+<p>code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify(person, null, 2)</span><br></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    sex: &apos;man&apos;,</span><br><span class="line">    name: &apos;Tom&apos;,</span><br><span class="line">    telphones: [</span><br><span class="line">        &quot;234123423&quot;,</span><br><span class="line">        &quot;2345234523&quot;</span><br><span class="line">    ]   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>三、不显示某些字段（哪些字段不需要显示就返回undefined）</p>
+<p>code</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JOSN.stringify(person, function(k, v)&#123;</span><br><span class="line">    if (k === &apos;telphones&apos;)&#123;</span><br><span class="line">        return undefined</span><br><span class="line">    &#125;</span><br><span class="line">    return v</span><br><span class="line">&#125;, 2)</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    sex: &apos;man&apos;,</span><br><span class="line">    name: &apos;Tom&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>四、只显示某些字段</p>
+<p>code</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JOSN.stringify(person, [&apos;sex&apos;], 2)</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    sex: &apos;man&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>更多详情<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify</a></p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+                    <a href="/tags/JSON/"><i class="fas fa-hashtag fa-fw"></i>JSON</a>
                 
             </div>
         
@@ -705,7 +946,7 @@
         
         
         
-          <p><span id="jinrishici-sentence">yongchao's blog</span></p>
+          <p><span id="jinrishici-sentence">chao's blog</span></p>
           <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
@@ -716,7 +957,7 @@
           
             <a href="mailto:13639628276@163.com" class="social flat-btn" target="_blank" rel="external">
               <i class="social social-padding fas fa-envelope" aria-hidden="true"></i>
-              yongchao
+              chao
             </a>
           
         
@@ -767,7 +1008,7 @@
 </header>
 
     <div class="content pure">
-      <a href="/tags/JSON-js/" style="font-size: 14px; color: #999">JSON js</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 19px; color: #777">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 16.5px; color: #888">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 14px; color: #999">highcharts</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 21.5px; color: #666">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a>
+      <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 19px; color: #777">components</a> <a href="/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 17.33px; color: #828282">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 15.67px; color: #8e8e8e">highcharts</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 22.33px; color: #606060">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a>
     </div>
   </section>
 
