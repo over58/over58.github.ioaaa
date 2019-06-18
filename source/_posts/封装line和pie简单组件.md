@@ -80,6 +80,10 @@ export default {
     notTimeStamp: {
       type: Boolean,
       default: false
+    },
+    zoomType: {
+      type: String,
+      default: 'none' // 可用值 none  x y xy
     }
   },
   data () {
@@ -92,7 +96,8 @@ export default {
     option () {
       return {
         chart: {
-          type: this.type
+          type: this.type,
+          zoomType: zoomType
         },
         title: {
           text: this.simple ? this.title : '',
