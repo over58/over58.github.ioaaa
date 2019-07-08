@@ -39,7 +39,7 @@ exports.area = function() {
 ```
 
 ### ES6 - import/export
-
+```
 import $ from 'jquery'
 
 export default{
@@ -50,5 +50,5 @@ export default{
   methods:{
   }
 }
-
+```
 
