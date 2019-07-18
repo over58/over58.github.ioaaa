@@ -16,6 +16,8 @@ categories: ['nginx']
   方法：GET、HEAD、POST
   Content-Typ为下面三个值之一：text/plain 、mutipart/form-data 、application/x-www-data-urlencoded
 
+<!-- more -->
+
 ### 复杂请求【预检请求】（满足下面任一条件）
   与前述简单请求不同，“需预检的请求”要求必须首先使用 OPTIONS 方法发起一个预检请求到服务器，以获知服务器是否允许该实际请求。"预检请求“的使用，可以避免跨域请求对服务器的用户数据产生未预期的影响。	
 当请求满足下述任一条件时，即应首先发送预检请求：
@@ -48,10 +50,10 @@ categories: ['nginx']
   让服务器把允许浏览器访问的头放入白名单。在跨域访问时，XMLHttpRequest对象的getResponseHeader()方法只能拿到一些最基本的响应头，Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma，如果要访问其他头，则需要服务器设置本响应头。
 
 #### Access-Control-Max-Age
-  头指定了preflight请求的结果能够被缓存多久
+  指定了preflight请求的结果能够被缓存多久
 
 #### Access-Control-Allow-Credentials 
-  头指定了当浏览器的credentials设置为true时是否允许浏览器读取response的内容。当用在对preflight预检测请求的响应中时，它指定了实际的请求是否可以使用credentials。请注意：简单 GET 请求不会被预检；如果对此类请求的响应中不包含该字段，这个响应将被忽略掉，并且浏览器也不会将相应内容返回给网页
+  指定了当浏览器的credentials设置为true时是否允许浏览器读取response的内容。当用在对preflight预检测请求的响应中时，它指定了实际的请求是否可以使用credentials。请注意：简单 GET 请求不会被预检；如果对此类请求的响应中不包含该字段，这个响应将被忽略掉，并且浏览器也不会将相应内容返回给网页
 
 #### Access-Control-Allow-Methods 
   首部字段用于预检请求的响应。其指明了实际请求所允许使用的 HTTP 方法
