@@ -72,5 +72,94 @@ categories: ['nginx']
   首部字段用于预检请求。其作用是，将实际请求所携带的首部字段告诉服务器。
 
 
+摘录自https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS
 
+
+### 最后来一个小demo吧
+
+index1.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  port: 9000 index page
+  <!-- <script src="http://127.0.0.1:9001/"></script> -->
+  <script>
+    var xhr = new XMLHttpRequest()
+    xhr.open('put', 'http://127.0.0.1:9001/')
+    // xhr.setRequestHeader('X-Custom-Field', 'custom-field')
+    xhr.send()
+  </script>
+</body>
+</html>
+```
+
+server1.js
+```
+const http = require('http');
+const fs = require('fs')
+
+http.createServer(function(req, res) {
+  if(req.url === '/') {
+    file = fs.readFileSync('./index1.html', 'utf-8')
+    res.writeHead(200, {
+      'Content-Type': 'text/html'
+    })
+    res.end(file)
+  }
+}).listen(9000, '127.0.0.1')
+```
+
+server2.js
+```
+const http = require('http');
+
+// http.createServer(function(req, res) {
+//   if(req.url === '/') {
+//     console.log('come in 127.0.0.1:9001 server')
+//     res.writeHead(200,{
+//       'Content-Type': 'text/plain'
+//     })
+//     res.end('9001 index page')
+//   }
+// }).listen(9001, '127.0.0.1')
+
+
+// http.createServer(function(req, res) {
+//   if(req.url === '/') {
+//     console.log('come in 127.0.0.1:9001 server')
+//     res.writeHead(200,{
+//       'Access-Control-Allow-Origin': '*', // 告诉浏览器允许访问的origin
+//       'Content-Type': 'text/plain' 
+//     })
+//     res.end('9001 index page')
+//   }
+// }).listen(9001, '127.0.0.1')
+
+
+
+http.createServer(function(req, res) {
+  if(req.url === '/') {
+    console.log('come in 127.0.0.1:9001 server')
+    res.writeHead(200,{
+      'Access-Control-Allow-Origin': '*', // 告诉浏览器允许访问的origin
+      'Access-Control-Allow-Methods': 'PUT', 
+      'Allow-Control-Request-Method': 'PUT',
+      // 'Access-Control-Allow-Headers': 'X-Custom-Field',  // 用来指定允许的自定义header
+      // 'Access-Control-Max-Age': 0,   //指定预请求(prefight)的有效期， 单位为秒
+      // 'Cache-Control': 'no-store',
+      'Content-Type': 'text/plain'
+    })
+    res.end(JSON.stringify({
+      name: 'Tom'
+    }))
+  }
+}).listen(9001, '127.0.0.1')
+```
 
