@@ -1,7 +1,7 @@
 ---
 title: cytoscape的简单使用
 date: 2019-03-07 14:29:42
-tags: [graph]
+tags: [graph, cytoscape]
 ---
 
 ### cy实例对象常用操作
