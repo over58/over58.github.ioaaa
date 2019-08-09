@@ -40,6 +40,7 @@ let list =[
 ];
 const result = convert(list);
 ```
+<!--more-->
  ### 结果
 ```
 
