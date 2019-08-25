@@ -86,6 +86,7 @@ var ret3 = Array.from(str).reduce((accumulator, current) => {
 
 #### 过滤满足多个条件的数组
 >将过滤函数作为数组进行调用， 初始值为原数据数组
+
 ```
 const filter1 = (arr) => arr.filter(item => item.name.length === 3)
 const filter2 = (arr) => arr.filter(item => item.age > 26)
