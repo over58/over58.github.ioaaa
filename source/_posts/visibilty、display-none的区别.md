@@ -1,5 +1,5 @@
 ---
-title: 'visibilty:hidden、display:non、opacity:0的区别'
+title: 'visibilty:hidden、display:none、opacity:0的区别'
 author: 徐勇超
 date: 2019-08-19 13:22:30
 tags:
