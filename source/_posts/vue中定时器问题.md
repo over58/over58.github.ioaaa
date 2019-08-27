@@ -32,7 +32,7 @@ beforeDestroy() {
 通过$once来监听定时器，在beforeDestroy中可以被清除
 
 
-优点：这两段代码写在一起，不同特意定义一个data.timer
+优点：这两段代码写在一起，不用特意定义一个data.timer,减少了数据监听的成本消耗
 缺点：适用于只有离开页面关闭定时器的情况，
 const timer = setInterval(()=>{
     // logic
