@@ -7,7 +7,7 @@ tags: [js]
 ###　简单介绍
 谈到JAVASCRIPT的继承，只有一种结构：对象。每个对象都有一个私有属性__proto__ 指向它的原型对象(prototype) . 原型对象也有自己的__proto__ ,层层向上直到一个对象的原型对象为NULL.根据定义，NULL是没有原型的，并作为这个原型链的最后一个环节。
 
-![js prototype]('/source/images/prototype.png')
+![js prototype](/source/images/prototype.png)
 
 ！！！ 实例对象的__proto__ 等于该对象构造函数的prototype
 ps: 
