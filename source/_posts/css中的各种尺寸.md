@@ -7,4 +7,4 @@ tags: css
 categories:
 ---
 
-![css各种尺寸的说明图](/source/images/css/size.png)
+![css各种尺寸的说明图](/images/css/size.png)
