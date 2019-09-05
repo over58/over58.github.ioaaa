@@ -10,6 +10,8 @@ tags: [js]
 ！！！ 实例对象的__proto__ 等于该对象构造函数的prototype
 ps: 
 ```
+
+![js prototype]('/source/images/原型链.png')
 var obj = {}
 obj.__proto__ === Object.prototype
 ```
