@@ -67,7 +67,7 @@ detachEvent("eventType","handler" )
 3. stopPropagation()阻止事件冒泡
 4. preventDefault()阻止事件默认行为
 5. keyCode：按下的键的值；
-6. stopImmediatePropagation() (DOM3)阻止任何事件的运行；详情看http://http://39.105.159.58:8080/2019/09/15/stopImmediatePropagation和stopPropagation的区别.md
+6. stopImmediatePropagation() (DOM3)阻止任何事件的运行；详情看http://39.105.159.58:8080/2019/09/16/stopImmediatePropagation%E5%92%8CstopPropagation%E7%9A%84%E5%8C%BA%E5%88%AB/
 
 
 - IE事件模型中的事件对象常用属性:
