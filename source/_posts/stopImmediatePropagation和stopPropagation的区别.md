@@ -11,18 +11,12 @@ categories:
 在事件处理程序中，每个事件处理程序中间都会有一个event对象，而这个event对象有两个方法，一个是stopPropagation方法，一个是stopImmediatePropagation方法，两个方法只差一个Immediate，这里就说说这两个方法的区别
 <!-- more -->
 ### stopImmediatePropagation方法：
-
-    stopImmediatePropagation方法作用在当前节点以及事件链上的所有后续节点上，目的是在执行完当前事件处理程序之后，停止当前节点以及所有后续节点的事件处理程序的运行
+stopImmediatePropagation方法作用在当前节点以及事件链上的所有后续节点上，目的是在执行完当前事件处理程序之后，停止当前节点以及所有后续节点的事件处理程序的运行
 
 ### stopPropagation方法
-
-    stopPropagation方法作用在后续节点上，目的在执行完绑定到当前元素上的所有事件处理程序之后，停止执行所有后续节点的事件处理程序
-
-　　
-
+stopPropagation方法作用在后续节点上，目的在执行完绑定到当前元素上的所有事件处理程序之后，停止执行所有后续节点的事件处理程序
 ### 区别：
-
-    从概念上讲，在调用完stopPropagation函数之后，就会立即停止对后续节点的访问，但是会执行完绑定到当前节点上的所有事件处理程序；而调用stopImmediatePropagation函数之后，除了所有后续节点，绑定到当前元素上的、当前事件处理程序之后的事件处理程序就不会再执行了
+从概念上讲，在调用完stopPropagation函数之后，就会立即停止对后续节点的访问，但是会执行完绑定到当前节点上的所有事件处理程序；而调用stopImmediatePropagation函数之后，除了所有后续节点，绑定到当前元素上的、当前事件处理程序之后的事件处理程序就不会再执行了
     
 ### Demo 
 ```
