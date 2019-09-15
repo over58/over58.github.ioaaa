@@ -4,6 +4,7 @@ author:
   - 徐勇超
 tags:
   - js
+  - 模拟函数
 date: 2019-09-15 23:29:42
 categories:
 ---
