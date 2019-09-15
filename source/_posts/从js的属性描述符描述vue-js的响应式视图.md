@@ -1,5 +1,5 @@
 ---
-title: 从js的属性描述符浦西vue.js的响应式视图
+title: 从js的属性描述符描述vue.js的响应式视图
 date: 2019-03-15 19:57:05
 tags: [js, vue]
 ---
