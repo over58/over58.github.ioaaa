@@ -2,7 +2,9 @@
 title: repaint重绘和reflow回流
 author:
   - 徐勇超
-tags: [css, 渲染过程，]
+tags: 
+  - css
+  - 渲染过程
 date: 2019-09-07 12:16:40
 categories:
 ---
