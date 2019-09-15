@@ -5,11 +5,14 @@ author:
 tags:
   - js
   - vscode
-date: 2019-09-15 23:34:30
+date: 2019-07-15 23:34:30
 categories:
 ---
 
 vscode 中支持自定义语法提示，于是我就将一些常见的代码模块记录一下，开发时只要输入少量代码就可以获得整个代码块，提高了开发效率。
+
+<!-- more -->
+
 ```
 '.text.html.vue':
   'button':
