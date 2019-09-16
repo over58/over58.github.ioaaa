@@ -2,6 +2,7 @@
 title: vue中使用cytoscape绘制拓扑图方案
 date: 2019-03-08 15:36:50
 tags: [vue, graph]
+categories: [graph]
 ---
 
 有一个需求需要绘制拓扑图，然后选图表库选择了cytoscape,看了官方文档http://js.cytoscape.org，感觉和network.js很像，包括两种element,一种是node（描述其相关信息），另一种是 edge(描述node之间的关系， 通过指明source, target确定指向)，其余的都是一些样式配置和事件的监听，可以说是非常的清晰明了了。此外文档的Extensions部分提供了各种的UI插件和API插件，拓展性也不错。

@@ -4,7 +4,7 @@ author:
   - 徐勇超
 date: 2019-06-03 19:54:27
 tags: [vue, highcharts]
-categories:
+categories: [graph]
 ---
 
 

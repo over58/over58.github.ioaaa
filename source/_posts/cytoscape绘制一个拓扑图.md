@@ -4,7 +4,7 @@ author:
   - 徐勇超
 date: 2019-07-18 14:52:39
 tags: [cytoscape, graph]
-categories:
+categories: [graph]
 ---
 
 ### 只记录核心代码

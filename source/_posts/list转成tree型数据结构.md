@@ -4,7 +4,7 @@ author:
   - 徐勇超
 date: 2019-08-09 14:53:18
 tags:
-categories:
+categories: [graph]
 ---
 
 ```
