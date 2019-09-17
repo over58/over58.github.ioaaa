@@ -12,7 +12,7 @@ categories:
 
 1.添加插件
 ```
-cnpm install webpack-bundle-analyzer -save-dev
+cnpm install webpack-bundle-analyzer -save
 ```
 
 2. vue.config.js文件
