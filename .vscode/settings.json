@@ -14,7 +14,7 @@
     "**/themes": true,
     "**/test": true,
     "Dockerfile": true,
-    "Makefile": true,
+    // "Makefile": true,
     "nginx.conf": true,
     // "_config.yml": true
   }
