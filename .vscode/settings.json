@@ -9,8 +9,13 @@
     "**/db.json": true,
     "**/webhook.js": true,
     "**/hexo.sh": true,
-    // "**/public": true,
+    "**/public": true,
     "**/scaffolds": true,
-    // "**/themes": true,
+    "**/themes": true,
+    "**/test": true,
+    "Dockerfile": true,
+    "Makefile": true,
+    "nginx.conf": true,
+    "_config.yml": true
   }
 }
