@@ -10,7 +10,7 @@ categories:
 
 ### 单个组件的生命周期
 
-![生命周期](生命周期.png)
+![lifecycle](lifecycle.png)
 
 分为三个阶段：
 
