@@ -72,16 +72,3 @@ search:
 less:
   compress: true
 
-# nav_menu:
-#   - name: home
-#     icon: fas fa-home
-#     url: https://xaoxuu.com/
-#   - name: blogs
-#     icon: fas fa-rss
-#     url: /
-#   - name: archives
-#     icon: fas fa-archive
-#     url: archives/
-#   - name: friends
-#     icon: fas fa-users
-#     url: friends/

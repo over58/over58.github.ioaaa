@@ -11,6 +11,6 @@
     "**/hexo.sh": true,
     // "**/public": true,
     "**/scaffolds": true,
-    "**/themes": true,
+    // "**/themes": true,
   }
 }
