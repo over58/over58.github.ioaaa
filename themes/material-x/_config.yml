@@ -24,7 +24,7 @@ services:
   scrollreveal: true
   nodewaves: true
   busuanzi: true
-  # fastclick: true
+  fastclick: true
   # leancloud_visitors: true
   # recommended_posts: true   # 需要安装插件  hexo-recommended-posts
   popular_posts: true   # 需要安装插件  hexo-related-popular-posts
