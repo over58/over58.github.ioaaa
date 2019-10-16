@@ -1,4 +1,5 @@
 restart:
+	git checkout .
 	git pull origin master
 	#cnpm install
 	hexo clean
@@ -9,6 +10,7 @@ restart:
 	docker run -d -p 8080:80 --name blog blog:latest
 
 start:
+	git checkout .
 	git pull origin master
 	#cnpm install
 	hexo clean
