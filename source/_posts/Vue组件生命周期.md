@@ -10,7 +10,7 @@ categories:
 
 ### 单个组件的生命周期
 
-{% asset_img lifecycle.png %}
+![lifecycle](vue组件生命周期/lifecycle.png)
 
 分为三个阶段：
 
