@@ -10,7 +10,7 @@ categories:
 
 ### 单个组件的生命周期
 
-![lifecycle](lifecycle.png)
+{% asset_img lifecycle.png 生命周期 %}
 
 分为三个阶段：
 
