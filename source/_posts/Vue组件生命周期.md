@@ -8,9 +8,8 @@ date: 2019-10-16 10:36:39
 categories:
 ---
 
-[toc]
 ### 单个组件的生命周期
-![d35ef48bce6fd2950ef8f54cd3ac7f75.png](562EB77D-1EFF-403B-ADAC-78D83DC7C898.png)
+![62EB77D-1EFF-403B-ADAC-78D83DC7C898](562EB77D-1EFF-403B-ADAC-78D83DC7C898.png)
 
 分为三个阶段：
 
