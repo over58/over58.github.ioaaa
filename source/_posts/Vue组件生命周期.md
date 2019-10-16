@@ -10,7 +10,7 @@ categories:
 
 [toc]
 ### 单个组件的生命周期
-![d35ef48bce6fd2950ef8f54cd3ac7f75.png](/images/vue/562EB77D-1EFF-403B-ADAC-78D83DC7C898.png)
+![d35ef48bce6fd2950ef8f54cd3ac7f75.png](562EB77D-1EFF-403B-ADAC-78D83DC7C898.png)
 
 分为三个阶段：
 
