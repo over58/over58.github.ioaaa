@@ -9,7 +9,7 @@ categories:
 ---
 
 ### 单个组件的生命周期
-![562EB77D-1EFF-403B-ADAC-78D83DC7C898](562EB77D-1EFF-403B-ADAC-78D83DC7C898.png)
+![生命周期](生命周期.png)
 
 分为三个阶段：
 
