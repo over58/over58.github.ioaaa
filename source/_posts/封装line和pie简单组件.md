@@ -1,7 +1,7 @@
 ---
 title: 封装line和pie简单组件
 date: 2019-04-29 10:13:37
-tags: [vue, components, highcharts]
+tags: [vue, 组件, highcharts]
 ---
 
 ### 效果图:
