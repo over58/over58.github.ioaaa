@@ -85,7 +85,8 @@ social:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/xuyongchaos/hexo.git
+  repo: git@github.com:xuyongchaos/hexo.git
+  branch: master
 
 widgets:
   - widget: author
