@@ -1,5 +1,5 @@
 ---
-title: Vue组件生命周期
+title: vue组件生命周期
 author:
   - 徐勇超
 tags:
