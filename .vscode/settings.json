@@ -16,6 +16,6 @@
     "Dockerfile": true,
     "Makefile": true,
     "nginx.conf": true,
-    "_config.yml": true
+    // "_config.yml": true
   }
 }
