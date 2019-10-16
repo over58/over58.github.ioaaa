@@ -9,7 +9,7 @@
     "**/db.json": true,
     "**/webhook.js": true,
     "**/hexo.sh": true,
-    "**/public": true,
+    // "**/public": true,
     "**/scaffolds": true,
     "**/themes": true,
   }

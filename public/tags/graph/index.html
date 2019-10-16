@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: graph | chao&#39;s blog</title>
+  <title>Tag: graph | Tim上校的小屋</title>
   
   <meta name="keywords" content="blog,vue,js,css,html">
   
@@ -12,7 +12,7 @@
   <meta name="description" content="技术博客">
   
 
-  <link rel="alternate" href="/atom.xml" title="chao's blog">
+  <link rel="alternate" href="/atom.xml" title="Tim上校的小屋">
 
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -57,15 +57,15 @@
 
     <script>setLoadingBarProgress(20)</script>
     <header class="l_header pure">
-	<div class="wrapper">
+	<div class='wrapper'>
 		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href="/">
+      <a class="logo flat-box" href='/' >
         
-          chao's blog
+          Tim上校的小屋
         
       </a>
-			<div class="menu">
-				<ul class="h-list">
+			<div class='menu'>
+				<ul class='h-list'>
           
 				</ul>
 			</div>
@@ -73,24 +73,24 @@
 			
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
 						<span class="icon"><i class="fas fa-search fa-fw"></i></span>
 					</form>
 				</div>
 			
-			<ul class="switcher h-list">
+			<ul class='switcher h-list'>
 				
-					<li class="s-search"><a class="fas fa-search fa-fw" href="javascript:void(0)"></a></li>
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
 				
-				<li class="s-menu"><a class="fas fa-bars fa-fw" href="javascript:void(0)"></a></li>
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 
-		<div class="nav-sub container container--flex">
+		<div class='nav-sub container container--flex'>
 			<a class="logo flat-box"></a>
-			<ul class="switcher h-list">
-				<li class="s-comment"><a class="flat-btn fas fa-comments fa-fw" href="javascript:void(0)"></a></li>
-				<li class="s-toc"><a class="flat-btn fas fa-list fa-fw" href="javascript:void(0)"></a></li>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 	</div>
@@ -206,6 +206,86 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
 
 
@@ -217,10 +297,147 @@
       
         
           
-            <div class="post-wrapper">
+            <div class='post-wrapper'>
               <article class="post reveal ">
     
-<section class="meta">
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/08/09/绘制网络拓扑图/">
+              
+                  绘制网络拓扑图
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-08-08
+      </time>
+    
+
+    
+      
+    
+    <div class='metatag cats'>
+        <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;<a class="categories" href="/categories/graph/">graph</a>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="效果图如下："><a href="#效果图如下：" class="headerlink" title="效果图如下："></a>效果图如下：</h3><p><img src="/images/echarts网络拓扑图.png" alt="echarts实现炫酷的网络拓扑图"></p>
+<h3 id="实现原理以及优缺点"><a href="#实现原理以及优缺点" class="headerlink" title="实现原理以及优缺点"></a>实现原理以及优缺点</h3><p>实现原理实际上是graph类型和lines类型结合画出来的，graph可以绘制的拓扑图,目前三种layout, 包括力导图(force)、环形布局(circular)、二维坐标系(none)。前两种基本上排版位置不怎么受自己控制，第三种的画，节点位置完全的受数据中的x/y位置控制，但是估计计算位置是个麻烦事儿，如果节点的数量很少或者说比较固定的话，采用这个非常不错。lines类型主要负责线条上添加动态的效果</p>
+<h3 id="live-demo"><a href="#live-demo" class="headerlink" title="live demo"></a>live demo</h3><p><a href="https://gallery.echartsjs.com/editor.html?c=xbETBRwXrm" target="_blank" rel="noopener">https://gallery.echartsjs.com/editor.html?c=xbETBRwXrm</a><br>或者<br><a href="http://39.105.159.58:3000/#/graph" target="_blank" rel="noopener">http://39.105.159.58:3000/#/graph</a></p>
+        
+            <div class="readmore">
+                <a href="/2019/08/09/绘制网络拓扑图/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/graph/"><i class="fas fa-hashtag fa-fw"></i>graph</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/07/18/cytoscape绘制一个拓扑图/">
+              
+                  cytoscape绘制一个拓扑图
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-07-18
+      </time>
+    
+
+    
+      
+    
+    <div class='metatag cats'>
+        <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;<a class="categories" href="/categories/graph/">graph</a>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="只记录核心代码"><a href="#只记录核心代码" class="headerlink" title="只记录核心代码"></a>只记录核心代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">import cytoscape from &apos;cytoscape&apos;</span><br><span class="line">import edgehandles from &apos;cytoscape-edgehandles&apos;</span><br><span class="line">cytoscape.use(edgehandles)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  let makeSvg = function (node) &#123;</span><br><span class="line">    let data = node.data()</span><br><span class="line">    return &#123; image: data.image || &apos;none&apos;, width: 50, height: 50 &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  const cy = cytoscape(&#123;</span><br><span class="line">    container: this.$refs.topology,</span><br><span class="line">    layout: &#123;</span><br><span class="line">      name: &apos;breadthfirst&apos;,</span><br><span class="line">      directed: true</span><br><span class="line">    &#125;,</span><br><span class="line">    userZoomingEnabled: false,</span><br><span class="line"></span><br><span class="line">    style: [</span><br><span class="line">      &#123;</span><br><span class="line">        selector: &apos;node&apos;,</span><br><span class="line">        style: &#123;</span><br><span class="line">          shape: &apos;ellipse&apos;, // rectangle vee pentagon</span><br><span class="line">          content: function (ele) &#123;</span><br><span class="line">            const data = ele.data()</span><br><span class="line">            if (data.title) &#123;</span><br><span class="line">              return `$&#123;data.title&#125;-$&#123;data.name&#125;`</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">              return `$&#123;data.id&#125;`</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          &apos;text-valign&apos;: &apos;center&apos;,</span><br><span class="line">          &apos;text-halign&apos;: &apos;right&apos;,</span><br><span class="line">          &apos;color&apos;: &apos;data(color)&apos;,</span><br><span class="line">          &apos;background-color&apos;: &apos;data(color)&apos;,</span><br><span class="line">          &apos;background-image&apos;: function (node) &#123; return makeSvg(node).image &#125;,</span><br><span class="line">          &apos;background-width&apos;: &apos;60%&apos;,</span><br><span class="line">          &apos;background-height&apos;: &apos;60%&apos;,</span><br><span class="line">          &apos;width&apos;: function (node) &#123; return makeSvg(node).width &#125;,</span><br><span class="line">          &apos;height&apos;: function (node) &#123; return makeSvg(node).height &#125;,</span><br><span class="line">          &apos;text-rotation&apos;: function (node) &#123;  //根据条件旋转文字，避免节点太多文字相互覆盖</span><br><span class="line">            let data = node.data()</span><br><span class="line">            if (data.level === 3 &amp;&amp; level3Len &gt; 10) &#123;</span><br><span class="line">              return 45</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">              return 0</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &apos;selector&apos;: &apos;node:selected&apos;,</span><br><span class="line">        &apos;style&apos;: &#123;</span><br><span class="line">          &apos;min-zoomed-font-size&apos;: 0,</span><br><span class="line">          &apos;z-index&apos;: 9999,</span><br><span class="line">          &apos;border-color&apos;: &apos;black&apos;,</span><br><span class="line">          &apos;border-width&apos;: 2,</span><br><span class="line">          &apos;color&apos;: &apos;black&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      &#123;</span><br><span class="line">        selector: &apos;edge&apos;,</span><br><span class="line">        style: &#123;</span><br><span class="line">          &apos;curve-style&apos;: &apos;straight&apos;,</span><br><span class="line">          &apos;target-arrow-shape&apos;: &apos;triangle&apos;,</span><br><span class="line">          &apos;line-color&apos;: &apos;gray&apos;,</span><br><span class="line">          &apos;width&apos;: 0.8,</span><br><span class="line">          &apos;line-style&apos;: &apos;data(lineStyle)&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    elements: &#123;</span><br><span class="line">      nodes: nodes,</span><br><span class="line">      edges: edges</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  cy.on(&apos;tap&apos;, &apos;node&apos;, function (evt) &#123;</span><br><span class="line">    let data = evt.target.data()</span><br><span class="line">    if (data.click) &#123;</span><br><span class="line">      vm.getIpStat(data.ip)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/graph/"><i class="fas fa-hashtag fa-fw"></i>graph</a>
+                
+                    <a href="/tags/cytoscape/"><i class="fas fa-hashtag fa-fw"></i>cytoscape</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
   
   <div class="meta" id="header-meta">
     
@@ -276,10 +493,10 @@
           
         
           
-            <div class="post-wrapper">
+            <div class='post-wrapper'>
               <article class="post reveal ">
     
-<section class="meta">
+<section class='meta'>
   
   <div class="meta" id="header-meta">
     
@@ -302,6 +519,11 @@
 
     
       
+    
+    <div class='metatag cats'>
+        <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;<a class="categories" href="/categories/graph/">graph</a>
+    </div>
+
 
     
 
@@ -340,10 +562,10 @@
           
         
           
-            <div class="post-wrapper">
+            <div class='post-wrapper'>
               <article class="post reveal ">
     
-<section class="meta">
+<section class='meta'>
   
   <div class="meta" id="header-meta">
     
@@ -366,6 +588,11 @@
 
     
       
+    
+    <div class='metatag cats'>
+        <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;<a class="categories" href="/categories/graph/">graph</a>
+    </div>
+
 
     
 
@@ -416,6 +643,8 @@ cy.removeScratch()
                 
                     <a href="/tags/graph/"><i class="fas fa-hashtag fa-fw"></i>graph</a>
                 
+                    <a href="/tags/cytoscape/"><i class="fas fa-hashtag fa-fw"></i>cytoscape</a>
+                
             </div>
         
     </section>
@@ -450,19 +679,19 @@ cy.removeScratch()
     
       
       
-        <section class="author">
-  <div class="content pure">
+        <section class='author'>
+  <div class='content pure'>
     
-      <div class="avatar">
-        <img class="avatar" src="/images/avatar.png">
+      <div class='avatar'>
+        <img class='avatar' src='/images/avatar.png'/>
       </div>
     
     
-      <div class="text">
+      <div class='text'>
         
         
         
-          <p><span id="jinrishici-sentence">chao's blog</span></p>
+          <p><span id="jinrishici-sentence">Tim上校的小屋</span></p>
           <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
@@ -473,7 +702,7 @@ cy.removeScratch()
           
             <a href="mailto:13639628276@163.com" class="social flat-btn" target="_blank" rel="external">
               <i class="social social-padding fas fa-envelope" aria-hidden="true"></i>
-              chao
+              Tim上校的小屋
             </a>
           
         
@@ -488,14 +717,14 @@ cy.removeScratch()
     
       
       
-        <section class="plain">
+        <section class='plain'>
   
-<header class="pure">
+<header class='pure'>
   <div><i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;注意啦～</div>
   
 </header>
 
-  <div class="content pure">
+  <div class='content pure'>
     <p>这是yongchao的技术博客喜欢的朋友可以阅读文档进行使用，超喜欢的话还可以安利给身边的朋友哦～</p>
 
   </div>
@@ -508,6 +737,30 @@ cy.removeScratch()
       
       
         
+  <section class='category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;所有分类</div>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/es6/" href="/categories/es6/"><div class='name'>es6</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/graph/" href="/categories/graph/"><div class='name'>graph</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/js知识库/" href="/categories/js知识库/"><div class='name'>js知识库</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/nginx/" href="/categories/nginx/"><div class='name'>nginx</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/插件/" href="/categories/插件/"><div class='name'>插件</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
 
       
     
@@ -516,15 +769,15 @@ cy.removeScratch()
       
       
         
-  <section class="tagcloud">
+  <section class='tagcloud'>
     
-<header class="pure">
+<header class='pure'>
   <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
   
 </header>
 
-    <div class="content pure">
-      <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 19px; color: #777">components</a> <a href="/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 17.33px; color: #828282">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 15.67px; color: #8e8e8e">highcharts</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 22.33px; color: #606060">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a>
+    <div class='content pure'>
+      <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 19.71px; color: #727272">components</a> <a href="/tags/cors/" style="font-size: 14px; color: #999">cors</a> <a href="/tags/css/" style="font-size: 21.14px; color: #686868">css</a> <a href="/tags/cytoscape/" style="font-size: 15.43px; color: #8f8f8f">cytoscape</a> <a href="/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.71px; color: #727272">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 16.86px; color: #868686">highcharts</a> <a href="/tags/http/" style="font-size: 15.43px; color: #8f8f8f">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/proxy/" style="font-size: 14px; color: #999">proxy</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.57px; color: #5f5f5f">vue</a> <a href="/tags/webpack/" style="font-size: 18.29px; color: #7c7c7c">webpack</a> <a href="/tags/事件模型/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a> <a href="/tags/权重/" style="font-size: 14px; color: #999">权重</a> <a href="/tags/模拟函数/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/渲染过程/" style="font-size: 15.43px; color: #8f8f8f">渲染过程</a> <a href="/tags/盒模型/" style="font-size: 14px; color: #999">盒模型</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/类型/" style="font-size: 16.86px; color: #868686">类型</a>
     </div>
   </section>
 
@@ -543,28 +796,31 @@ cy.removeScratch()
     
       
       
-        <section class="list">
+        <section class='list'>
   
-<header class="pure">
+<header class='pure'>
   <div><i class="fas fa-medal fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;精选项目</div>
   
-    <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="http://nevis.sina.com.cn/" title>
+    <a class="rightBtn" target="_blank"
+    rel="external nofollow noopener noreferrer"
+    href="http://nevis.sina.com.cn/"
+    title="">
     <i class="fas fa-arrow-right fa-fw"></i></a>
   
 </header>
 
-  <div class="content pure">
+  <div class='content pure'>
     <ul class="entry">
       
         <li><a class="flat-box" title="https:www.baidu.com/" href="https:www.baidu.com/">
-          <div class="name">
+          <div class='name'>
             
               <i class="fas fa-cube fa-fw" aria-hidden="true"></i>
             
             &nbsp;&nbsp;百度
           </div>
           
-            <div class="badge">(baidu)</div>
+            <div class='badge'>(baidu)</div>
           
         </a></li>
       
@@ -578,18 +834,18 @@ cy.removeScratch()
     
       
       
-        <section class="list">
+        <section class='list'>
   
-<header class="pure">
+<header class='pure'>
   <div><i class="fas fa-link fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;特别链接</div>
   
 </header>
 
-  <div class="content pure">
+  <div class='content pure'>
     <ul class="entry">
       
         <li><a class="flat-box" title="https://github.com/xuyongchaos/hexo.git" href="https://github.com/xuyongchaos/hexo.git">
-          <div class="name">
+          <div class='name'>
             
               <i class="fab fa-github fa-fw" aria-hidden="true"></i>
             
@@ -599,7 +855,7 @@ cy.removeScratch()
         </a></li>
       
         <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/front-matter/index.html" href="https://xaoxuu.com/wiki/material-x/front-matter/index.html">
-          <div class="name">
+          <div class='name'>
             
               <i class="fas fa-question-circle fa-fw" aria-hidden="true"></i>
             
@@ -687,6 +943,14 @@ cy.removeScratch()
   
     <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
   
+  
+    <!-- fastclick -->
+    <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body)
+      }, false)
+    </script>
   
   
 

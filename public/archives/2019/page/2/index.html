@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Archives: 2019 | chao&#39;s blog</title>
+  <title>Archives: 2019 | Tim上校的小屋</title>
   
   <meta name="keywords" content="blog,vue,js,css,html">
   
@@ -12,7 +12,7 @@
   <meta name="description" content="技术博客">
   
 
-  <link rel="alternate" href="/atom.xml" title="chao's blog">
+  <link rel="alternate" href="/atom.xml" title="Tim上校的小屋">
 
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -57,15 +57,15 @@
 
     <script>setLoadingBarProgress(20)</script>
     <header class="l_header pure">
-	<div class="wrapper">
+	<div class='wrapper'>
 		<div class="nav-main container container--flex">
-      <a class="logo flat-box" href="/">
+      <a class="logo flat-box" href='/' >
         
-          chao's blog
+          Tim上校的小屋
         
       </a>
-			<div class="menu">
-				<ul class="h-list">
+			<div class='menu'>
+				<ul class='h-list'>
           
 				</ul>
 			</div>
@@ -73,24 +73,24 @@
 			
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
 						<span class="icon"><i class="fas fa-search fa-fw"></i></span>
 					</form>
 				</div>
 			
-			<ul class="switcher h-list">
+			<ul class='switcher h-list'>
 				
-					<li class="s-search"><a class="fas fa-search fa-fw" href="javascript:void(0)"></a></li>
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
 				
-				<li class="s-menu"><a class="fas fa-bars fa-fw" href="javascript:void(0)"></a></li>
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 
-		<div class="nav-sub container container--flex">
+		<div class='nav-sub container container--flex'>
 			<a class="logo flat-box"></a>
-			<ul class="switcher h-list">
-				<li class="s-comment"><a class="flat-btn fas fa-comments fa-fw" href="javascript:void(0)"></a></li>
-				<li class="s-toc"><a class="flat-btn fas fa-list fa-fw" href="javascript:void(0)"></a></li>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
 			</ul>
 		</div>
 	</div>
@@ -130,151 +130,17 @@
       
         
           
-            <div class="post-wrapper">
+            <div class='post-wrapper'>
               <article class="post reveal ">
     
-<section class="meta">
+<section class='meta'>
   
   <div class="meta" id="header-meta">
     
       <h2 class="title">
-          <a href="/2019/03/26/执行栈和执行上下文/">
+          <a href="/2019/09/12/判断类型的方式/">
               
-                  执行栈和执行上下文
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-26
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>执行上下文是当前 JavaScript 代码被解析和执行时所在环境的抽象概念。</p>
-<h3 id="执行上下文的类型"><a href="#执行上下文的类型" class="headerlink" title="执行上下文的类型"></a>执行上下文的类型</h3><p>执行上下文总共有三种类型</p>
-<p>  1.全局执行上下文：只有一个，浏览器中的全局对象就是 window 对象，this 指向这个全局对象。</p>
-<p>  2.函数执行上下文：存在无数个，只有在函数被调用的时候才会被创建，每次调用函数都会创建一个新的执行上下文。</p>
-<p>  3.Eval 函数执行上下文： 指的是运行在 eval 函数中的代码，不用很少用而且不建议使用。</p>
-<h3 id="执行栈"><a href="#执行栈" class="headerlink" title="执行栈"></a>执行栈</h3><p>执行栈，也叫调用栈，具有 LIFO（后进先出）结构，用于存储在代码执行期间创建的所有执行上下文。</p>
-<p>首次运行JS代码时，会创建一个全局执行上下文并Push到当前的执行栈中。每当发生函数调用，引擎都会为该函数创建一个新的函数执行上下文并Push到当前执行栈的栈顶。</p>
-<p>根据执行栈LIFO规则，当栈顶函数运行完成后，其对应的函数执行上下文将会从执行栈中Pop出，上下文控制权将移到当前执行栈的下一个执行上下文。</p>
-<h3 id="执行上下文的创建"><a href="#执行上下文的创建" class="headerlink" title="执行上下文的创建"></a>执行上下文的创建</h3><p>执行上下文分两个阶段创建：1）创建阶段； 2）执行阶段</p>
-<p>创建阶段</p>
-<p>1、确定 this 的值，也被称为 This Binding。</p>
-<p>2、LexicalEnvironment（词法环境） 组件被创建。</p>
-<p>3、VariableEnvironment（变量环境） 组件被创建。</p>
-<p>直接看伪代码可能更加直观<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ExecutionContext = &#123;  </span><br><span class="line">  ThisBinding = &lt;this value&gt;,     // 确定this </span><br><span class="line">  LexicalEnvironment = &#123; ... &#125;,   // 词法环境</span><br><span class="line">  VariableEnvironment = &#123; ... &#125;,  // 变量环境</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-        
-            <div class="readmore">
-                <a href="/2019/03/26/执行栈和执行上下文/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/21/vue实现文件下载/">
-              
-                  vue实现文件下载
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-21
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;url&quot; download=&quot;文件名.后缀名&quot;&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="实际使用场景"><a href="#实际使用场景" class="headerlink" title="实际使用场景"></a>实际使用场景</h3><p>上面的原理中适合开放的资源下载，http请求中无需验证时使用。在实际使用过程中，a标签中的url中直接设置header比较麻烦且不安全，<br>而且从开发规范上api一般上要封装一下（header中需要一些特定设置），放到统一的文件。</p>
-<p>解决办法：下载相关和api responseType设置为blob(!!!重要)，在以blob形式获取到文件之后js创建一个a标签，设置url和downlaod后并触发，最后释放url资源并删除创建的a标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">api:</span><br><span class="line">downloadFile (url) =&gt; &#123;</span><br><span class="line">  axios.get(url, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    headers: &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    // 重要</span><br><span class="line">    responseType: &apos;blob&apos;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">html: </span><br><span class="line">&lt;button @click=&quot;download&quot;&gt;下载&lt;/button&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">js: </span><br><span class="line">  function downlaod (param)&#123;</span><br><span class="line">    api.downloadFile(param).then(data =&gt; &#123;</span><br><span class="line">      if (!data) &#123;</span><br><span class="line">        this.$Message.error(&apos;下载内容为空&apos;)</span><br><span class="line">        return</span><br><span class="line">      &#125;</span><br><span class="line">      let url = window.URL.createObjectURL(new Blob([data]))</span><br><span class="line">      let link = document.createElement(&apos;a&apos;)</span><br><span class="line">      link.style.display = &apos;none&apos;</span><br><span class="line">      link.href = url</span><br><span class="line">      link.setAttribute(&apos;download&apos;, etcdCluster + &apos;.zip&apos;)</span><br><span class="line">        </span><br><span class="line">      document.body.appendChild(link)</span><br><span class="line">      link.click()</span><br><span class="line">      //释放URL对象所占资源</span><br><span class="line">      window.URL.revokeObjectURL(url)</span><br><span class="line">      //用完即删</span><br><span class="line">      document.body.removeChild(link)</span><br><span class="line">    &#125;).catch(err =&gt; &#123;</span><br><span class="line">      console.log(&apos;err: &apos;, err)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="MDN相关链接"><a href="#MDN相关链接" class="headerlink" title="MDN相关链接"></a>MDN相关链接</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/URL/revokeObjectURL" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/URL/revokeObjectURL</a></p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/21/vue中使用highcharts和echarts的实践/">
-              
-                  vue中使用highcharts和echarts的实践
+                  判断类型的方式
               
           </a>
       </h2>
@@ -288,7 +154,7 @@
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-21
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-12
       </time>
     
 
@@ -305,20 +171,31 @@
 </section>
 
     <section class="article typo">
-        <p>  我从事云平台前端的开发，由于项目的需要，写了一个云监控Monitor项目。起初，我选择了 Echarts， 原因很简单，中文文档，定制化能力也比较好。事实上，使用了一年多来，用的也是蛮顺手的。但是，这是一个监控项目,里面存在大量的图，每个图有着巨量的数据，而且每条line的名字也超长。带来的问题就是，页面及其卡顿，即使是我限制了每个图中的数据量，仍然无法降低，页面无操作的情况下，CPU仍然占据20%以上（八个图，每个图平均10条line）。网上找了一通，都指向z_render()函数，echarts会不停的执行这个函数。实在是不堪忍受这样的卡顿，在进行了充分调研的情况下,果断换了highcharts。</p>
-<p>  经过实际项目测试：同等数量的情况下，highcharts和echarts 所占的内存相近，但CPU占比很低。举一个栗子，一个页面上有八个图，每个图平均大概10条线，当页面渲染完成，无任何鼠标点击的时候，echarts的CPU占比稳定在20%左右，highcharts始终在1%以下。</p>
-<p><img src="/images/highcharts-q.png" alt="highcharts"><br><img src="/images/echarts-q.png" alt="echarts"></p>
-
+        <h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><p>取值范围</p>
+<ul>
+<li>number</li>
+<li>string</li>
+<li>object</li>
+<li>function</li>
+<li>boolean</li>
+<li>symbol</li>
+<li>boolean</li>
+</ul>
+        
+            <div class="readmore">
+                <a href="/2019/09/12/判断类型的方式/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
         
 
         
             <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
                 
-                    <a href="/tags/highcharts/"><i class="fas fa-hashtag fa-fw"></i>highcharts</a>
-                
-                    <a href="/tags/echarts/"><i class="fas fa-hashtag fa-fw"></i>echarts</a>
+                    <a href="/tags/类型/"><i class="fas fa-hashtag fa-fw"></i>类型</a>
                 
             </div>
         
@@ -329,17 +206,17 @@
           
         
           
-            <div class="post-wrapper">
+            <div class='post-wrapper'>
               <article class="post reveal ">
     
-<section class="meta">
+<section class='meta'>
   
   <div class="meta" id="header-meta">
     
       <h2 class="title">
-          <a href="/2019/03/21/ vue-cli3入门/">
+          <a href="/2019/09/12/类型转换/">
               
-                  vue-cli3 入门
+                  类型转换
               
           </a>
       </h2>
@@ -353,7 +230,7 @@
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-21
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-12
       </time>
     
 
@@ -370,12 +247,10 @@
 </section>
 
     <section class="article typo">
-        <p><a href="https://cli.vuejs.org/zh/guide/" target="_blank" rel="noopener">官方文档</a></p>
-<h3 id="1-vue-cli3实现分环境打包步骤"><a href="#1-vue-cli3实现分环境打包步骤" class="headerlink" title="1. vue-cli3实现分环境打包步骤"></a>1. vue-cli3实现分环境打包步骤</h3><p>通过改变 <code>process.env.NODE_ENV</code> 值区分打包环境，但是webpack打包时针对<code>process.env.NODE_ENV===&#39;production&#39;</code> 和其他情况打出来的包结构和大小都不一样；</p>
-<p>为了消除这种差异，可以使用其他变量比如 <code>process.env.VUE_APP_TITLE</code> 来区分环境。<br>XXXXx<br>
+        <h4 id="1-类型转换规则"><a href="#1-类型转换规则" class="headerlink" title="1. 类型转换规则"></a>1. 类型转换规则</h4><p><img src="/images/leixingzhuanhuan.png" alt="1aa4dd552dadf8f2b6b10384bb7dd6fc.png"><br></p>
         
             <div class="readmore">
-                <a href="/2019/03/21/ vue-cli3入门/" class="flat-box">
+                <a href="/2019/09/12/类型转换/" class="flat-box">
                     <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
                     阅读全文
                 </a>
@@ -385,68 +260,9 @@
         
             <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
                 
-            </div>
-        
-    </p></section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/21/MySQL常见错误码/">
-              
-                  MySQL常见错误码
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-21
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>0101 属于其他进程的专用标志。<br><br>0102 标志已经设置，无法关闭。<br><br>0103 无法再次设置该标志。<br><br>0104 中断时无法请求专用标志。<br></p>
-        
-            <div class="readmore">
-                <a href="/2019/03/21/MySQL常见错误码/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/mysql/"><i class="fas fa-hashtag fa-fw"></i>mysql</a>
+                    <a href="/tags/类型/"><i class="fas fa-hashtag fa-fw"></i>类型</a>
                 
             </div>
         
@@ -457,32 +273,41 @@
           
         
           
-            <div class="post-wrapper">
+            <div class='post-wrapper'>
               <article class="post reveal ">
     
-<section class="meta">
+<section class='meta'>
   
   <div class="meta" id="header-meta">
     
       <h2 class="title">
-          <a href="/2019/03/18/js自定义modal框/">
+          <a href="/2019/09/11/dataTable中自定义列排序问题/">
               
-                  js自定义modal框
+                  dataTable中自定义列排序问题
               
           </a>
       </h2>
     
 
     
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-17
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-10
       </time>
     
 
     
       
+    
+    <div class='metatag cats'>
+        <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;<a class="categories" href="/categories/插件/">插件</a>
+    </div>
+
 
     
 
@@ -494,22 +319,14 @@
 </section>
 
     <section class="article typo">
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>作为一个Web开发而言，modal模态框一定不会陌生。本文将简单的讲一下如何使用js自定义一个modal框，当然了，本文的重点并不是教你如何构建一个modal框，而是希望能够教你如何构建一个组件的思路。好了，废话不多说，正文开始。</p>
-<h3 id="modal是什么，有什么功能"><a href="#modal是什么，有什么功能" class="headerlink" title="modal是什么，有什么功能"></a>modal是什么，有什么功能</h3><p>modal是位于用户主窗口之上的一个元素，当它打开的时候，主窗口无法操作，位于主窗口之上的modal框内可以操作。一个modal至少包含以下几个功能：</p>
+        <p>在使用dataTables的时候，有些列中会是一些包含内容的按钮或链接，不是单纯的文字内容。那么dataTables会将这些内容视为字符串，进行排序，有时候这不符合我们的期望。那么就需要自己能够灵活的指定某些列按照我们的意愿进行排序，幸运的是dataTable支持这样的插件拓展。</p>
 <ol>
-<li>模态框的蒙版 .modal-overlay</li>
-<li>头部  .modal-header</li>
-<li>主体 .modal-body</li>
-<li>脚步 .modal-footer</li>
-<li>关闭按钮 .modal-close</li>
+<li>首先创建一个文件叫dataTables.sort.plungin.js，加入以下代码。</li>
 </ol>
-<blockquote>
-<p>关闭按钮包括多种方式：取消按钮（footer中）、关闭按钮(右上角)、ESC按键、点击模态框主体外的蒙版的区域</p>
-</blockquote>
-<h3 id="构建插件"><a href="#构建插件" class="headerlink" title="构建插件"></a>构建插件</h3><p>1.首先选择iife。这里使用了闭包的知识，因为闭包可以创建一个私有域。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">jQuery.extend(jQuery.fn.dataTableExt.oSort, &#123;</span><br><span class="line">    &quot;html-percent-pre&quot;: function (a) &#123;</span><br><span class="line">        var x = String(a).replace(/&lt;[\s\S]*?&gt;/g, &quot;&quot;);    //去除html标记</span><br><span class="line">        x = x.replace(/&amp;amp;nbsp;/ig, &quot;&quot;);                   //去除空格</span><br><span class="line">        x = x.replace(/%/, &quot;&quot;);                          //去除百分号</span><br><span class="line">        return parseFloat(x);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &quot;html-percent-asc&quot;: function (a, b) &#123;                //正序排序引用方法</span><br><span class="line">        return ((a &lt; b) ? -1 : ((a &gt; b) ? 1 : 0));</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &quot;html-percent-desc&quot;: function (a, b) &#123;                //倒序排序引用方法</span><br><span class="line">        return ((a &lt; b) ? 1 : ((a &gt; b) ? -1 : 0));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
         
             <div class="readmore">
-                <a href="/2019/03/18/js自定义modal框/" class="flat-box">
+                <a href="/2019/09/11/dataTable中自定义列排序问题/" class="flat-box">
                     <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
                     阅读全文
                 </a>
@@ -521,6 +338,8 @@
                 
                     <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
                 
+                    <a href="/tags/dataTable/"><i class="fas fa-hashtag fa-fw"></i>dataTable</a>
+                
             </div>
         
     </section>
@@ -530,27 +349,97 @@
           
         
           
-            <div class="post-wrapper">
+            <div class='post-wrapper'>
               <article class="post reveal ">
     
-<section class="meta">
+<section class='meta'>
   
   <div class="meta" id="header-meta">
     
       <h2 class="title">
-          <a href="/2019/03/16/从js的属性描述符描述vue-js的响应式视图/">
+          <a href="/2019/09/10/codemirror基本配置/">
               
-                  从js的属性描述符浦西vue.js的响应式视图
+                  codemirror基本配置
               
           </a>
       </h2>
     
 
     
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-15
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-09
+      </time>
+    
+
+    
+      
+    
+    <div class='metatag cats'>
+        <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;<a class="categories" href="/categories/插件/">插件</a>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">export const editorOption = &#123;</span><br><span class="line">  tabSize: 2,</span><br><span class="line">  styleActiveLine: true,</span><br><span class="line">  line: true,</span><br><span class="line">  mode: &apos;text/x-nginx-conf&apos;,</span><br><span class="line">  lineNumbers: true,  // 显示行号</span><br><span class="line">  theme: &apos;solarized&apos;,  // 设置主题</span><br><span class="line">  keyMap: &apos;sublime&apos;,  // 绑定sublime</span><br><span class="line">  fullScreen: false,  // 全屏模式</span><br><span class="line">  matchBrackets: true,  // 括号匹配</span><br><span class="line">  indentWithTabs: true,</span><br><span class="line">  readOnly: false</span><br><span class="line">&#125;</span><br><span class="line">import &#123; codemirror &#125; from &apos;vue-codemirror&apos;</span><br><span class="line">import &#123; editorOption &#125; from &apos;@/api/convention&apos;</span><br><span class="line">require(&apos;codemirror/keymap/sublime.js&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div style=&quot;width: 80%;&quot;&gt;</span><br><span class="line">   &lt;codemirror v-model=&quot;templateForm.content&quot; :options=&quot;editorOption&quot;&gt;&lt;/codemirror&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.CodeMirror &#123;</span><br><span class="line">  height: 360px;</span><br><span class="line">&#125;</span><br><span class="line">.CodeMirror-fullscreen &#123;</span><br><span class="line">  z-index: 9999;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+                    <a href="/tags/codemirror/"><i class="fas fa-hashtag fa-fw"></i>codemirror</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/09/08/比较两个值相等/">
+              
+                  比较两个值相等
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-07
       </time>
     
 
@@ -567,172 +456,21 @@
 </section>
 
     <section class="article typo">
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>JavaScript 的对象，拥有任意数量的唯一键，键可以是字符串（String）类型或标记（Symbol，ES6 新增的基本数据类型）类型，每个键对应一个值，值可以是任意类型的任意值。对于对象内的属性，JavaScript 提供了一个属性描述器接口 PropertyDescriptor</p>
-<h3 id="定义对象的属性"><a href="#定义对象的属性" class="headerlink" title="定义对象的属性"></a>定义对象的属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">  name: &apos;Tom&apos;,</span><br><span class="line">  sex: &apos;man</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line">var obj = &#123;&#125;</span><br><span class="line">obj.name = &apos;Tom&apos;</span><br></pre></td></tr></table></figure>
-<h3 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty()"></a>Object.defineProperty()</h3><p>上面使用的方式不能对属性描述符的操作，需要使用 Object.ddefineProperty(obj, prop, descriptor)</p>
-<h4 id="当使用-defineProperty-方法操作属性的时候，描述符的默认值为："><a href="#当使用-defineProperty-方法操作属性的时候，描述符的默认值为：" class="headerlink" title="当使用 defineProperty()方法操作属性的时候，描述符的默认值为："></a>当使用 defineProperty()方法操作属性的时候，描述符的默认值为：</h4><ol>
-<li>value: undefined</li>
-<li>set: undefined</li>
-<li>get: undefined</li>
-<li>writable: false</li>
-<li>enumerable: false</li>
-<li>configable: false</li>
-</ol>
-<h4 id="不使用该方法定义属性，默认值为："><a href="#不使用该方法定义属性，默认值为：" class="headerlink" title="不使用该方法定义属性，默认值为："></a>不使用该方法定义属性，默认值为：</h4><ol>
-<li>value: undefined</li>
-<li>set: undefined</li>
-<li>get: undefined</li>
-<li>writable: true</li>
-<li>enumerable: true</li>
-<li>configable: true</li>
-</ol>
-<h4 id="还支持批量修改对象属性以及描述对象"><a href="#还支持批量修改对象属性以及描述对象" class="headerlink" title="还支持批量修改对象属性以及描述对象"></a>还支持批量修改对象属性以及描述对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperties(obj, &#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    value: &apos;Tom&apos;,</span><br><span class="line">    configable: true</span><br><span class="line">  &#125;,</span><br><span class="line">  sex: &#123;</span><br><span class="line">    value: &apos;man&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-        
-            <div class="readmore">
-                <a href="/2019/03/16/从js的属性描述符描述vue-js的响应式视图/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
-                
-                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/13/stringify的使用/">
-              
-                  stringify的使用
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-13
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>这篇文章的由来是这样的：前两天遇到这样一个场景，接口返回了一个json对象，要求我进行格式化显示（显示出json对象的结构）。那么我就想了，一个对象要想显示出来，得转成string 类型的，于是我就使用了JSON.stringify(),但是转成字符串之后并没有缩进，显示出来的是一个长长的字符串。难道我还要自己人为的遍历对象,自己拼接一个带缩进的字符串么？太TM扯了！于是查看了stringify的官方文档，发现了很多有意思的东西，这个函数的作用远远不止是将json对象转成string那么简单，下面是我列举的stringify的几个小功能:</p>
+        <p>首先回顾javascript的数据类型：</p>
 <ol>
-<li>json格式化，带缩进</li>
-<li>过滤掉无效的字段</li>
-<li>对符合某种条件的字段做操作</li>
+<li>string</li>
+<li>number</li>
+<li>boolean</li>
+<li>undefined</li>
+<li>null</li>
+<li>object(array 、function、普通object )</li>
+<li>symbol(es6新加)</li>
 </ol>
-<p>原始数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">person = &#123;</span><br><span class="line">    sex: &apos;man&apos;,</span><br><span class="line">    name: &apos;Tom&apos;,</span><br><span class="line">    telphones: [</span><br><span class="line">        &quot;234123423&quot;,</span><br><span class="line">        &quot;2345234523&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>一、原始情况，直接显示json字符串</p>
-<p>code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JOSN.stringify(person)</span><br></pre></td></tr></table></figure></p>
-<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;sex&quot;:&quot;man&quot;,&quot;name&quot;:&quot;Tom&quot;,&quot;age&quot;:22,&quot;telphones&quot;:[&quot;2341234123&quot;,&quot;3452345&quot;]&#125;</span><br></pre></td></tr></table></figure></p>
-<p>二、将一个json对象格式化显示出来</p>
-<p>code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify(person, null, 2)</span><br></pre></td></tr></table></figure></p>
-<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    sex: &apos;man&apos;,</span><br><span class="line">    name: &apos;Tom&apos;,</span><br><span class="line">    telphones: [</span><br><span class="line">        &quot;234123423&quot;,</span><br><span class="line">        &quot;2345234523&quot;</span><br><span class="line">    ]   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>三、不显示某些字段（哪些字段不需要显示就返回undefined）</p>
-<p>code</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JOSN.stringify(person, function(k, v)&#123;</span><br><span class="line">    if (k === &apos;telphones&apos;)&#123;</span><br><span class="line">        return undefined</span><br><span class="line">    &#125;</span><br><span class="line">    return v</span><br><span class="line">&#125;, 2)</span><br></pre></td></tr></table></figure>
-<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    sex: &apos;man&apos;,</span><br><span class="line">    name: &apos;Tom&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>四、只显示某些字段</p>
-<p>code</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JOSN.stringify(person, [&apos;sex&apos;], 2)</span><br></pre></td></tr></table></figure>
-<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    sex: &apos;man&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>更多详情<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify</a></p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
-                
-                    <a href="/tags/JSON/"><i class="fas fa-hashtag fa-fw"></i>JSON</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-    
-<section class="meta">
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/03/10/将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组/">
-              
-                  将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-09
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];</span><br></pre></td></tr></table></figure>
-<h3 id="解决方法1"><a href="#解决方法1" class="headerlink" title="解决方法1"></a>解决方法1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[...new Set(arr.flat(Infinity).sort((a,b) =&gt; a-b))]</span><br></pre></td></tr></table></figure>
-<h3 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[...new Set(arr.toString().split(&apos;,&apos;).map(Number).sort((a,b) =&gt; a-b))]</span><br><span class="line">or</span><br><span class="line">Arrary.froms(new Set(arr.toString().split(&apos;,&apos;).map(Number).sort((a,b) =&gt; a-b)))</span><br></pre></td></tr></table></figure>
+<p>其中 string、number、boolean 、undefined、null 是直接比较值的，可以通过===判断<br>object 、symbol是比较地址的，地址相同则视为相等</p>
+<p>so,</p>
         
             <div class="readmore">
-                <a href="/2019/03/10/将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组/" class="flat-box">
+                <a href="/2019/09/08/比较两个值相等/" class="flat-box">
                     <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
                     阅读全文
                 </a>
@@ -753,27 +491,31 @@
           
         
           
-            <div class="post-wrapper">
+            <div class='post-wrapper'>
               <article class="post reveal ">
     
-<section class="meta">
+<section class='meta'>
   
   <div class="meta" id="header-meta">
     
       <h2 class="title">
-          <a href="/2019/03/08/vue中使用cytoscape绘制拓扑图方案/">
+          <a href="/2019/09/08/监听快捷键/">
               
-                  vue中使用cytoscape绘制拓扑图方案
+                  监听快捷键
               
           </a>
       </h2>
     
 
     
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
 
     
       <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-03-08
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-07
       </time>
     
 
@@ -790,11 +532,74 @@
 </section>
 
     <section class="article typo">
-        <p>有一个需求需要绘制拓扑图，然后选图表库选择了cytoscape,看了官方文档<a href="http://js.cytoscape.org，感觉和network.js很像，包括两种element,一种是node（描述其相关信息），另一种是" target="_blank" rel="noopener">http://js.cytoscape.org，感觉和network.js很像，包括两种element,一种是node（描述其相关信息），另一种是</a> edge(描述node之间的关系， 通过指明source, target确定指向)，其余的都是一些样式配置和事件的监听，可以说是非常的清晰明了了。此外文档的Extensions部分提供了各种的UI插件和API插件，拓展性也不错。</p>
-<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">nodes: [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"a"</span>,//required</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"demo"</span>,//optional</span><br><span class="line">    // ...</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"b"</span>,//required</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"demo"</span>,//optional</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">edges: [</span><br><span class="line">  //描述了 a--&gt;b</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"aadsfasdf"</span>, //optional</span><br><span class="line">    <span class="string">"source"</span>: <span class="string">"a"</span>, //required, <span class="built_in">source</span>-node-id</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"b"</span>,  //required target-node-id</span><br><span class="line">  &#125;,</span><br><span class="line">  //描述了 a--&gt;a,会出现一个指向自己的圆，不过想要实现这一点需要cytoscape-edgehandles插件</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"aadsfasdf"</span>, //optional</span><br><span class="line">    <span class="string">"source"</span>: <span class="string">"a"</span>, //required, <span class="built_in">source</span>-node-id</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"a"</span>,  //required target-node-id</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt; </span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt; </span><br><span class="line">&lt;script type=&quot;text/javascript&quot; language=JavaScript&gt; </span><br><span class="line">       document.onkeydown=function(event)&#123; </span><br><span class="line">            var e = event || window.event || arguments.callee.caller.arguments[0]; </span><br><span class="line">            if(e &amp;&amp; e.keyCode==27)&#123; // 按 Esc  </span><br><span class="line">                //要做的事情 </span><br><span class="line">				alert(&quot;按 esc&quot;); </span><br><span class="line">            &#125; </span><br><span class="line">            if(e &amp;&amp; e.keyCode==113)&#123; // 按 F2  </span><br><span class="line">                //要做的事情 </span><br><span class="line">				alert(&quot;按 f2&quot;); </span><br><span class="line">            &#125;             </span><br><span class="line">            if(e &amp;&amp; e.keyCode==13)&#123; // enter 键 </span><br><span class="line">                //要做的事情 </span><br><span class="line">				alert(&quot;按 Enter&quot;); </span><br><span class="line">            &#125;</span><br><span class="line">			if (e.keyCode == 86 &amp;&amp; e.ctrlKey) &#123;  </span><br><span class="line">                alert(&quot;你按下了ctrl+V&quot;);  </span><br><span class="line">            &#125;</span><br><span class="line">         &#125;;  </span><br><span class="line">&lt;/script&gt; </span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/09/07/repaint重绘和reflow回流/">
+              
+                  repaint重绘和reflow回流
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-07
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>前言： 为什么不能用CSS通配符 *，CSS选择器层叠为什么不能超过三层，CSS为什么尽量使用类选择器，书写HTML为什么少使用table，为什么结构要尽量简单-DOM树要小….</p>
+<h3 id="浏览器解析大概的工作流程大致可归纳为四个步骤："><a href="#浏览器解析大概的工作流程大致可归纳为四个步骤：" class="headerlink" title="浏览器解析大概的工作流程大致可归纳为四个步骤："></a>浏览器解析大概的工作流程大致可归纳为四个步骤：</h3><ol>
+<li>解析HTML以构建DOM树：渲染引擎开始解析HTML文档，转换树中的html标签或js生成的标签到DOM节点，它被称为 – 内容树。</li>
+<li>构建渲染树：解析CSS（包括外部CSS文件和样式元素以及js生成的样式）成样式结构体，根据CSS选择器计算出节点的样式，创建另一个树 —- 渲染树（render tree）。 注：在解析的过程中会去掉浏览器不能识别的样式，比如IE会去掉-moz开头的样式，而firefox会去掉_开头的样式。</li>
+<li>布局渲染树: 从根节点递归调用，计算每一个元素的大小、位置等，给每个节点所应该出现在屏幕上的精确坐标。</li>
+<li><p>绘制渲染树: 遍历渲染树，每个节点将使用UI后端层来绘制。</p></li></ol>
         
             <div class="readmore">
-                <a href="/2019/03/08/vue中使用cytoscape绘制拓扑图方案/" class="flat-box">
+                <a href="/2019/09/07/repaint重绘和reflow回流/" class="flat-box">
                     <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
                     阅读全文
                 </a>
@@ -804,9 +609,195 @@
         
             <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/vue/"><i class="fas fa-hashtag fa-fw"></i>vue</a>
+                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
                 
-                    <a href="/tags/graph/"><i class="fas fa-hashtag fa-fw"></i>graph</a>
+                    <a href="/tags/渲染过程/"><i class="fas fa-hashtag fa-fw"></i>渲染过程</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/09/07/从url到页面渲染的流程/">
+              
+                  从url到页面渲染的流程
+              
+          </a>
+      </h2>
+    
+
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-07
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>从用户在浏览器中输入一个URL，到整个页面渲染，这个过程中究竟发生了什么呢？今天先简单写下整个过程，后面再一点点完善。</p>
+<h3 id="DNS解析获取IP地址"><a href="#DNS解析获取IP地址" class="headerlink" title="DNS解析获取IP地址"></a>DNS解析获取IP地址</h3><ol>
+<li>首先会在浏览器的缓存中查找，是否缓存了URL，如果有，就直接向该URL对应的服务器发送请求；如果没有则进行下一步;</li>
+<li>在本地的hosts文件中是否保存了该URL和其对应的IP地址，如果保存了，就直接向该URL对应的服务器发送请求；如果没有则进行下一步；</li>
+<li>向本地DNS服务器（一般由本地网络接入服务器提供商ISP提供，比如移动、联通）发送DNS请求，本地DNS服务器会首先查询它的缓存记录，如果有就将该域名对应的IP地址返回给用户，如果没有则进行下一步；</li>
+<li>首先向根域名服务器发送DNS查询请求，根域名服务器返回给可能保存了该域名的一级域名服务器地址；本地主机再根据返回的地址，向一级域名服务器发送DNS查询请求；…一直迭代，直到找到对应的域名存放的服务器，向其发送DNS查询请求，该域名服务器返回该域名对应的IP地址；</li>
+</ol>
+        
+            <div class="readmore">
+                <a href="/2019/09/07/从url到页面渲染的流程/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/渲染过程/"><i class="fas fa-hashtag fa-fw"></i>渲染过程</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/08/26/reduce函数的应用/">
+              
+                  reduce函数的应用
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-08-25
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [11,3,4,556,7,8,-4]</span><br></pre></td></tr></table></figure>
+<h4 id="获得最大值-最小值"><a href="#获得最大值-最小值" class="headerlink" title="获得最大值/最小值"></a>获得最大值/最小值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a= arr.reduce((a, b) =&gt; &#123;</span><br><span class="line">  return a &gt; b ? a: b</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        
+            <div class="readmore">
+                <a href="/2019/08/26/reduce函数的应用/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/08/21/css中的各种尺寸/">
+              
+                  css中的各种尺寸
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-08-20
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p><img src="/images/css/size.png" alt="css各种尺寸的说明图"></p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
                 
             </div>
         
@@ -831,13 +822,13 @@
           <div class="prev-next">
               
                   <a class="prev" rel="prev" href="/archives/2019/">
-                      <section class="post prev">
+                      <section class="post prev" >
                           <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
                       </section>
                   </a>
               
               <p class="current">
-                  2 / 5
+                  2 / 9
               </p>
               
                   <a class="next" rel="next" href="/archives/2019/page/3/">
@@ -874,19 +865,19 @@
     
       
       
-        <section class="author">
-  <div class="content pure">
+        <section class='author'>
+  <div class='content pure'>
     
-      <div class="avatar">
-        <img class="avatar" src="/images/avatar.png">
+      <div class='avatar'>
+        <img class='avatar' src='/images/avatar.png'/>
       </div>
     
     
-      <div class="text">
+      <div class='text'>
         
         
         
-          <p><span id="jinrishici-sentence">chao's blog</span></p>
+          <p><span id="jinrishici-sentence">Tim上校的小屋</span></p>
           <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
@@ -897,7 +888,7 @@
           
             <a href="mailto:13639628276@163.com" class="social flat-btn" target="_blank" rel="external">
               <i class="social social-padding fas fa-envelope" aria-hidden="true"></i>
-              chao
+              Tim上校的小屋
             </a>
           
         
@@ -912,14 +903,14 @@
     
       
       
-        <section class="plain">
+        <section class='plain'>
   
-<header class="pure">
+<header class='pure'>
   <div><i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;注意啦～</div>
   
 </header>
 
-  <div class="content pure">
+  <div class='content pure'>
     <p>这是yongchao的技术博客喜欢的朋友可以阅读文档进行使用，超喜欢的话还可以安利给身边的朋友哦～</p>
 
   </div>
@@ -932,6 +923,30 @@
       
       
         
+  <section class='category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;所有分类</div>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/es6/" href="/categories/es6/"><div class='name'>es6</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/graph/" href="/categories/graph/"><div class='name'>graph</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/js知识库/" href="/categories/js知识库/"><div class='name'>js知识库</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/nginx/" href="/categories/nginx/"><div class='name'>nginx</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/插件/" href="/categories/插件/"><div class='name'>插件</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
 
       
     
@@ -940,15 +955,15 @@
       
       
         
-  <section class="tagcloud">
+  <section class='tagcloud'>
     
-<header class="pure">
+<header class='pure'>
   <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
   
 </header>
 
-    <div class="content pure">
-      <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/components/" style="font-size: 19px; color: #777">components</a> <a href="/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 17.33px; color: #828282">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 15.67px; color: #8e8e8e">highcharts</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 22.33px; color: #606060">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vue/" style="font-size: 24px; color: #555">vue</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a>
+    <div class='content pure'>
+      <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 19.71px; color: #727272">components</a> <a href="/tags/cors/" style="font-size: 14px; color: #999">cors</a> <a href="/tags/css/" style="font-size: 21.14px; color: #686868">css</a> <a href="/tags/cytoscape/" style="font-size: 15.43px; color: #8f8f8f">cytoscape</a> <a href="/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.71px; color: #727272">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 16.86px; color: #868686">highcharts</a> <a href="/tags/http/" style="font-size: 15.43px; color: #8f8f8f">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/proxy/" style="font-size: 14px; color: #999">proxy</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.57px; color: #5f5f5f">vue</a> <a href="/tags/webpack/" style="font-size: 18.29px; color: #7c7c7c">webpack</a> <a href="/tags/事件模型/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a> <a href="/tags/权重/" style="font-size: 14px; color: #999">权重</a> <a href="/tags/模拟函数/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/渲染过程/" style="font-size: 15.43px; color: #8f8f8f">渲染过程</a> <a href="/tags/盒模型/" style="font-size: 14px; color: #999">盒模型</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/类型/" style="font-size: 16.86px; color: #868686">类型</a>
     </div>
   </section>
 
@@ -967,28 +982,31 @@
     
       
       
-        <section class="list">
+        <section class='list'>
   
-<header class="pure">
+<header class='pure'>
   <div><i class="fas fa-medal fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;精选项目</div>
   
-    <a class="rightBtn" target="_blank" rel="external nofollow noopener noreferrer" href="http://nevis.sina.com.cn/" title>
+    <a class="rightBtn" target="_blank"
+    rel="external nofollow noopener noreferrer"
+    href="http://nevis.sina.com.cn/"
+    title="">
     <i class="fas fa-arrow-right fa-fw"></i></a>
   
 </header>
 
-  <div class="content pure">
+  <div class='content pure'>
     <ul class="entry">
       
         <li><a class="flat-box" title="https:www.baidu.com/" href="https:www.baidu.com/">
-          <div class="name">
+          <div class='name'>
             
               <i class="fas fa-cube fa-fw" aria-hidden="true"></i>
             
             &nbsp;&nbsp;百度
           </div>
           
-            <div class="badge">(baidu)</div>
+            <div class='badge'>(baidu)</div>
           
         </a></li>
       
@@ -1002,18 +1020,18 @@
     
       
       
-        <section class="list">
+        <section class='list'>
   
-<header class="pure">
+<header class='pure'>
   <div><i class="fas fa-link fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;特别链接</div>
   
 </header>
 
-  <div class="content pure">
+  <div class='content pure'>
     <ul class="entry">
       
         <li><a class="flat-box" title="https://github.com/xuyongchaos/hexo.git" href="https://github.com/xuyongchaos/hexo.git">
-          <div class="name">
+          <div class='name'>
             
               <i class="fab fa-github fa-fw" aria-hidden="true"></i>
             
@@ -1023,7 +1041,7 @@
         </a></li>
       
         <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/front-matter/index.html" href="https://xaoxuu.com/wiki/material-x/front-matter/index.html">
-          <div class="name">
+          <div class='name'>
             
               <i class="fas fa-question-circle fa-fw" aria-hidden="true"></i>
             
@@ -1111,6 +1129,14 @@
   
     <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
   
+  
+    <!-- fastclick -->
+    <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body)
+      }, false)
+    </script>
   
   
 
