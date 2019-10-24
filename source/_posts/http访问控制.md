@@ -3,8 +3,8 @@ title: http访问控制
 author:
   - 徐勇超
 date: 2019-07-18 14:33:20
-tags: ['cors', 'http']
-categories: ['nginx']
+tags: [http]
+categories: [nginx]
 ---
 
 ### http访问控制(cors)概念
