@@ -148,6 +148,25 @@ module.exports = {
   ]
 }
 ```
+or
+
+```
+var postcssLoader = {
+    loader: 'postcss-loader',
+    options: {
+        plugins: (loader) => [
+            require('autoprefixer')({
+                browsers: [
+                    // 加这个后可以出现额外的兼容性前缀
+                    "> 0.01%"
+                ]
+            })
+        ],
+        sourceMap: true
+    }
+}
+```
+
 #### 3.4 production 压缩css
 ```
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
