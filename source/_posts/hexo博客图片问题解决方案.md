@@ -25,6 +25,8 @@ categories: 其他
 
 把要引用的图片拷贝到xxxx文件夹中
 
+<!-- more -->
+
 ```
 {% asset_img example.jpg This is an example image %}来引用本地图片
 ```
