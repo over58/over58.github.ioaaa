@@ -40,7 +40,8 @@ data () {
   }
 },
 methods: {
-  download (e) {
+  download (e, index) {
+    console.log('操作的slide的索引',index)
     //handleClipboard 是封装clipboard的一个函数，不必追究
       handleClipboard('复制文本', e, {
         showToast: false
