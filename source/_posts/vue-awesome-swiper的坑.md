@@ -16,6 +16,8 @@ categories:
 我试了之后，确实，能够解决点击失效问题。但是我的逻辑是要在点击的同时需要一个TouchEvent, 按照上面的例子，获得的是事件对象在我使用clipboard进行复制的时候，报错 “clipboard.js?f71e:32 Uncaught TypeError: Cannot read property 'hasAttribute' of null”。于是我查了文档。发现了这个。
 ![[lifecycle](https://www.swiper.com.cn/api/event/226.html)](vue-awesome-swiper的坑/QQ20191126-173814@2x.png)
 
+<!-- more -->
+
 #### 最后核心代码
 ```
 data () {
