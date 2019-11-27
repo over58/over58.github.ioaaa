@@ -3,9 +3,6 @@ title: webpack前端页面分析插件
 author:
   - 徐勇超
 tags:
-  - js
-  - vue
-  - webpack
 date: 2019-09-17 19:23:07
 categories:
   - webpack

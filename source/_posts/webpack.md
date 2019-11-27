@@ -1,7 +1,7 @@
 ---
 title: webpack
 date: 2019-04-04 19:04:19
-tags: [webpack]
+tags:
 categories:
   - webpack
 ---
