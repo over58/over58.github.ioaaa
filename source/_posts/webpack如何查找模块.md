@@ -106,7 +106,6 @@ extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx'],
 看到数组中配置的字符串大概就可以猜到，这个配置的作用是和文件后缀名有关的。是的，这个配置可以定义在进行模块路径解析时，webpack 会尝试帮你补全那些后缀名来进行查找，例如有了上述的配置，当你在 src/utils/ 目录下有一个 common.js 文件时，就可以这样来引用.
 import * as common from './src/utils/common'
 webpack 会尝试给你依赖的路径添加上 extensions 字段所配置的后缀，然后进行依赖路径查找，所以可以命中 src/utils/common.js 文件。
-resolve.modules
 
 #### resolve.mainFiles
 ```
