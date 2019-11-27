@@ -49,6 +49,7 @@ updated: 2019-11-27 20:24:10
 /loaders1/babel-loader/...
 /loaders2/babel-loader/...
 ```
+<!-- more -->
 
 ### 具体如何解析寻找模块
 这个过程有一个很关键的模块 enhanced-resolve 就是处理依赖模块路径的解析的，这个模块可以说是 Node.js 那一套模块路径解析的增强版本，有很多可以自定义的解析配置。
