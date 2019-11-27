@@ -286,6 +286,16 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
 
 
@@ -295,6 +305,71 @@
       
 
       
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/10/25/git合并多个commit/">
+              
+                  git合并多个commit
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-10-24
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="&#x4E00;&#x822C;&#x7684;&#x505A;&#x6CD5;&#xFF08;&#x76F4;&#x63A5;merge&#xFF09;"><a href="#&#x4E00;&#x822C;&#x7684;&#x505A;&#x6CD5;&#xFF08;&#x76F4;&#x63A5;merge&#xFF09;" class="headerlink" title="&#x4E00;&#x822C;&#x7684;&#x505A;&#x6CD5;&#xFF08;&#x76F4;&#x63A5;merge&#xFF09;"></a>&#x4E00;&#x822C;&#x7684;&#x505A;&#x6CD5;&#xFF08;&#x76F4;&#x63A5;merge&#xFF09;</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git chekcout another</span><br><span class="line">modify ...</span><br><span class="line">git chekcout <span class="literal">master</span></span><br><span class="line">git merge another</span><br></pre></td></tr></table></figure>
+<h3 id="&#x6539;&#x8FDB;&#x7248;&#x672C;-&#x5408;&#x5E76;&#x591A;&#x4E2A;&#x63D0;&#x4EA4;&#x4E3A;&#x4E00;&#x6761;-git-merge-&#x2013;squash-branchname"><a href="#&#x6539;&#x8FDB;&#x7248;&#x672C;-&#x5408;&#x5E76;&#x591A;&#x4E2A;&#x63D0;&#x4EA4;&#x4E3A;&#x4E00;&#x6761;-git-merge-&#x2013;squash-branchname" class="headerlink" title="&#x6539;&#x8FDB;&#x7248;&#x672C;:&#x5408;&#x5E76;&#x591A;&#x4E2A;&#x63D0;&#x4EA4;&#x4E3A;&#x4E00;&#x6761;(git merge &#x2013;squash branchname)"></a>&#x6539;&#x8FDB;&#x7248;&#x672C;:&#x5408;&#x5E76;&#x591A;&#x4E2A;&#x63D0;&#x4EA4;&#x4E3A;&#x4E00;&#x6761;(git merge &#x2013;squash branchname)</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">merge</span> <span class="comment">--squash another</span></span><br><span class="line">git <span class="keyword">commit</span> -m <span class="string">&quot;message here&quot;</span></span><br></pre></td></tr></table></figure>
+<p>&#x2013;squash&#x542B;&#x4E49;&#x548C;&#x539F;&#x7406;&#x5982;&#x4E0B;:</p>
+<p>&#x2013;squash&#x9009;&#x9879;&#x7684;&#x542B;&#x4E49;&#x662F;&#xFF1A;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x4E0E;&#x4E0D;&#x4F7F;&#x7528;&#x8BE5;&#x9009;&#x9879;&#x7684;&#x5408;&#x5E76;&#x7ED3;&#x679C;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x63D0;&#x4EA4;&#x3001;&#x4E0D;&#x79FB;&#x52A8;HEAD&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x4E00;&#x6761;&#x989D;&#x5916;&#x7684;commit&#x547D;&#x4EE4;&#x3002;&#x5176;&#x6548;&#x679C;&#x76F8;&#x5F53;&#x4E8E;&#x5C06;another&#x5206;&#x652F;&#x4E0A;&#x7684;&#x591A;&#x4E2A;commit&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#xFF0C;&#x653E;&#x5728;&#x5F53;&#x524D;&#x5206;&#x652F;&#x4E0A;&#xFF0C;&#x539F;&#x6765;&#x7684;commit&#x5386;&#x53F2;&#x5219;&#x6CA1;&#x6709;&#x62FF;&#x8FC7;&#x6765;&#x3002;</p>
+<p>&#x5224;&#x65AD;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x2013;squash&#x9009;&#x9879;&#x6700;&#x6839;&#x672C;&#x7684;&#x6807;&#x51C6;&#x662F;&#xFF0C;&#x5F85;&#x5408;&#x5E76;&#x5206;&#x652F;&#x4E0A;&#x7684;&#x5386;&#x53F2;&#x662F;&#x5426;&#x6709;&#x610F;&#x4E49;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5728;&#x5F00;&#x53D1;&#x5206;&#x652F;&#x4E0A;&#x63D0;&#x4EA4;&#x975E;&#x5E38;&#x968F;&#x610F;&#xFF0C;&#x751A;&#x81F3;&#x5199;&#x6210;&#x5FAE;&#x535A;&#x4F53;&#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x5B9A;&#x8981;&#x4F7F;&#x7528;&#x2013;squash&#x9009;&#x9879;&#x3002;&#x7248;&#x672C;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x7684;&#x5E94;&#x8BE5;&#x662F;&#x4EE3;&#x7801;&#x7684;&#x53D1;&#x5C55;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x7F16;&#x7801;&#x65F6;&#x7684;&#x6D3B;&#x52A8;&#x3002;</p>
+<p>&#x53EA;&#x6709;&#x5728;&#x5F00;&#x53D1;&#x5206;&#x652F;&#x4E0A;&#x6BCF;&#x4E2A;commit&#x90FD;&#x6709;&#x5176;&#x72EC;&#x81EA;&#x5B58;&#x5728;&#x7684;&#x610F;&#x4E49;&#xFF0C;&#x5E76;&#x4E14;&#x80FD;&#x591F;&#x7F16;&#x8BD1;&#x901A;&#x8FC7;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF08;&#x80FD;&#x591F;&#x901A;&#x8FC7;&#x6D4B;&#x8BD5;&#x5C31;&#x66F4;&#x5B8C;&#x7F8E;&#x4E86;&#xFF09;&#xFF0C;&#x624D;&#x5E94;&#x8BE5;&#x9009;&#x62E9;&#x7F3A;&#x7701;&#x7684;&#x5408;&#x5E76;&#x65B9;&#x5F0F;&#x6765;&#x4FDD;&#x7559;commit&#x5386;&#x53F2;&#x3002;</p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/git/"><i class="fas fa-hashtag fa-fw"></i>git</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
         
           
             <div class='post-wrapper'>
@@ -334,7 +409,7 @@
 </section>
 
     <section class="article typo">
-        <h3 id="常用的几个命令"><a href="#常用的几个命令" class="headerlink" title="常用的几个命令"></a>常用的几个命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git add</span><br><span class="line">git commit</span><br><span class="line">git status</span><br><span class="line">git diff </span><br><span class="line">git branch</span><br><span class="line">git remote</span><br><span class="line">git pull </span><br><span class="line">git push </span><br><span class="line">git reset</span><br><span class="line">git tag</span><br></pre></td></tr></table></figure>
+        <h3 id="&#x5E38;&#x7528;&#x7684;&#x51E0;&#x4E2A;&#x547D;&#x4EE4;"><a href="#&#x5E38;&#x7528;&#x7684;&#x51E0;&#x4E2A;&#x547D;&#x4EE4;" class="headerlink" title="&#x5E38;&#x7528;&#x7684;&#x51E0;&#x4E2A;&#x547D;&#x4EE4;"></a>&#x5E38;&#x7528;&#x7684;&#x51E0;&#x4E2A;&#x547D;&#x4EE4;</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git add</span><br><span class="line">git commit</span><br><span class="line">git <span class="built_in">status</span></span><br><span class="line">git <span class="built_in">diff</span> </span><br><span class="line">git branch</span><br><span class="line">git remote</span><br><span class="line">git pull </span><br><span class="line">git <span class="built_in">push</span> </span><br><span class="line">git <span class="built_in">reset</span></span><br><span class="line">git tag</span><br></pre></td></tr></table></figure>
         
             <div class="readmore">
                 <a href="/2019/03/04/git常用知识点/" class="flat-box">
@@ -453,11 +528,13 @@
         
           <li><a class="flat-box" title="/categories/es6/" href="/categories/es6/"><div class='name'>es6</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/graph/" href="/categories/graph/"><div class='name'>graph</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box" title="/categories/graph/" href="/categories/graph/"><div class='name'>graph</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box" title="/categories/js知识库/" href="/categories/js知识库/"><div class='name'>js知识库</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/nginx/" href="/categories/nginx/"><div class='name'>nginx</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/其他/" href="/categories/其他/"><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/插件/" href="/categories/插件/"><div class='name'>插件</div><div class='badge'>(2)</div></a></li>
         
@@ -481,7 +558,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/json/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/cors/" style="font-size: 14px; color: #999">cors</a> <a href="/tags/css/" style="font-size: 21.14px; color: #686868">css</a> <a href="/tags/cytoscape/" style="font-size: 15.43px; color: #8f8f8f">cytoscape</a> <a href="/tags/datatable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.71px; color: #727272">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 16.86px; color: #868686">highcharts</a> <a href="/tags/http/" style="font-size: 15.43px; color: #8f8f8f">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/proxy/" style="font-size: 14px; color: #999">proxy</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.57px; color: #5f5f5f">vue</a> <a href="/tags/webpack/" style="font-size: 18.29px; color: #7c7c7c">webpack</a> <a href="/tags/事件模型/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a> <a href="/tags/权重/" style="font-size: 14px; color: #999">权重</a> <a href="/tags/模拟函数/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/渲染过程/" style="font-size: 15.43px; color: #8f8f8f">渲染过程</a> <a href="/tags/盒模型/" style="font-size: 14px; color: #999">盒模型</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/类型/" style="font-size: 16.86px; color: #868686">类型</a> <a href="/tags/组件/" style="font-size: 18.29px; color: #7c7c7c">组件</a>
+      <a href="/tags/F2/" style="font-size: 14px; color: #999">F2</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 21.14px; color: #686868">css</a> <a href="/tags/cytoscape/" style="font-size: 15.43px; color: #8f8f8f">cytoscape</a> <a href="/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 15.43px; color: #8f8f8f">git</a> <a href="/tags/graph/" style="font-size: 19.71px; color: #727272">graph</a> <a href="/tags/hexo/" style="font-size: 15.43px; color: #8f8f8f">hexo</a> <a href="/tags/highcharts/" style="font-size: 16.86px; color: #868686">highcharts</a> <a href="/tags/http/" style="font-size: 15.43px; color: #8f8f8f">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/proxy/" style="font-size: 14px; color: #999">proxy</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.57px; color: #5f5f5f">vue</a> <a href="/tags/webpack/" style="font-size: 18.29px; color: #7c7c7c">webpack</a> <a href="/tags/事件模型/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a> <a href="/tags/权重/" style="font-size: 14px; color: #999">权重</a> <a href="/tags/模拟函数/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/渲染过程/" style="font-size: 15.43px; color: #8f8f8f">渲染过程</a> <a href="/tags/盒模型/" style="font-size: 14px; color: #999">盒模型</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/类型/" style="font-size: 15.43px; color: #8f8f8f">类型</a> <a href="/tags/类型转换/" style="font-size: 15.43px; color: #8f8f8f">类型转换</a> <a href="/tags/组件/" style="font-size: 18.29px; color: #7c7c7c">组件</a>
     </div>
   </section>
 

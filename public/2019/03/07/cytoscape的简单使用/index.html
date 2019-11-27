@@ -153,11 +153,11 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h3 id="cy实例对象常用操作"><a href="#cy实例对象常用操作" class="headerlink" title="cy实例对象常用操作"></a>cy实例对象常用操作</h3><h4 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h4><pre><code>cy.add(eleObj/eleObjs/eles)
+        <h3 id="cy&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x5E38;&#x7528;&#x64CD;&#x4F5C;"><a href="#cy&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x5E38;&#x7528;&#x64CD;&#x4F5C;" class="headerlink" title="cy&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x5E38;&#x7528;&#x64CD;&#x4F5C;"></a>cy&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x5E38;&#x7528;&#x64CD;&#x4F5C;</h3><h4 id="&#x6DFB;&#x52A0;"><a href="#&#x6DFB;&#x52A0;" class="headerlink" title="&#x6DFB;&#x52A0;"></a>&#x6DFB;&#x52A0;</h4><pre><code>cy.add(eleObj/eleObjs/eles)
 </code></pre><h4 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h4><pre><code>cy.remove(elems/selector)
-</code></pre><h4 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h4><pre><code>cy.colleciton 返回一个new empty collection
+</code></pre><h4 id="&#x83B7;&#x53D6;"><a href="#&#x83B7;&#x53D6;" class="headerlink" title="&#x83B7;&#x53D6;"></a>&#x83B7;&#x53D6;</h4><pre><code>cy.colleciton &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;new empty collection
 cy.getElementById() or  cy.$id()   return one element
-cy.$(selector)、cy.elements(selector)  return  elements
+cy.$(selector)&#x3001;cy.elements(selector)  return  elements
 cy.nodes(selector)
 cy.edges(selector)
 cy.filter(selector) return elements
@@ -166,25 +166,25 @@ cy.filter(function(ele, i, eles))
   - i The counter used for iteration over the elements in the graph.
   - eles The collection of elements being filtered
 </code></pre><blockquote>
-<p>ps: cy.nodes(‘[weight &gt; 50]’);</p>
+<p>ps: cy.nodes(&#x2018;[weight &gt; 50]&#x2019;);</p>
 </blockquote>
-<h4 id="批量修改-能够有效的减少渲染成本"><a href="#批量修改-能够有效的减少渲染成本" class="headerlink" title="批量修改(能够有效的减少渲染成本)"></a>批量修改(能够有效的减少渲染成本)</h4><pre><code>cy.batch()
+<h4 id="&#x6279;&#x91CF;&#x4FEE;&#x6539;-&#x80FD;&#x591F;&#x6709;&#x6548;&#x7684;&#x51CF;&#x5C11;&#x6E32;&#x67D3;&#x6210;&#x672C;"><a href="#&#x6279;&#x91CF;&#x4FEE;&#x6539;-&#x80FD;&#x591F;&#x6709;&#x6548;&#x7684;&#x51CF;&#x5C11;&#x6E32;&#x67D3;&#x6210;&#x672C;" class="headerlink" title="&#x6279;&#x91CF;&#x4FEE;&#x6539;(&#x80FD;&#x591F;&#x6709;&#x6548;&#x7684;&#x51CF;&#x5C11;&#x6E32;&#x67D3;&#x6210;&#x672C;)"></a>&#x6279;&#x91CF;&#x4FEE;&#x6539;(&#x80FD;&#x591F;&#x6709;&#x6548;&#x7684;&#x51CF;&#x5C11;&#x6E32;&#x67D3;&#x6210;&#x672C;)</h4><pre><code>cy.batch()
 cy.satrtBatch()
 cy.endBatch()
 </code></pre><blockquote>
-<p>demo如下<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cy.startBatch();</span><br><span class="line"></span><br><span class="line">&lt;!-- 多次的样式修改操作 --&gt;</span><br><span class="line">cy.$(&apos;#j&apos;)</span><br><span class="line">  .data(&apos;weight&apos;, &apos;70&apos;)</span><br><span class="line">  .addClass(&apos;funny&apos;)</span><br><span class="line">  .removeClass(&apos;serious&apos;)</span><br><span class="line"></span><br><span class="line">cy.endBatch();</span><br><span class="line">能够减少中间的redraw的成本，和jquery中将一系列修改样式的操作合并到一个类中，对这个类进行操作一个道理。</span><br></pre></td></tr></table></figure></p>
+<p>demo&#x5982;&#x4E0B;<br>  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cy.startBatch();</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- &#x591A;&#x6B21;&#x7684;&#x6837;&#x5F0F;&#x4FEE;&#x6539;&#x64CD;&#x4F5C; --&gt;</span></span><br><span class="line">cy.$(&apos;#j&apos;)</span><br><span class="line">  .data(&apos;weight&apos;, &apos;70&apos;)</span><br><span class="line">  .addClass(&apos;funny&apos;)</span><br><span class="line">  .removeClass(&apos;serious&apos;)</span><br><span class="line"></span><br><span class="line">cy.endBatch();</span><br><span class="line">&#x80FD;&#x591F;&#x51CF;&#x5C11;&#x4E2D;&#x95F4;&#x7684;redraw&#x7684;&#x6210;&#x672C;&#xFF0C;&#x548C;jquery&#x4E2D;&#x5C06;&#x4E00;&#x7CFB;&#x5217;&#x4FEE;&#x6539;&#x6837;&#x5F0F;&#x7684;&#x64CD;&#x4F5C;&#x5408;&#x5E76;&#x5230;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#xFF0C;&#x5BF9;&#x8FD9;&#x4E2A;&#x7C7B;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x4E00;&#x4E2A;&#x9053;&#x7406;&#x3002;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h4 id="create"><a href="#create" class="headerlink" title="create"></a>create</h4><pre><code>cy.mount()
 cy.unmount()
-</code></pre><h4 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h4><pre><code>cy.destroy() 有利于gc
-</code></pre><h4 id="临时数据操作"><a href="#临时数据操作" class="headerlink" title="临时数据操作"></a>临时数据操作</h4><pre><code>cy.scratch([namespace], [value])
+</code></pre><h4 id="&#x9500;&#x6BC1;"><a href="#&#x9500;&#x6BC1;" class="headerlink" title="&#x9500;&#x6BC1;"></a>&#x9500;&#x6BC1;</h4><pre><code>cy.destroy() &#x6709;&#x5229;&#x4E8E;gc
+</code></pre><h4 id="&#x4E34;&#x65F6;&#x6570;&#x636E;&#x64CD;&#x4F5C;"><a href="#&#x4E34;&#x65F6;&#x6570;&#x636E;&#x64CD;&#x4F5C;" class="headerlink" title="&#x4E34;&#x65F6;&#x6570;&#x636E;&#x64CD;&#x4F5C;"></a>&#x4E34;&#x65F6;&#x6570;&#x636E;&#x64CD;&#x4F5C;</h4><pre><code>cy.scratch([namespace], [value])
 cy.removeScratch()
-</code></pre><h3 id="全局函数：-cytoscape在调试过程中在console中打印一些错"><a href="#全局函数：-cytoscape在调试过程中在console中打印一些错" class="headerlink" title="全局函数： cytoscape在调试过程中在console中打印一些错"></a>全局函数： cytoscape在调试过程中在console中打印一些错</h3><ul>
-<li>cytoscape.warnings(false) 禁止报错</li>
-<li>cytoscape.warnings(true)  开启报错</li>
-<li>cytoscape.warnings()      得到当前状态</li>
+</code></pre><h3 id="&#x5168;&#x5C40;&#x51FD;&#x6570;&#xFF1A;-cytoscape&#x5728;&#x8C03;&#x8BD5;&#x8FC7;&#x7A0B;&#x4E2D;&#x5728;console&#x4E2D;&#x6253;&#x5370;&#x4E00;&#x4E9B;&#x9519;"><a href="#&#x5168;&#x5C40;&#x51FD;&#x6570;&#xFF1A;-cytoscape&#x5728;&#x8C03;&#x8BD5;&#x8FC7;&#x7A0B;&#x4E2D;&#x5728;console&#x4E2D;&#x6253;&#x5370;&#x4E00;&#x4E9B;&#x9519;" class="headerlink" title="&#x5168;&#x5C40;&#x51FD;&#x6570;&#xFF1A; cytoscape&#x5728;&#x8C03;&#x8BD5;&#x8FC7;&#x7A0B;&#x4E2D;&#x5728;console&#x4E2D;&#x6253;&#x5370;&#x4E00;&#x4E9B;&#x9519;"></a>&#x5168;&#x5C40;&#x51FD;&#x6570;&#xFF1A; cytoscape&#x5728;&#x8C03;&#x8BD5;&#x8FC7;&#x7A0B;&#x4E2D;&#x5728;console&#x4E2D;&#x6253;&#x5370;&#x4E00;&#x4E9B;&#x9519;</h3><ul>
+<li>cytoscape.warnings(false) &#x7981;&#x6B62;&#x62A5;&#x9519;</li>
+<li>cytoscape.warnings(true)  &#x5F00;&#x542F;&#x62A5;&#x9519;</li>
+<li>cytoscape.warnings()      &#x5F97;&#x5230;&#x5F53;&#x524D;&#x72B6;&#x6001;</li>
 </ul>
-<h3 id="collection的一些操作"><a href="#collection的一些操作" class="headerlink" title="collection的一些操作"></a>collection的一些操作</h3>
+<h3 id="collection&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;"><a href="#collection&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;" class="headerlink" title="collection&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;"></a>collection&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;</h3>
       </div>
         
           <section class='meta' id="footer-meta">
@@ -361,11 +361,13 @@ cy.removeScratch()
         
           <li><a class="flat-box" title="/categories/es6/" href="/categories/es6/"><div class='name'>es6</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/graph/" href="/categories/graph/"><div class='name'>graph</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box" title="/categories/graph/" href="/categories/graph/"><div class='name'>graph</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box" title="/categories/js知识库/" href="/categories/js知识库/"><div class='name'>js知识库</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/nginx/" href="/categories/nginx/"><div class='name'>nginx</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/其他/" href="/categories/其他/"><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/插件/" href="/categories/插件/"><div class='name'>插件</div><div class='badge'>(2)</div></a></li>
         
@@ -389,7 +391,7 @@ cy.removeScratch()
 </header>
 
     <div class='content pure'>
-      <a href="/tags/json/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/cors/" style="font-size: 14px; color: #999">cors</a> <a href="/tags/css/" style="font-size: 21.14px; color: #686868">css</a> <a href="/tags/cytoscape/" style="font-size: 15.43px; color: #8f8f8f">cytoscape</a> <a href="/tags/datatable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.71px; color: #727272">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 16.86px; color: #868686">highcharts</a> <a href="/tags/http/" style="font-size: 15.43px; color: #8f8f8f">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/proxy/" style="font-size: 14px; color: #999">proxy</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.57px; color: #5f5f5f">vue</a> <a href="/tags/webpack/" style="font-size: 18.29px; color: #7c7c7c">webpack</a> <a href="/tags/事件模型/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a> <a href="/tags/权重/" style="font-size: 14px; color: #999">权重</a> <a href="/tags/模拟函数/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/渲染过程/" style="font-size: 15.43px; color: #8f8f8f">渲染过程</a> <a href="/tags/盒模型/" style="font-size: 14px; color: #999">盒模型</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/类型/" style="font-size: 16.86px; color: #868686">类型</a> <a href="/tags/组件/" style="font-size: 18.29px; color: #7c7c7c">组件</a>
+      <a href="/tags/F2/" style="font-size: 14px; color: #999">F2</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 21.14px; color: #686868">css</a> <a href="/tags/cytoscape/" style="font-size: 15.43px; color: #8f8f8f">cytoscape</a> <a href="/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 15.43px; color: #8f8f8f">git</a> <a href="/tags/graph/" style="font-size: 19.71px; color: #727272">graph</a> <a href="/tags/hexo/" style="font-size: 15.43px; color: #8f8f8f">hexo</a> <a href="/tags/highcharts/" style="font-size: 16.86px; color: #868686">highcharts</a> <a href="/tags/http/" style="font-size: 15.43px; color: #8f8f8f">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/proxy/" style="font-size: 14px; color: #999">proxy</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.57px; color: #5f5f5f">vue</a> <a href="/tags/webpack/" style="font-size: 18.29px; color: #7c7c7c">webpack</a> <a href="/tags/事件模型/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a> <a href="/tags/权重/" style="font-size: 14px; color: #999">权重</a> <a href="/tags/模拟函数/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/渲染过程/" style="font-size: 15.43px; color: #8f8f8f">渲染过程</a> <a href="/tags/盒模型/" style="font-size: 14px; color: #999">盒模型</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/类型/" style="font-size: 15.43px; color: #8f8f8f">类型</a> <a href="/tags/类型转换/" style="font-size: 15.43px; color: #8f8f8f">类型转换</a> <a href="/tags/组件/" style="font-size: 18.29px; color: #7c7c7c">组件</a>
     </div>
   </section>
 

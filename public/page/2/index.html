@@ -133,6 +133,354 @@
   <div class="meta" id="header-meta">
     
       <h2 class="title">
+          <a href="/2019/09/16/css特性/">
+              
+                  css特性
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-16
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="&#x6743;&#x91CD;"><a href="#&#x6743;&#x91CD;" class="headerlink" title="&#x6743;&#x91CD;"></a>&#x6743;&#x91CD;</h3><ul>
+<li>&#xFF01;important  Infinity</li>
+<li>&#x884C;&#x95F4;&#x6837;&#x5F0F;         1000 </li>
+<li>id               100</li>
+<li>class |&#x5C5E;&#x6027;|&#x4F2A;&#x7C7B;   10</li>
+<li>&#x6807;&#x7B7E;&#x9009;&#x62E9;&#x5668;|&#x4F2A;&#x5143;&#x7D20;    1</li>
+<li>&#x901A;&#x914D;&#x7B26;             0</li>
+<li>&#x7EE7;&#x627F;<blockquote>
+<p>&#x4E0D;&#x5B58;&#x5728;&#x8FDB;&#x4F4D;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x53EA;&#x8981;&#x9AD8;&#x4F4D;&#x5927;&#xFF0C;&#x5C31;&#x4E0D;&#x7528;&#x6BD4;&#x4E86;&#xFF0C;&#x6743;&#x91CD;&#x4E00;&#x5B9A;&#x9AD8;</p>
+</blockquote>
+</li>
+</ul>
+        
+            <div class="readmore">
+                <a href="/2019/09/16/css特性/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
+                
+                    <a href="/tags/权重/"><i class="fas fa-hashtag fa-fw"></i>权重</a>
+                
+                    <a href="/tags/盒模型/"><i class="fas fa-hashtag fa-fw"></i>盒模型</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/09/16/模拟一些常见的js函数/">
+              
+                  模拟一些常见的js函数
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-15
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h4 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h4><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.myapply = function(<span class="built_in">context</span>, arr) {</span><br><span class="line">  <span class="built_in">var</span> <span class="built_in">context</span> = Object(<span class="built_in">context</span>) || window;</span><br><span class="line">  <span class="built_in">context</span>.fn = this;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">var</span> result;</span><br><span class="line">  <span class="keyword">if</span> (!arr) {</span><br><span class="line">    result = <span class="built_in">context</span>.fn();</span><br><span class="line">  } <span class="keyword">else</span> {</span><br><span class="line">    <span class="built_in">var</span> <span class="built_in">args</span> = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">var</span> i = <span class="number">0</span>, len = arr.<span class="built_in">length</span>; i &lt; len; i++) {</span><br><span class="line">      <span class="built_in">args</span>.<span class="built_in">push</span>(<span class="string">&quot;arr[&quot;</span> + i + <span class="string">&quot;]&quot;</span>);</span><br><span class="line">    }</span><br><span class="line">    result = <span class="built_in">eval</span>(<span class="string">&quot;context.fn(&quot;</span> + <span class="built_in">args</span> + <span class="string">&quot;)&quot;</span>);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="built_in">delete</span> <span class="built_in">context</span>.fn;</span><br><span class="line">  <span class="built_in">return</span> result;</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<h4 id="call"><a href="#call" class="headerlink" title="call"></a>call</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myCall = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>{</span><br><span class="line">  context.fn = <span class="keyword">this</span></span><br><span class="line">  <span class="keyword">let</span> args = <span class="built_in">Array</span>.prototype.slice(<span class="built_in">arguments</span>, <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">let</span> result = context.fn(...args)</span><br><span class="line">  <span class="keyword">delete</span> context.fn</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h4><p>&#x90FD;&#x77E5;&#x9053;instanceof&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x7528;&#x6765;&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x9762;&#x80FD;&#x4E0D;&#x80FD;&#x627E;&#x5230;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x539F;&#x578B;&#x3002;&#x7136;&#x540E;&#x5C31;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x539F;&#x7406;&#x6765;&#x5199;&#x6B4C;demo<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">instance_of</span>(<span class="params">l, r</span>)</span>{</span><br><span class="line">    <span class="keyword">let</span> proto = r.__proto__</span><br><span class="line">    l = l.__proto__</span><br><span class="line">    <span class="keyword">while</span>(l) {</span><br><span class="line">        <span class="keyword">if</span> (l === proto) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        <span class="keyword">if</span>(l === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        l = l.__proto__</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+                    <a href="/tags/模拟函数/"><i class="fas fa-hashtag fa-fw"></i>模拟函数</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/09/16/stopImmediatePropagation和stopPropagation的区别/">
+              
+                  stopImmediatePropagation和stopPropagation的区别
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-15
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <p>&#x5728;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x4E2D;&#x95F4;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;event&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;event&#x5BF9;&#x8C61;&#x6709;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;stopPropagation&#x65B9;&#x6CD5;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;stopImmediatePropagation&#x65B9;&#x6CD5;&#xFF0C;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x53EA;&#x5DEE;&#x4E00;&#x4E2A;Immediate&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x8BF4;&#x8BF4;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x533A;&#x522B;<br></p>
+        
+            <div class="readmore">
+                <a href="/2019/09/16/stopImmediatePropagation和stopPropagation的区别/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/09/16/js的事件模型/">
+              
+                  js的事件模型
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-15
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <h3 id="&#x5F15;&#x8A00;"><a href="#&#x5F15;&#x8A00;" class="headerlink" title="&#x5F15;&#x8A00;"></a>&#x5F15;&#x8A00;</h3><p>&#x5176;&#x5B9E;&#xFF0C;&#x8BF4;&#x8D77;js&#x7684;&#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#xFF0C;&#x6709;&#x70B9;&#x57FA;&#x7840;&#x7684;&#x90FD;&#x80FD;&#x8BF4;&#x51E0;&#x53E5;&#xFF0C; &#x5206;&#x4E3A;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C; &#x6355;&#x83B7;-&#x4E8B;&#x4EF6;&#x5904;&#x7406;-&#x5192;&#x6CE1;&#xFF0C;&#x5DF4;&#x62C9;&#x5DF4;&#x62C9;&#x2026;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x5E76;&#x6CA1;&#x6709;&#x8003;&#x8651;&#x5230;&#x6211;&#x4EEC; <strong>&#x201C;&#x4F1F;&#x5927;&#x201D;</strong> &#x7684;IE&#xFF0C;&#x6709;&#x70B9;&#x8003;&#x8651;&#x7684;&#x4E0D;&#x591F;&#x5168;&#x9762;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x7CFB;&#x7EDF;&#x6027;&#x7684;&#x8BE6;&#x7EC6;&#x7684;&#x8BB2;&#x4E00;&#x6CE2;&#x513F;</p>
+<h3 id="&#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#x7684;&#x524D;&#x4E16;&#x4ECA;&#x751F;"><a href="#&#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#x7684;&#x524D;&#x4E16;&#x4ECA;&#x751F;" class="headerlink" title="&#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#x7684;&#x524D;&#x4E16;&#x4ECA;&#x751F;"></a>&#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#x7684;&#x524D;&#x4E16;&#x4ECA;&#x751F;</h3><p>&#x6545;&#x4E8B;&#x6E90;&#x4E8E;&#x4F20;&#x8BF4;&#x4E2D;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x5927;&#x6218;&#xFF0C;&#x5FAE;&#x8F6F;&#x7684; IE &#x548C;&#x7F51;&#x666F;&#x7684;Netspace Navigator&#x3002;<br>IE&#x7684;&#x4E8B;&#x4EF6;&#x6D41;&#x662F;&#x5192;&#x6CE1; &#x4ECE;&#x91CC;&#x9762;&#x5F80;&#x4E0A;&#x9762;&#x5192;, netscape&#x662F;&#x4ECE;&#x5916;&#x90E8;&#x5143;&#x7D20;&#x5F80;&#x5185;&#x90E8;&#x5143;&#x7D20;&#x6355;&#x83B7;;&#x540E;&#x6765;&#x51FA;&#x6765;&#x4E86;&#x4E2A;W3C&#x59D4;&#x5458;&#x4F1A;&#xFF0C;&#x60F3;&#x8981;&#x7EDF;&#x4E00;&#xFF0C;&#x4E3A;&#x4E86;&#x517C;&#x5BB9;&#xFF0C;&#x5BA3;&#x5E03;&#x4E86;&#x540E;&#x6765;&#x7684;W3C&#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#xFF08;&#x6355;&#x83B7;-&#x4E8B;&#x4EF6;&#x5904;&#x7406;-&#x5192;&#x6CE1;&#xFF09;&#xFF0C;&#x4ECE;&#x6B64;&#x5929;&#x4E0B;&#x4E00;&#x7EDF;&#x3002; </p>
+        
+            <div class="readmore">
+                <a href="/2019/09/16/js的事件模型/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+                    <a href="/tags/事件模型/"><i class="fas fa-hashtag fa-fw"></i>事件模型</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
+          <a href="/2019/09/12/装箱和拆箱/">
+              
+                  装箱和拆箱
+              
+          </a>
+      </h2>
+    
+
+    
+      <span class="metatag time">
+        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
+      </span>
+    
+
+    
+      <time class="metatag time">
+        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-12
+      </time>
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+  </div>
+</section>
+
+    <section class="article typo">
+        <ul>
+<li>&#x88C5;&#x7BB1;&#x8F6C;&#x6362;&#xFF1A;&#x628A;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x5305;&#x88C5;&#x7C7B;&#x578B;</li>
+<li>&#x62C6;&#x7BB1;&#x64CD;&#x4F5C;&#xFF1A;&#x628A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x57FA;&#x672C;&#x7C7B;&#x578B;</li>
+</ul>
+<p>&#x65E2;&#x7136;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x4E0D;&#x80FD;&#x6269;&#x5C55;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x7684;&#x5462;&#xFF1F;</p>
+<p>&#x6BCF;&#x5F53;&#x6211;&#x4EEC;&#x64CD;&#x4F5C;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x540E;&#x53F0;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;&#x88C5;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x8C03;&#x7528;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+        
+            <div class="readmore">
+                <a href="/2019/09/12/装箱和拆箱/" class="flat-box">
+                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+                    阅读全文
+                </a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
+                
+                    <a href="/tags/类型转换/"><i class="fas fa-hashtag fa-fw"></i>类型转换</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+            </div>
+          
+        
+          
+            <div class='post-wrapper'>
+              <article class="post reveal ">
+    
+<section class='meta'>
+  
+  <div class="meta" id="header-meta">
+    
+      <h2 class="title">
           <a href="/2019/09/12/判断类型的方式/">
               
                   判断类型的方式
@@ -166,7 +514,7 @@
 </section>
 
     <section class="article typo">
-        <h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><p>取值范围</p>
+        <h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><p>&#x53D6;&#x503C;&#x8303;&#x56F4;</p>
 <ul>
 <li>number</li>
 <li>string</li>
@@ -242,7 +590,7 @@
 </section>
 
     <section class="article typo">
-        <h4 id="1-类型转换规则"><a href="#1-类型转换规则" class="headerlink" title="1. 类型转换规则"></a>1. 类型转换规则</h4><p><img src="/images/leixingzhuanhuan.png" alt="1aa4dd552dadf8f2b6b10384bb7dd6fc.png"><br></p>
+        <h4 id="1-&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x89C4;&#x5219;"><a href="#1-&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x89C4;&#x5219;" class="headerlink" title="1. &#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x89C4;&#x5219;"></a>1. &#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x89C4;&#x5219;</h4><p><img src="/2019/09/12/&#x7C7B;&#x578B;&#x8F6C;&#x6362;/images/leixingzhuanhuan.png" alt="1aa4dd552dadf8f2b6b10384bb7dd6fc.png"><br></p>
         
             <div class="readmore">
                 <a href="/2019/09/12/类型转换/" class="flat-box">
@@ -314,11 +662,11 @@
 </section>
 
     <section class="article typo">
-        <p>在使用dataTables的时候，有些列中会是一些包含内容的按钮或链接，不是单纯的文字内容。那么dataTables会将这些内容视为字符串，进行排序，有时候这不符合我们的期望。那么就需要自己能够灵活的指定某些列按照我们的意愿进行排序，幸运的是dataTable支持这样的插件拓展。</p>
+        <p>&#x5728;&#x4F7F;&#x7528;dataTables&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6709;&#x4E9B;&#x5217;&#x4E2D;&#x4F1A;&#x662F;&#x4E00;&#x4E9B;&#x5305;&#x542B;&#x5185;&#x5BB9;&#x7684;&#x6309;&#x94AE;&#x6216;&#x94FE;&#x63A5;&#xFF0C;&#x4E0D;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x6587;&#x5B57;&#x5185;&#x5BB9;&#x3002;&#x90A3;&#x4E48;dataTables&#x4F1A;&#x5C06;&#x8FD9;&#x4E9B;&#x5185;&#x5BB9;&#x89C6;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x8FD9;&#x4E0D;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x7684;&#x671F;&#x671B;&#x3002;&#x90A3;&#x4E48;&#x5C31;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x80FD;&#x591F;&#x7075;&#x6D3B;&#x7684;&#x6307;&#x5B9A;&#x67D0;&#x4E9B;&#x5217;&#x6309;&#x7167;&#x6211;&#x4EEC;&#x7684;&#x610F;&#x613F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x5E78;&#x8FD0;&#x7684;&#x662F;dataTable&#x652F;&#x6301;&#x8FD9;&#x6837;&#x7684;&#x63D2;&#x4EF6;&#x62D3;&#x5C55;&#x3002;</p>
 <ol>
-<li>首先创建一个文件叫dataTables.sort.plungin.js，加入以下代码。</li>
+<li>&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x53EB;dataTables.sort.plungin.js&#xFF0C;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x3002;</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">jQuery.extend(jQuery.fn.dataTableExt.oSort, &#123;</span><br><span class="line">    &quot;html-percent-pre&quot;: function (a) &#123;</span><br><span class="line">        var x = String(a).replace(/&lt;[\s\S]*?&gt;/g, &quot;&quot;);    //去除html标记</span><br><span class="line">        x = x.replace(/&amp;amp;nbsp;/ig, &quot;&quot;);                   //去除空格</span><br><span class="line">        x = x.replace(/%/, &quot;&quot;);                          //去除百分号</span><br><span class="line">        return parseFloat(x);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &quot;html-percent-asc&quot;: function (a, b) &#123;                //正序排序引用方法</span><br><span class="line">        return ((a &lt; b) ? -1 : ((a &gt; b) ? 1 : 0));</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &quot;html-percent-desc&quot;: function (a, b) &#123;                //倒序排序引用方法</span><br><span class="line">        return ((a &lt; b) ? 1 : ((a &gt; b) ? -1 : 0));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">jQuery.extend(jQuery.fn.dataTableExt.oSort, {</span><br><span class="line">    <span class="string">&quot;html-percent-pre&quot;</span>: <span class="function"><span class="keyword">function</span> (<span class="params">a</span>) </span>{</span><br><span class="line">        <span class="keyword">var</span> x = <span class="built_in">String</span>(a).replace(<span class="regexp">/&lt;[\s\S]*?&gt;/g</span>, <span class="string">&quot;&quot;</span>);    <span class="comment">//&#x53BB;&#x9664;html&#x6807;&#x8BB0;</span></span><br><span class="line">        x = x.replace(<span class="regexp">/&amp;amp;nbsp;/ig</span>, <span class="string">&quot;&quot;</span>);                   <span class="comment">//&#x53BB;&#x9664;&#x7A7A;&#x683C;</span></span><br><span class="line">        x = x.replace(<span class="regexp">/%/</span>, <span class="string">&quot;&quot;</span>);                          <span class="comment">//&#x53BB;&#x9664;&#x767E;&#x5206;&#x53F7;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">parseFloat</span>(x);</span><br><span class="line">    },</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;html-percent-asc&quot;</span>: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>{                <span class="comment">//&#x6B63;&#x5E8F;&#x6392;&#x5E8F;&#x5F15;&#x7528;&#x65B9;&#x6CD5;</span></span><br><span class="line">        <span class="keyword">return</span> ((a &lt; b) ? <span class="number">-1</span> : ((a &gt; b) ? <span class="number">1</span> : <span class="number">0</span>));</span><br><span class="line">    },</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;html-percent-desc&quot;</span>: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>{                <span class="comment">//&#x5012;&#x5E8F;&#x6392;&#x5E8F;&#x5F15;&#x7528;&#x65B9;&#x6CD5;</span></span><br><span class="line">        <span class="keyword">return</span> ((a &lt; b) ? <span class="number">1</span> : ((a &gt; b) ? <span class="number">-1</span> : <span class="number">0</span>));</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
         
             <div class="readmore">
                 <a href="/2019/09/11/dataTable中自定义列排序问题/" class="flat-box">
@@ -333,7 +681,7 @@
                 
                     <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
                 
-                    <a href="/tags/datatable/"><i class="fas fa-hashtag fa-fw"></i>dataTable</a>
+                    <a href="/tags/dataTable/"><i class="fas fa-hashtag fa-fw"></i>dataTable</a>
                 
             </div>
         
@@ -390,7 +738,7 @@
 </section>
 
     <section class="article typo">
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">export const editorOption = &#123;</span><br><span class="line">  tabSize: 2,</span><br><span class="line">  styleActiveLine: true,</span><br><span class="line">  line: true,</span><br><span class="line">  mode: &apos;text/x-nginx-conf&apos;,</span><br><span class="line">  lineNumbers: true,  // 显示行号</span><br><span class="line">  theme: &apos;solarized&apos;,  // 设置主题</span><br><span class="line">  keyMap: &apos;sublime&apos;,  // 绑定sublime</span><br><span class="line">  fullScreen: false,  // 全屏模式</span><br><span class="line">  matchBrackets: true,  // 括号匹配</span><br><span class="line">  indentWithTabs: true,</span><br><span class="line">  readOnly: false</span><br><span class="line">&#125;</span><br><span class="line">import &#123; codemirror &#125; from &apos;vue-codemirror&apos;</span><br><span class="line">import &#123; editorOption &#125; from &apos;@/api/convention&apos;</span><br><span class="line">require(&apos;codemirror/keymap/sublime.js&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div style=&quot;width: 80%;&quot;&gt;</span><br><span class="line">   &lt;codemirror v-model=&quot;templateForm.content&quot; :options=&quot;editorOption&quot;&gt;&lt;/codemirror&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.CodeMirror &#123;</span><br><span class="line">  height: 360px;</span><br><span class="line">&#125;</span><br><span class="line">.CodeMirror-fullscreen &#123;</span><br><span class="line">  z-index: 9999;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> editorOption = {</span><br><span class="line">  tabSize: <span class="number">2</span>,</span><br><span class="line">  styleActiveLine: <span class="literal">true</span>,</span><br><span class="line">  line: <span class="literal">true</span>,</span><br><span class="line">  mode: <span class="string">&apos;text/x-nginx-conf&apos;</span>,</span><br><span class="line">  lineNumbers: <span class="literal">true</span>,  <span class="comment">// &#x663E;&#x793A;&#x884C;&#x53F7;</span></span><br><span class="line">  theme: <span class="string">&apos;solarized&apos;</span>,  <span class="comment">// &#x8BBE;&#x7F6E;&#x4E3B;&#x9898;</span></span><br><span class="line">  keyMap: <span class="string">&apos;sublime&apos;</span>,  <span class="comment">// &#x7ED1;&#x5B9A;sublime</span></span><br><span class="line">  fullScreen: <span class="literal">false</span>,  <span class="comment">// &#x5168;&#x5C4F;&#x6A21;&#x5F0F;</span></span><br><span class="line">  matchBrackets: <span class="literal">true</span>,  <span class="comment">// &#x62EC;&#x53F7;&#x5339;&#x914D;</span></span><br><span class="line">  indentWithTabs: <span class="literal">true</span>,</span><br><span class="line">  readOnly: <span class="literal">false</span></span><br><span class="line">}</span><br><span class="line"><span class="keyword">import</span> { codemirror } <span class="keyword">from</span> <span class="string">&apos;vue-codemirror&apos;</span></span><br><span class="line"><span class="keyword">import</span> { editorOption } <span class="keyword">from</span> <span class="string">&apos;@/api/convention&apos;</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&apos;codemirror/keymap/sublime.js&apos;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div style=<span class="string">&quot;width: 80%;&quot;</span>&gt;</span><br><span class="line">   &lt;codemirror v-model=<span class="string">&quot;templateForm.content&quot;</span> :options=<span class="string">&quot;editorOption&quot;</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">codemirror</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;style&gt;</span></span><br><span class="line"><span class="regexp">.CodeMirror {</span></span><br><span class="line"><span class="regexp">  height: 360px;</span></span><br><span class="line"><span class="regexp">}</span></span><br><span class="line"><span class="regexp">.CodeMirror-fullscreen {</span></span><br><span class="line"><span class="regexp">  z-index: 9999;</span></span><br><span class="line"><span class="regexp">}</span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure>
 
         
 
@@ -451,17 +799,17 @@
 </section>
 
     <section class="article typo">
-        <p>首先回顾javascript的数据类型：</p>
+        <p>&#x9996;&#x5148;&#x56DE;&#x987E;javascript&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;</p>
 <ol>
 <li>string</li>
 <li>number</li>
 <li>boolean</li>
 <li>undefined</li>
 <li>null</li>
-<li>object(array 、function、普通object )</li>
-<li>symbol(es6新加)</li>
+<li>object(array &#x3001;function&#x3001;&#x666E;&#x901A;object )</li>
+<li>symbol(es6&#x65B0;&#x52A0;)</li>
 </ol>
-<p>其中 string、number、boolean 、undefined、null 是直接比较值的，可以通过===判断<br>object 、symbol是比较地址的，地址相同则视为相等</p>
+<p>&#x5176;&#x4E2D; string&#x3001;number&#x3001;boolean &#x3001;undefined&#x3001;null &#x662F;&#x76F4;&#x63A5;&#x6BD4;&#x8F83;&#x503C;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;===&#x5224;&#x65AD;<br>object &#x3001;symbol&#x662F;&#x6BD4;&#x8F83;&#x5730;&#x5740;&#x7684;&#xFF0C;&#x5730;&#x5740;&#x76F8;&#x540C;&#x5219;&#x89C6;&#x4E3A;&#x76F8;&#x7B49;</p>
 <p>so,</p>
         
             <div class="readmore">
@@ -476,323 +824,6 @@
             <div class="full-width auto-padding tags">
                 
                     <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class='post-wrapper'>
-              <article class="post reveal ">
-    
-<section class='meta'>
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/09/08/监听快捷键/">
-              
-                  监听快捷键
-              
-          </a>
-      </h2>
-    
-
-    
-      <span class="metatag time">
-        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
-      </span>
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-07
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt; </span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt; </span><br><span class="line">&lt;script type=&quot;text/javascript&quot; language=JavaScript&gt; </span><br><span class="line">       document.onkeydown=function(event)&#123; </span><br><span class="line">            var e = event || window.event || arguments.callee.caller.arguments[0]; </span><br><span class="line">            if(e &amp;&amp; e.keyCode==27)&#123; // 按 Esc  </span><br><span class="line">                //要做的事情 </span><br><span class="line">				alert(&quot;按 esc&quot;); </span><br><span class="line">            &#125; </span><br><span class="line">            if(e &amp;&amp; e.keyCode==113)&#123; // 按 F2  </span><br><span class="line">                //要做的事情 </span><br><span class="line">				alert(&quot;按 f2&quot;); </span><br><span class="line">            &#125;             </span><br><span class="line">            if(e &amp;&amp; e.keyCode==13)&#123; // enter 键 </span><br><span class="line">                //要做的事情 </span><br><span class="line">				alert(&quot;按 Enter&quot;); </span><br><span class="line">            &#125;</span><br><span class="line">			if (e.keyCode == 86 &amp;&amp; e.ctrlKey) &#123;  </span><br><span class="line">                alert(&quot;你按下了ctrl+V&quot;);  </span><br><span class="line">            &#125;</span><br><span class="line">         &#125;;  </span><br><span class="line">&lt;/script&gt; </span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/js/"><i class="fas fa-hashtag fa-fw"></i>js</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class='post-wrapper'>
-              <article class="post reveal ">
-    
-<section class='meta'>
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/09/07/repaint重绘和reflow回流/">
-              
-                  repaint重绘和reflow回流
-              
-          </a>
-      </h2>
-    
-
-    
-      <span class="metatag time">
-        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
-      </span>
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-07
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>前言： 为什么不能用CSS通配符 *，CSS选择器层叠为什么不能超过三层，CSS为什么尽量使用类选择器，书写HTML为什么少使用table，为什么结构要尽量简单-DOM树要小….</p>
-<h3 id="浏览器解析大概的工作流程大致可归纳为四个步骤："><a href="#浏览器解析大概的工作流程大致可归纳为四个步骤：" class="headerlink" title="浏览器解析大概的工作流程大致可归纳为四个步骤："></a>浏览器解析大概的工作流程大致可归纳为四个步骤：</h3><ol>
-<li>解析HTML以构建DOM树：渲染引擎开始解析HTML文档，转换树中的html标签或js生成的标签到DOM节点，它被称为 – 内容树。</li>
-<li>构建渲染树：解析CSS（包括外部CSS文件和样式元素以及js生成的样式）成样式结构体，根据CSS选择器计算出节点的样式，创建另一个树 —- 渲染树（render tree）。 注：在解析的过程中会去掉浏览器不能识别的样式，比如IE会去掉-moz开头的样式，而firefox会去掉_开头的样式。</li>
-<li>布局渲染树: 从根节点递归调用，计算每一个元素的大小、位置等，给每个节点所应该出现在屏幕上的精确坐标。</li>
-<li><p>绘制渲染树: 遍历渲染树，每个节点将使用UI后端层来绘制。</p></li></ol>
-        
-            <div class="readmore">
-                <a href="/2019/09/07/repaint重绘和reflow回流/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
-                
-                    <a href="/tags/渲染过程/"><i class="fas fa-hashtag fa-fw"></i>渲染过程</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class='post-wrapper'>
-              <article class="post reveal ">
-    
-<section class='meta'>
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/09/07/从url到页面渲染的流程/">
-              
-                  从url到页面渲染的流程
-              
-          </a>
-      </h2>
-    
-
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-09-07
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p>从用户在浏览器中输入一个URL，到整个页面渲染，这个过程中究竟发生了什么呢？今天先简单写下整个过程，后面再一点点完善。</p>
-<h3 id="DNS解析获取IP地址"><a href="#DNS解析获取IP地址" class="headerlink" title="DNS解析获取IP地址"></a>DNS解析获取IP地址</h3><ol>
-<li>首先会在浏览器的缓存中查找，是否缓存了URL，如果有，就直接向该URL对应的服务器发送请求；如果没有则进行下一步;</li>
-<li>在本地的hosts文件中是否保存了该URL和其对应的IP地址，如果保存了，就直接向该URL对应的服务器发送请求；如果没有则进行下一步；</li>
-<li>向本地DNS服务器（一般由本地网络接入服务器提供商ISP提供，比如移动、联通）发送DNS请求，本地DNS服务器会首先查询它的缓存记录，如果有就将该域名对应的IP地址返回给用户，如果没有则进行下一步；</li>
-<li>首先向根域名服务器发送DNS查询请求，根域名服务器返回给可能保存了该域名的一级域名服务器地址；本地主机再根据返回的地址，向一级域名服务器发送DNS查询请求；…一直迭代，直到找到对应的域名存放的服务器，向其发送DNS查询请求，该域名服务器返回该域名对应的IP地址；</li>
-</ol>
-        
-            <div class="readmore">
-                <a href="/2019/09/07/从url到页面渲染的流程/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/渲染过程/"><i class="fas fa-hashtag fa-fw"></i>渲染过程</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class='post-wrapper'>
-              <article class="post reveal ">
-    
-<section class='meta'>
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/08/26/reduce函数的应用/">
-              
-                  reduce函数的应用
-              
-          </a>
-      </h2>
-    
-
-    
-      <span class="metatag time">
-        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
-      </span>
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-08-25
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [11,3,4,556,7,8,-4]</span><br></pre></td></tr></table></figure>
-<h4 id="获得最大值-最小值"><a href="#获得最大值-最小值" class="headerlink" title="获得最大值/最小值"></a>获得最大值/最小值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a= arr.reduce((a, b) =&gt; &#123;</span><br><span class="line">  return a &gt; b ? a: b</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-        
-            <div class="readmore">
-                <a href="/2019/08/26/reduce函数的应用/" class="flat-box">
-                    <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-                    阅读全文
-                </a>
-            </div>
-        
-
-        
-    </section>
-</article>
-
-            </div>
-          
-        
-          
-            <div class='post-wrapper'>
-              <article class="post reveal ">
-    
-<section class='meta'>
-  
-  <div class="meta" id="header-meta">
-    
-      <h2 class="title">
-          <a href="/2019/08/21/css中的各种尺寸/">
-              
-                  css中的各种尺寸
-              
-          </a>
-      </h2>
-    
-
-    
-      <span class="metatag time">
-        <i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp;徐勇超
-      </span>
-    
-
-    
-      <time class="metatag time">
-        <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;2019-08-20
-      </time>
-    
-
-    
-      
-
-    
-
-    
-
-    
-
-  </div>
-</section>
-
-    <section class="article typo">
-        <p><img src="/images/css/size.png" alt="css各种尺寸的说明图"></p>
-
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/css/"><i class="fas fa-hashtag fa-fw"></i>css</a>
                 
             </div>
         
@@ -924,11 +955,13 @@
         
           <li><a class="flat-box" title="/categories/es6/" href="/categories/es6/"><div class='name'>es6</div><div class='badge'>(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/graph/" href="/categories/graph/"><div class='name'>graph</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box" title="/categories/graph/" href="/categories/graph/"><div class='name'>graph</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box" title="/categories/js知识库/" href="/categories/js知识库/"><div class='name'>js知识库</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/nginx/" href="/categories/nginx/"><div class='name'>nginx</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/其他/" href="/categories/其他/"><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/插件/" href="/categories/插件/"><div class='name'>插件</div><div class='badge'>(2)</div></a></li>
         
@@ -952,7 +985,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/json/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/cors/" style="font-size: 14px; color: #999">cors</a> <a href="/tags/css/" style="font-size: 21.14px; color: #686868">css</a> <a href="/tags/cytoscape/" style="font-size: 15.43px; color: #8f8f8f">cytoscape</a> <a href="/tags/datatable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/graph/" style="font-size: 19.71px; color: #727272">graph</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/highcharts/" style="font-size: 16.86px; color: #868686">highcharts</a> <a href="/tags/http/" style="font-size: 15.43px; color: #8f8f8f">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/proxy/" style="font-size: 14px; color: #999">proxy</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.57px; color: #5f5f5f">vue</a> <a href="/tags/webpack/" style="font-size: 18.29px; color: #7c7c7c">webpack</a> <a href="/tags/事件模型/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a> <a href="/tags/权重/" style="font-size: 14px; color: #999">权重</a> <a href="/tags/模拟函数/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/渲染过程/" style="font-size: 15.43px; color: #8f8f8f">渲染过程</a> <a href="/tags/盒模型/" style="font-size: 14px; color: #999">盒模型</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/类型/" style="font-size: 16.86px; color: #868686">类型</a> <a href="/tags/组件/" style="font-size: 18.29px; color: #7c7c7c">组件</a>
+      <a href="/tags/F2/" style="font-size: 14px; color: #999">F2</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 21.14px; color: #686868">css</a> <a href="/tags/cytoscape/" style="font-size: 15.43px; color: #8f8f8f">cytoscape</a> <a href="/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/git/" style="font-size: 15.43px; color: #8f8f8f">git</a> <a href="/tags/graph/" style="font-size: 19.71px; color: #727272">graph</a> <a href="/tags/hexo/" style="font-size: 15.43px; color: #8f8f8f">hexo</a> <a href="/tags/highcharts/" style="font-size: 16.86px; color: #868686">highcharts</a> <a href="/tags/http/" style="font-size: 15.43px; color: #8f8f8f">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/proxy/" style="font-size: 14px; color: #999">proxy</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.57px; color: #5f5f5f">vue</a> <a href="/tags/webpack/" style="font-size: 18.29px; color: #7c7c7c">webpack</a> <a href="/tags/事件模型/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/前端入门/" style="font-size: 14px; color: #999">前端入门</a> <a href="/tags/权重/" style="font-size: 14px; color: #999">权重</a> <a href="/tags/模拟函数/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/渲染过程/" style="font-size: 15.43px; color: #8f8f8f">渲染过程</a> <a href="/tags/盒模型/" style="font-size: 14px; color: #999">盒模型</a> <a href="/tags/算法/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/类型/" style="font-size: 15.43px; color: #8f8f8f">类型</a> <a href="/tags/类型转换/" style="font-size: 15.43px; color: #8f8f8f">类型转换</a> <a href="/tags/组件/" style="font-size: 18.29px; color: #7c7c7c">组件</a>
     </div>
   </section>
 
