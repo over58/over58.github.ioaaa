@@ -8,6 +8,7 @@ tags:
   - webpack
 date: 2019-09-17 19:23:07
 categories:
+  - webpack
 ---
 
 1.添加插件
@@ -15,7 +16,7 @@ categories:
 cnpm install webpack-bundle-analyzer -save
 ```
 
-2. vue.config.js文件
+1. vue.config.js文件
 ```
  chainWebpack: config => {
     // 运行npm run analyze 显示性能分析
