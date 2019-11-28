@@ -109,20 +109,20 @@ widgets:
     title: 精选项目
     more:
       icon: fas fa-arrow-right
-      url: http://nevis.sina.com.cn/
+      url: http:yongchao.tech:9000/
     rows:
       - name: 项目控制台
         desc: 项目控制台
         icon: fas fa-cube
-        url: https:yongchao.tech:9000/
+        url: http:yongchao.tech:9000/
       - name: iview-admin
         desc: iview管理后台系统
         icon: fas fa-cube
-        url: https:yongchao.tech:8083/
+        url: http:yongchao.tech:8083/
       - name: element-admin(fork)
         desc: fork的element管理后台
         icon: fas fa-cube
-        url: https:yongchao.tech:8081/
+        url: http:yongchao.tech:8081/
   - widget: list
     icon: fas fa-link
     title: 特别链接
