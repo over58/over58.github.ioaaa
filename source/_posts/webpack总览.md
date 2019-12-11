@@ -60,5 +60,4 @@ demo
 
 window['MyLibrary'] = _entry_return_;
 window.MyLibrary.doSomething();
-
 ```
