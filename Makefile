@@ -1,7 +1,6 @@
 restart:
 	git checkout .
 	git pull origin master
-	rm -rf node_modules
 	cnpm install
 	hexo clean
 	hexo generate
@@ -14,7 +13,6 @@ start:
 	hexo clean
 	git checkout .
 	git pull origin master
-	rm -rf node_modules
 	cnpm install
 	hexo generate
 	docker build -t blog:latest  .
