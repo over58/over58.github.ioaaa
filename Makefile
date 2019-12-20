@@ -7,7 +7,7 @@ restart:
 	docker rm -f blog
 	docker rmi blog:latest
 	docker build -t blog:latest  .
-	docker run -d -p 8080:80 --name blog blog:latest
+	docker run -d -p 80:80 --name blog blog:latest
 
 start:
 	hexo clean
@@ -16,7 +16,7 @@ start:
 	cnpm install
 	hexo generate
 	docker build -t blog:latest  .
-	docker run -d -p 8080:80 --name blog blog:latest
+	docker run -d -p 80:80 --name blog blog:latest
 rm:	
 	docker rm -f blog
 rmi:
