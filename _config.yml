@@ -93,14 +93,6 @@ widgets:
     avatar: avatar.png
     jinrishici: true
     social: true
-  # - widget: plain
-  #   icon: fas fa-bullhorn
-  #   title: 注意啦～
-  #   body: '这是yongchao的技术博客喜欢的朋友可以阅读文档进行使用，超喜欢的话还可以安利给身边的朋友哦～'
-    # more:
-    #   icon: fas fa-question-circle
-    #   url: https://xaoxuu.com/wiki/material-x/front-matter/index.html
-    #   title: 写markdown文章的语法
   - widget: toc
   - widget: category
   - widget: tagcloud
