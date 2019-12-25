@@ -101,7 +101,7 @@ widgets:
     title: 精选项目
     more:
       icon: fas fa-arrow-right
-      url: http://yongchao.online:9000/
+      url: http://yongchao.online:8082/
     rows:
       - name: iview-admin
         desc: iview管理后台系统
