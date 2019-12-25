@@ -4,10 +4,10 @@ restart:
 	cnpm install
 	hexo clean
 	hexo generate
-	docker rm -f blog
-	docker rmi blog:latest
-	docker build -t blog:latest  .
-	docker run -d -p 80:80 --name blog blog:latest
+	docker rm -f hexo
+	docker rmi hexo:latest
+	docker build -t hexo:latest  .
+	docker run -d -p 80:80 --name hexo hexo:latest
 
 start:
 	hexo clean
@@ -15,12 +15,12 @@ start:
 	git pull origin master
 	cnpm install
 	hexo generate
-	docker build -t blog:latest  .
-	docker run -d -p 80:80 --name blog blog:latest
+	docker build -t hexo:latest  .
+	docker run -d -p 80:80 --name hexo hexo:latest
 rm:	
-	docker rm -f blog
+	docker rm -f hexo
 rmi:
-	docker rmi blog:latest
+	docker rmi hexo:latest
 commit-update:
 	git add .
 	git commit -m 'update article'
