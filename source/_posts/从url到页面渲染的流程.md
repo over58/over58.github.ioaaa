@@ -34,7 +34,7 @@ categories:
   2. 动态资源：如果客户端请求的是动态资源，则web服务器会调用CGI/VM执行程序完成相应的操作，如查询数据库，然后返回查询结果数据集，并将运行的结果--HTML文件返回给web服务器。Web服务器再将HTML文件返回给用户。
 
 ### 浏览器渲染
-  详情请看http://yongchao.tech:8080/2019/09/07/repaint重绘和reflow回流/
+  详情请看http://yongchao.online/2019/09/07/repaint重绘和reflow回流/
   浏览器拿到HTML文件后，根据渲染规则进行渲染：
   1. 解析HTML，构建DOM树
   2. 解析CSS，生成CSS规则树
