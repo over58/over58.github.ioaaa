@@ -1,7 +1,7 @@
 restart:
 	git checkout .
 	git pull origin master
-	cnpm install
+	yarn install
 	hexo clean
 	hexo generate
 	docker rm -f hexo
@@ -13,7 +13,7 @@ start:
 	hexo clean
 	git checkout .
 	git pull origin master
-	cnpm install
+	yarn install
 	hexo generate
 	docker build -t hexo:latest  .
 	docker run -d -p 80:80 --name hexo hexo:latest
