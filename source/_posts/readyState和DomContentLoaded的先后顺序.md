@@ -168,4 +168,11 @@ if (document.readyState != 'loading') {
 ```
 这是当下实际开发中，唯一需要使用document.readyState的场景，在开源或者大规模使用的框架或组件中精准初始化使用。
 
+
+
+### load/readState/DomContentLoaded/pageshow执行的先后顺序
+![执行顺序]((readyState和DomContentLoaded的先后顺序/js加载时候各个事件执行的先后顺序.png))
+
+
+
 >摘自 https://www.zhangxinxu.com/wordpress/2019/10/document-readystate/
