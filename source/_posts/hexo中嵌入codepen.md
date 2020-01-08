@@ -11,7 +11,7 @@ updated: 2020-01-08 11:20:16
 ---
 ### 安装
 使用npm安装插件
-```
+```npm
 $ npm install hexo-codepen --save
 ```
 
@@ -21,7 +21,7 @@ $ npm install hexo-codepen --save
 ```
 
 ### 生成的html
-```
+```html
 <p data-height="265" data-theme-id="dark" data-slug-hash="bgjKKE" data-default-tab="css,result" data-user="CiTA" data-embed-version="2" data-pen-title="CSS sidebar toggle" class="codepen">See the Pen <a href="https://codepen.io/CiTA/pen/bgjKKE/">CSS sidebar toggle</a> by Silvestar Bistrović (<a href="https://codepen.io/CiTA">@CiTA</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 看源码实际上是插入了一个iframe
