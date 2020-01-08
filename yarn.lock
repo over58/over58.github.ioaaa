@@ -1591,6 +1591,11 @@ hexo-cli@^2.0.0:
     resolve "^1.10.0"
     tildify "^1.2.0"
 
+hexo-codepen@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/hexo-codepen/-/hexo-codepen-0.1.1.tgz#249be13d54d35daa1eeb596f49ea1bb4919438d3"
+  integrity sha1-JJvhPVTTXaoe61lvSeobtJGUONM=
+
 hexo-front-matter@^0.2.3:
   version "0.2.3"
   resolved "https://registry.npmjs.org/hexo-front-matter/-/hexo-front-matter-0.2.3.tgz#c7ca8ef420ea36bd85e8408a2e8c9bf49efa605e"
