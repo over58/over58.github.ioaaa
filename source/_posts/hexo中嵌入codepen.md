@@ -29,7 +29,7 @@ $ npm install hexo-codepen --save
 ```
 参数使用
 |参数|	值|
-|:-- |:-- |
+|:---:|:---:|
 |userId	|codepen的用户名|
 |slugHash|	当前pen url上的hash值|
 |theme	|dark|
