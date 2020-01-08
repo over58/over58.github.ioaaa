@@ -1,5 +1,5 @@
 ---
-title: 测试hexo中嵌入codepen
+title: hexo中嵌入codepen
 author:
   - 徐勇超
 tags: []
