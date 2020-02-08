@@ -2,9 +2,9 @@
 title: 纯css绘制雷达扫描图
 author:
   - 徐勇超
-tags: []
+tags: [css动画]
 categories:
-  - js知识库
+  - css
 comments: true
 date: 2020-01-08 12:30:16
 updated: 2020-01-08 12:30:16
