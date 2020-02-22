@@ -29,3 +29,6 @@ commit-add:
 	git add .
 	git commit -m 'add article'
 	git push origin master
+deploy:
+	make commit-update
+	hexo d -g
