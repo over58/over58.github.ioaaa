@@ -8,3 +8,12 @@ categories:
 ---
 
 ![css各种尺寸的说明图](/images/css/size.png)
+
+### client
+
+| clientTop    | border-top-width                    |
+| ------------ | ----------------------------------- |
+| clientLeft   | border-left-width                   |
+| clientWidth  | 水平方向 content + padding + border |
+| clientHeight | 竖直方向 content + padding + border |
+
