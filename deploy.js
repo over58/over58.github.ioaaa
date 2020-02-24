@@ -14,8 +14,9 @@ let comments = [
   "提交代码",
   "开启部署..."
 ]
-commands.forEach(command => {
+commands.forEach((command, index) => {
   exec(command)
+  console.log(chalk.yellowBright(comments[index]))
 })
 
 console.log(chalk.green('部署成功！'));
