@@ -8,6 +8,12 @@ let commands = [
   'hexo d -g'
 ]
 
+let comments = [
+  "添加暂存",
+  "编辑提交信息",
+  "提交代码",
+  "开启部署..."
+]
 commands.forEach(command => {
   exec(command)
 })
