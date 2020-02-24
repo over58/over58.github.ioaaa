@@ -6,9 +6,10 @@
     "version": "3.9.0"
   },
   "scripts": {
-    "deploy":"node ./deploy.js"
+    "deploy": "node ./deploy.js"
   },
   "dependencies": {
+    "chalk": "^3.0.0",
     "exec": "^0.2.1",
     "express": "^4.16.4",
     "hexo": "^3.9.0",
