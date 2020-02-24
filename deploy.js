@@ -9,9 +9,9 @@ let commands = [
 ]
 
 let comments = [
-  "添加暂存",
-  "编辑提交信息",
-  "提交代码",
+  "添加暂存...",
+  "编辑提交信息...",
+  "提交代码中...",
   "开启部署..."
 ]
 commands.forEach((command, index) => {
