@@ -5,6 +5,9 @@
   "hexo": {
     "version": "3.9.0"
   },
+  "scripts": {
+    "deploy":"node ./deploy.js"
+  },
   "dependencies": {
     "exec": "^0.2.1",
     "express": "^4.16.4",
