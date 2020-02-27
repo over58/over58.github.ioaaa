@@ -4,8 +4,6 @@ author:
   - 徐勇超
 tags: []
 categories:
-  - js知识库
-  - css
   - svg
 comments: true
 date: 2020-02-27 15:42:24
