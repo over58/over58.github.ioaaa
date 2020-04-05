@@ -4,10 +4,10 @@ author:
   - 徐勇超
 tags:
   - js
-  - proxy
+  - es6
 date: 2019-09-16 19:22:32
 categories:
-  - es6
+  - js知识库
 ---
 
 ### todoList
