@@ -41,6 +41,8 @@ var out = fs.createWriteStream('./extra/fileForCompress.txt.gz');
 inFile.pipe(gzip).pipe(out);
 ```
 
+<!-- more -->
+
 ### 解压的例子
 
 同样非常简单，就是个反向操作。
