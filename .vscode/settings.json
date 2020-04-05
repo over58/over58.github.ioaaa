@@ -6,7 +6,7 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/node_modules": true,
-    "**/db.json": true,
+    // "**/db.json": true,
     "**/webhook.js": true,
     "**/hexo.sh": true,
     "**/public": true,
