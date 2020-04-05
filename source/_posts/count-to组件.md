@@ -1,7 +1,9 @@
 ---
 title: count-to组件
 date: 2019-04-29 19:37:54
-tags: [vue, 组件]
+tags: [组件]
+categories:
+ - vue
 ---
 
 ```

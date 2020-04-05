@@ -1,7 +1,9 @@
 ---
 title: button-popup
 date: 2019-04-29 17:58:49
-tags: [vue, 组件]
+tags: [ 组件]
+categories:
+  - vue
 ---
 
 ### 效果图
