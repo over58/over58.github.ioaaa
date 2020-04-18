@@ -186,11 +186,6 @@
           action: 'show',
           value
         })
-        report({
-          event: category,
-          tag: label,
-          type: 1
-        })
         return statistics.pushBaiDuEvent
       }
   
@@ -201,11 +196,6 @@
           label,
           action: 'click',
           value
-        })
-        report({
-          event: category,
-          tag: label,
-          type: 2
         })
         return statistics.pushBaiDuEvent
       }
