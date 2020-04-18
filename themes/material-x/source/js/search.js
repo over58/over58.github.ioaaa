@@ -156,6 +156,8 @@ var SearchService = "";
      */
     self.onSubmit = function(event) {
       event.preventDefault();
+      console.log('点击搜索按钮...')
+      window.$push('搜索页面', '搜索按钮点击')
       self.queryText = $(this).find('.u-search-input').val();
       if (self.queryText) {
         self.search(1);

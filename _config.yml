@@ -121,3 +121,6 @@ widgets:
       - name: 如何写文章(相关语法)
         icon: fas fa-question-circle
         url: https://xaoxuu.com/wiki/material-x/front-matter/index.html
+
+## 百度统计
+baidu_analytics_key: 2306a802782087441eacb63a2407394e
