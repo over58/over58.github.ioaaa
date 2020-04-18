@@ -90,7 +90,7 @@ push.show = function (category, label, value = '') {
 }
 
 push.click = function (category, label, value = '') {
-  utils.log(category, label, value)
+  console.log(category, label, value)
   statistics.pushBaiDuEvent({
     category,
     label,
