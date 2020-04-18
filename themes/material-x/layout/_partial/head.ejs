@@ -99,7 +99,7 @@
   <% } %>
   <% if (config.baidu_analytics_key) { %>
     <!-- ba -->
-    <script>
+    <!-- <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -107,7 +107,7 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-    </script>
+    </script> -->
   <% } %>
 
   <script type="text/javascript">
@@ -162,6 +162,7 @@
         const opt = statistics.mergeObject(defaultOpt, option)
         const { category, action, label, value } = opt
         return statistics.addBaiDuTongJi(opt.eventID).then(() => {
+          console.log('添加一个埋点...')
           window._hmt.push(['_trackEvent', category, action, label, value])
         })
       }
