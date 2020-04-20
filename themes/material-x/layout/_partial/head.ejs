@@ -201,9 +201,7 @@
         return statistics.pushBaiDuEvent
       }
   
-      window.$push = function(category, value){
-        window._hmt.push(['_trackEvent', category, 'click', label, value])
-      } 
+      window.$push = push
 
       console.log('添加百度统计代码')
     })(window)
