@@ -36,6 +36,12 @@ ipcMain.on('custom-event', ({sender}, args)=>{
 })
 ```
 
+
+
+<!-- more -->
+
+
+
 #### 主进程---->渲染进程
 
 ##### 主进程
