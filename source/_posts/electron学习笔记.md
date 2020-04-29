@@ -4,7 +4,7 @@ author:
   - 徐勇超
 tags: []
 categories:
-  - js知识库
+  - electron
 comments: true
 date: 2020-04-05 11:39:56
 updated: 2020-04-05 11:39:56
