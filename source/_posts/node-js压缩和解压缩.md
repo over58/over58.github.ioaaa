@@ -4,7 +4,6 @@ author:
   - 徐勇超
 tags: []
 categories:
-  - js知识库
   - node
 comments: true
 date: 2020-04-05 17:52:57
