@@ -3,7 +3,7 @@ title: 缓存memorize
 author: 徐勇超
 date: 2019-06-11 16:41:04
 tags: [js]
-categories:
+categories: [js知识库]
 ---
 
 ### code

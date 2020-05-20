@@ -3,7 +3,7 @@ title: macrotask和microtask以及eventloop的介绍
 author: 徐勇超
 date: 2019-06-17 14:44:56
 tags: [js]
-categories:
+categories: [js知识库]
 ---
 
 ### 前言
