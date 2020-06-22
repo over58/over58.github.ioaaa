@@ -4,7 +4,7 @@ author:
   - 徐勇超
 date: 2019-07-08 23:11:12
 tags: [js]
-categories:
+categories: [js知识库]
 ---
 
 ### AMD

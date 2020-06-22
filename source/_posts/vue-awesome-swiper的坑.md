@@ -6,6 +6,7 @@ tags:
   - vue
 date: 2019-11-26 17:24:08
 categories:
+  - js知识库
 ---
 
 ### loop下点击事件无效

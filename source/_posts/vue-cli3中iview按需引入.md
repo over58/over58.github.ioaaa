@@ -3,11 +3,11 @@ title: vue-cli3中iview按需引入
 author:
   - 徐勇超
 tags:
-  - js
   - vue
   - webpack
 date: 2019-09-17 19:16:59
 categories:
+  - js知识库
 ---
 
 1.安装babel-plugin-import插件

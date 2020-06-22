@@ -3,10 +3,9 @@ title: js的事件模型
 author:
   - 徐勇超
 tags:
-  - js
   - 事件模型
 date: 2019-09-15 18:21:20
-categories:
+  - js知识库
 ---
 
 ### 引言
