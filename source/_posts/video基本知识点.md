@@ -26,6 +26,8 @@ HTML5中 **video** 标签定义视频，比如电影片段或其他视频流。�
 |preload |pixels |如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。|
 |src |URL |要播放的视频的 URL。|
 
+<!-- more -->
+
 ## Video事件
 
 |属性|值|描述|
@@ -229,10 +231,6 @@ if (document.exitFullscreen) {
 - TimeRanges.start(index) //第index段区域的开始位置
 - TimeRanges.end(index) //第index段区域的结束位置
 
-
->摘自: https://cloud.tencent.com/developer/article/1588145 和
->https://cloud.tencent.com/developer/article/1462727?from=10680
-
 ## 常见应用
 ### 视频非全屏播放
 
@@ -255,3 +253,6 @@ if (document.exitFullscreen) {
 />
 ```
 
+
+>摘自: https://cloud.tencent.com/developer/article/1588145 和
+>https://cloud.tencent.com/developer/article/1462727?from=10680
