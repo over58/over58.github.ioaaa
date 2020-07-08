@@ -184,7 +184,7 @@ if (document.exitFullscreen) {
     document.webkitExitFullscreen();
 }
 ```
-## .Media方法和属性
+## Media方法和属性
 
 >HTMLVideoElement和HTMLAudioElement 均继承自HTMLMediaElement
 * Media.error; //null:正常
