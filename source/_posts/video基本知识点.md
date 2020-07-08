@@ -31,9 +31,11 @@ HTML5中 **video** 标签定义视频，比如电影片段或其他视频流。�
 |属性|值|描述|
 | --- | --- | --- |
  | oncanplay | script | 当文件就绪可以开始播放时运行的脚本（缓冲已足够开始时）。 | 
- | oncanplaythrough | script | 当媒介能够无需因缓冲而停止即可播放至结尾时运行的脚本。 | onemptied | script | 当发生故障并且文件突然不可用时运行的脚本（比如连接意外断开时）。 | 
+ | oncanplaythrough | script | 当媒介能够无需因缓冲而停止即可播放至结尾时运行的脚本。 |
+ | onemptied | script | 当发生故障并且文件突然不可用时运行的脚本（比如连接意外断开时）。 | 
  | onended | script | 当媒介已到达结尾时运行的脚本（可发送类似“感谢观看”之类的消息）。 | 
- | onerror | script | 当在文件加载期间发生错误时运行的脚本。 | onloadeddata | script | 当媒介数据已加载时运行的脚本。 | 
+ | onerror | script | 当在文件加载期间发生错误时运行的脚本。 |
+ | onloadeddata | script | 当媒介数据已加载时运行的脚本。 | 
  | onpause | script | 当媒介被用户或程序暂停时运行的脚本。 | 
  | onplay | script | 当媒介已就绪可以开始播放时运行的脚本。 | 
  | onplaying | script | 当媒介已开始播放时运行的脚本。 | 
