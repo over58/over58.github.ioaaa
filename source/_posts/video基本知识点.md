@@ -16,28 +16,31 @@ HTML5中 **video** 标签定义视频，比如电影片段或其他视频流。�
 
 |属性|值|描述|
 |----| ----|---|
-|autoplay |autoplay |如果出现该属性，则视频在就绪后马上播放。
-|controls |controls |如果出现该属性，则向用户显示控件，比如播放按钮。
-|height |pixels |设置视频播放器的高度。
-|width |pixels |设置视频播放器的宽度。
-|loop |loop |如果出现该属性，则当媒介文件完成播放后再次开始播放。
-|muted |muted |规定视频的音频输出应该被静音。
-|poster |URL |规定视频下载时显示的图像，或者在用户点击播放按钮前显示的图像。
-|preload |pixels |如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。
-|src |URL |要播放的视频的 URL。
+|autoplay |autoplay |如果出现该属性，则视频在就绪后马上播放。|
+|controls |controls |如果出现该属性，则向用户显示控件，比如播放按钮。|
+|height |pixels |设置视频播放器的高度。|
+|width |pixels |设置视频播放器的宽度。|
+|loop |loop |如果出现该属性，则当媒介文件完成播放后再次开始播放。|
+|muted |muted |规定视频的音频输出应该被静音。|
+|poster |URL |规定视频下载时显示的图像，或者在用户点击播放按钮前显示的图像。|
+|preload |pixels |如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。|
+|src |URL |要播放的视频的 URL。|
 
 ## Video事件
 
 |属性|值|描述|
 | --- | --- | --- |
-|oncanplay|script|当文件就绪可以开始播放时运行的脚本（缓冲已足够开始时）。
-|oncanplaythrough|script|当媒介能够无需因缓冲而停止即可播放至结尾时运行的脚本。|onemptied|script|当发生故障并且文件突然不可用时运行的脚本（比如连接意外断开时）。
-|onended|script|当媒介已到达结尾时运行的脚本（可发送类似“感谢观看”之类的消息）。|onerror|script|当在文件加载期间发生错误时运行的脚本。|onloadeddata|script|当媒介数据已加载时运行的脚本。|onpause|script|当媒介被用户或程序暂停时运行的脚本。
-|onplay|script|当媒介已就绪可以开始播放时运行的脚本。|onplaying|script|当媒介已开始播放时运行的脚本。
-|onprogress|script|当浏览器正在获取媒介数据时运行的脚本。
-|ontimeupdate|script|当播放位置改变时（比如当用户快进到媒介中一个不同的位置时）运行的脚本。
-|onvolumechange|script|每当音量改变时（包括将音量设置为静音）时运行的脚本。
-|onwaiting|script|当媒介已停止播放但打算继续播放时（比如当媒介暂停已缓冲更多数据）
+ | oncanplay | script | 当文件就绪可以开始播放时运行的脚本（缓冲已足够开始时）。 | 
+ | oncanplaythrough | script | 当媒介能够无需因缓冲而停止即可播放至结尾时运行的脚本。 | onemptied | script | 当发生故障并且文件突然不可用时运行的脚本（比如连接意外断开时）。 | 
+ | onended | script | 当媒介已到达结尾时运行的脚本（可发送类似“感谢观看”之类的消息）。 | 
+ | onerror | script | 当在文件加载期间发生错误时运行的脚本。 | onloadeddata | script | 当媒介数据已加载时运行的脚本。 | 
+ | onpause | script | 当媒介被用户或程序暂停时运行的脚本。 | 
+ | onplay | script | 当媒介已就绪可以开始播放时运行的脚本。 | 
+ | onplaying | script | 当媒介已开始播放时运行的脚本。 | 
+ | onprogress | script | 当浏览器正在获取媒介数据时运行的脚本。 | 
+ | ontimeupdate | script | 当播放位置改变时（比如当用户快进到媒介中一个不同的位置时）运行的脚本。 | 
+ | onvolumechange | script | 每当音量改变时（包括将音量设置为静音）时运行的脚本。 | 
+ | onwaiting | script | 当媒介已停止播放但打算继续播放时（比如当媒介暂停已缓冲更多数据） | 
 
 ### 运行脚本
 ```
