@@ -235,15 +235,17 @@ if (document.exitFullscreen) {
 
 ## 常见应用
 ### 视频非全屏播放
+
 ```
 <video
   x5-video-player-type="h5"
   playsinline
   webkit-playsinline>
 </video>
-``` 
+```
 
 ### 隐藏视频右下角的三个点
+
 ```
  <video
   //关闭下载， 音轨
@@ -252,3 +254,4 @@ if (document.exitFullscreen) {
   disablePictureInPicture
 />
 ```
+
