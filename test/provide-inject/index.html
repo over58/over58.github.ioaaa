@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script crossorigin="anonymous" integrity="sha384-OZmxTjkv7EQo5XDMPAmIkkvywVeXw59YyYh6zq8UKfkbor13jS+5p8qMTBSA1q+F" src="https://lib.baomitu.com/vue/2.6.11/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <Parent>
+    </Parent>
+  </div>
+  <script>
+    Vue.component('Center', {
+      components:{
+        Child :{
+          inject: ['parentName'],
+          data () {
+            return {
+              name: 'child name'
+            }
+          },
+          template: '<div class="child">child: {{parentName}}</div>',
+          created() {
+          }
+        }
+      },
+      data (){
+        return {
+          name: 'center name'
+        }
+      },
+      template: `<div class="center">
+        <Child></Child>
+      </div>`
+    })
+
+    Vue.component('Parent', {
+      
+      data (){
+        return {
+          name: 'parent name',
+          obj:{
+            parentName: 'parent name',
+            desc: 'desc'
+          }
+        }
+      },
+      provide (){
+        return this.obj
+      },
+      computed: {
+       
+      },
+      template: `
+        <div class="parent">
+          <Center/>
+        </div>
+      `,
+      created() {
+        console.log('Parent', this)
+      }
+    })
+
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>
