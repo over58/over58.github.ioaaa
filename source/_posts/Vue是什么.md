@@ -30,6 +30,9 @@ renderMixin(Vue)
 
 export default Vue
 ```
+
+<!-- more -->
+
 ## 主要步骤
 1.initMixin(Vue)
 2.stateMixin(Vue)
@@ -47,26 +50,26 @@ export default Vue
 - Vue.prototype.$delete(响应式删除，并通知)
 - Vue.prototype.$watch
 
-并已经为\$data和\$props添加了set,get方法,执行如下
+并已经为$data和$props添加了set,get方法,执行如下
 ```
  Object.defineProperty(Vue.prototype, '$data', {
     get () {
-        return this._data
+      return this._data
     },
     set () {
         warn(
-                'Avoid replacing instance root $data. ' +
-                'Use nested data properties instead.',
-                this
-          )
+          'Avoid replacing instance root $data. ' +
+          'Use nested data properties instead.',
+          this
+        )
      }
  })
  Object.defineProperty(Vue.prototype, '$props', {
     get () {
-        return this._props
+      return this._props
     },
     set () {
-          warn(`$props is readonly.`, this)
+      warn(`$props is readonly.`, this)
     }
 })
 ```
@@ -173,7 +176,7 @@ Vue.prototype._init = function (options?: Object) {
 8. 初始化state
 9. 初始化provide
 10. 调用created
-11. 如果\$el存在，则调用\$mount(\$el)方法
+11. 如果$el存在，则调用$mount($el)方法
 
 ### 初始化lifecycle
 ```
@@ -254,4 +257,35 @@ export function initState (vm: Component) {
 2. 初始化methods (initMethods)
 3. 初始化data    (initData)
 4. 初始化计算属性 (initComputed)  **vm._computedWatchers**
-5. 初始化watch   (initWatch)
+5. 初始化watch   (initWatch)  **vm.$watch(expOrFn, handler, options)**
+
+### 初始化provide
+```
+export function initProvide (vm: Component) {
+  const provide = vm.$options.provide
+  if (provide) {
+    vm._provided = typeof provide === 'function'
+      ? provide.call(vm)
+      : provide
+  }
+}
+```
+将provide中的对象存储到vm._provided中
+### 调用created
+```
+vm.$emit('hook:' + hook)
+```
+### 如果$el存在，则调用$mount($el)方法
+1. callHook(vm, 'beforeMount')
+2. vm._update()
+3. 
+```
+ new Watcher(vm, updateComponent, noop, {
+    before () {
+      if (vm._isMounted && !vm._isDestroyed) {
+        callHook(vm, 'beforeUpdate')
+      }
+    }
+  }, true /* isRenderWatcher */)
+ ```
+4. callHook(vm, 'mounted')
