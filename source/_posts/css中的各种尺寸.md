@@ -11,9 +11,17 @@ categories:
 
 ### client
 
-| clientTop    | border-top-width                    |
+| clientTop    | border-top-width           |
+| ------------ | -------------------------- |
+| clientLeft   | border-left-width          |
+| clientWidth  | 水平方向 content + padding |
+| clientHeight | 竖直方向 content + padding |
+
+### offset
+
+| offsetTop    |                                     |
 | ------------ | ----------------------------------- |
-| clientLeft   | border-left-width                   |
-| clientWidth  | 水平方向 content + padding + border |
-| clientHeight | 竖直方向 content + padding + border |
+| offsetLeft   |                                     |
+| offsetWidth  | 水平方向 content + padding + border |
+| offsetHeight | 竖直方向 content + padding + border |
 
