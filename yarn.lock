@@ -1684,8 +1684,8 @@ hexo-codepen@^0.1.1:
 
 hexo-deployer-git@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.npmjs.org/hexo-deployer-git/-/hexo-deployer-git-2.1.0.tgz#2e72f05d7b318dbe29929d156ea13f9132354ff1"
-  integrity sha512-0rx8YVd1UrwD9vUzIPrB7mljLdcmUv0zRj3MAMCBxY7HqI2RM5ZEV0uKxi34qB7LYA80BNl3FWHl2ghO/tKVTA==
+  resolved "https://r.cnpmjs.org/hexo-deployer-git/download/hexo-deployer-git-2.1.0.tgz#2e72f05d7b318dbe29929d156ea13f9132354ff1"
+  integrity sha1-LnLwXXsxjb4pkp0VbqE/kTI1T/E=
   dependencies:
     bluebird "^3.5.0"
     chalk "^3.0.0"
