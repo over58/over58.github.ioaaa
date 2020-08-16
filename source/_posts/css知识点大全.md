@@ -76,3 +76,44 @@ tags:[css]
         - scrollTop 内容层 top 端到可视区域top 端的距离
         - scrollTop 内容层 left 端到可视区域 left 端的距离
     >常见应用，判断滚动到底部 el.scrollHeight - (el.offsetHeight + el.scrollTop) < 10
+5. BFC
+    block format context 特点是内部子元素绝不会影响外部的元素
+    1. 根元素(html)
+    2. 绝对定位元素：position (absolute、fixed)
+    3. 浮动元素: float 除 none 以外的值
+    4. display 为 inline-block、table-cell、table-caption、flex、inline-flex
+    5. overflow 除了 visible 以外的值 (hidden、auto、scroll)
+
+6. BFC 有哪些用途
+   1. 同一个 bfc 下外边距会发生折叠
+   2. 可以包含浮动的元素
+   3. 可以阻止元素被浮动元素覆盖
+   
+7. 元素高度，宽度获取， style, currentStyle, getComputedStyle getBoundingClientRect
+    - dom.style.width 只能获取内联样式
+    - dom.currentStyle.width Element.currentStyle 是一个与 window.getComputedStyle方法功能相同的属性。这个属性实现在旧版本的IE浏览器中。
+    - window.getComputedStyle  方法返回一个对象，该对象在应用活动样式表并解析这些值可能包含的任何基本计算后报告元素的所有CSS属性的值。因此输出的值是准确的
+    - window.getBoundingClientRect 对象包含了一组用于描述边框的只读属性-——- left、top、right 和 bottom，单位为px。除了 width 和 height 外的属性都是相对于视口的左上角位置而言的。
+  
+8. 全屏滚动的原理
+    类似于轮播图，整体元素一直排列下去，假设有5个需要展示的全屏页面，那么高度将回是500%，但我们只能展示100%，剩下的内容可以通过 transform 进行 Y 轴定位， 也可以通过 margin-top 实现
+
+    **涉及css 属性**
+    overflow:hiidden | transition: all 1s ease;
+
+9. z-index层叠上下文
+    - z-index 可以解决元素之前的覆盖顺序问题，设置它的层叠顺序
+    - 如果元素是没有定位的，对其设置的 z-index 会是无效的
+
+    ## 元素层叠时，覆盖关系准则(*)
+    ### 同父同级元素
+      - 当具有明显的层叠水平标识时，如识别的 z-index 值 
+        - z-index大的覆盖小的，数值越大，越靠近视觉点。
+        - z-index相同时，在DOM流中处于后面会覆盖前面
+     - 都没有设置 z-index 时， 使用默认值，一个定位一个没有定位，那么定位覆盖未定位元素
+     - 都没有发生定位且发生位置重合现象时，在 dom 流中处于后面的会覆盖前面
+    ### 父子层级元素
+      - 不同父元素，只要父元素越大，那么整体就越靠近视觉点，而不管其子元素大小情况。
+      - 如果父元素 z-index 有效，那么子元素无论是否设置 z-index 都和父元素一致，会在父元素上方；
+      - 如果父元素 z-index 失效（未定位或者使用默认值），那么定位子元素的 z-index 设置生效。
+
