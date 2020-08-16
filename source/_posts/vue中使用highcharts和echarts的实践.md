@@ -10,6 +10,4 @@ categories: [graph]
 
   经过实际项目测试：同等数量的情况下，highcharts和echarts 所占的内存相近，但CPU占比很低。举一个栗子，一个页面上有八个图，每个图平均大概10条线，当页面渲染完成，无任何鼠标点击的时候，echarts的CPU占比稳定在20%左右，highcharts始终在1%以下。
 
-![highcharts](/images/highcharts-q.png)
-![echarts](/images/echarts-q.png)
 
