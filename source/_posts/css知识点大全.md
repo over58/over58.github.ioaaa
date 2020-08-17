@@ -117,3 +117,54 @@ tags:[css]
       - 如果父元素 z-index 有效，那么子元素无论是否设置 z-index 都和父元素一致，会在父元素上方；
       - 如果父元素 z-index 失效（未定位或者使用默认值），那么定位子元素的 z-index 设置生效。
 
+## 层叠上下文的创建
+
+### 根层叠上下文
+
+指的是页面根元素，也就是滚动条的默认的始作俑者元素。这就是为什么，绝对定位元素在left/top等值定位的时候，如果没有其他定位元素限制，会相对浏览器窗口定位的原因。👉
+
+### 定位元素与传统层叠上下文
+
+对于包含有position:relative/position:absolute/position:fixed的定位元素，当其z-index值不是auto的时候，会创建层叠上下文。👉
+
+### CSS3与新时代的层叠上下文
+
+CSS3的出现除了带来了新属性，同时还对过去的很多规则发出了挑战。例如，👉CSS3 transform对overflow隐藏对position:fixed定位的影响等。而这里，层叠上下文这一块的影响要更加广泛与显著。
+如下：
+
+1. z-index值不为auto的flex项(父元素display:flex|inline-flex).
+2. 元素的opacity值不是1.
+3. 元素的transform值不是none.
+4. 元素mix-blend-mode值不是normal.
+5. 元素的filter值不是none.
+6. 元素的isolation值是isolate.
+7. will-change指定的属性值为上面任意一个。
+8. 元素的-webkit-overflow-scrolling设为touch
+
+![image-20200817132141238](css知识点大全/image-20200817132141238.png)
+
+10. CSS优化及性能提升
+
+- 将css文件放在页面最上面，多个css可合并，并尽量减少http请求
+
+- 避免过渡约束，避免使用后代选择符，链式选择符，多种类型选择符
+
+- 避免不必要的命名空间，避免不必要的重复样式，移除空的css规则
+
+- 使用具有语义的名字，使用紧凑的语法
+
+- 避免使用 !important
+
+- 尽可能地精简规则，尽可能合并不同类的重复规则，修复解析错误
+
+- 正确使用display属性
+  - inline后不应该使用width、height、margin、padding以及float
+  - inline-block后不应该使用float；block后不应该使用vertical-align
+
+- 不滥用浮动，遵守盒模型规则
+
+- 不滥用web字体，不声明过多font-size，不重复定义h1-h6，不给h1-h6定义过多样式
+
+- 值为0时不需要任何单位
+
+- 标准化各种浏览器前缀
