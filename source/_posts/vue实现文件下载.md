@@ -14,7 +14,7 @@ tags: [js, vue]
 而且从开发规范上api一般上要封装一下（header中需要一些特定设置），放到统一的文件。
 
 解决办法：下载相关和api responseType设置为blob(!!!重要)，在以blob形式获取到文件之后js创建一个a标签，设置url和downlaod后并触发，最后释放url资源并删除创建的a标签
-```
+```js
 api:
 downloadFile (url) => {
   axios.get(url, {

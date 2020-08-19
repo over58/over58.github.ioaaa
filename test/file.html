@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="file" id="file">
+  <script>
+    var fileEl = document.getElementById('file')
+    fileEl.onchange = function (e) {
+      const reader = new FileReader()
+      reader.onload = function () {
+        console.log(reader.result)
+      }
+      reader.onerror = function(e) {
+        console.log(e)
+      }
+      reader.onabort = function (e) {
+        console.log(e)
+      }
+      reader.readAsText(fileEl.files[0])
+      console.log(e, fileEl.files)
+    }
+  </script>
+</body>
+</html>
