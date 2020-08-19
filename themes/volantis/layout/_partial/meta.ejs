@@ -68,6 +68,12 @@ if (post.meta && (post.meta.footer !== undefined && post.meta.footer !== null)) 
 <% } else if (position == 'footer') { %>
   <section class='meta' id="footer-meta">
     <div class='new-meta-box'>
+      <div class="new-meta-item date">
+        <a href="https://github.com/over58/over58.github.io/tree/myblog/source/<%=page.source%>" class="link">
+          <i class="fa fa-edit"></i>
+          <p>编辑文章<%=page.layout%></p>
+        </a>
+      </div>
       <% (bottomMetas).forEach(function(meta){ %>
         <% if((meta != 'title') && (meta in theme.meta)){ %>
           <%- partial('../_meta/' + meta, {post: post, isPostList: isPostList}) %>
