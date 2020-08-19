@@ -698,9 +698,9 @@ rightmenu:
     onclick: document.execCommand('print')
   # 自定义菜单的格式如下
   help:
-    name: 常见问题
+    name: 编辑文章
     icon: fa fa-question
-    url: https://volantis.js.org/faqs/
+    url: https://github.com/over58/over58.github.io/blob/master/(path)
   source_docs:
     name: 本站源码
     icon: fa fa-code-branch
