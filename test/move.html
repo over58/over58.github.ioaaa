@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+    .container{
+      height: 600px;
+      border: solid  1px #dfdfdf;
+      position: relative;
+    }
+      #moveBox{
+        width: 100px;
+        height: 100px;
+        background:red;
+        position: absolute;
+        left:0;
+        top:0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="moveBox"></div>
+    </div>
+    <script type="text/javascript">
+    let container = document.querySelector('.container')
+      let moveBox = document.querySelector('#moveBox')
+      let loading = false
+      moveBox.addEventListener('touchstart', (e) => {
+        loading = true
+      })
+
+      moveBox.addEventListener('touchmove', (e) => {
+        if(loading) {
+          let touch = e.touches ? e.touches[0] : e
+          console.log('mousemove',touch.clienttX, touch.clienttY)
+          moveBox.style.left = touch.clienttX+'px'
+          moveBox.style.top = touch.clienttY+'px'
+        }
+        e.preventDefault()
+      })
+
+      moveBox.addEventListener('touchend', (e) => {
+        console.log(e)
+        loading = false
+      })
+    </script>
+  </body>
+</html>

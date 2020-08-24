@@ -173,7 +173,7 @@ if (document.readyState != 'loading') {
 
 
 ### load/readState/DomContentLoaded/pageshow执行的先后顺序
-![执行顺序](readyState和DomContentLoaded的先后顺序/js加载时候各个事件执行的先后顺序.png)
+![image-20200824110347927](readyState和DomContentLoaded的先后顺序/image-20200824110347927.png)
 
 
 
