@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "find-up": "^5.0.0",
-    "locate-path": "^6.0.0"
+    "locate-path": "^6.0.0",
+    "ora": "^5.0.0"
   }
 }

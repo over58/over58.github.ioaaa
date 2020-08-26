@@ -1,5 +1,7 @@
 let exec = require('child_process').execSync
 let chalk  = require('chalk')
+const ora = require('ora')
+const spinner = ora('start...')
 
 let commands = [
   'git add .',
@@ -13,8 +15,9 @@ let comments = [
   "提交代码中..."
 ]
 commands.forEach((command, index) => {
+  spinner.text = 'loading'
   console.log(chalk.yellowBright(comments[index]))
   exec(command)
 })
 
-console.log(chalk.green('部署成功！'));
+spinner.succeed('success!')
