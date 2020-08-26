@@ -6,7 +6,7 @@ var chalk = require('chalk');
 
 var ora = require('ora');
 
-var spinner = ora().start(chalk.bgGrey('start...\n'));
+var spinner = ora().start(chalk.blue('start...\n'));
 var commands = ['git add .', 'git commit -m "feat: update artcile"', 'git push origin myblog'];
 spinner.text = 'loading';
 commands.forEach(function (command) {
