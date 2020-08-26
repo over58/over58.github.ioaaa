@@ -9,8 +9,8 @@ let commands = [
   'git push origin myblog'
 ]
 
+spinner.text = 'loading'
 commands.forEach((command, index) => {
-  spinner.text = 'loading'
   exec(command)
 })
 
