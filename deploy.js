@@ -9,15 +9,9 @@ let commands = [
   'git push origin myblog'
 ]
 
-let comments = [
-  "添加暂存...",
-  "编辑提交信息...",
-  "提交代码中..."
-]
 commands.forEach((command, index) => {
   spinner.text = 'loading'
-  console.log(chalk.yellowBright(comments[index]))
   exec(command)
 })
 
-spinner.succeed('success!')
+spinner.succeed(chalk.green('success!'))
