@@ -1,4 +1,4 @@
-let exec = require('child_process').execSync
+let execSync = require('child_process').execSync
 let chalk  = require('chalk')
 const ora = require('ora')
 const spinner = ora().start('start...')
@@ -10,8 +10,8 @@ let commands = [
 ]
 
 spinner.text = 'loading'
-commands.forEach((command, index) => {
-  exec(command)
+commands.forEach((command) => {
+  execSync(command)
 })
 
 spinner.succeed(chalk.green('success!'))
