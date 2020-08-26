@@ -1,7 +1,7 @@
 let execSync = require('child_process').execSync
 let chalk  = require('chalk')
 const ora = require('ora')
-const spinner = ora().start(chalk.bgGrey('start...'))
+const spinner = ora().start(chalk.bgGrey('start...\n'))
 
 let commands = [
   'git add .',
