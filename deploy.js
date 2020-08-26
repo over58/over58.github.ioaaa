@@ -5,7 +5,7 @@ const spinner = ora('start...').start()
 
 let commands = [
   'git add .',
-  'git commit -m "update artcile"',
+  'git commit -m "feat: update artcile"',
   'git push origin myblog'
 ]
 
