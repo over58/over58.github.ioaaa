@@ -10,18 +10,18 @@ jobs:
     name: my first job
     steps:
       - name: first_job_step
-      - run: echo '111'
+        run: echo 111
   second_job:
     runs-on: ubuntu-18.04
     name: my second job
-    needs: first_job
+    needs: first_job #指定任务的依赖关系，第一个任务完成，才能开始第二个任务
     steps:
       - name: first_job_step
-      - run: echo 222
+        run: echo 222
   third_job:
     runs-on: ubuntu-18.04
     name: my third job
     needs: [first_job, second_job]
     steps:
       - name: first_job_step
-      - run: echo '333'
+        run: echo '333'
