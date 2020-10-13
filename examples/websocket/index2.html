@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3 id="time"></h3>
+
+    <textarea name="" id="msgContent" cols="30" rows="10"></textarea>
+    <script>
+        // 使用 WebSocket 的地址向服务端开启连接
+        let ws = new WebSocket('ws://localhost:3000')
+
+        const timeContainer = document.getElementById('time')
+        const msgContent = document.getElementById('msgContent')
+        console.log(ws)
+
+        ws.onopen = function () {
+            console.log('open connection')
+        }
+
+        ws.onmessage = function (event) {
+            console.log(event)
+            let data = event.data
+            try {
+                data = JSON.parse(data)
+            } catch {
+                data = event.data
+            }
+            if (data.type === 'time') {
+                timeContainer.innerHTML = new Date(data.data)
+            } else {
+                msgContent.innerHTML = data
+            }
+        }
+
+        ws.onclose = function () {
+            console.log('close connection')
+        }
+    </script>
+</body>
+
+</html>
