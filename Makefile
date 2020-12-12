@@ -24,11 +24,11 @@ rmi:
 commit-update:
 	git add .
 	git commit -m 'update article'
-	git push origin master
+	git push origin myblog
 commit-add:
 	git add .
 	git commit -m 'add article'
-	git push origin master
+	git push origin myblog
 deploy:
 	make commit-update
 	hexo d -g
