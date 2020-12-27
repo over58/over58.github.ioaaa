@@ -5,7 +5,7 @@ author:
 tags:
 date: 2019-10-11 00:26:56
 categories:
-  - wepack
+  - webpack
 ---
 
 # 常用的npm package	
