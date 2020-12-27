@@ -1,4 +1,15 @@
-vue2.x的合并策略
+---
+title: vue2.x的合并策略
+author:
+  - 徐勇超
+tags: []
+categories:
+  - vue
+comments: true
+date: 2020-12-27 15:53:55
+updated: 2020-12-27 15:53:55
+---
+
 
 # data
 
