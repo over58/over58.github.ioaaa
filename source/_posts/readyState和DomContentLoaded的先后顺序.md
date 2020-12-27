@@ -178,3 +178,4 @@ if (document.readyState != 'loading') {
 
 
 >摘自 https://www.zhangxinxu.com/wordpress/2019/10/document-readystate/
+>强烈建议看看这篇文章https://javascript.info/onload-ondomcontentloaded#domcontentloaded
