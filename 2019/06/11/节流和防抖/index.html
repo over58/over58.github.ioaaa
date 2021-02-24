@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#3.0-beta6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>节流和防抖 - over58</title>
+  
+    <meta name="keywords" content="js">
+  
+
+  
+    <meta name="description" content="&#x524D;&#x8A00;&#x5F88;&#x591A;&#x5E38;&#x89C1;&#x4E2D;&#x7531;&#x4E8E;&#x4E8B;&#x4EF6;&#x9891;&#x7E41;&#x7684;&#x88AB;&#x89E6;&#x53D1;&#xFF0C;&#x9020;&#x62...">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/io/atom.xml" title="over58">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+    <link rel="shortcut icon" type='image/x-icon' href="https://www.sina.com.cn/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/io/css/style.css">
+
+  
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+	  setTimeout(function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2306a802782087441eacb63a2407394e";
+		hm.defer=true;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+	  }, 5000);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post' style="display: none;">
+      <div class='cover-body'>
+  <div class='a'>
+    
+      <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png'/>
+    
+    
+    
+  </div>
+  <div class='b'>
+    <div class='menu navigation dock'>
+      <div class='list-h'>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+    </cover>
+    <header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/io/'>
+          
+            <img no-lazy class='logo' src='img/avatar.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                  
+                  
+                  
+                    id="io"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                  
+                  
+                  
+                    id="ioarchives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                  
+                  
+                  
+                    id="io"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                  
+                  
+                  
+                    id="ioarchives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  </div>
+  
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper' id="pjax-container">
+      
+        <!--此文件用来存放一些不方便取值的变量--> 
+<!--思路大概是将值藏到重加载的区域内--> 
+ 
+ 
+ 
+<div id="pjax-data" style="display: none"> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">节流和防抖</div> 
+  <div id="pjax-enable-cover">true</div> 
+  <div id="pjax-comment-path">none</div> 
+  <div id="pjax-comment-placeholder">none</div> 
+</div> 
+ 
+ 
+<script> 
+  // 处理封面 此时 jquery 还没加载 
+  if ("none" == "none") { // 移除封面 
+    document.getElementsByClassName('cover')[0].style.display = "none"; 
+    document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
+  } else { 
+    if ("none" == "blog") { // 半屏 
+      document.getElementsByClassName('cover')[0].classList.remove("full"); 
+      document.getElementsByClassName('cover')[0].classList.add("half"); 
+      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
+    } else if ("none" == "docs") { // 全屏 
+      document.getElementsByClassName('cover')[0].classList.remove("half"); 
+      document.getElementsByClassName('cover')[0].classList.add("full"); 
+      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
+    } 
+    document.getElementsByClassName('cover')[0].style.display = ""; 
+    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover"); 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
+  } 
+</script> 
+
+      
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/io/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/">
+      节流和防抖
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年6月11日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><p>&#x5F88;&#x591A;&#x5E38;&#x89C1;&#x4E2D;&#x7531;&#x4E8E;&#x4E8B;&#x4EF6;&#x9891;&#x7E41;&#x7684;&#x88AB;&#x89E6;&#x53D1;&#xFF0C;&#x9020;&#x6210;&#x9891;&#x7E41;&#x7684;&#x6267;&#x884C;Dom&#x64CD;&#x4F5C;&#xFF0C;&#x8D44;&#x6E90;&#x52A0;&#x8F7D;&#x7B49;&#x884C;&#x4E3A;&#xFF0C;&#x5BFC;&#x81F4;UI&#x5361;&#x987F;&#x751A;&#x81F3;&#x5D29;&#x6E83;&#x3002;</p>
+<ol>
+<li>window &#x7684;resize&#x548C;scroll&#x4E8B;&#x4EF6;</li>
+<li>mousedown keydown mousemove keydup&#x4E8B;&#x4EF6;<br>&#x5B9E;&#x9645;&#x4E0A;&#x5BF9;&#x4E8E;window&#x7684;resize&#x4E8B;&#x4EF6;&#xFF0C;&#x5B9E;&#x9645;&#x9700;&#x6C42;&#x5927;&#x591A;&#x4E3A;&#x505C;&#x6B62;&#x6539;&#x53D8;&#x5927;&#x5C0F;n&#x6BEB;&#x79D2;&#x540E;&#x6267;&#x884C;&#x540E;&#x7EED;&#x5904;&#x7406;&#xFF1B;&#x800C;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;&#x5927;&#x591A;&#x7684;&#x9700;&#x6C42;&#x662F;&#x4EE5;&#x4E00;&#x5B9A;&#x7684;&#x9891;&#x7387;&#x6267;&#x884C;&#x540E;&#x7EED;&#x5904;&#x7406;&#x3002;&#x9488;&#x5BF9;&#x8FD9;&#x4E24;&#x79CD;&#x9700;&#x6C42;&#x5C31;&#x51FA;&#x73B0;&#x4E86;debounce&#x548C;throttle&#x4E24;&#x79CD;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x3002; </li>
+</ol>
+<h3 id="throttle"><a href="#throttle" class="headerlink" title="throttle"></a>throttle</h3><h4 id="&#x4ECB;&#x7ECD;"><a href="#&#x4ECB;&#x7ECD;" class="headerlink" title="&#x4ECB;&#x7ECD;"></a>&#x4ECB;&#x7ECD;</h4><p>&#x6BCF;&#x95F4;&#x9694;&#x4E00;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x6B64;&#x671F;&#x95F4;&#x5185;&#x5F97;&#x591A;&#x6B21;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x5FFD;&#x7565;&#x4E0D;&#x5904;&#x7406;</p>
+<h4 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span><span class="params">(fn, wait)</span></span>{</span><br><span class="line">  let pervious = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="params">(<span class="rest_arg">...args</span>)</span> </span>{</span><br><span class="line">    let now = Date.now()</span><br><span class="line">    <span class="keyword">if</span>(now - pervious &gt; wait) {</span><br><span class="line">      pervious = now</span><br><span class="line">      fn.apply(<span class="keyword">this</span>, args)</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<h4 id="underscore&#x6E90;&#x7801;&#x5206;&#x6790;"><a href="#underscore&#x6E90;&#x7801;&#x5206;&#x6790;" class="headerlink" title="underscore&#x6E90;&#x7801;&#x5206;&#x6790;"></a>underscore&#x6E90;&#x7801;&#x5206;&#x6790;</h4><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/* options&#x7684;&#x9ED8;&#x8BA4;&#x503C;</span></span><br><span class="line"><span class="comment">  *  &#x8868;&#x793A;&#x9996;&#x6B21;&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x503C;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4F1A;&#x9A6C;&#x4E0A;&#x8C03;&#x7528;func&#xFF1B;&#x5426;&#x5219;&#x4EC5;&#x4F1A;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x65F6;&#x523B;&#xFF0C;&#x5F53;&#x7B2C;&#x4E8C;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x8D85;&#x8FC7;wait&#x65F6;&#xFF0C;&#x624D;&#x8C03;&#x7528;func&#x3002;</span></span><br><span class="line"><span class="comment">  *  options.leading = true;</span></span><br><span class="line"><span class="comment">  *  &#x8868;&#x793A;&#x5F53;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x672A;&#x5230;&#x8FBE;wait&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF0C;&#x5219;&#x542F;&#x52A8;&#x8BA1;&#x65F6;&#x5668;&#x5EF6;&#x8FDF;&#x8C03;&#x7528;func&#x51FD;&#x6570;&#xFF0C;&#x82E5;&#x540E;&#x7EED;&#x5728;&#x65E2;&#x672A;&#x8FBE;&#x5230;wait&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x548C;func&#x51FD;&#x6570;&#x53C8;&#x672A;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x503C;&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x88AB;&#x8C03;&#x7528;&#x8BF7;&#x6C42;&#x5C06;&#x88AB;&#x4E22;&#x5F03;&#x3002;</span></span><br><span class="line"><span class="comment">  *  options.trailing = true; </span></span><br><span class="line"><span class="comment">  *  &#x6CE8;&#x610F;&#xFF1A;&#x5F53;options.trailing = false&#x65F6;&#xFF0C;&#x6548;&#x679C;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x7B80;&#x5355;&#x5B9E;&#x73B0;&#x6548;&#x679C;&#x76F8;&#x540C;</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">_.<span class="attr">throttle</span> = function(func, wait, options) {</span><br><span class="line">    var timeout, context, args, result;</span><br><span class="line">    var <span class="attr">previous</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (!options) <span class="attr">options</span> = {};</span><br><span class="line"></span><br><span class="line">    var <span class="attr">later</span> = function() {</span><br><span class="line">      <span class="attr">previous</span> = options.<span class="attr">leading</span> === <span class="literal">false</span> ? <span class="number">0</span> : _.now();</span><br><span class="line">      <span class="attr">timeout</span> = <span class="literal">null</span>;</span><br><span class="line">      <span class="attr">result</span> = func.apply(context, args);</span><br><span class="line">      <span class="keyword">if</span> (!timeout) <span class="attr">context</span> = <span class="attr">args</span> = <span class="literal">null</span>;</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    var <span class="attr">throttled</span> = function() {</span><br><span class="line">      var <span class="attr">now</span> = _.now();</span><br><span class="line">      <span class="keyword">if</span> (!previous &amp;&amp; options.<span class="attr">leading</span> === <span class="literal">false</span>) <span class="attr">previous</span> = now; // &#x9ED8;&#x8BA4;&#x4E3A;&#x65F6;&#x5F00;&#x5934;&#x5C31;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x7684;&#xFF0C; Date.now() - previous (<span class="number">0</span>) &gt; wait</span><br><span class="line">      var <span class="attr">remaining</span> = wait - (now - previous);</span><br><span class="line">      <span class="attr">context</span> = this;</span><br><span class="line">      <span class="attr">args</span> = arguments;</span><br><span class="line">      <span class="keyword">if</span> (remaining &lt;= <span class="number">0</span> || remaining &gt; wait) { // &#x5F53;&#x95F4;&#x9694;&#x5927;&#x4E8E;wait &#x6216;&#x8005; &#x5F53;&#x524D;&#x65F6;&#x95F4;&#x5C0F;&#x4E8E;&#x4E0A;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;(&#xFF01;&#xFF01;&#xFF01;&#x5BA2;&#x6237;&#x7AEF;&#x4EBA;&#x4E3A;&#x7684;&#x66F4;&#x6539;&#x7CFB;&#x7EDF;&#x65F6;&#x95F4;&#x540E;&#xFF0C;&#x9A6C;&#x4E0A;&#x6267;&#x884C;&#x4E86;func&#x51FD;&#x6570;)</span><br><span class="line">        <span class="keyword">if</span> (timeout) {</span><br><span class="line">          clearTimeout(timeout);</span><br><span class="line">          <span class="attr">timeout</span> = <span class="literal">null</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="attr">previous</span> = now;</span><br><span class="line">        <span class="attr">result</span> = func.apply(context, args);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (!timeout) <span class="attr">context</span> = <span class="attr">args</span> = <span class="literal">null</span>;</span><br><span class="line">      } <span class="keyword">else</span> <span class="keyword">if</span> (!timeout &amp;&amp; options.trailing !== <span class="literal">false</span>) { // &#x65E0;timeout&#x548C; &#x5141;&#x8BB8;&#x7ED3;&#x5C3E;&#x65F6;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x51FD;&#x6570; </span><br><span class="line">        <span class="attr">timeout</span> = setTimeout(later, remaining);</span><br><span class="line">      }</span><br><span class="line">      return result;</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    throttled.<span class="attr">cancel</span> = function() {</span><br><span class="line">      clearTimeout(timeout);</span><br><span class="line">      <span class="attr">previous</span> = <span class="number">0</span>;</span><br><span class="line">      <span class="attr">timeout</span> = <span class="attr">context</span> = <span class="attr">args</span> = <span class="literal">null</span>;</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    return throttled;</span><br><span class="line">  };</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="&#x9632;&#x6296;"><a href="#&#x9632;&#x6296;" class="headerlink" title="&#x9632;&#x6296;"></a>&#x9632;&#x6296;</h3><h4 id="&#x4ECB;&#x7ECD;-1"><a href="#&#x4ECB;&#x7ECD;-1" class="headerlink" title="&#x4ECB;&#x7ECD;"></a>&#x4ECB;&#x7ECD;</h4><p>&#x5982;&#x679C;&#x7528;&#x624B;&#x6307;&#x4E00;&#x76F4;&#x6309;&#x4F4F;&#x4E00;&#x4E2A;&#x5F39;&#x7C27;&#xFF0C;&#x5B83;&#x5C06;&#x4E0D;&#x4F1A;&#x5F39;&#x8D77;&#x76F4;&#x5230;&#x4F60;&#x677E;&#x624B;&#x4E3A;&#x6B62;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5F53;&#x8C03;&#x7528;&#x52A8;&#x4F5C;n&#x6BEB;&#x79D2;&#x540E;&#xFF0C;&#x624D;&#x4F1A;&#x6267;&#x884C;&#x8BE5;&#x52A8;&#x4F5C;&#xFF0C;&#x82E5;&#x5728;&#x8FD9;n&#x6BEB;&#x79D2;&#x5185;&#x53C8;&#x8C03;&#x7528;&#x6B64;&#x52A8;&#x4F5C;&#x5219;&#x5C06;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x3002;</p>
+<h4 id="&#x7B80;&#x5355;demo"><a href="#&#x7B80;&#x5355;demo" class="headerlink" title="&#x7B80;&#x5355;demo"></a>&#x7B80;&#x5355;demo</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debouce</span> <span class="params">(fn, wait, immediate)</span> </span>{</span><br><span class="line">  let timer = <span class="literal">null</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(<span class="rest_arg">...args</span>)</span></span>{</span><br><span class="line">    &lt;!-- &#x6E05;&#x9664;&#x539F;&#x6765;&#x7684;&#x5EF6;&#x65F6;&#x5668; --&gt;</span><br><span class="line">    <span class="keyword">if</span>(tiemr) clearTimeout(timer)</span><br><span class="line"></span><br><span class="line">    &lt;!-- &#x7B2C;&#x4E00;&#x6B21;&#x8C03;&#x7528; --&gt;</span><br><span class="line">    <span class="keyword">if</span> (immediate &amp;&amp; !tiemr){</span><br><span class="line">      fn.apply(<span class="keyword">this</span>, args)</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    timer = setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</span><br><span class="line">      fn.apply(<span class="keyword">this</span>, args)</span><br><span class="line">    }, wait)</span><br><span class="line"></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x52A0;&#x5F3A;&#x7248;&#x7684;throttle"><a href="#&#x52A0;&#x5F3A;&#x7248;&#x7684;throttle" class="headerlink" title="&#x52A0;&#x5F3A;&#x7248;&#x7684;throttle"></a>&#x52A0;&#x5F3A;&#x7248;&#x7684;throttle</h4><p>&#x73B0;&#x5728;&#x8003;&#x8651;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x6237;&#x7684;&#x64CD;&#x4F5C;&#x975E;&#x5E38;&#x9891;&#x7E41;&#xFF0C;&#x4E0D;&#x7B49;&#x8BBE;&#x7F6E;&#x7684;&#x5EF6;&#x8FDF;&#x65F6;&#x95F4;&#x7ED3;&#x675F;&#x5C31;&#x8FDB;&#x884C;&#x4E0B;&#x6B21;&#x64CD;&#x4F5C;&#xFF0C;&#x4F1A;&#x9891;&#x7E41;&#x7684;&#x6E05;&#x9664;&#x8BA1;&#x65F6;&#x5668;&#x5E76;&#x91CD;&#x65B0;&#x751F;&#x6210;&#xFF0C;&#x6240;&#x4EE5;&#x51FD;&#x6570; fn &#x4E00;&#x76F4;&#x90FD;&#x6CA1;&#x529E;&#x6CD5;&#x6267;&#x884C;&#xFF0C;&#x5BFC;&#x81F4;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x8FDF;&#x8FDF;&#x5F97;&#x4E0D;&#x5230;&#x54CD;&#x5E94;&#x3002;<br>&#x6709;&#x4E00;&#x79CD;&#x601D;&#x60F3;&#x662F;&#x5C06;&#x300C;&#x8282;&#x6D41;&#x300D;&#x548C;&#x300C;&#x9632;&#x6296;&#x300D;&#x5408;&#x4E8C;&#x4E3A;&#x4E00;&#xFF0C;&#x53D8;&#x6210;&#x52A0;&#x5F3A;&#x7248;&#x7684;&#x8282;&#x6D41;&#x51FD;&#x6570;&#xFF0C;&#x5173;&#x952E;&#x70B9;&#x5728;&#x4E8E;&#x300C; wait &#x65F6;&#x95F4;&#x5185;&#xFF0C;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x4F46;&#x53EA;&#x8981; wait &#x7684;&#x65F6;&#x95F4;&#x5230;&#x4E86;&#xFF0C;&#x5FC5;&#x987B;&#x7ED9;&#x7528;&#x6237;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x3002;&#x8FD9;&#x79CD;&#x5408;&#x4F53;&#x601D;&#x8DEF;&#x6070;&#x597D;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x4E0A;&#x9762;&#x63D0;&#x51FA;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span><span class="params">(fn, wait , immediate)</span> </span>{</span><br><span class="line">  let pervious = <span class="number">0</span></span><br><span class="line">  let timer = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(<span class="rest_arg">...args</span>)</span> </span>{</span><br><span class="line">    let now = Date.now()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(now - pervious &lt; wait) {</span><br><span class="line">      <span class="keyword">if</span> (timer) clearTimeout(timer)</span><br><span class="line">      <span class="keyword">if</span> (immediate &amp;&amp; !timer) {</span><br><span class="line">        fn.apply(<span class="keyword">this</span>, args)</span><br><span class="line">      }</span><br><span class="line">      timer = setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</span><br><span class="line">        pervious = now</span><br><span class="line">        fn.apply(<span class="keyword">this</span>, args)</span><br><span class="line">      })</span><br><span class="line"></span><br><span class="line">    }<span class="keyword">else</span>{</span><br><span class="line">      pervious = now</span><br><span class="line">      fn.apply(<span class="keyword">this</span>, args)</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h4 id="underscore&#x6E90;&#x7801;&#x5206;&#x6790;-1"><a href="#underscore&#x6E90;&#x7801;&#x5206;&#x6790;-1" class="headerlink" title="underscore&#x6E90;&#x7801;&#x5206;&#x6790;"></a>underscore&#x6E90;&#x7801;&#x5206;&#x6790;</h4><p>&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x548C;demo&#x53EF;&#x4EE5;&#x8BF4;&#x662F;&#x4E00;&#x6478;&#x4E00;&#x6837;</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &#x6B64;&#x5904;&#x7684;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x4E0A;&#x6587;&#x90FD;&#x6709;&#x89E3;&#x91CA;</span></span><br><span class="line">_.debounce = <span class="function"><span class="keyword">function</span><span class="params">(func, wait, immediate)</span> </span>{</span><br><span class="line">  <span class="keyword">var</span> timer, result;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// &#x5B9A;&#x65F6;&#x5668;&#x8BA1;&#x65F6;&#x7ED3;&#x675F;&#x540E;</span></span><br><span class="line">  <span class="comment">// 1&#x3001;&#x6E05;&#x7A7A;&#x8BA1;&#x65F6;&#x5668;&#xFF0C;&#x4F7F;&#x4E4B;&#x4E0D;&#x5F71;&#x54CD;&#x4E0B;&#x6B21;&#x8FDE;&#x7EED;&#x4E8B;&#x4EF6;&#x7684;&#x89E6;&#x53D1;</span></span><br><span class="line">  <span class="comment">// 2&#x3001;&#x89E6;&#x53D1;&#x6267;&#x884C; func</span></span><br><span class="line">  <span class="keyword">var</span> later = <span class="function"><span class="keyword">function</span><span class="params">(context, args)</span> </span>{</span><br><span class="line">    timer = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (args) result = func.apply(context, args);</span><br><span class="line">  };</span><br><span class="line"></span><br><span class="line">  <span class="comment">// &#x5C06; debounce &#x5904;&#x7406;&#x7ED3;&#x679C;&#x5F53;&#x4F5C;&#x51FD;&#x6570;&#x8FD4;&#x56DE;</span></span><br><span class="line">  <span class="keyword">var</span> debounced = restArguments(<span class="function"><span class="keyword">function</span><span class="params">(args)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span> (timer) clearTimeout(timer);</span><br><span class="line">    <span class="keyword">if</span> (immediate) {</span><br><span class="line">      <span class="comment">// &#x7B2C;&#x4E00;&#x6B21;&#x89E6;&#x53D1;&#x540E;&#x4F1A;&#x8BBE;&#x7F6E; timer&#xFF0C;</span></span><br><span class="line">      <span class="comment">// &#x6839;&#x636E; timer &#x662F;&#x5426;&#x4E3A;&#x7A7A;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x9996;&#x6B21;&#x89E6;&#x53D1;</span></span><br><span class="line">      <span class="keyword">var</span> callNow = !timer;</span><br><span class="line">      timer = setTimeout(later, wait);</span><br><span class="line">      <span class="keyword">if</span> (callNow) result = func.apply(<span class="keyword">this</span>, args);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="comment">// &#x8BBE;&#x7F6E;&#x5B9A;&#x65F6;&#x5668;</span></span><br><span class="line">      timer = _.delay(later, wait, <span class="keyword">this</span>, args);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  });</span><br><span class="line"></span><br><span class="line">  <span class="comment">// &#x65B0;&#x589E; &#x624B;&#x52A8;&#x53D6;&#x6D88;</span></span><br><span class="line">  debounced.cancel = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</span><br><span class="line">    clearTimeout(timer);</span><br><span class="line">    timer = <span class="literal">null</span>;</span><br><span class="line">  };</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> debounced;</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x7684;&#x6BEB;&#x79D2; wait &#x5EF6;&#x8FDF;&#x6267;&#x884C;&#x51FD;&#x6570; func</span></span><br><span class="line">_.delay = restArguments(<span class="function"><span class="keyword">function</span><span class="params">(func, wait, args)</span> </span>{</span><br><span class="line">  <span class="keyword">return</span> setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> func.apply(<span class="literal">null</span>, args);</span><br><span class="line">  }, wait);</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+
+
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://over58.gitee.io/io/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/>https://over58.gitee.io/io/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-24T13:25:39+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年2月24日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/io/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>js</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://over58.gitee.io/io/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/&title=节流和防抖 - over58&summary=&#x524D;&#x8A00;&#x5F88;&#x591A;&#x5E38;&#x89C1;&#x4E2D;&#x7531;&#x4E8E;&#x4E8B;&#x4EF6;&#x9891;&#x7E41;&#x7684;&#x88AB;&#x89E6;&#x53D1;&#xFF0C;&#x9020;&#x6210;&#x9891;&#x7E41;&#x7684;&#x6267;&#x884C;Dom&#x64CD;&#x4F5C;&#xFF0C;&#x8D44;&#x6E90;&#x52A0;&#x8F7D;&#x7B49;&#x884C;&#x4E3A;&#xFF0C;&#x5BFC;&#x81F4;UI&#x5361;&#x987F;&#x751A;&#x81F3;&#x5D29;&#x6E83;&#x3002;
+
+window &#x7684;resize&#x548C;scroll&#x4E8B;&#x4EF6;
+mousedown keydown mousemove keydup&#x4E8B;&#x4EF6;&#x5B9E;&#x9645;&#x4E0A;&#x5BF9;&#x4E8E;window&#x7684;resize&#x4E8B;&#x4EF6;&#xFF0C;&#x5B9E;&#x9645;&#x9700;&#x6C42;&#x5927;&#x591A;&#x4E3A;&#x505C;&#x6B62;&#x6539;&#x53D8;&#x5927;&#x5C0F;n&#x6BEB;&#x79D2;&#x540E;&#x6267;&#x884C;&#x540E;&#x7EED;&#x5904;&#x7406;&#xFF1B;&#x800C;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;&#x5927;&#x591A;&#x7684;&#x9700;&#x6C42;&#x662F;&#x4EE5;&#x4E00;&#x5B9A;&#x7684;&#x9891;&#x7387;&#x6267;&#x884C;&#x540E;&#x7EED;&#x5904;&#x7406;&#x3002;&#x9488;&#x5BF9;&#x8FD9;&#x4E24;&#x79CD;&#x9700;&#x6C42;&#x5C31;&#x51FA;&#x73B0;&#x4E86;debounce&#x548C;throttle&#x4E24;&#x79CD;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x3002; 
+
+throttle&#x4ECB;&#x7ECD;&#x6BCF;&#x95F4;&#x9694;&#x4E00;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x6B64;&#x671F;&#x95F4;&#x5185;&#x5F97;&#x591A;&#x6B21;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x5FFD;&#x7565;&#x4E0D;&#x5904;&#x7406;
+demo1234567891011function throttle(fn, wait){  let pervious = 0  return function (...args) {    let now = Date.now()    if(now - pervious &gt; wait) {      pervious = now      fn.apply(this, args)    }  }}"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://over58.gitee.io/io/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/&title=节流和防抖 - over58&summary=&#x524D;&#x8A00;&#x5F88;&#x591A;&#x5E38;&#x89C1;&#x4E2D;&#x7531;&#x4E8E;&#x4E8B;&#x4EF6;&#x9891;&#x7E41;&#x7684;&#x88AB;&#x89E6;&#x53D1;&#xFF0C;&#x9020;&#x6210;&#x9891;&#x7E41;&#x7684;&#x6267;&#x884C;Dom&#x64CD;&#x4F5C;&#xFF0C;&#x8D44;&#x6E90;&#x52A0;&#x8F7D;&#x7B49;&#x884C;&#x4E3A;&#xFF0C;&#x5BFC;&#x81F4;UI&#x5361;&#x987F;&#x751A;&#x81F3;&#x5D29;&#x6E83;&#x3002;
+
+window &#x7684;resize&#x548C;scroll&#x4E8B;&#x4EF6;
+mousedown keydown mousemove keydup&#x4E8B;&#x4EF6;&#x5B9E;&#x9645;&#x4E0A;&#x5BF9;&#x4E8E;window&#x7684;resize&#x4E8B;&#x4EF6;&#xFF0C;&#x5B9E;&#x9645;&#x9700;&#x6C42;&#x5927;&#x591A;&#x4E3A;&#x505C;&#x6B62;&#x6539;&#x53D8;&#x5927;&#x5C0F;n&#x6BEB;&#x79D2;&#x540E;&#x6267;&#x884C;&#x540E;&#x7EED;&#x5904;&#x7406;&#xFF1B;&#x800C;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;&#x5927;&#x591A;&#x7684;&#x9700;&#x6C42;&#x662F;&#x4EE5;&#x4E00;&#x5B9A;&#x7684;&#x9891;&#x7387;&#x6267;&#x884C;&#x540E;&#x7EED;&#x5904;&#x7406;&#x3002;&#x9488;&#x5BF9;&#x8FD9;&#x4E24;&#x79CD;&#x9700;&#x6C42;&#x5C31;&#x51FA;&#x73B0;&#x4E86;debounce&#x548C;throttle&#x4E24;&#x79CD;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x3002; 
+
+throttle&#x4ECB;&#x7ECD;&#x6BCF;&#x95F4;&#x9694;&#x4E00;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x6B64;&#x671F;&#x95F4;&#x5185;&#x5F97;&#x591A;&#x6B21;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x5FFD;&#x7565;&#x4E0D;&#x5904;&#x7406;
+demo1234567891011function throttle(fn, wait){  let pervious = 0  return function (...args) {    let now = Date.now()    if(now - pervious &gt; wait) {      pervious = now      fn.apply(this, args)    }  }}"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://over58.gitee.io/io/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/&title=节流和防抖 - over58&summary=&#x524D;&#x8A00;&#x5F88;&#x591A;&#x5E38;&#x89C1;&#x4E2D;&#x7531;&#x4E8E;&#x4E8B;&#x4EF6;&#x9891;&#x7E41;&#x7684;&#x88AB;&#x89E6;&#x53D1;&#xFF0C;&#x9020;&#x6210;&#x9891;&#x7E41;&#x7684;&#x6267;&#x884C;Dom&#x64CD;&#x4F5C;&#xFF0C;&#x8D44;&#x6E90;&#x52A0;&#x8F7D;&#x7B49;&#x884C;&#x4E3A;&#xFF0C;&#x5BFC;&#x81F4;UI&#x5361;&#x987F;&#x751A;&#x81F3;&#x5D29;&#x6E83;&#x3002;
+
+window &#x7684;resize&#x548C;scroll&#x4E8B;&#x4EF6;
+mousedown keydown mousemove keydup&#x4E8B;&#x4EF6;&#x5B9E;&#x9645;&#x4E0A;&#x5BF9;&#x4E8E;window&#x7684;resize&#x4E8B;&#x4EF6;&#xFF0C;&#x5B9E;&#x9645;&#x9700;&#x6C42;&#x5927;&#x591A;&#x4E3A;&#x505C;&#x6B62;&#x6539;&#x53D8;&#x5927;&#x5C0F;n&#x6BEB;&#x79D2;&#x540E;&#x6267;&#x884C;&#x540E;&#x7EED;&#x5904;&#x7406;&#xFF1B;&#x800C;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;&#x5927;&#x591A;&#x7684;&#x9700;&#x6C42;&#x662F;&#x4EE5;&#x4E00;&#x5B9A;&#x7684;&#x9891;&#x7387;&#x6267;&#x884C;&#x540E;&#x7EED;&#x5904;&#x7406;&#x3002;&#x9488;&#x5BF9;&#x8FD9;&#x4E24;&#x79CD;&#x9700;&#x6C42;&#x5C31;&#x51FA;&#x73B0;&#x4E86;debounce&#x548C;throttle&#x4E24;&#x79CD;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x3002; 
+
+throttle&#x4ECB;&#x7ECD;&#x6BCF;&#x95F4;&#x9694;&#x4E00;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x6B64;&#x671F;&#x95F4;&#x5185;&#x5F97;&#x591A;&#x6B21;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x5FFD;&#x7565;&#x4E0D;&#x5904;&#x7406;
+demo1234567891011function throttle(fn, wait){  let pervious = 0  return function (...args) {    let now = Date.now()    if(now - pervious &gt; wait) {      pervious = now      fn.apply(this, args)    }  }}"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/io/2019/06/12/%E7%BC%93%E5%AD%98memorize/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>缓存memorize</p>
+                <p class='content'>code123456789101112function memoize(func, hashFunc) {  var memoize = function(key) {    var cache...</p>
+              </a>
+            
+            
+              <a class='next' href='/io/2019/06/04/highcharts%E4%B8%AD%E4%B8%80%E4%BA%9B%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8Fdemo/'>
+                <p class='title'>highcharts中一些插件的使用方式demo<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>&#x6548;&#x679C;&#x56FE;demo123456789101112131415161718192021222324252627282930313233343536373839...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#&#x524D;&#x8A00;"><span class="toc-text">&amp;#x524D;&amp;#x8A00;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#throttle"><span class="toc-text">throttle</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#&#x4ECB;&#x7ECD;"><span class="toc-text">&amp;#x4ECB;&amp;#x7ECD;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#demo"><span class="toc-text">demo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#underscore&#x6E90;&#x7801;&#x5206;&#x6790;"><span class="toc-text">underscore&amp;#x6E90;&amp;#x7801;&amp;#x5206;&amp;#x6790;</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#&#x9632;&#x6296;"><span class="toc-text">&amp;#x9632;&amp;#x6296;</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#&#x4ECB;&#x7ECD;-1"><span class="toc-text">&amp;#x4ECB;&amp;#x7ECD;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#&#x7B80;&#x5355;demo"><span class="toc-text">&amp;#x7B80;&amp;#x5355;demo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#&#x52A0;&#x5F3A;&#x7248;&#x7684;throttle"><span class="toc-text">&amp;#x52A0;&amp;#x5F3A;&amp;#x7248;&amp;#x7684;throttle</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#underscore&#x6E90;&#x7801;&#x5206;&#x6790;-1"><span class="toc-text">underscore&amp;#x6E90;&amp;#x7801;&amp;#x5206;&amp;#x6790;</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+    </div>
+    
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/io/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@xxx.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/over58"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <div>
+    
+      
+  
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='option'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick='document.execCommand("copy")'><i class='fa fa-copy fa-fw'></i>复制文本</a>
+        <hr id='hr-text'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>复制链接</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>在新标签页打开</a>
+        <hr id='hr-href'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>复制图片地址</a>
+        <hr id='hr-src'>
+      </li>
+      <li class='navigation'>
+        <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+      </li>
+      <hr>
+      
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+        
+        
+        
+        
+          id="https:volantisjsorgfaqs"
+        >
+        <i class='fa fa-question fa-fw'></i> 常见问题
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
+        
+        
+        
+        
+          id="https:volantisjsorgexamples"
+        >
+        <i class='fa fa-rss fa-fw'></i> 示例博客
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
+        
+        
+        
+        
+          id="https:volantisjsorgcontributors"
+        >
+        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xvolantis-docs"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          <li class='music name'>
+            <p class='nav music-title fix-cursor-default'></p>
+          </li>
+          <li class='music ctrl'>
+            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+          </li>
+          <li class='music volume'>
+            <a class='nav volume'>
+              <div class="aplayer-volume-bar-wrap">
+                <div class="aplayer-volume-bar fix-cursor-pointer">
+                  <div class="aplayer-volume"></div>
+                  <i class='left fa fa-volume-off fa-fw'></i>
+                  <i class='right fa fa-volume-up fa-fw'></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          copyText.style.display = 'block';
+          hrText.style.display = 'block';
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if (true == true) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/io/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  <script>
+    let APlayerController = new Object();
+    APlayerController.id = '3175833810';  // 设定全局音乐播放ID
+    APlayerController.volume = '0.7';
+  </script>
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+    
+<script src="/io/js/aplayer.js"></script>
+
+  
+
+
+
+
+  
+  
+<script src="/io/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    let pageUrl = $.trim($('#pjax-comment-path').text()) === "none" ? 
+      decodeURI(window.location.pathname) : $.trim($('#pjax-comment-path').text());
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) === "none" ?
+      "快来评论吧~" : $.trim($('#"pjax-comment-placeholder').text());
+
+    let ALLPATH = '';
+    if(ALLPATH != '') pageUrl = ALLPATH;
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: pageUrl,
+      appId: "",
+      appKey: "",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+<!-- darkmodejs -->
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+<!-- scrollreveal -->
+
+<!-- ******************************** -->
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+<!-- ******************************** -->
+
+
+  
+<script src="/io/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/io/js/search.js"></script>
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+      // _hmt.push(['_trackPageview', document.location.pathname]);
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
+      try{
+        pjax_fancybox();
+        
+          
+          if ('.cover') {
+            $('.cover').backstretch("resize");
+          } else {
+            $.backstretch("resize");
+          }
+        
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
