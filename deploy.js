@@ -7,14 +7,19 @@ spinner.text = 'loading'
 spinner.color = "yellow"
 
 let commands = [
-  
+
   'git add .',
   'git commit -m "feat: update artcile"',
   'git push origin myblog'
 ]
 
 commands.forEach((command) => {
-  execSync(command)
+  try {
+    execSync(command)
+    
+  } catch (error) {
+    console.log(error)
+  }
 })
   
 spinner.succeed(chalk.green('success!'))
