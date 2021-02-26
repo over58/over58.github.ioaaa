@@ -27,7 +27,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/io/atom.xml" title="over58">
+    <link rel="alternate" href="/atom.xml" title="over58">
   
 
   <!-- import meta -->
@@ -66,7 +66,7 @@
   
   
     
-<link rel="stylesheet" href="/io/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
 
@@ -128,7 +128,7 @@
 		<div class="nav-main">
       
         
-        <a class="title flat-box" target="_self" href='/io/'>
+        <a class="title flat-box" target="_self" href='/'>
           
             <img no-lazy class='logo' src='img/avatar.png'/>
           
@@ -145,11 +145,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="io"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -161,11 +161,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="ioarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -195,11 +195,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="io"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -211,11 +211,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="ioarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -294,7 +294,7 @@
         
           
   <h1 class="title">
-    <a href="/io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/">
+    <a href="/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/">
       封装line和pie简单组件
     </a>
   </h1>
@@ -320,7 +320,7 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/vue/' rel="nofollow">
+    <a href='/categories/vue/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>vue</p>
     </a>
@@ -357,7 +357,7 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <h3 id="&#x6548;&#x679C;&#x56FE;"><a href="#&#x6548;&#x679C;&#x56FE;" class="headerlink" title="&#x6548;&#x679C;&#x56FE;:"></a>&#x6548;&#x679C;&#x56FE;:</h3><p><img src="/io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/images/chart-line-pie.png" alt="chart-line-pie"></p>
+          <h3 id="&#x6548;&#x679C;&#x56FE;"><a href="#&#x6548;&#x679C;&#x56FE;" class="headerlink" title="&#x6548;&#x679C;&#x56FE;:"></a>&#x6548;&#x679C;&#x56FE;:</h3><p><img src="/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/images/chart-line-pie.png" alt="chart-line-pie"></p>
 <a id="more"></a>
 
 <h3 id="ChartLine-vue"><a href="#ChartLine-vue" class="headerlink" title="ChartLine.vue"></a>ChartLine.vue</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">Card</span> <span class="attr">dis-hover</span> <span class="attr">class</span>=<span class="string">&quot;chart-item&quot;</span> <span class="attr">style</span>=<span class="string">&quot;margin-bottom:20px&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">&quot;!simple&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">&quot;title&quot;</span> <span class="attr">class</span>=<span class="string">&quot;chart-item-title&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        </span><span class="template-variable">{{ title }}</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;float:right&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">&quot;extra&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">&quot;unit&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">              <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;desc-title&quot;</span>&gt;</span>&#x5355;&#x4F4D;<span class="tag">&lt;/<span class="name">span</span>&gt;</span> </span><span class="template-variable">{{unit}}</span><span class="xml"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&apos;vertital-divider&apos;</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;chart-item-header&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">&quot;operation&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&quot;chart&quot;</span> <span class="attr">:class</span>=<span class="string">&quot;[&apos;chart-item-content&apos;, {&apos;simple&apos; : simple}]&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">Card</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">import Highcharts from &apos;highcharts&apos;</span></span><br><span class="line"><span class="xml">import HighchartsNoData from &apos;highcharts/modules/no-data-to-display&apos;</span></span><br><span class="line"><span class="xml">import HighchartsExporting from &apos;highcharts/modules/exporting&apos;</span></span><br><span class="line"><span class="xml">import mockData from &apos;./mock.js&apos;</span></span><br><span class="line"></span><br><span class="line"><span class="xml">HighchartsNoData(Highcharts)</span></span><br><span class="line"><span class="xml">HighchartsExporting(Highcharts)</span></span><br><span class="line"></span><br><span class="line"><span class="xml">export default {</span></span><br><span class="line"><span class="xml">  name: &apos;ChartItem&apos;,</span></span><br><span class="line"><span class="xml">  props: {</span></span><br><span class="line"><span class="xml">    simple: {</span></span><br><span class="line"><span class="xml">      type: Boolean,</span></span><br><span class="line"><span class="xml">      default: false</span></span><br><span class="line"><span class="xml">    },</span></span><br><span class="line"><span class="xml">    type: {</span></span><br><span class="line"><span class="xml">      type: String,</span></span><br><span class="line"><span class="xml">      default: &apos;line&apos;,</span></span><br><span class="line"><span class="xml">      validator (val) {</span></span><br><span class="line"><span class="xml">        if ([&apos;area&apos;, &apos;spline&apos;, &apos;line&apos;].indexOf(val) &gt; -1) {</span></span><br><span class="line"><span class="xml">          return true</span></span><br><span class="line"><span class="xml">        } else {</span></span><br><span class="line"><span class="xml">          throw new Error(&apos;chart type must be oneof [line, spline, area]&apos;)</span></span><br><span class="line"><span class="xml">        }</span></span><br><span class="line"><span class="xml">      }</span></span><br><span class="line"><span class="xml">    },</span></span><br><span class="line"><span class="xml">    title: {</span></span><br><span class="line"><span class="xml">      type: String,</span></span><br><span class="line"><span class="xml">      default: &apos;&apos;</span></span><br><span class="line"><span class="xml">    }, // &#x56FE;&#x8868;&#x540D;&#x5B57;</span></span><br><span class="line"><span class="xml">    extra: Object, // &#x5173;&#x4E8E;&#x56FE;&#x8868;&#x7684;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x4FE1;&#x606F;</span></span><br><span class="line"><span class="xml">    data: {</span></span><br><span class="line"><span class="xml">      type: Array,</span></span><br><span class="line"><span class="xml">      required: true</span></span><br><span class="line"><span class="xml">    },</span></span><br><span class="line"><span class="xml">    unit: {</span></span><br><span class="line"><span class="xml">      type: String,</span></span><br><span class="line"><span class="xml">      default: &apos;&apos;</span></span><br><span class="line"><span class="xml">    },</span></span><br><span class="line"><span class="xml">    plotLine: {</span></span><br><span class="line"><span class="xml">      type: Object,</span></span><br><span class="line"><span class="xml">      default: null</span></span><br><span class="line"><span class="xml">    },</span></span><br><span class="line"><span class="xml">    notTimeStamp: {</span></span><br><span class="line"><span class="xml">      type: Boolean,</span></span><br><span class="line"><span class="xml">      default: false</span></span><br><span class="line"><span class="xml">    },</span></span><br><span class="line"><span class="xml">    zoomType: {</span></span><br><span class="line"><span class="xml">      type: String,</span></span><br><span class="line"><span class="xml">      default: &apos;none&apos; // &#x53EF;&#x7528;&#x503C; none  x y xy</span></span><br><span class="line"><span class="xml">    }</span></span><br><span class="line"><span class="xml">  },</span></span><br><span class="line"><span class="xml">  data () {</span></span><br><span class="line"><span class="xml">    return {</span></span><br><span class="line"><span class="xml">      chartInstance: null,</span></span><br><span class="line"><span class="xml">      mockData: mockData</span></span><br><span class="line"><span class="xml">    }</span></span><br><span class="line"><span class="xml">  },</span></span><br><span class="line"><span class="xml">  computed: {</span></span><br><span class="line"><span class="xml">    option () {</span></span><br><span class="line"><span class="xml">      return {</span></span><br><span class="line"><span class="xml">        chart: {</span></span><br><span class="line"><span class="xml">          type: this.type,</span></span><br><span class="line"><span class="xml">          zoomType: zoomType</span></span><br><span class="line"><span class="xml">        },</span></span><br><span class="line"><span class="xml">        title: {</span></span><br><span class="line"><span class="xml">          text: this.simple ? this.title : &apos;&apos;,</span></span><br><span class="line"><span class="xml">          style: {</span></span><br><span class="line"><span class="xml">            fontWeight: &apos;bold&apos;</span></span><br><span class="line"><span class="xml">          }</span></span><br><span class="line"><span class="xml">        },</span></span><br><span class="line"><span class="xml">        credits: {</span></span><br><span class="line"><span class="xml">          text: &apos;http://xxx.com.cn&apos;,</span></span><br><span class="line"><span class="xml">          href: &apos;http://xxx.com.cn&apos;</span></span><br><span class="line"><span class="xml">        },</span></span><br><span class="line"><span class="xml">        legend: {</span></span><br><span class="line"><span class="xml">          enabled: true,</span></span><br><span class="line"><span class="xml">          lineHeight: 20,</span></span><br><span class="line"><span class="xml">          maxHeight: 40</span></span><br><span class="line"><span class="xml">        },</span></span><br><span class="line"><span class="xml">        tooltip: {</span></span><br><span class="line"><span class="xml">          xDateFormat: &apos;%Y-%m-%d %H:%M&apos;,</span></span><br><span class="line"><span class="xml">          valueDecimals: 2,</span></span><br><span class="line"><span class="xml">          shared: true</span></span><br><span class="line"><span class="xml">        },</span></span><br><span class="line"><span class="xml">        xAxis: {</span></span><br><span class="line"><span class="xml">          startOnTick: true,</span></span><br><span class="line"><span class="xml">          tickmarkPlacement: &apos;on&apos;,</span></span><br><span class="line"><span class="xml">          type: &apos;datetime&apos;,</span></span><br><span class="line"><span class="xml">          dateTimeLabelFormats: {</span></span><br><span class="line"><span class="xml">            day: &apos;%Y/%b/%e&apos;</span></span><br><span class="line"><span class="xml">          },</span></span><br><span class="line"><span class="xml">          followPointer: true,</span></span><br><span class="line"><span class="xml">          crosshair: true</span></span><br><span class="line"><span class="xml">        },</span></span><br><span class="line"><span class="xml">        yAxis: {</span></span><br><span class="line"><span class="xml">          startOnTick: true,</span></span><br><span class="line"><span class="xml">          lineWidth: 1,</span></span><br><span class="line"><span class="xml">          tickWidth: 1,</span></span><br><span class="line"><span class="xml">          title: {</span></span><br><span class="line"><span class="xml">            align: &apos;middle&apos;,</span></span><br><span class="line"><span class="xml">            text: `&#x503C;(${this.unit})`</span></span><br><span class="line"><span class="xml">          },</span></span><br><span class="line"><span class="xml">          plotBands: [],</span></span><br><span class="line"><span class="xml">          min: this.min || null</span></span><br><span class="line"><span class="xml">        },</span></span><br><span class="line"><span class="xml">        plotOptions: {</span></span><br><span class="line"><span class="xml">          series: {</span></span><br><span class="line"><span class="xml">            lineWidth: 1,</span></span><br><span class="line"><span class="xml">            marker: {</span></span><br><span class="line"><span class="xml">              enabled: false</span></span><br><span class="line"><span class="xml">            }</span></span><br><span class="line"><span class="xml">          }</span></span><br><span class="line"><span class="xml">        },</span></span><br><span class="line"><span class="xml">        exporting: {</span></span><br><span class="line"><span class="xml">          enabled: true,</span></span><br><span class="line"><span class="xml">          buttons: {</span></span><br><span class="line"><span class="xml">            contextButton: {</span></span><br><span class="line"><span class="xml">              menuItems: [</span></span><br><span class="line"><span class="xml">                &apos;viewFullscreen&apos;, &apos;downloadPNG&apos;, &apos;downloadJPEG&apos;, &apos;downloadPDF&apos;, &apos;downloadSVG&apos;</span></span><br><span class="line"><span class="xml">              ]</span></span><br><span class="line"><span class="xml">            }</span></span><br><span class="line"><span class="xml">          },</span></span><br><span class="line"><span class="xml">          filename: this.title</span></span><br><span class="line"><span class="xml">        },</span></span><br><span class="line"><span class="xml">        series: this.innerData</span></span><br><span class="line"><span class="xml">      }</span></span><br><span class="line"><span class="xml">    },</span></span><br><span class="line"><span class="xml">    innerData () {</span></span><br><span class="line"><span class="xml">      if (this.notTimeStamp) {</span></span><br><span class="line"><span class="xml">        return this.data.map(item =&gt; {</span></span><br><span class="line"><span class="xml">          return [Date.parse(item[0]), item[1]]</span></span><br><span class="line"><span class="xml">        })</span></span><br><span class="line"><span class="xml">      } else {</span></span><br><span class="line"><span class="xml">        return this.data</span></span><br><span class="line"><span class="xml">      }</span></span><br><span class="line"><span class="xml">    }</span></span><br><span class="line"><span class="xml">  },</span></span><br><span class="line"><span class="xml">  watch: {</span></span><br><span class="line"><span class="xml">  },</span></span><br><span class="line"><span class="xml">  methods: {</span></span><br><span class="line"><span class="xml">    init () {</span></span><br><span class="line"><span class="xml">      Highcharts.setOptions({</span></span><br><span class="line"><span class="xml">        global: {</span></span><br><span class="line"><span class="xml">          useUTC: true</span></span><br><span class="line"><span class="xml">        },</span></span><br><span class="line"><span class="xml">        lang: {</span></span><br><span class="line"><span class="xml">          loading: &apos;&#x52A0;&#x8F7D;&#x4E2D;...&apos;,</span></span><br><span class="line"><span class="xml">          shortMonths: [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;, &apos;10&apos;, &apos;11&apos;, &apos;12&apos;],</span></span><br><span class="line"><span class="xml">          printChart: &apos;&#x6253;&#x5370;&#x56FE;&#x8868;&apos;,</span></span><br><span class="line"><span class="xml">          downloadJPEG: &apos;&#x5BFC;&#x51FA;jpeg&apos;,</span></span><br><span class="line"><span class="xml">          downloadPNG: &apos;&#x5BFC;&#x51FA;png&apos;,</span></span><br><span class="line"><span class="xml">          downloadSVG: &apos;&#x5BFC;&#x51FA;svg&apos;,</span></span><br><span class="line"><span class="xml">          downloadPDF: &apos;&#x5BFC;&#x51FA;pdf&apos;,</span></span><br><span class="line"><span class="xml">          noData: &apos;&#x6682;&#x65E0;&#x6570;&#x636E;&apos;,</span></span><br><span class="line"><span class="xml">          contextButtonTitle: &apos;&#x5BFC;&#x51FA;&apos;,</span></span><br><span class="line"><span class="xml">          viewFullscreen: &apos;&#x5168;&#x5C4F;&#x663E;&#x793A;&apos;,</span></span><br><span class="line"><span class="xml">          viewData: &apos;&#x8868;&#x683C;&#x663E;&#x793A;&#x6570;&#x636E;&apos;</span></span><br><span class="line"><span class="xml">        }</span></span><br><span class="line"><span class="xml">      })</span></span><br><span class="line"><span class="xml">      let option = this.option</span></span><br><span class="line"><span class="xml">      if (this.plotLine) {</span></span><br><span class="line"><span class="xml">        option = Object.assign(this.option, {</span></span><br><span class="line"><span class="xml">          yAxis: {</span></span><br><span class="line"><span class="xml">            plotLines: [</span></span><br><span class="line"><span class="xml">              {</span></span><br><span class="line"><span class="xml">                value: this.plotLine.value,</span></span><br><span class="line"><span class="xml">                color: &apos;red&apos;,</span></span><br><span class="line"><span class="xml">                width: 2,</span></span><br><span class="line"><span class="xml">                dashStyle: &apos;solid&apos;,</span></span><br><span class="line"><span class="xml">                label: {</span></span><br><span class="line"><span class="xml">                  text: this.plotLine.text || &apos;&apos;,</span></span><br><span class="line"><span class="xml">                  align: this.plotLine.align || &apos;left&apos;,</span></span><br><span class="line"><span class="xml">                  style: {</span></span><br><span class="line"><span class="xml">                    color: &apos;red&apos;,</span></span><br><span class="line"><span class="xml">                    fontSize: &apos;18px&apos;</span></span><br><span class="line"><span class="xml">                  }</span></span><br><span class="line"><span class="xml">                }</span></span><br><span class="line"><span class="xml">              }</span></span><br><span class="line"><span class="xml">            ]</span></span><br><span class="line"><span class="xml">          }</span></span><br><span class="line"><span class="xml">        })</span></span><br><span class="line"><span class="xml">      }</span></span><br><span class="line"><span class="xml">      Highcharts.chart(this.$refs.chart, option)</span></span><br><span class="line"><span class="xml">    }</span></span><br><span class="line"><span class="xml">  },</span></span><br><span class="line"><span class="xml">  mounted () {</span></span><br><span class="line"><span class="xml">    this.init()</span></span><br><span class="line"><span class="xml">  },</span></span><br><span class="line"><span class="xml">  beforeDestroy () {</span></span><br><span class="line"><span class="xml">    this.chartInstance &amp;&amp; this.chartInstance.destroy()</span></span><br><span class="line"><span class="xml">    this.chartInstance = null</span></span><br><span class="line"><span class="xml">  }</span></span><br><span class="line"><span class="xml">}</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">&quot;less&quot;</span> <span class="attr">scoped</span>&gt;</span></span></span><br><span class="line"><span class="xml">.chart-item {</span></span><br><span class="line"><span class="xml">  margin-bottom: 20px;</span></span><br><span class="line"><span class="xml">  &amp;-title {</span></span><br><span class="line"><span class="xml">    font-weight: bold;</span></span><br><span class="line"><span class="xml">    height: 18px;</span></span><br><span class="line"><span class="xml">    line-height: 18px;</span></span><br><span class="line"><span class="xml">    .vertital-divider{</span></span><br><span class="line"><span class="xml">      margin: 0 5px;</span></span><br><span class="line"><span class="xml">      display: inline-block;</span></span><br><span class="line"><span class="xml">      width: 1px;</span></span><br><span class="line"><span class="xml">      vertical-align: middle;</span></span><br><span class="line"><span class="xml">      color: #e8eaec;</span></span><br><span class="line"><span class="xml">      box-sizing: border-box;</span></span><br><span class="line"><span class="xml">      background: #e8eaec;</span></span><br><span class="line"><span class="xml">    }</span></span><br><span class="line"><span class="xml">    .desc-title{</span></span><br><span class="line"><span class="xml">      color: #888;</span></span><br><span class="line"><span class="xml">    }</span></span><br><span class="line"><span class="xml">  }</span></span><br><span class="line"><span class="xml">  &amp;-header {</span></span><br><span class="line"><span class="xml">    text-align: right;</span></span><br><span class="line"><span class="xml">  }</span></span><br><span class="line"><span class="xml">  &amp;-content {</span></span><br><span class="line"><span class="xml">    height: 400px;</span></span><br><span class="line"><span class="xml">  }</span></span><br><span class="line"><span class="xml">  .simple{</span></span><br><span class="line"><span class="xml">    height: 446px;</span></span><br><span class="line"><span class="xml">  }</span></span><br><span class="line"><span class="xml">}</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
@@ -401,7 +401,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://over58.gitee.io/io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/>https://over58.gitee.io/io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/</a></p>
+            <p>本文永久链接是：<a href=https://over58.github.io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/>https://over58.github.io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/</a></p>
           
         
       </blockquote>
@@ -424,12 +424,18 @@
 
   <section class='meta' id="footer-meta">
     <div class='new-meta-box'>
+      <div class="new-meta-item date">
+        <a href="https://github.com/over58/over58.github.io/tree/myblog/source/_posts/封装line和pie简单组件.md" target="_blank" rel="noopener" class="link">
+          <i class="fa fa-edit"></i>
+          <p>编辑文章post</p>
+        </a>
+      </div>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-24T13:25:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-26T03:43:14+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月24日</p>
+    <p>更新于：2021年2月26日</p>
   </a>
 </div>
 
@@ -438,7 +444,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/io/tags/highcharts/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>highcharts</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/highcharts/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>highcharts</p></a></div>
 
 
         
@@ -456,7 +462,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://over58.gitee.io/io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/&title=封装line和pie简单组件 - over58&summary=&#x6548;&#x679C;&#x56FE;:"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://over58.github.io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/&title=封装line和pie简单组件 - over58&summary=&#x6548;&#x679C;&#x56FE;:"
           
           >
           
@@ -468,7 +474,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://over58.gitee.io/io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/&title=封装line和pie简单组件 - over58&summary=&#x6548;&#x679C;&#x56FE;:"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://over58.github.io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/&title=封装line和pie简单组件 - over58&summary=&#x6548;&#x679C;&#x56FE;:"
           
           >
           
@@ -480,7 +486,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://over58.gitee.io/io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/&title=封装line和pie简单组件 - over58&summary=&#x6548;&#x679C;&#x56FE;:"
+          href="http://service.weibo.com/share/share.php?url=https://over58.github.io/2019/04/29/%E5%B0%81%E8%A3%85line%E5%92%8Cpie%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6/&title=封装line和pie简单组件 - over58&summary=&#x6548;&#x679C;&#x56FE;:"
           
           >
           
@@ -504,13 +510,13 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/io/2019/04/29/%E5%85%A8%E5%B1%8F%E6%98%BE%E7%A4%BA%E7%BB%84%E4%BB%B6/'>
+              <a class='prev' href='/2019/04/29/%E5%85%A8%E5%B1%8F%E6%98%BE%E7%A4%BA%E7%BB%84%E4%BB%B6/'>
                 <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>全屏显示组件</p>
                 <p class='content'>1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253...</p>
               </a>
             
             
-              <a class='next' href='/io/2019/04/13/vue%E4%B8%AD%E5%BC%95%E5%85%A5higcharts%E6%8B%93%E5%B1%95%E6%A8%A1%E5%9D%97/'>
+              <a class='next' href='/2019/04/12/vue%E4%B8%AD%E5%BC%95%E5%85%A5higcharts%E6%8B%93%E5%B1%95%E6%A8%A1%E5%9D%97/'>
                 <p class='title'>vue中引入higcharts拓展模块<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>&#x573A;&#x666F;vue&#x4E2D;&#x4F7F;&#x7528;highcharts&#x7ED8;&#x5236;&#x56FE;&#x8868;&#x7684;&#x6...</p>
               </a>
@@ -595,7 +601,7 @@
         <div class="social-wrapper">
           
             
-              <a href="/io/atom.xml"
+              <a href="/atom.xml"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -603,7 +609,7 @@
             
           
             
-              <a href="mailto:me@xxx.com"
+              <a href="mailto:2658553345@qq.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -684,49 +690,19 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/over58/over58.github.io/blob/master/(path)
         
         
         
         
-          id="https:volantisjsorgfaqs"
+          id="https:githubcomover58over58githubioblobmaster(path)"
         >
-        <i class='fa fa-question fa-fw'></i> 常见问题
+        <i class='fa fa-question fa-fw'></i> 编辑文章
       </a>
     </li>
   
         
       
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
-        
-        
-        
-        
-          id="https:volantisjsorgexamples"
-        >
-        <i class='fa fa-rss fa-fw'></i> 示例博客
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
-        
-        
-        
-        
-          id="https:volantisjsorgcontributors"
-        >
-        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
-      </a>
-    </li>
-  
         
       
         
@@ -736,12 +712,12 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/over58/over58.github.io
         
         
         
         
-          id="https:githubcomvolantis-xvolantis-docs"
+          id="https:githubcomover58over58githubio"
         >
         <i class='fa fa-code-branch fa-fw'></i> 本站源码
       </a>
@@ -949,7 +925,7 @@
   <script>
     
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/io/" || "/";
+    var ROOT = "/" || "/";
     if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
@@ -1019,7 +995,7 @@
 
   
     
-<script src="/io/js/aplayer.js"></script>
+<script src="/js/aplayer.js"></script>
 
   
 
@@ -1028,7 +1004,7 @@
 
   
   
-<script src="/io/js/valine.js"></script>
+<script src="/js/valine.js"></script>
 
 
 <script>
@@ -1213,14 +1189,14 @@
 
 
   
-<script src="/io/js/app.js"></script>
+<script src="/js/app.js"></script>
 
 
 
 
   
     
-<script src="/io/js/search.js"></script>
+<script src="/js/search.js"></script>
 
   
 

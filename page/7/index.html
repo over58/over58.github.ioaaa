@@ -27,7 +27,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/io/atom.xml" title="over58">
+    <link rel="alternate" href="/atom.xml" title="over58">
   
 
   <!-- import meta -->
@@ -66,7 +66,7 @@
   
   
     
-<link rel="stylesheet" href="/io/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
 
@@ -128,7 +128,7 @@
 		<div class="nav-main">
       
         
-        <a class="title flat-box" target="_self" href='/io/'>
+        <a class="title flat-box" target="_self" href='/'>
           
             <img no-lazy class='logo' src='img/avatar.png'/>
           
@@ -145,11 +145,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="io"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -161,11 +161,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="ioarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -195,11 +195,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="io"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -211,11 +211,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="ioarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -298,679 +298,8 @@
         
           
   <h2 class="title">
-    <a href="/io/2019/09/07/%E4%BB%8Eurl%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E7%9A%84%E6%B5%81%E7%A8%8B/">
-      从url到页面渲染的流程
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>请设置文章作者</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年9月7日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2019/09/07/%E4%BB%8Eurl%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E7%9A%84%E6%B5%81%E7%A8%8B/" class="leancloud_visitors" data-flag-title="从url到页面渲染的流程">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2019/09/07/%E4%BB%8Eurl%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E7%9A%84%E6%B5%81%E7%A8%8B/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/09/07/%E4%BB%8Eurl%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E7%9A%84%E6%B5%81%E7%A8%8B/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#x4ECE;&#x7528;&#x6237;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;&#x4E00;&#x4E2A;URL&#xFF0C;&#x5230;&#x6574;&#x4E2A;&#x9875;&#x9762;&#x6E32;&#x67D3;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#x7A76;&#x7ADF;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
-<h2 id="&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;"><a href="#&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;" class="headerlink" title="&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;"></a>&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;</h2><h3 id="DNS&#x89E3;&#x6790;&#x83B7;&#x53D6;IP&#x5730;&#x5740;"><a href="#DNS&#x89E3;&#x6790;&#x83B7;&#x53D6;IP&#x5730;&#x5740;" class="headerlink" title="DNS&#x89E3;&#x6790;&#x83B7;&#x53D6;IP&#x5730;&#x5740;"></a>DNS&#x89E3;&#x6790;&#x83B7;&#x53D6;IP&#x5730;&#x5740;</h3><ol>
-<li>&#x9996;&#x5148;&#x4F1A;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x7F13;&#x5B58;&#x4E2D;&#x67E5;&#x627E;&#xFF0C;&#x662F;&#x5426;&#x7F13;&#x5B58;&#x4E86;URL&#xFF0C;&#x5982;&#x679C;&#x6709;&#xFF0C;&#x5C31;&#x76F4;&#x63A5;&#x5411;&#x8BE5;URL&#x5BF9;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF1B;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x6B65;;</li>
-<li>&#x5728;&#x672C;&#x5730;&#x7684;hosts&#x6587;&#x4EF6;&#x4E2D;&#x662F;&#x5426;&#x4FDD;&#x5B58;&#x4E86;&#x8BE5;URL&#x548C;&#x5176;&#x5BF9;&#x5E94;&#x7684;IP&#x5730;&#x5740;&#xFF0C;&#x5982;&#x679C;&#x4FDD;&#x5B58;&#x4E86;&#xFF0C;&#x5C31;&#x76F4;&#x63A5;&#x5411;&#x8BE5;URL&#x5BF9;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF1B;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x6B65;&#xFF1B;</li>
-<li>&#x5411;&#x672C;&#x5730;DNS&#x670D;&#x52A1;&#x5668;&#xFF08;&#x4E00;&#x822C;&#x7531;&#x672C;&#x5730;&#x7F51;&#x7EDC;&#x63A5;&#x5165;&#x670D;&#x52A1;&#x5668;&#x63D0;&#x4F9B;&#x5546;ISP&#x63D0;&#x4F9B;&#xFF0C;&#x6BD4;&#x5982;&#x79FB;&#x52A8;&#x3001;&#x8054;&#x901A;&#xFF09;&#x53D1;&#x9001;DNS&#x8BF7;&#x6C42;&#xFF0C;&#x672C;&#x5730;DNS&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x9996;&#x5148;&#x67E5;&#x8BE2;&#x5B83;&#x7684;&#x7F13;&#x5B58;&#x8BB0;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5C31;&#x5C06;&#x8BE5;&#x57DF;&#x540D;&#x5BF9;&#x5E94;&#x7684;IP&#x5730;&#x5740;&#x8FD4;&#x56DE;&#x7ED9;&#x7528;&#x6237;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x6B65;&#xFF1B;</li>
-<li>&#x9996;&#x5148;&#x5411;&#x6839;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;DNS&#x67E5;&#x8BE2;&#x8BF7;&#x6C42;&#xFF0C;&#x6839;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7ED9;&#x53EF;&#x80FD;&#x4FDD;&#x5B58;&#x4E86;&#x8BE5;&#x57DF;&#x540D;&#x7684;&#x4E00;&#x7EA7;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#xFF1B;&#x672C;&#x5730;&#x4E3B;&#x673A;&#x518D;&#x6839;&#x636E;&#x8FD4;&#x56DE;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5411;&#x4E00;&#x7EA7;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;DNS&#x67E5;&#x8BE2;&#x8BF7;&#x6C42;&#xFF1B;&#x2026;&#x4E00;&#x76F4;&#x8FED;&#x4EE3;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x57DF;&#x540D;&#x5B58;&#x653E;&#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5411;&#x5176;&#x53D1;&#x9001;DNS&#x67E5;&#x8BE2;&#x8BF7;&#x6C42;&#xFF0C;&#x8BE5;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x8BE5;&#x57DF;&#x540D;&#x5BF9;&#x5E94;&#x7684;IP&#x5730;&#x5740;&#xFF1B;</li>
-</ol>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/io/2019/09/07/%E4%BB%8Eurl%E5%88%B0%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E7%9A%84%E6%B5%81%E7%A8%8B/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2019/08/26/reduce%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">
-      reduce函数的应用
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年8月25日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2019/08/26/reduce%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/" class="leancloud_visitors" data-flag-title="reduce函数的应用">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2019/08/26/reduce%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/08/26/reduce%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [<span class="number">11</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">556</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">-4</span>]</span><br></pre></td></tr></table></figure>
-<h4 id="&#x83B7;&#x5F97;&#x6700;&#x5927;&#x503C;-&#x6700;&#x5C0F;&#x503C;"><a href="#&#x83B7;&#x5F97;&#x6700;&#x5927;&#x503C;-&#x6700;&#x5C0F;&#x503C;" class="headerlink" title="&#x83B7;&#x5F97;&#x6700;&#x5927;&#x503C;/&#x6700;&#x5C0F;&#x503C;"></a>&#x83B7;&#x5F97;&#x6700;&#x5927;&#x503C;/&#x6700;&#x5C0F;&#x503C;</h4><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a= arr.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> {</span><br><span class="line">  <span class="keyword">return</span> a &gt; b ? a: b</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/io/2019/08/26/reduce%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2019/08/21/css%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E5%B0%BA%E5%AF%B8/">
-      css中的各种尺寸
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年8月20日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2019/08/21/css%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E5%B0%BA%E5%AF%B8/" class="leancloud_visitors" data-flag-title="css中的各种尺寸">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2019/08/21/css%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E5%B0%BA%E5%AF%B8/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/08/21/css%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E5%B0%BA%E5%AF%B8/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/io/2019/08/21/css%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E5%B0%BA%E5%AF%B8/images/css/size.png" alt="css&#x5404;&#x79CD;&#x5C3A;&#x5BF8;&#x7684;&#x8BF4;&#x660E;&#x56FE;"></p>
-<h3 id="client"><a href="#client" class="headerlink" title="client"></a>client</h3><table>
-<thead>
-<tr>
-<th>clientTop</th>
-<th>border-top-width</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>clientLeft</td>
-<td>border-left-width</td>
-</tr>
-<tr>
-<td>clientWidth</td>
-<td>&#x6C34;&#x5E73;&#x65B9;&#x5411; content + padding</td>
-</tr>
-<tr>
-<td>clientHeight</td>
-<td>&#x7AD6;&#x76F4;&#x65B9;&#x5411; content + padding</td>
-</tr>
-</tbody></table>
-<h3 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h3><table>
-<thead>
-<tr>
-<th>offsetTop</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>offsetLeft</td>
-<td></td>
-</tr>
-<tr>
-<td>offsetWidth</td>
-<td>&#x6C34;&#x5E73;&#x65B9;&#x5411; content + padding + border</td>
-</tr>
-<tr>
-<td>offsetHeight</td>
-<td>&#x7AD6;&#x76F4;&#x65B9;&#x5411; content + padding + border</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2019/08/21/repalce%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">
-      repalce函数的应用
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年8月20日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2019/08/21/repalce%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/" class="leancloud_visitors" data-flag-title="repalce函数的应用">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2019/08/21/repalce%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/08/21/repalce%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="&#x4ECB;&#x7ECD;"><a href="#&#x4ECB;&#x7ECD;" class="headerlink" title="&#x4ECB;&#x7ECD;"></a>&#x4ECB;&#x7ECD;</h3><table>
-<thead>
-<tr>
-<th>&#x5B57;&#x7B26;</th>
-<th>&#x66FF;&#x6362;&#x6587;&#x672C;</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$1&#x3001;$2&#x2026;$99</td>
-<td>&#x4E0E; regexp &#x4E2D;&#x7684;&#x7B2C; 1 &#x5230;&#x7B2C; 99 &#x4E2A;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;&#x76F8;&#x5339;&#x914D;&#x7684;&#x6587;&#x672C;&#x3002;</td>
-</tr>
-<tr>
-<td>$&amp;</td>
-<td>&#x4E0E; regexp &#x76F8;&#x5339;&#x914D;&#x7684;&#x5B50;&#x4E32;&#x3002;</td>
-</tr>
-<tr>
-<td>$`</td>
-<td>&#x4F4D;&#x4E8E;&#x5339;&#x914D;&#x5B50;&#x4E32;&#x5DE6;&#x4FA7;&#x7684;&#x6587;&#x672C;&#x3002;</td>
-</tr>
-<tr>
-<td>$&#x2019;</td>
-<td>&#x4F4D;&#x4E8E;&#x5339;&#x914D;&#x5B50;&#x4E32;&#x53F3;&#x4FA7;&#x7684;&#x6587;&#x672C;&#x3002;</td>
-</tr>
-<tr>
-<td>$$</td>
-<td>&#x76F4;&#x63A5;&#x91CF;&#x7B26;&#x53F7;&#x3002;</td>
-</tr>
-</tbody></table>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/io/2019/08/21/repalce%E5%87%BD%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2019/08/19/visibilty%E3%80%81display-none%E7%9A%84%E5%8C%BA%E5%88%AB/">
-      visibilty:hidden、display:none、opacity:0的区别
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年8月19日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2019/08/19/visibilty%E3%80%81display-none%E7%9A%84%E5%8C%BA%E5%88%AB/" class="leancloud_visitors" data-flag-title="visibilty:hidden、display:none、opacity:0的区别">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2019/08/19/visibilty%E3%80%81display-none%E7%9A%84%E5%8C%BA%E5%88%AB/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/08/19/visibilty%E3%80%81display-none%E7%9A%84%E5%8C%BA%E5%88%AB/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="&#x5206;&#x6790;&#x6BD4;&#x8F83;-opacity-0&#x3001;visibility-hidden&#x3001;display-none-&#x4F18;&#x52A3;&#x548C;&#x9002;&#x7528;&#x573A;&#x666F;"><a href="#&#x5206;&#x6790;&#x6BD4;&#x8F83;-opacity-0&#x3001;visibility-hidden&#x3001;display-none-&#x4F18;&#x52A3;&#x548C;&#x9002;&#x7528;&#x573A;&#x666F;" class="headerlink" title="&#x5206;&#x6790;&#x6BD4;&#x8F83; opacity: 0&#x3001;visibility: hidden&#x3001;display: none &#x4F18;&#x52A3;&#x548C;&#x9002;&#x7528;&#x573A;&#x666F;"></a>&#x5206;&#x6790;&#x6BD4;&#x8F83; opacity: 0&#x3001;visibility: hidden&#x3001;display: none &#x4F18;&#x52A3;&#x548C;&#x9002;&#x7528;&#x573A;&#x666F;</h3><h3 id="display-none"><a href="#display-none" class="headerlink" title="display: none;"></a>display: none;</h3><p>1.DOM &#x7ED3;&#x6784;&#xFF1A;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x4F1A;&#x6E32;&#x67D3; display &#x5C5E;&#x6027;&#x4E3A; none &#x7684;&#x5143;&#x7D20;&#xFF0C;&#x4E0D;&#x5360;&#x636E;&#x7A7A;&#x95F4;&#xFF1B;<br>2.&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#xFF1A;&#x65E0;&#x6CD5;&#x8FDB;&#x884C; DOM &#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#xFF1B;<br>3.&#x6027;&#x80FD;&#xFF1A;&#x52A8;&#x6001;&#x6539;&#x53D8;&#x6B64;&#x5C5E;&#x6027;&#x65F6;&#x4F1A;&#x5F15;&#x8D77;&#x91CD;&#x6392;&#xFF0C;&#x6027;&#x80FD;&#x8F83;&#x5DEE;&#xFF1B;<br>4.&#x7EE7;&#x627F;&#xFF1A;&#x4E0D;&#x4F1A;&#x88AB;&#x5B50;&#x5143;&#x7D20;&#x7EE7;&#x627F;&#xFF0C;&#x6BD5;&#x7ADF;&#x5B50;&#x7C7B;&#x4E5F;&#x4E0D;&#x4F1A;&#x88AB;&#x6E32;&#x67D3;&#xFF1B;<br>5.transition&#xFF1A;transition &#x4E0D;&#x652F;&#x6301; display&#x3002;</p>
-<h3 id="visibility-hidden"><a href="#visibility-hidden" class="headerlink" title="visibility: hidden;"></a>visibility: hidden;</h3><p>1.DOM &#x7ED3;&#x6784;&#xFF1A;&#x5143;&#x7D20;&#x88AB;&#x9690;&#x85CF;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x88AB;&#x6E32;&#x67D3;&#x4E0D;&#x4F1A;&#x6D88;&#x5931;&#xFF0C;&#x5360;&#x636E;&#x7A7A;&#x95F4;&#xFF1B;<br>2.&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#xFF1A;&#x65E0;&#x6CD5;&#x8FDB;&#x884C; DOM &#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#xFF1B;<br>3.&#x6027; &#x80FD;&#xFF1A;&#x52A8;&#x6001;&#x6539;&#x53D8;&#x6B64;&#x5C5E;&#x6027;&#x65F6;&#x4F1A;&#x5F15;&#x8D77;&#x91CD;&#x7ED8;&#xFF0C;&#x6027;&#x80FD;&#x8F83;&#x9AD8;&#xFF1B;<br>4.&#x7EE7; &#x627F;&#xFF1A;&#x4F1A;&#x88AB;&#x5B50;&#x5143;&#x7D20;&#x7EE7;&#x627F;&#xFF0C;&#x5B50;&#x5143;&#x7D20;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E; visibility: visible; &#x6765;&#x53D6;&#x6D88;&#x9690;&#x85CF;&#xFF1B;<br>5.transition&#xFF1A;transition &#x4E0D;&#x652F;&#x6301; display&#x3002;</p>
-<p>###opacity: 0;<br>1.DOM &#x7ED3;&#x6784;&#xFF1A;&#x900F;&#x660E;&#x5EA6;&#x4E3A; 100%&#xFF0C;&#x5143;&#x7D20;&#x9690;&#x85CF;&#xFF0C;&#x5360;&#x636E;&#x7A7A;&#x95F4;&#xFF1B;<br>2.&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#xFF1A;&#x53EF;&#x4EE5;&#x8FDB;&#x884C; DOM &#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#xFF1B;<br>3.&#x6027; &#x80FD;&#xFF1A;&#x63D0;&#x5347;&#x4E3A;&#x5408;&#x6210;&#x5C42;&#xFF0C;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x91CD;&#x7ED8;&#xFF0C;&#x6027;&#x80FD;&#x8F83;&#x9AD8;&#xFF1B;<br>4.&#x7EE7; &#x627F;&#xFF1A;&#x4F1A;&#x88AB;&#x5B50;&#x5143;&#x7D20;&#x7EE7;&#x627F;,&#x4E14;&#xFF0C;&#x5B50;&#x5143;&#x7D20;&#x5E76;&#x4E0D;&#x80FD;&#x901A;&#x8FC7; opacity: 1 &#x6765;&#x53D6;&#x6D88;&#x9690;&#x85CF;&#xFF1B;<br>5.transition&#xFF1A;transition &#x4E0D;&#x652F;&#x6301; opacity&#x3002;</p>
-<h3 id="&#x8054;&#x7CFB;&#xFF1A;&#x5B83;&#x4EEC;&#x90FD;&#x80FD;&#x8BA9;&#x5143;&#x7D20;&#x4E0D;&#x53EF;&#x89C1;"><a href="#&#x8054;&#x7CFB;&#xFF1A;&#x5B83;&#x4EEC;&#x90FD;&#x80FD;&#x8BA9;&#x5143;&#x7D20;&#x4E0D;&#x53EF;&#x89C1;" class="headerlink" title="&#x8054;&#x7CFB;&#xFF1A;&#x5B83;&#x4EEC;&#x90FD;&#x80FD;&#x8BA9;&#x5143;&#x7D20;&#x4E0D;&#x53EF;&#x89C1;"></a>&#x8054;&#x7CFB;&#xFF1A;&#x5B83;&#x4EEC;&#x90FD;&#x80FD;&#x8BA9;&#x5143;&#x7D20;&#x4E0D;&#x53EF;&#x89C1;</h3><p>&#x6458;&#x81EA; <a href="https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/100" target="_blank" rel="noopener">https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/100</a></p>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2019/08/16/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">
-      深度优先遍历和广度优先遍历
+    <a href="/2019/09/17/webpack%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%88%86%E6%9E%90%E6%8F%92%E4%BB%B6/">
+      webpack前端页面分析插件
     </a>
   </h2>
 
@@ -995,7 +324,145 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+    <a href='/categories/webpack/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>webpack</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年9月17日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2019/09/17/webpack%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%88%86%E6%9E%90%E6%8F%92%E4%BB%B6/" class="leancloud_visitors" data-flag-title="webpack前端页面分析插件">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2019/09/17/webpack%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%88%86%E6%9E%90%E6%8F%92%E4%BB%B6/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2019/09/17/webpack%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%88%86%E6%9E%90%E6%8F%92%E4%BB%B6/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.&#x6DFB;&#x52A0;&#x63D2;&#x4EF6;</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm <span class="keyword">install </span>webpack-<span class="keyword">bundle-analyzer </span>-save</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>vue.config.js&#x6587;&#x4EF6;<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">chainWebpack: <span class="built_in">config</span> =&gt; {</span><br><span class="line">   <span class="comment">// &#x8FD0;&#x884C;npm run analyze &#x663E;&#x793A;&#x6027;&#x80FD;&#x5206;&#x6790;</span></span><br><span class="line">   <span class="keyword">if</span> (<span class="built_in">process</span>.env.analyze &amp;&amp; <span class="built_in">process</span>.NODE_ENV === production) {</span><br><span class="line">     <span class="built_in">config</span></span><br><span class="line">       .plugin(<span class="string">&quot;webpack-bundle-analyzer&quot;</span>)</span><br><span class="line">       .use(require(<span class="string">&quot;webpack-bundle-analyzer&quot;</span>).BundleAnalyzerPlugin);</span><br><span class="line">   }</span><br><span class="line"> },</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>3.scripts&#x4E2D;&#x6DFB;&#x52A0;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;analyz&quot;: &quot;NODE_ENV=production <span class="keyword">analyze</span>=<span class="literal">true</span> npm run <span class="keyword">build</span><span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>&#x8FD0;&#x884C;<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">run</span><span class="bash"> analyze</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2019/09/17/vue-cli3%E4%B8%ADiview%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5/">
+      vue-cli3中iview按需引入
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>js知识库</p>
     </a>
@@ -1008,7 +475,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年8月15日</p>
+    <p>发布于：2019年9月17日</p>
   </a>
 </div>
 
@@ -1025,7 +492,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2019/08/16/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/" class="leancloud_visitors" data-flag-title="深度优先遍历和广度优先遍历">
+      <span id="/2019/09/17/vue-cli3%E4%B8%ADiview%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5/" class="leancloud_visitors" data-flag-title="vue-cli3中iview按需引入">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -1040,9 +507,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2019/08/16/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/#comments">
+  <a href="/2019/09/17/vue-cli3%E4%B8%ADiview%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/08/16/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">0</span>
+    <span class="valine-comment-count" data-xid="/2019/09/17/vue-cli3%E4%B8%ADiview%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -1067,9 +534,21 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;"><a href="#&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;" class="headerlink" title="&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;"></a>&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;</h4><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> traverse(<span class="type">node</span>) {</span><br><span class="line">  <span class="keyword">let</span> stack = []</span><br><span class="line">  <span class="keyword">let</span> nodes = []</span><br><span class="line">  <span class="keyword">if</span>(<span class="type">node</span>) {</span><br><span class="line">    stack.push(<span class="type">node</span>)</span><br><span class="line">    while(stack.length) {</span><br><span class="line">      <span class="keyword">let</span> <span class="type">item</span> = stack.shift()</span><br><span class="line">      <span class="keyword">let</span> children = <span class="type">item</span>.children</span><br><span class="line">      nodes.push(<span class="type">item</span>)</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;children.length;i++) {</span><br><span class="line">        stack.push(children[i])</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> nodes</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+        <p>1.&#x5B89;&#x88C5;babel-plugin-import&#x63D2;&#x4EF6;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm <span class="keyword">install</span> babel-<span class="keyword">plugin</span>-<span class="keyword">import</span> <span class="comment">--save-dev</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;"><a href="#&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;" class="headerlink" title="&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;"></a>&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;</h4><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function deepTraverse(<span class="keyword">node</span><span class="title">, ret</span>) {</span><br><span class="line">  if(<span class="keyword">node</span> <span class="title">!== null</span>) {</span><br><span class="line">    ret.push(<span class="keyword">node</span><span class="title">)</span></span><br><span class="line"><span class="title">    let</span> children = <span class="keyword">node</span>.<span class="title">children</span></span><br><span class="line">    for(let i=<span class="number">0</span>;i<span class="tag">&lt;children.length;i++) {</span></span><br><span class="line"><span class="tag">      deepTraverse(children[i], ret)</span></span><br><span class="line"><span class="tag">    }</span></span><br><span class="line"><span class="tag">  }</span></span><br><span class="line"><span class="tag">  return ret</span></span><br><span class="line"><span class="tag">}</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>&#x5728;&#x6587;&#x4EF6;.babelrc&#x4E2D;&#x6DFB;&#x52A0;&#x914D;&#x7F6E;</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;plugins&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;transform-vue-jsx&quot;</span>, <span class="string">&quot;transform-runtime&quot;</span>,</span><br><span class="line">    [<span class="string">&quot;import&quot;</span>, {</span><br><span class="line">      <span class="string">&quot;libraryName&quot;</span>: <span class="string">&quot;iview&quot;</span>,</span><br><span class="line">      <span class="string">&quot;libraryDirectory&quot;</span>: <span class="string">&quot;src/components&quot;</span></span><br><span class="line">    }]</span><br><span class="line">  ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></li>
+<li><p>&#x5728;plugins&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;iview.js&#x6587;&#x4EF6;</p>
+<figure class="highlight plain"><figcaption><span>Vue from &apos;vue&apos;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">import &apos;iview/dist/styles/iview.css&apos;</span><br><span class="line">import {</span><br><span class="line">  Row,</span><br><span class="line">  Col,</span><br><span class="line">  Switch,</span><br><span class="line">  Form,</span><br><span class="line">  FormItem,</span><br><span class="line">  Select,</span><br><span class="line">  Input,</span><br><span class="line">  InputNumber,</span><br><span class="line">  Button,</span><br><span class="line">  Icon,</span><br><span class="line">  Card,</span><br><span class="line">  Modal,</span><br><span class="line">  Menu,</span><br><span class="line">  MenuItem,</span><br><span class="line">  Submenu,</span><br><span class="line">  Message,</span><br><span class="line">  Notice,</span><br><span class="line">  Layout,</span><br><span class="line">  Sider,</span><br><span class="line">  Content,</span><br><span class="line">  Tag,</span><br><span class="line">  Table,</span><br><span class="line">  Poptip,</span><br><span class="line">  Page,</span><br><span class="line">  Timeline,</span><br><span class="line">  TimelineItem,</span><br><span class="line">  Tabs,</span><br><span class="line">  TabPane,</span><br><span class="line">  Tooltip,</span><br><span class="line">  Alert,</span><br><span class="line">  Checkbox,</span><br><span class="line">  CheckboxGroup,</span><br><span class="line">  RadioGroup,</span><br><span class="line">  Radio</span><br><span class="line">} from &apos;iview&apos;</span><br><span class="line"></span><br><span class="line">Vue.component(&apos;Row&apos;, Row)</span><br><span class="line">Vue.component(&apos;Col&apos;, Col)</span><br><span class="line">Vue.component(&apos;iSwitch&apos;, Switch)</span><br><span class="line">Vue.component(&apos;Form&apos;, Form)</span><br><span class="line">Vue.component(&apos;FormItem&apos;, FormItem)</span><br><span class="line">Vue.component(&apos;Select&apos;, Select)</span><br><span class="line">Vue.component(&apos;Input&apos;, Input)</span><br><span class="line">Vue.component(&apos;InputNumber&apos;, InputNumber)</span><br><span class="line">Vue.component(&apos;Button&apos;, Button)</span><br><span class="line">Vue.component(&apos;Icon&apos;, Icon)</span><br><span class="line">Vue.component(&apos;Card&apos;, Card)</span><br><span class="line">Vue.component(&apos;Modal&apos;, Modal)</span><br><span class="line">Vue.component(&apos;Card&apos;, Card)</span><br><span class="line">Vue.component(&apos;Menu&apos;, Menu)</span><br><span class="line">Vue.component(&apos;Submenu&apos;, Submenu)</span><br><span class="line">Vue.component(&apos;MenuItem&apos;, MenuItem)</span><br><span class="line">Vue.component(&apos;Layout&apos;, Layout)</span><br><span class="line">Vue.component(&apos;Sider&apos;, Sider)</span><br><span class="line">Vue.component(&apos;Content&apos;, Content)</span><br><span class="line">Vue.component(&apos;Tag&apos;, Tag)</span><br><span class="line">Vue.component(&apos;Table&apos;, Table)</span><br><span class="line">Vue.component(&apos;Poptip&apos;, Poptip)</span><br><span class="line">Vue.component(&apos;Page&apos;, Page)</span><br><span class="line">Vue.component(&apos;Timeline&apos;, Timeline)</span><br><span class="line">Vue.component(&apos;TimelineItem&apos;, TimelineItem)</span><br><span class="line">Vue.component(&apos;Tabs&apos;, Tabs)</span><br><span class="line">Vue.component(&apos;TabPane&apos;, TabPane)</span><br><span class="line">Vue.component(&apos;Tooltip&apos;, Tooltip)</span><br><span class="line">Vue.component(&apos;Alert&apos;, Alert)</span><br><span class="line">Vue.component(&apos;Checkbox&apos;, Checkbox)</span><br><span class="line">Vue.component(&apos;CheckboxGroup&apos;, CheckboxGroup)</span><br><span class="line">Vue.component(&apos;RadioGroup&apos;, RadioGroup)</span><br><span class="line">Vue.component(&apos;Radio&apos;, Radio)</span><br><span class="line"></span><br><span class="line">Vue.component(&apos;Message&apos;, Message)</span><br><span class="line">Vue.component(&apos;Notice&apos;, Notice)</span><br></pre></td></tr></table></figure></li>
+<li><p>&#x5728;main.js&#x6587;&#x4EF6;&#x4E2D;</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span> <span class="keyword">import</span> iView <span class="keyword">from</span> <span class="string">&apos;iview&apos;</span></span><br><span class="line"><span class="regexp">//</span> Vue.use(iView)</span><br><span class="line"><span class="keyword">import</span> <span class="string">&apos;@/plugins/iview</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x5230;&#x8FD9;&#x91CC;&#x57FA;&#x672C;&#x5B8C;&#x6210;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;iview&#x7684;&#x5168;&#x5C40;API&#x662F;&#x9700;&#x8981;&#x989D;&#x5916;&#x5904;&#x7406;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x591A;&#x8BF4;&#x4E86;</p>
+</li>
+</ol>
+
       
     </div>
     
@@ -1095,8 +574,8 @@
         
           
   <h2 class="title">
-    <a href="/io/2019/08/09/list%E8%BD%AC%E6%88%90tree%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-      list转成tree型数据结构
+    <a href="/2019/09/16/proxy%E4%BD%93%E9%AA%8C/">
+      proxy体验
     </a>
   </h2>
 
@@ -1121,9 +600,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/graph/' rel="nofollow">
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>graph</p>
+      <p>js知识库</p>
     </a>
   </div>
 
@@ -1134,7 +613,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年8月9日</p>
+    <p>发布于：2019年9月16日</p>
   </a>
 </div>
 
@@ -1151,7 +630,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2019/08/09/list%E8%BD%AC%E6%88%90tree%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="leancloud_visitors" data-flag-title="list转成tree型数据结构">
+      <span id="/2019/09/16/proxy%E4%BD%93%E9%AA%8C/" class="leancloud_visitors" data-flag-title="proxy体验">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -1166,9 +645,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2019/08/09/list%E8%BD%AC%E6%88%90tree%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#comments">
+  <a href="/2019/09/16/proxy%E4%BD%93%E9%AA%8C/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/08/09/list%E8%BD%AC%E6%88%90tree%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">0</span>
+    <span class="valine-comment-count" data-xid="/2019/09/16/proxy%E4%BD%93%E9%AA%8C/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -1193,267 +672,8 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">convert</span><span class="params">(list)</span> </span>{</span><br><span class="line">	<span class="keyword">const</span> res = []</span><br><span class="line">  <span class="keyword">const</span> map = <span class="keyword">list</span>.reduce((res, v) =&gt; (res[v.id] = v, res), {})</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">const</span> item of <span class="keyword">list</span>) {</span><br><span class="line">		<span class="keyword">if</span> (item.parentId === <span class="number">0</span>) {</span><br><span class="line">			res.push(item)</span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">if</span> (item.parentId in map) {</span><br><span class="line">			<span class="keyword">const</span> <span class="keyword">parent</span> = map[item.parentId]</span><br><span class="line">			<span class="keyword">parent</span>.children = <span class="keyword">parent</span>.children || []</span><br><span class="line">			<span class="keyword">parent</span>.children.push(item)</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> res</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>&#x539F;&#x59CB; list &#x6570;&#x636E; &#x5982;&#x4E0B;</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let list =[</span><br><span class="line">  {<span class="string">id:</span><span class="number">1</span>,<span class="string">name:</span><span class="string">&apos;&#x90E8;&#x95E8;A&apos;</span>,<span class="string">parentId:</span><span class="number">0</span>},</span><br><span class="line">  {<span class="string">id:</span><span class="number">2</span>,<span class="string">name:</span><span class="string">&apos;&#x90E8;&#x95E8;B&apos;</span>,<span class="string">parentId:</span><span class="number">0</span>},</span><br><span class="line">  {<span class="string">id:</span><span class="number">3</span>,<span class="string">name:</span><span class="string">&apos;&#x90E8;&#x95E8;C&apos;</span>,<span class="string">parentId:</span><span class="number">1</span>},</span><br><span class="line">  {<span class="string">id:</span><span class="number">4</span>,<span class="string">name:</span><span class="string">&apos;&#x90E8;&#x95E8;D&apos;</span>,<span class="string">parentId:</span><span class="number">1</span>},</span><br><span class="line">  {<span class="string">id:</span><span class="number">5</span>,<span class="string">name:</span><span class="string">&apos;&#x90E8;&#x95E8;E&apos;</span>,<span class="string">parentId:</span><span class="number">2</span>},</span><br><span class="line">  {<span class="string">id:</span><span class="number">6</span>,<span class="string">name:</span><span class="string">&apos;&#x90E8;&#x95E8;F&apos;</span>,<span class="string">parentId:</span><span class="number">3</span>},</span><br><span class="line">  {<span class="string">id:</span><span class="number">7</span>,<span class="string">name:</span><span class="string">&apos;&#x90E8;&#x95E8;G&apos;</span>,<span class="string">parentId:</span><span class="number">2</span>},</span><br><span class="line">  {<span class="string">id:</span><span class="number">8</span>,<span class="string">name:</span><span class="string">&apos;&#x90E8;&#x95E8;H&apos;</span>,<span class="string">parentId:</span><span class="number">4</span>},</span><br><span class="line">  {<span class="string">id:</span><span class="number">9</span>,<span class="string">name:</span><span class="string">&apos;&#x90E8;&#x95E8;H&apos;</span>,<span class="string">parentId:</span><span class="number">8</span>}</span><br><span class="line">];</span><br><span class="line">const result = convert(list);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/io/2019/08/09/list%E8%BD%AC%E6%88%90tree%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
+        <h3 id="todoList"><a href="#todoList" class="headerlink" title="todoList"></a>todoList</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        TODO:</span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;text&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>Add To Todo List<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;list&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">const</span> input = <span class="built_in">document</span>.getElementById(<span class="string">&apos;input&apos;</span>)</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> text = <span class="built_in">document</span>.getElementById(<span class="string">&apos;text&apos;</span>)</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> list = <span class="built_in">document</span>.getElementById(<span class="string">&apos;list&apos;</span>)</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">&apos;btn&apos;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> render</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> inputObj = <span class="keyword">new</span> <span class="built_in">Proxy</span>({}, {</span></span><br><span class="line"><span class="javascript">      <span class="keyword">get</span> (target, key, receiver) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> <span class="built_in">Reflect</span>.get(target, key, receiver)</span></span><br><span class="line">      },</span><br><span class="line"><span class="javascript">      <span class="keyword">set</span> (target, key, value, receiver) {</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">if</span> (key === <span class="string">&apos;text&apos;</span>) {</span></span><br><span class="line">          input.value = value</span><br><span class="line">          text.innerHTML = value</span><br><span class="line">        }</span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> <span class="built_in">Reflect</span>.set(target, key, value, receiver)</span></span><br><span class="line">      }</span><br><span class="line">    })</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="class"><span class="keyword">class</span> <span class="title">Render</span> </span>{</span></span><br><span class="line"><span class="javascript">      <span class="keyword">constructor</span> (arr) {</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.arr = arr</span></span><br><span class="line">      }</span><br><span class="line">      init () {</span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> fragment = <span class="built_in">document</span>.createDocumentFragment()</span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.arr.length; i++) {</span></span><br><span class="line"><span class="javascript">          <span class="keyword">const</span> li = <span class="built_in">document</span>.createElement(<span class="string">&apos;li&apos;</span>)</span></span><br><span class="line"><span class="actionscript">          li.textContent = <span class="keyword">this</span>.arr[i]</span></span><br><span class="line">          fragment.appendChild(li)</span><br><span class="line">        }</span><br><span class="line">        list.appendChild(fragment)</span><br><span class="line">      }</span><br><span class="line">      addList (val) {</span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> li = <span class="built_in">document</span>.createElement(<span class="string">&apos;li&apos;</span>)</span></span><br><span class="line">        li.textContent = val</span><br><span class="line">        list.appendChild(li)</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> todoList = <span class="keyword">new</span> <span class="built_in">Proxy</span>([], {</span></span><br><span class="line"><span class="javascript">      <span class="keyword">get</span> (target, key, receiver) {</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> <span class="built_in">Reflect</span>.get(target, key, receiver)</span></span><br><span class="line">      },</span><br><span class="line"><span class="javascript">      <span class="keyword">set</span> (target, key, value, receiver) {</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(target, key, value, receiver)</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">if</span> (key !== <span class="string">&apos;length&apos;</span>) {</span></span><br><span class="line">          render.addList(value)</span><br><span class="line">        }</span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> <span class="built_in">Reflect</span>.set(target, key, value, receiver)</span></span><br><span class="line">      }</span><br><span class="line">    })</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="params">()</span> =&gt;</span> {</span></span><br><span class="line"><span class="actionscript">      render = <span class="keyword">new</span> Render([])</span></span><br><span class="line">      render.init()</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    input.addEventListener(<span class="string">&apos;keyup&apos;</span>, e =&gt; {</span></span><br><span class="line">      inputObj.text = e.target.value</span><br><span class="line">    })</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    btn.addEventListener(<span class="string">&apos;click&apos;</span>, () =&gt; {</span></span><br><span class="line"><span class="actionscript">      todoList.push(inputObj.text) <span class="comment">// &#x6BCF;&#x6B21; &#x589E;&#x52A0;&#x548C;&#x5220;&#x9664; &#x90FD;&#x4F1A;&#x5F15;&#x8D77; length &#x7684;&#x6539;&#x53D8;</span></span></span><br><span class="line"><span class="actionscript">      inputObj.text = <span class="string">&apos;&apos;</span></span></span><br><span class="line">    })</span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(todoList)</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2019/08/09/%E7%BB%98%E5%88%B6%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE/">
-      绘制网络拓扑图
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/graph/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>graph</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年8月8日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2019/08/09/%E7%BB%98%E5%88%B6%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE/" class="leancloud_visitors" data-flag-title="绘制网络拓扑图">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2019/08/09/%E7%BB%98%E5%88%B6%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/08/09/%E7%BB%98%E5%88%B6%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="&#x6548;&#x679C;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;"><a href="#&#x6548;&#x679C;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;" class="headerlink" title="&#x6548;&#x679C;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;"></a>&#x6548;&#x679C;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</h3><p><img src="/io/2019/08/09/%E7%BB%98%E5%88%B6%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE/images/echarts%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE.png" alt="echarts&#x5B9E;&#x73B0;&#x70AB;&#x9177;&#x7684;&#x7F51;&#x7EDC;&#x62D3;&#x6251;&#x56FE;"></p>
-<h3 id="&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x4EE5;&#x53CA;&#x4F18;&#x7F3A;&#x70B9;"><a href="#&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x4EE5;&#x53CA;&#x4F18;&#x7F3A;&#x70B9;" class="headerlink" title="&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x4EE5;&#x53CA;&#x4F18;&#x7F3A;&#x70B9;"></a>&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x4EE5;&#x53CA;&#x4F18;&#x7F3A;&#x70B9;</h3><p>&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x5B9E;&#x9645;&#x4E0A;&#x662F;graph&#x7C7B;&#x578B;&#x548C;lines&#x7C7B;&#x578B;&#x7ED3;&#x5408;&#x753B;&#x51FA;&#x6765;&#x7684;&#xFF0C;graph&#x53EF;&#x4EE5;&#x7ED8;&#x5236;&#x7684;&#x62D3;&#x6251;&#x56FE;,&#x76EE;&#x524D;&#x4E09;&#x79CD;layout, &#x5305;&#x62EC;&#x529B;&#x5BFC;&#x56FE;(force)&#x3001;&#x73AF;&#x5F62;&#x5E03;&#x5C40;(circular)&#x3001;&#x4E8C;&#x7EF4;&#x5750;&#x6807;&#x7CFB;(none)&#x3002;&#x524D;&#x4E24;&#x79CD;&#x57FA;&#x672C;&#x4E0A;&#x6392;&#x7248;&#x4F4D;&#x7F6E;&#x4E0D;&#x600E;&#x4E48;&#x53D7;&#x81EA;&#x5DF1;&#x63A7;&#x5236;&#xFF0C;&#x7B2C;&#x4E09;&#x79CD;&#x7684;&#x753B;&#xFF0C;&#x8282;&#x70B9;&#x4F4D;&#x7F6E;&#x5B8C;&#x5168;&#x7684;&#x53D7;&#x6570;&#x636E;&#x4E2D;&#x7684;x/y&#x4F4D;&#x7F6E;&#x63A7;&#x5236;&#xFF0C;&#x4F46;&#x662F;&#x4F30;&#x8BA1;&#x8BA1;&#x7B97;&#x4F4D;&#x7F6E;&#x662F;&#x4E2A;&#x9EBB;&#x70E6;&#x4E8B;&#x513F;&#xFF0C;&#x5982;&#x679C;&#x8282;&#x70B9;&#x7684;&#x6570;&#x91CF;&#x5F88;&#x5C11;&#x6216;&#x8005;&#x8BF4;&#x6BD4;&#x8F83;&#x56FA;&#x5B9A;&#x7684;&#x8BDD;&#xFF0C;&#x91C7;&#x7528;&#x8FD9;&#x4E2A;&#x975E;&#x5E38;&#x4E0D;&#x9519;&#x3002;lines&#x7C7B;&#x578B;&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x7EBF;&#x6761;&#x4E0A;&#x6DFB;&#x52A0;&#x52A8;&#x6001;&#x7684;&#x6548;&#x679C;</p>
-<h3 id="live-demo"><a href="#live-demo" class="headerlink" title="live demo"></a>live demo</h3><p><a href="https://gallery.echartsjs.com/editor.html?c=xbETBRwXrm" target="_blank" rel="noopener">https://gallery.echartsjs.com/editor.html?c=xbETBRwXrm</a><br>&#x6216;&#x8005;<br><a href="http://39.105.159.58:3000/#/graph" target="_blank" rel="noopener">http://39.105.159.58:3000/#/graph</a></p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/io/2019/08/09/%E7%BB%98%E5%88%B6%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2019/07/18/cytoscape%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E6%8B%93%E6%89%91%E5%9B%BE/">
-      cytoscape绘制一个拓扑图
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/graph/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>graph</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年7月18日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2019/07/18/cytoscape%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E6%8B%93%E6%89%91%E5%9B%BE/" class="leancloud_visitors" data-flag-title="cytoscape绘制一个拓扑图">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2019/07/18/cytoscape%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E6%8B%93%E6%89%91%E5%9B%BE/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/07/18/cytoscape%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E6%8B%93%E6%89%91%E5%9B%BE/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="&#x53EA;&#x8BB0;&#x5F55;&#x6838;&#x5FC3;&#x4EE3;&#x7801;"><a href="#&#x53EA;&#x8BB0;&#x5F55;&#x6838;&#x5FC3;&#x4EE3;&#x7801;" class="headerlink" title="&#x53EA;&#x8BB0;&#x5F55;&#x6838;&#x5FC3;&#x4EE3;&#x7801;"></a>&#x53EA;&#x8BB0;&#x5F55;&#x6838;&#x5FC3;&#x4EE3;&#x7801;</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cytoscape <span class="keyword">from</span> <span class="string">&apos;cytoscape&apos;</span></span><br><span class="line"><span class="keyword">import</span> edgehandles <span class="keyword">from</span> <span class="string">&apos;cytoscape-edgehandles&apos;</span></span><br><span class="line">cytoscape.use(edgehandles)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> makeSvg = <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{</span><br><span class="line">    <span class="keyword">let</span> data = node.data()</span><br><span class="line">    <span class="keyword">return</span> { <span class="attr">image</span>: data.image || <span class="string">&apos;none&apos;</span>, <span class="attr">width</span>: <span class="number">50</span>, <span class="attr">height</span>: <span class="number">50</span> }</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> cy = cytoscape({</span><br><span class="line">    container: <span class="keyword">this</span>.$refs.topology,</span><br><span class="line">    layout: {</span><br><span class="line">      name: <span class="string">&apos;breadthfirst&apos;</span>,</span><br><span class="line">      directed: <span class="literal">true</span></span><br><span class="line">    },</span><br><span class="line">    userZoomingEnabled: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">    style: [</span><br><span class="line">      {</span><br><span class="line">        selector: <span class="string">&apos;node&apos;</span>,</span><br><span class="line">        style: {</span><br><span class="line">          shape: <span class="string">&apos;ellipse&apos;</span>, <span class="comment">// rectangle vee pentagon</span></span><br><span class="line">          content: <span class="function"><span class="keyword">function</span> (<span class="params">ele</span>) </span>{</span><br><span class="line">            <span class="keyword">const</span> data = ele.data()</span><br><span class="line">            <span class="keyword">if</span> (data.title) {</span><br><span class="line">              <span class="keyword">return</span> <span class="string">`<span class="subst">${data.title}</span>-<span class="subst">${data.name}</span>`</span></span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">              <span class="keyword">return</span> <span class="string">`<span class="subst">${data.id}</span>`</span></span><br><span class="line">            }</span><br><span class="line">          },</span><br><span class="line">          <span class="string">&apos;text-valign&apos;</span>: <span class="string">&apos;center&apos;</span>,</span><br><span class="line">          <span class="string">&apos;text-halign&apos;</span>: <span class="string">&apos;right&apos;</span>,</span><br><span class="line">          <span class="string">&apos;color&apos;</span>: <span class="string">&apos;data(color)&apos;</span>,</span><br><span class="line">          <span class="string">&apos;background-color&apos;</span>: <span class="string">&apos;data(color)&apos;</span>,</span><br><span class="line">          <span class="string">&apos;background-image&apos;</span>: <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{ <span class="keyword">return</span> makeSvg(node).image },</span><br><span class="line">          <span class="string">&apos;background-width&apos;</span>: <span class="string">&apos;60%&apos;</span>,</span><br><span class="line">          <span class="string">&apos;background-height&apos;</span>: <span class="string">&apos;60%&apos;</span>,</span><br><span class="line">          <span class="string">&apos;width&apos;</span>: <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{ <span class="keyword">return</span> makeSvg(node).width },</span><br><span class="line">          <span class="string">&apos;height&apos;</span>: <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{ <span class="keyword">return</span> makeSvg(node).height },</span><br><span class="line">          <span class="string">&apos;text-rotation&apos;</span>: <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{  <span class="comment">//&#x6839;&#x636E;&#x6761;&#x4EF6;&#x65CB;&#x8F6C;&#x6587;&#x5B57;&#xFF0C;&#x907F;&#x514D;&#x8282;&#x70B9;&#x592A;&#x591A;&#x6587;&#x5B57;&#x76F8;&#x4E92;&#x8986;&#x76D6;</span></span><br><span class="line">            <span class="keyword">let</span> data = node.data()</span><br><span class="line">            <span class="keyword">if</span> (data.level === <span class="number">3</span> &amp;&amp; level3Len &gt; <span class="number">10</span>) {</span><br><span class="line">              <span class="keyword">return</span> <span class="number">45</span></span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">              <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            }</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      {</span><br><span class="line">        <span class="string">&apos;selector&apos;</span>: <span class="string">&apos;node:selected&apos;</span>,</span><br><span class="line">        <span class="string">&apos;style&apos;</span>: {</span><br><span class="line">          <span class="string">&apos;min-zoomed-font-size&apos;</span>: <span class="number">0</span>,</span><br><span class="line">          <span class="string">&apos;z-index&apos;</span>: <span class="number">9999</span>,</span><br><span class="line">          <span class="string">&apos;border-color&apos;</span>: <span class="string">&apos;black&apos;</span>,</span><br><span class="line">          <span class="string">&apos;border-width&apos;</span>: <span class="number">2</span>,</span><br><span class="line">          <span class="string">&apos;color&apos;</span>: <span class="string">&apos;black&apos;</span></span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line"></span><br><span class="line">      {</span><br><span class="line">        selector: <span class="string">&apos;edge&apos;</span>,</span><br><span class="line">        style: {</span><br><span class="line">          <span class="string">&apos;curve-style&apos;</span>: <span class="string">&apos;straight&apos;</span>,</span><br><span class="line">          <span class="string">&apos;target-arrow-shape&apos;</span>: <span class="string">&apos;triangle&apos;</span>,</span><br><span class="line">          <span class="string">&apos;line-color&apos;</span>: <span class="string">&apos;gray&apos;</span>,</span><br><span class="line">          <span class="string">&apos;width&apos;</span>: <span class="number">0.8</span>,</span><br><span class="line">          <span class="string">&apos;line-style&apos;</span>: <span class="string">&apos;data(lineStyle)&apos;</span></span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    elements: {</span><br><span class="line">      nodes: nodes,</span><br><span class="line">      edges: edges</span><br><span class="line">    }</span><br><span class="line">  })</span><br><span class="line"></span><br><span class="line">  cy.on(<span class="string">&apos;tap&apos;</span>, <span class="string">&apos;node&apos;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>{</span><br><span class="line">    <span class="keyword">let</span> data = evt.target.data()</span><br><span class="line">    <span class="keyword">if</span> (data.click) {</span><br><span class="line">      vm.getIpStat(data.ip)</span><br><span class="line">    }</span><br><span class="line">  })</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -1479,8 +699,8 @@
         
           
   <h2 class="title">
-    <a href="/io/2019/07/18/http%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/">
-      http访问控制
+    <a href="/2019/09/16/css%E7%89%B9%E6%80%A7/">
+      css特性
     </a>
   </h2>
 
@@ -1505,9 +725,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/nginx/' rel="nofollow">
+    <a href='/categories/%E6%A0%B7%E5%BC%8F-css-less/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>nginx</p>
+      <p>样式(css/less...)</p>
     </a>
   </div>
 
@@ -1518,7 +738,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年7月18日</p>
+    <p>发布于：2019年9月16日</p>
   </a>
 </div>
 
@@ -1535,7 +755,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2019/07/18/http%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/" class="leancloud_visitors" data-flag-title="http访问控制">
+      <span id="/2019/09/16/css%E7%89%B9%E6%80%A7/" class="leancloud_visitors" data-flag-title="css特性">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -1550,9 +770,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2019/07/18/http%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/#comments">
+  <a href="/2019/09/16/css%E7%89%B9%E6%80%A7/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/07/18/http%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/">0</span>
+    <span class="valine-comment-count" data-xid="/2019/09/16/css%E7%89%B9%E6%80%A7/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -1577,16 +797,802 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="http&#x8BBF;&#x95EE;&#x63A7;&#x5236;-cors-&#x6982;&#x5FF5;"><a href="#http&#x8BBF;&#x95EE;&#x63A7;&#x5236;-cors-&#x6982;&#x5FF5;" class="headerlink" title="http&#x8BBF;&#x95EE;&#x63A7;&#x5236;(cors)&#x6982;&#x5FF5;"></a>http&#x8BBF;&#x95EE;&#x63A7;&#x5236;(cors)&#x6982;&#x5FF5;</h3><pre><code>&#x8DE8;&#x57DF;&#x8D44;&#x6E90;&#x5171;&#x4EAB;(CORS) &#x662F;&#x4E00;&#x79CD;&#x673A;&#x5236;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x989D;&#x5916;&#x7684; HTTP &#x5934;&#x6765;&#x544A;&#x8BC9;&#x6D4F;&#x89C8;&#x5668;  &#x8BA9;&#x8FD0;&#x884C;&#x5728;&#x4E00;&#x4E2A; origin (domain) &#x4E0A;&#x7684;Web&#x5E94;&#x7528;&#x88AB;&#x51C6;&#x8BB8;&#x8BBF;&#x95EE;&#x6765;&#x81EA;&#x4E0D;&#x540C;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6307;&#x5B9A;&#x7684;&#x8D44;&#x6E90;&#x3002;</code></pre><p>&#x51FA;&#x4E8E;&#x5B89;&#x5168;&#x539F;&#x56E0;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x9650;&#x5236;&#x4ECE;&#x811A;&#x672C;&#x5185;<strong>&#x53D1;&#x8D77;</strong>&#x7684;&#x8DE8;&#x6E90;HTTP&#x8BF7;&#x6C42;&#x3002;</p>
-<blockquote>
-<p>&#x26A0;&#xFE0F;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x9650;&#x5236;&#x4E86;&#x53D1;&#x8D77;&#x8DE8;&#x7AD9;&#x8BF7;&#x6C42;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x8DE8;&#x7AD9;&#x8BF7;&#x6C42;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x53D1;&#x8D77;&#xFF0C;&#x4F46;&#x662F;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x62E6;&#x622A;&#x4E86;</p>
+        <h3 id="&#x6743;&#x91CD;"><a href="#&#x6743;&#x91CD;" class="headerlink" title="&#x6743;&#x91CD;"></a>&#x6743;&#x91CD;</h3><ul>
+<li>&#xFF01;important  Infinity</li>
+<li>&#x884C;&#x95F4;&#x6837;&#x5F0F;         1000 </li>
+<li>id               100</li>
+<li>class |&#x5C5E;&#x6027;|&#x4F2A;&#x7C7B;   10</li>
+<li>&#x6807;&#x7B7E;&#x9009;&#x62E9;&#x5668;|&#x4F2A;&#x5143;&#x7D20;    1</li>
+<li>&#x901A;&#x914D;&#x7B26;             0</li>
+<li>&#x7EE7;&#x627F;<blockquote>
+<p>&#x4E0D;&#x5B58;&#x5728;&#x8FDB;&#x4F4D;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x53EA;&#x8981;&#x9AD8;&#x4F4D;&#x5927;&#xFF0C;&#x5C31;&#x4E0D;&#x7528;&#x6BD4;&#x4E86;&#xFF0C;&#x6743;&#x91CD;&#x4E00;&#x5B9A;&#x9AD8;</p>
 </blockquote>
-<h3 id="&#x7B80;&#x5355;&#x8BF7;&#x6C42;-&#x6EE1;&#x8DB3;&#x4E0B;&#x9762;&#x6240;&#x6709;&#x6761;&#x4EF6;"><a href="#&#x7B80;&#x5355;&#x8BF7;&#x6C42;-&#x6EE1;&#x8DB3;&#x4E0B;&#x9762;&#x6240;&#x6709;&#x6761;&#x4EF6;" class="headerlink" title="&#x7B80;&#x5355;&#x8BF7;&#x6C42;: (&#x6EE1;&#x8DB3;&#x4E0B;&#x9762;&#x6240;&#x6709;&#x6761;&#x4EF6;)"></a>&#x7B80;&#x5355;&#x8BF7;&#x6C42;: (&#x6EE1;&#x8DB3;&#x4E0B;&#x9762;&#x6240;&#x6709;&#x6761;&#x4EF6;)</h3><p>  &#x65B9;&#x6CD5;&#xFF1A;GET&#x3001;HEAD&#x3001;POST<br>  Content-Typ&#x4E3A;&#x4E0B;&#x9762;&#x4E09;&#x4E2A;&#x503C;&#x4E4B;&#x4E00;&#xFF1A;text/plain &#x3001;mutipart/form-data &#x3001;application/x-www-data-urlencoded</p>
+</li>
+</ul>
       
     </div>
     
       
-        <a class= "readmore" href="/io/2019/07/18/http%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/">
+        <a class= "readmore" href="/2019/09/16/css%E7%89%B9%E6%80%A7/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2019/09/15/%E6%A8%A1%E6%8B%9F%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%81%E7%9A%84js%E5%87%BD%E6%95%B0/">
+      模拟一些常见的js函数
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年9月15日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2019/09/15/%E6%A8%A1%E6%8B%9F%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%81%E7%9A%84js%E5%87%BD%E6%95%B0/" class="leancloud_visitors" data-flag-title="模拟一些常见的js函数">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2019/09/15/%E6%A8%A1%E6%8B%9F%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%81%E7%9A%84js%E5%87%BD%E6%95%B0/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2019/09/15/%E6%A8%A1%E6%8B%9F%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%81%E7%9A%84js%E5%87%BD%E6%95%B0/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h4><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.myapply = function(<span class="built_in">context</span>, arr) {</span><br><span class="line">  <span class="built_in">var</span> <span class="built_in">context</span> = Object(<span class="built_in">context</span>) || window;</span><br><span class="line">  <span class="built_in">context</span>.fn = this;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">var</span> result;</span><br><span class="line">  <span class="keyword">if</span> (!arr) {</span><br><span class="line">    result = <span class="built_in">context</span>.fn();</span><br><span class="line">  } <span class="keyword">else</span> {</span><br><span class="line">    <span class="built_in">var</span> <span class="built_in">args</span> = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">var</span> i = <span class="number">0</span>, len = arr.<span class="built_in">length</span>; i &lt; len; i++) {</span><br><span class="line">      <span class="built_in">args</span>.<span class="built_in">push</span>(<span class="string">&quot;arr[&quot;</span> + i + <span class="string">&quot;]&quot;</span>);</span><br><span class="line">    }</span><br><span class="line">    result = <span class="built_in">eval</span>(<span class="string">&quot;context.fn(&quot;</span> + <span class="built_in">args</span> + <span class="string">&quot;)&quot;</span>);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="built_in">delete</span> <span class="built_in">context</span>.fn;</span><br><span class="line">  <span class="built_in">return</span> result;</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+
+<h4 id="call"><a href="#call" class="headerlink" title="call"></a>call</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myCall = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>{</span><br><span class="line">  context.fn = <span class="keyword">this</span></span><br><span class="line">  <span class="keyword">let</span> args = <span class="built_in">Array</span>.prototype.slice(<span class="built_in">arguments</span>, <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">let</span> result = context.fn(...args)</span><br><span class="line">  <span class="keyword">delete</span> context.fn</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h4><p>&#x90FD;&#x77E5;&#x9053;instanceof&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x7528;&#x6765;&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x9762;&#x80FD;&#x4E0D;&#x80FD;&#x627E;&#x5230;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x539F;&#x578B;&#x3002;&#x7136;&#x540E;&#x5C31;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x539F;&#x7406;&#x6765;&#x5199;&#x6B4C;demo</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">instance_of</span>(<span class="params">l, r</span>)</span>{</span><br><span class="line">    <span class="keyword">let</span> proto = r.__proto__</span><br><span class="line">    l = l.__proto__</span><br><span class="line">    <span class="keyword">while</span>(l) {</span><br><span class="line">        <span class="keyword">if</span> (l === proto) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        <span class="keyword">if</span>(l === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        l = l.__proto__</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2019/09/15/stopImmediatePropagation%E5%92%8CstopPropagation%E7%9A%84%E5%8C%BA%E5%88%AB/">
+      stopImmediatePropagation和stopPropagation的区别
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年9月15日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2019/09/15/stopImmediatePropagation%E5%92%8CstopPropagation%E7%9A%84%E5%8C%BA%E5%88%AB/" class="leancloud_visitors" data-flag-title="stopImmediatePropagation和stopPropagation的区别">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2019/09/15/stopImmediatePropagation%E5%92%8CstopPropagation%E7%9A%84%E5%8C%BA%E5%88%AB/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2019/09/15/stopImmediatePropagation%E5%92%8CstopPropagation%E7%9A%84%E5%8C%BA%E5%88%AB/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x5728;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x4E2D;&#x95F4;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;event&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;event&#x5BF9;&#x8C61;&#x6709;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;stopPropagation&#x65B9;&#x6CD5;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;stopImmediatePropagation&#x65B9;&#x6CD5;&#xFF0C;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x53EA;&#x5DEE;&#x4E00;&#x4E2A;Immediate&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x8BF4;&#x8BF4;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x533A;&#x522B;</p>
+      
+    </div>
+    
+      
+        <a class= "readmore" href="/2019/09/15/stopImmediatePropagation%E5%92%8CstopPropagation%E7%9A%84%E5%8C%BA%E5%88%AB/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2019/09/12/%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1/">
+      装箱和拆箱
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年9月12日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2019/09/12/%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1/" class="leancloud_visitors" data-flag-title="装箱和拆箱">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2019/09/12/%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2019/09/12/%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>&#x88C5;&#x7BB1;&#x8F6C;&#x6362;&#xFF1A;&#x628A;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x5305;&#x88C5;&#x7C7B;&#x578B;</li>
+<li>&#x62C6;&#x7BB1;&#x64CD;&#x4F5C;&#xFF1A;&#x628A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x57FA;&#x672C;&#x7C7B;&#x578B;</li>
+</ul>
+<p>&#x65E2;&#x7136;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x4E0D;&#x80FD;&#x6269;&#x5C55;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x7684;&#x5462;&#xFF1F;</p>
+<p>&#x6BCF;&#x5F53;&#x6211;&#x4EEC;&#x64CD;&#x4F5C;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x540E;&#x53F0;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;&#x88C5;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x8C03;&#x7528;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+      
+    </div>
+    
+      
+        <a class= "readmore" href="/2019/09/12/%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2019/09/12/%E5%88%A4%E6%96%AD%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E5%BC%8F/">
+      判断类型的方式
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年9月12日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2019/09/12/%E5%88%A4%E6%96%AD%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E5%BC%8F/" class="leancloud_visitors" data-flag-title="判断类型的方式">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2019/09/12/%E5%88%A4%E6%96%AD%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E5%BC%8F/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2019/09/12/%E5%88%A4%E6%96%AD%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E5%BC%8F/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><p>&#x53D6;&#x503C;&#x8303;&#x56F4;</p>
+<ul>
+<li>number</li>
+<li>string</li>
+<li>object</li>
+<li>function</li>
+<li>boolean</li>
+<li>symbol</li>
+<li>boolean</li>
+</ul>
+      
+    </div>
+    
+      
+        <a class= "readmore" href="/2019/09/12/%E5%88%A4%E6%96%AD%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E5%BC%8F/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2019/09/12/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">
+      类型转换
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年9月12日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2019/09/12/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="leancloud_visitors" data-flag-title="类型转换">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2019/09/12/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2019/09/12/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x89C4;&#x5219;"><a href="#1-&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x89C4;&#x5219;" class="headerlink" title="1. &#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x89C4;&#x5219;"></a>1. &#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x89C4;&#x5219;</h4><p><img src="/2019/09/12/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/images/leixingzhuanhuan.png" alt="1aa4dd552dadf8f2b6b10384bb7dd6fc.png"></p>
+      
+    </div>
+    
+      
+        <a class= "readmore" href="/2019/09/12/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2019/09/10/dataTable%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%97%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98/">
+      dataTable中自定义列排序问题
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%8F%92%E4%BB%B6/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>插件</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年9月10日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2019/09/10/dataTable%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%97%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="dataTable中自定义列排序问题">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2019/09/10/dataTable%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%97%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2019/09/10/dataTable%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%97%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x5728;&#x4F7F;&#x7528;dataTables&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6709;&#x4E9B;&#x5217;&#x4E2D;&#x4F1A;&#x662F;&#x4E00;&#x4E9B;&#x5305;&#x542B;&#x5185;&#x5BB9;&#x7684;&#x6309;&#x94AE;&#x6216;&#x94FE;&#x63A5;&#xFF0C;&#x4E0D;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x6587;&#x5B57;&#x5185;&#x5BB9;&#x3002;&#x90A3;&#x4E48;dataTables&#x4F1A;&#x5C06;&#x8FD9;&#x4E9B;&#x5185;&#x5BB9;&#x89C6;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x8FD9;&#x4E0D;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x7684;&#x671F;&#x671B;&#x3002;&#x90A3;&#x4E48;&#x5C31;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x80FD;&#x591F;&#x7075;&#x6D3B;&#x7684;&#x6307;&#x5B9A;&#x67D0;&#x4E9B;&#x5217;&#x6309;&#x7167;&#x6211;&#x4EEC;&#x7684;&#x610F;&#x613F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x5E78;&#x8FD0;&#x7684;&#x662F;dataTable&#x652F;&#x6301;&#x8FD9;&#x6837;&#x7684;&#x63D2;&#x4EF6;&#x62D3;&#x5C55;&#x3002;</p>
+<ol>
+<li>&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x53EB;dataTables.sort.plungin.js&#xFF0C;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x3002;</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">jQuery.extend(jQuery.fn.dataTableExt.oSort, {</span><br><span class="line">    <span class="string">&quot;html-percent-pre&quot;</span>: <span class="function"><span class="keyword">function</span> (<span class="params">a</span>) </span>{</span><br><span class="line">        <span class="keyword">var</span> x = <span class="built_in">String</span>(a).replace(<span class="regexp">/&lt;[\s\S]*?&gt;/g</span>, <span class="string">&quot;&quot;</span>);    <span class="comment">//&#x53BB;&#x9664;html&#x6807;&#x8BB0;</span></span><br><span class="line">        x = x.replace(<span class="regexp">/&amp;amp;nbsp;/ig</span>, <span class="string">&quot;&quot;</span>);                   <span class="comment">//&#x53BB;&#x9664;&#x7A7A;&#x683C;</span></span><br><span class="line">        x = x.replace(<span class="regexp">/%/</span>, <span class="string">&quot;&quot;</span>);                          <span class="comment">//&#x53BB;&#x9664;&#x767E;&#x5206;&#x53F7;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">parseFloat</span>(x);</span><br><span class="line">    },</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;html-percent-asc&quot;</span>: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>{                <span class="comment">//&#x6B63;&#x5E8F;&#x6392;&#x5E8F;&#x5F15;&#x7528;&#x65B9;&#x6CD5;</span></span><br><span class="line">        <span class="keyword">return</span> ((a &lt; b) ? <span class="number">-1</span> : ((a &gt; b) ? <span class="number">1</span> : <span class="number">0</span>));</span><br><span class="line">    },</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;html-percent-desc&quot;</span>: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>{                <span class="comment">//&#x5012;&#x5E8F;&#x6392;&#x5E8F;&#x5F15;&#x7528;&#x65B9;&#x6CD5;</span></span><br><span class="line">        <span class="keyword">return</span> ((a &lt; b) ? <span class="number">1</span> : ((a &gt; b) ? <span class="number">-1</span> : <span class="number">0</span>));</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+      
+        <a class= "readmore" href="/2019/09/10/dataTable%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%97%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
@@ -1604,17 +1610,17 @@
       <br>
       <div class="prev-next">
         
-          <a class="prev" rel="prev" href="/io/page/6/">
+          <a class="prev" rel="prev" href="/page/6/">
             <section class="post prev white-box shadow" >
               <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
             </section>
           </a>
         
         <p class="current">
-          7 / 13
+          7 / 14
         </p>
         
-          <a class="next" rel="next" href="/io/page/8/">
+          <a class="next" rel="next" href="/page/8/">
             <section class="post next white-box shadow">
               &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
             </section>
@@ -1640,7 +1646,7 @@
   <div class='content'>
     
       
-        <a class='avatar flat-box rectangle' href='/io/about/'>
+        <a class='avatar flat-box rectangle' href='/about/'>
           <img no-lazy src='/img/avatar.png'/>
         </a>
       
@@ -1659,7 +1665,7 @@
       <div class="social-wrapper">
         
           
-            <a href="/io/atom.xml"
+            <a href="/atom.xml"
               class="social fas fa-rss flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -1667,7 +1673,7 @@
           
         
           
-            <a href="mailto:me@xxx.com"
+            <a href="mailto:2658553345@qq.com"
               class="social fas fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -1715,69 +1721,84 @@
       <ul class="entry navigation">
         
           <li><a class="flat-box"
-            title="/io/categories/electron/" href="/io/categories/electron/"
-            id="iocategorieselectron"
+            title="/categories/electron/" href="/categories/electron/"
+            id="categorieselectron"
             ><div class='name'>electron</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/git/" href="/io/categories/git/"
-            id="iocategoriesgit"
+            title="/categories/git/" href="/categories/git/"
+            id="categoriesgit"
             ><div class='name'>git</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/graph/" href="/io/categories/graph/"
-            id="iocategoriesgraph"
+            title="/categories/graph/" href="/categories/graph/"
+            id="categoriesgraph"
             ><div class='name'>graph</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/" href="/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/"
-            id="iocategoriesjsE79FA5E8AF86E5BA93"
-            ><div class='name'>js知识库</div><div class='badge'>(38)</div></a></li>
+            title="/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/" href="/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/"
+            id="categoriesjsE79FA5E8AF86E5BA93"
+            ><div class='name'>js知识库</div><div class='badge'>(41)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/nginx/" href="/io/categories/nginx/"
-            id="iocategoriesnginx"
+            title="/categories/nginx/" href="/categories/nginx/"
+            id="categoriesnginx"
             ><div class='name'>nginx</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/node/" href="/io/categories/node/"
-            id="iocategoriesnode"
+            title="/categories/node/" href="/categories/node/"
+            id="categoriesnode"
             ><div class='name'>node</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/svg/" href="/io/categories/svg/"
-            id="iocategoriessvg"
+            title="/categories/svg/" href="/categories/svg/"
+            id="categoriessvg"
             ><div class='name'>svg</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/vue/" href="/io/categories/vue/"
-            id="iocategoriesvue"
-            ><div class='name'>vue</div><div class='badge'>(7)</div></a></li>
+            title="/categories/typescript/" href="/categories/typescript/"
+            id="categoriestypescript"
+            ><div class='name'>typescript</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/webpack/" href="/io/categories/webpack/"
-            id="iocategorieswebpack"
-            ><div class='name'>webpack</div><div class='badge'>(8)</div></a></li>
+            title="/categories/vue/" href="/categories/vue/"
+            id="categoriesvue"
+            ><div class='name'>vue</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E5%85%B6%E4%BB%96/" href="/io/categories/%E5%85%B6%E4%BB%96/"
-            id="iocategoriesE585B6E4BB96"
+            title="/categories/webpack/" href="/categories/webpack/"
+            id="categorieswebpack"
+            ><div class='name'>webpack</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
+            id="categoriesE585B6E4BB96"
             ><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%8F%92%E4%BB%B6/" href="/io/categories/%E6%8F%92%E4%BB%B6/"
-            id="iocategoriesE68F92E4BBB6"
+            title="/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/" href="/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"
+            id="categoriesE5B7A5E7A88BE58C96"
+            ><div class='name'>工程化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%8F%92%E4%BB%B6/" href="/categories/%E6%8F%92%E4%BB%B6/"
+            id="categoriesE68F92E4BBB6"
             ><div class='name'>插件</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%96%87%E6%A1%A3/" href="/io/categories/%E6%96%87%E6%A1%A3/"
-            id="iocategoriesE69687E6A1A3"
+            title="/categories/%E6%96%87%E6%A1%A3/" href="/categories/%E6%96%87%E6%A1%A3/"
+            id="categoriesE69687E6A1A3"
             ><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%A0%B7%E5%BC%8F-css-less/" href="/io/categories/%E6%A0%B7%E5%BC%8F-css-less/"
-            id="iocategoriesE6A0B7E5BC8F-css-less"
+            title="/categories/%E6%A0%B7%E5%BC%8F-css-less/" href="/categories/%E6%A0%B7%E5%BC%8F-css-less/"
+            id="categoriesE6A0B7E5BC8F-css-less"
             ><div class='name'>样式(css/less...)</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%BD%91%E7%BB%9C/" href="/categories/%E7%BD%91%E7%BB%9C/"
+            id="categoriesE7BD91E7BB9C"
+            ><div class='name'>网络</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -1801,7 +1822,7 @@
 
 
     <div class='content'>
-      <a href="/io/tags/F2/" style="font-size: 14px; color: #999">F2</a> <a href="/io/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/io/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/io/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/io/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/io/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/io/tags/css%E5%8A%A8%E7%94%BB/" style="font-size: 15.67px; color: #8e8e8e">css动画</a> <a href="/io/tags/cytoscape/" style="font-size: 15.67px; color: #8e8e8e">cytoscape</a> <a href="/io/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/io/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/io/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/io/tags/git/" style="font-size: 15.67px; color: #8e8e8e">git</a> <a href="/io/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/io/tags/hexo/" style="font-size: 15.67px; color: #8e8e8e">hexo</a> <a href="/io/tags/highcharts/" style="font-size: 17.33px; color: #828282">highcharts</a> <a href="/io/tags/http/" style="font-size: 15.67px; color: #8e8e8e">http</a> <a href="/io/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/io/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/io/tags/lifecycle/" style="font-size: 14px; color: #999">lifecycle</a> <a href="/io/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/io/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/io/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/io/tags/pageshow/" style="font-size: 14px; color: #999">pageshow</a> <a href="/io/tags/performance/" style="font-size: 14px; color: #999">performance</a> <a href="/io/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/io/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/io/tags/vue/" style="font-size: 22.33px; color: #606060">vue</a> <a href="/io/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/io/tags/%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">事件模型</a> <a href="/io/tags/%E6%A8%A1%E6%8B%9F%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/io/tags/%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/" style="font-size: 15.67px; color: #8e8e8e">渲染过程</a> <a href="/io/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/io/tags/%E7%B1%BB%E5%9E%8B/" style="font-size: 15.67px; color: #8e8e8e">类型</a> <a href="/io/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 15.67px; color: #8e8e8e">类型转换</a> <a href="/io/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 17.33px; color: #828282">组件</a>
+      <a href="/tags/F2/" style="font-size: 14px; color: #999">F2</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/tags/css%E5%8A%A8%E7%94%BB/" style="font-size: 15.67px; color: #8e8e8e">css动画</a> <a href="/tags/cytoscape/" style="font-size: 15.67px; color: #8e8e8e">cytoscape</a> <a href="/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/tags/git/" style="font-size: 15.67px; color: #8e8e8e">git</a> <a href="/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/tags/hexo/" style="font-size: 15.67px; color: #8e8e8e">hexo</a> <a href="/tags/highcharts/" style="font-size: 17.33px; color: #828282">highcharts</a> <a href="/tags/http/" style="font-size: 15.67px; color: #8e8e8e">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/lifecycle/" style="font-size: 14px; color: #999">lifecycle</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/pageshow/" style="font-size: 14px; color: #999">pageshow</a> <a href="/tags/performance/" style="font-size: 14px; color: #999">performance</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.33px; color: #606060">vue</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/%E6%A8%A1%E6%8B%9F%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/" style="font-size: 15.67px; color: #8e8e8e">渲染过程</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/%E7%B1%BB%E5%9E%8B/" style="font-size: 15.67px; color: #8e8e8e">类型</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 15.67px; color: #8e8e8e">类型转换</a> <a href="/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 17.33px; color: #828282">组件</a>
     </div>
   </section>
 
@@ -1850,7 +1871,7 @@
         <div class="social-wrapper">
           
             
-              <a href="/io/atom.xml"
+              <a href="/atom.xml"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -1858,7 +1879,7 @@
             
           
             
-              <a href="mailto:me@xxx.com"
+              <a href="mailto:2658553345@qq.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -1939,49 +1960,19 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/over58/over58.github.io/blob/master/(path)
         
         
         
         
-          id="https:volantisjsorgfaqs"
+          id="https:githubcomover58over58githubioblobmaster(path)"
         >
-        <i class='fa fa-question fa-fw'></i> 常见问题
+        <i class='fa fa-question fa-fw'></i> 编辑文章
       </a>
     </li>
   
         
       
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
-        
-        
-        
-        
-          id="https:volantisjsorgexamples"
-        >
-        <i class='fa fa-rss fa-fw'></i> 示例博客
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
-        
-        
-        
-        
-          id="https:volantisjsorgcontributors"
-        >
-        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
-      </a>
-    </li>
-  
         
       
         
@@ -1991,12 +1982,12 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/over58/over58.github.io
         
         
         
         
-          id="https:githubcomvolantis-xvolantis-docs"
+          id="https:githubcomover58over58githubio"
         >
         <i class='fa fa-code-branch fa-fw'></i> 本站源码
       </a>
@@ -2204,7 +2195,7 @@
   <script>
     
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/io/" || "/";
+    var ROOT = "/" || "/";
     if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
@@ -2274,7 +2265,7 @@
 
   
     
-<script src="/io/js/aplayer.js"></script>
+<script src="/js/aplayer.js"></script>
 
   
 
@@ -2283,7 +2274,7 @@
 
   
   
-<script src="/io/js/valine.js"></script>
+<script src="/js/valine.js"></script>
 
 
 <script>
@@ -2468,14 +2459,14 @@
 
 
   
-<script src="/io/js/app.js"></script>
+<script src="/js/app.js"></script>
 
 
 
 
   
     
-<script src="/io/js/search.js"></script>
+<script src="/js/search.js"></script>
 
   
 

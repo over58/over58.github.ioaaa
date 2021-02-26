@@ -25,7 +25,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/io/atom.xml" title="over58">
+    <link rel="alternate" href="/atom.xml" title="over58">
   
 
   <!-- import meta -->
@@ -64,7 +64,7 @@
   
   
     
-<link rel="stylesheet" href="/io/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
 
@@ -126,7 +126,7 @@
 		<div class="nav-main">
       
         
-        <a class="title flat-box" target="_self" href='/io/'>
+        <a class="title flat-box" target="_self" href='/'>
           
             <img no-lazy class='logo' src='img/avatar.png'/>
           
@@ -143,11 +143,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="io"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -159,11 +159,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="ioarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -193,11 +193,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="io"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -209,11 +209,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="ioarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -297,8 +297,8 @@
         
           
   <h2 class="title">
-    <a href="/io/2020/01/13/%E8%81%8A%E5%A4%A9%E6%A1%86/">
-      聊天框
+    <a href="/2020/04/05/electron%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+      electron学习笔记
     </a>
   </h2>
 
@@ -323,7 +323,697 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/%E6%A0%B7%E5%BC%8F-css-less/' rel="nofollow">
+    <a href='/categories/electron/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>electron</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年4月5日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/04/05/electron%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="electron学习笔记">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/04/05/electron%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/04/05/electron%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="&#x5F00;&#x53D1;&#x7B2C;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x5E94;&#x7528;"><a href="#&#x5F00;&#x53D1;&#x7B2C;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x5E94;&#x7528;" class="headerlink" title="&#x5F00;&#x53D1;&#x7B2C;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x5E94;&#x7528;"></a>&#x5F00;&#x53D1;&#x7B2C;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x5E94;&#x7528;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> { app, BrowserWindow} = <span class="built_in">require</span>(<span class="string">&apos;electron&apos;</span>)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createWindow</span>(<span class="params"></span>)</span>{</span><br><span class="line">	<span class="keyword">var</span> win = <span class="keyword">new</span> BrowserWindow({<span class="attr">height</span>: <span class="number">800</span>, <span class="attr">width</span>:<span class="number">800</span>})</span><br><span class="line">	win.loadFile(<span class="string">&apos;./index.html&apos;</span>)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">app.on(<span class="string">&apos;ready&apos;</span>,createWindow)</span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x5E38;&#x7528;&#x70B9;"><a href="#&#x5E38;&#x7528;&#x70B9;" class="headerlink" title="&#x5E38;&#x7528;&#x70B9;"></a>&#x5E38;&#x7528;&#x70B9;</h3><h4 id="&#x6807;&#x9898;&#x680F;&#x8BBE;&#x7F6E;&#x76EE;&#x5F55;"><a href="#&#x6807;&#x9898;&#x680F;&#x8BBE;&#x7F6E;&#x76EE;&#x5F55;" class="headerlink" title="&#x6807;&#x9898;&#x680F;&#x8BBE;&#x7F6E;&#x76EE;&#x5F55;"></a>&#x6807;&#x9898;&#x680F;&#x8BBE;&#x7F6E;&#x76EE;&#x5F55;</h4><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mainWindow.set<span class="constructor">RepresentedFilename(&apos;<span class="operator">/</span>Users<span class="operator">/</span><span class="params">xyc</span><span class="operator">/</span>Learn<span class="operator">/</span><span class="params">projects</span><span class="operator">/</span><span class="params">hexo</span>-<span class="params">blog</span>&apos;)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x6253;&#x5F00;&#x5BF9;&#x8BDD;&#x6846;"><a href="#&#x6253;&#x5F00;&#x5BF9;&#x8BDD;&#x6846;" class="headerlink" title="&#x6253;&#x5F00;&#x5BF9;&#x8BDD;&#x6846;"></a>&#x6253;&#x5F00;&#x5BF9;&#x8BDD;&#x6846;</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> options = {</span><br><span class="line">        title: <span class="string">&apos;&#x6807;&#x9898;&apos;</span>,</span><br><span class="line">        message: <span class="string">&apos;mac&#x4E2D;&#x7684;&#x6807;&#x9898;&apos;</span>,</span><br><span class="line">        <span class="comment">// createDirectory&#x53EA;&#x9488;&#x5BF9; mac</span></span><br><span class="line">        <span class="comment">// multiSelections &#x7528;&#x4E8E;&#x591A;&#x9009;</span></span><br><span class="line">        properties: [<span class="string">&apos;openFile&apos;</span>, <span class="string">&apos;createDirectory&apos;</span>, <span class="string">&apos;multiSelections&apos;</span>],</span><br><span class="line">        buttonLabel: <span class="string">&apos;&#x6211;&#x7684;&#x6253;&#x5F00;&apos;</span>,</span><br><span class="line">        <span class="keyword">default</span>: <span class="string">&apos;/Users/yongchao9/&apos;</span>,</span><br><span class="line">        filters: [</span><br><span class="line">          {<span class="attr">name</span>: <span class="string">&apos;&#x56FE;&#x7247;&apos;</span>, <span class="attr">extensions</span>: [<span class="string">&apos;jpg&apos;</span>, <span class="string">&apos;png&apos;</span>, <span class="string">&apos;gif&apos;</span>, <span class="string">&apos;jpeg&apos;</span>]},</span><br><span class="line">          {<span class="attr">name</span>: <span class="string">&apos;&#x89C6;&#x9891;&apos;</span>, <span class="attr">extensions</span>: [<span class="string">&apos;mp4&apos;</span>, <span class="string">&apos;avi&apos;</span>]},</span><br><span class="line">          <span class="comment">// eslint-disable-next-line standard/object-curly-even-spacing</span></span><br><span class="line">          {<span class="attr">name</span>: <span class="string">&apos;&#x5168;&#x90E8;&apos;</span>, <span class="attr">extensions</span>: [<span class="string">&apos;*&apos;</span>] }</span><br><span class="line">        ]</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (process.platform === <span class="string">&apos;darwin&apos;</span>) {</span><br><span class="line">        options.properties.push(<span class="string">&apos;openDirectory&apos;</span>)</span><br><span class="line">      }</span><br><span class="line">      dialog.showOpenDialog(options, (files) =&gt; {</span><br><span class="line">        <span class="keyword">this</span>.files = files</span><br><span class="line">      })</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x540C;&#x65F6;&#x9009;&#x62E9;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x7684;&#x8BDD;&#xFF0C;mac &#x548C; windows&#x7684;&#x8BBE;&#x7F6E;&#x65B9;&#x6CD5;&#x4E0D;&#x540C;<br>Mac: &#x9700;&#x8981;&#x540C;&#x65F6;&#x6307;&#x5B9A; openFile&#x548C; openDirectory<br>Windows&#xFF1A; &#x53EA;&#x9700;&#x8981;&#x6307;&#x5B9A; openFile, &#x5C31;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x4E86;openDirectory&#xFF0C;&#x5C31;&#x53EA;&#x80FD;&#x9009;&#x62E9;&#x76EE;&#x5F55;&#x4E86;</p>
+</blockquote>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/02/27/svg%E5%92%8Ccss%E7%9A%84%E6%BB%A4%E9%95%9C%E5%AE%9E%E7%8E%B0%E7%BD%AE%E7%81%B0%E6%95%88%E6%9E%9C/">
+      svg和css的滤镜实现置灰效果
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/svg/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>svg</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年2月27日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/02/27/svg%E5%92%8Ccss%E7%9A%84%E6%BB%A4%E9%95%9C%E5%AE%9E%E7%8E%B0%E7%BD%AE%E7%81%B0%E6%95%88%E6%9E%9C/" class="leancloud_visitors" data-flag-title="svg和css的滤镜实现置灰效果">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/02/27/svg%E5%92%8Ccss%E7%9A%84%E6%BB%A4%E9%95%9C%E5%AE%9E%E7%8E%B0%E7%BD%AE%E7%81%B0%E6%95%88%E6%9E%9C/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/02/27/svg%E5%92%8Ccss%E7%9A%84%E6%BB%A4%E9%95%9C%E5%AE%9E%E7%8E%B0%E7%BD%AE%E7%81%B0%E6%95%88%E6%9E%9C/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <iframe id="cp_embed_zYGZVQy" src="//codepen.io/xuyongchaos/embed/zYGZVQy?height=300&amp;theme-id=dark&amp;slug-hash=zYGZVQy&amp;default-tab=result" scrolling="no" frameborder="no" height="300" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/02/23/%E7%A7%BB%E5%8A%A8%E7%AB%AFiphone%E7%82%B9%E5%87%BB%E8%BF%94%E5%9B%9E%E6%97%B6%E5%BC%BA%E5%88%B6%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+      移动端iphone点击返回时强制页面刷新解决办法
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年2月23日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/02/23/%E7%A7%BB%E5%8A%A8%E7%AB%AFiphone%E7%82%B9%E5%87%BB%E8%BF%94%E5%9B%9E%E6%97%B6%E5%BC%BA%E5%88%B6%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="leancloud_visitors" data-flag-title="移动端iphone点击返回时强制页面刷新解决办法">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/02/23/%E7%A7%BB%E5%8A%A8%E7%AB%AFiphone%E7%82%B9%E5%87%BB%E8%BF%94%E5%9B%9E%E6%97%B6%E5%BC%BA%E5%88%B6%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/02/23/%E7%A7%BB%E5%8A%A8%E7%AB%AFiphone%E7%82%B9%E5%87%BB%E8%BF%94%E5%9B%9E%E6%97%B6%E5%BC%BA%E5%88%B6%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x5728;&#x505A;&#x79FB;&#x52A8;&#x7AEF;&#x9879;&#x76EE;&#x7684;&#x65F6;&#x5019;&#x7ECF;&#x5E38;&#x9047;&#x5230;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x6BD4;&#x5982;&#xFF1A; </p>
+<p><img src="/2020/02/23/%E7%A7%BB%E5%8A%A8%E7%AB%AFiphone%E7%82%B9%E5%87%BB%E8%BF%94%E5%9B%9E%E6%97%B6%E5%BC%BA%E5%88%B6%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/image-20200223021830310.png" alt="image-20200223021830310"></p>
+<p>&#x8FD4;&#x56DE;&#x540E;&#x9875;&#x9762;&#x4E0D;&#x5237;&#x65B0;&#xFF0C;&#x4E00;&#x4E9B;&#x5931;&#x6548;&#x7684;&#x4FE1;&#x606F;&#x4F9D;&#x7136;&#x663E;&#x793A;&#x5728;&#x9875;&#x9762;&#x4E0A;&#x3002;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5728;iphone&#x624B;&#x673A;&#x4E0A;&#x4F1A;&#x51FA;&#x73B0;&#x3002;</p>
+<p>onpageshow &#x4E8B;&#x4EF6;&#x5728;&#x7528;&#x6237;&#x6D4F;&#x89C8;&#x7F51;&#x9875;&#x65F6;&#x89E6;&#x53D1;&#x3002;</p>
+<p>onpageshow &#x4E8B;&#x4EF6;&#x7C7B;&#x4F3C;&#x4E8E; <a href="http://www.runoob.com/jsref/event-onload.html" target="_blank" rel="noopener">onload</a> &#x4E8B;&#x4EF6;&#xFF0C;onload &#x4E8B;&#x4EF6;&#x5728;&#x9875;&#x9762;&#x7B2C;&#x4E00;&#x6B21;&#x52A0;&#x8F7D;&#x65F6;&#x89E6;&#x53D1;&#xFF0C; onpageshow &#x4E8B;&#x4EF6;&#x5728;&#x6BCF;&#x6B21;&#x52A0;&#x8F7D;&#x9875;&#x9762;&#x65F6;&#x89E6;&#x53D1;&#xFF0C;&#x5373; <strong>onload &#x4E8B;&#x4EF6;&#x5728;&#x9875;&#x9762;&#x4ECE;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#x4E2D;&#x8BFB;&#x53D6;&#x65F6;&#x4E0D;&#x89E6;&#x53D1;</strong>&#xFF0C;<strong>&#x6B64;&#x5916;&#x8FD8;&#x6709;pagehide&#x5728;&#x4E0D;&#x663E;&#x793A;&#x7684;&#x65F6;&#x5019;&#x89E6;&#x53D1;&#x3002;</strong></p>
+<p>&#x4E3A;&#x4E86;&#x67E5;&#x770B;&#x9875;&#x9762;&#x662F;&#x76F4;&#x63A5;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8F7D;&#x5165;&#x8FD8;&#x662F;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x8BFB;&#x53D6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; PageTransitionEvent &#x5BF9;&#x8C61;&#x7684; persisted &#x5C5E;&#x6027;&#x6765;&#x5224;&#x65AD;&#x3002;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&apos;pageshow&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>{</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;PageShow Event  &quot;</span> + event.persisted);</span><br><span class="line">    <span class="built_in">console</span>.log(event)</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<p><strong>&#x5982;&#x679C;&#x9875;&#x9762;&#x4ECE;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x7F13;&#x5B58;&#x4E2D;&#x8BFB;&#x53D6;&#x8BE5;&#x5C5E;&#x6027;&#x8FD4;&#x56DE; ture&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE; false&#x3002;&#x7136;&#x540E;&#x5728;&#x6839;&#x636E;true&#x6216;false&#x5728;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x9875;&#x9762;&#x5237;&#x65B0;&#x52A8;&#x4F5C;&#x6216;&#x8005;&#x76F4;&#x63A5;ajax&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x3002;&#x8FD9;&#x4E00;&#x70B9;&#x6709;&#x4E2A;&#x7F3A;&#x9677;&#x5C31;&#x662F;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x4E0D;&#x662F;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#x90FD;&#x4F1A;&#x5237;&#x65B0;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x505A;&#x7684;&#x53EA;&#x662F;&#x6570;&#x636E;&#x53D8;&#x5316;&#x4E86;&#x624D;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x3002;&#x4E8E;&#x662F;&#x60F3;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x529E;&#x6CD5;&#x5728;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x6570;&#x636E;&#x53D8;&#x5316;&#x7684;&#x9875;&#x9762;&#x8BBE;&#x7F6E;&#x7F13;&#x5B58;&#xFF0C;&#x5373;&#x4E3A;&#x53EA;&#x8981;&#x9875;&#x9762;&#x6570;&#x636E;&#x53D8;&#x5316;&#x4E86;&#x5C31;&#x5199;&#x7F13;&#x5B58;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5728;&#x8FD4;&#x56DE;&#x9875;&#x9762;&#x540E;&#x68C0;&#x6D4B;&#x5230;&#x8FD9;&#x6761;&#x8BB0;&#x5F55;&#x5C31;&#x8BF4;&#x660E;&#x9700;&#x8981;&#x9875;&#x9762;&#x5237;&#x65B0;&#x6216;&#x8C03;&#x7528;&#x63A5;&#x53E3;&#x5237;&#x65B0;&#x3002;</strong></p>
+<p><strong>&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x4E3A;&#xFF1A;</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.html &#x8BBE;&#x7F6E;&#x5237;&#x65B0; &#x68C0;&#x6D4B;&#x7F13;&#x5B58;&#x662F;&#x5426;&#x6709;&#x6807;&#x5FD7; &#x8981;&#x662F;&#x6709;&#x5C31;&#x8BF4;&#x660E;&#x6570;&#x636E;&#x6709;&#x53D8;&#x5316;  a.html&#x8DF3;&#x8F6C;&#x5230;b.html&#x9875;&#x9762;</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&quot;pageshow&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    <span class="keyword">if</span>(sessionStorage.getItem(<span class="string">&quot;need-refresh&quot;</span>)){</span><br><span class="line">        location.reload();</span><br><span class="line">        sessionStorage.removeItem(<span class="string">&quot;need-refresh&quot;</span>);</span><br><span class="line">    }</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line"><span class="comment">// b.html &#x5982;&#x679C;&#x662F;&#x6570;&#x636E;&#x53D8;&#x5316;&#x4E86;&#x5C31;&#x5199;&#x4E00;&#x6761;&#x7F13;&#x5B58;   b.html&#x8FD4;&#x56DE;&#x5230;a.html&#x9875;&#x9762;</span></span><br><span class="line">sessionStorage.setItem(<span class="string">&quot;need-refresh&quot;</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>&#x6458;&#x81EA;<a href="https://www.cnblogs.com/wangmaoling/p/8022561.html" target="_blank" rel="noopener">https://www.cnblogs.com/wangmaoling/p/8022561.html</a></p>
+</blockquote>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/02/10/%E7%BC%93%E5%AD%98/">
+      浏览器缓存
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年2月10日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/02/10/%E7%BC%93%E5%AD%98/" class="leancloud_visitors" data-flag-title="浏览器缓存">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/02/10/%E7%BC%93%E5%AD%98/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/02/10/%E7%BC%93%E5%AD%98/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;"><a href="#&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;" class="headerlink" title="&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;"></a>&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;</h1><h2 id="&#x7F13;&#x5B58;&#x7684;&#x65B9;&#x6848;"><a href="#&#x7F13;&#x5B58;&#x7684;&#x65B9;&#x6848;" class="headerlink" title="&#x7F13;&#x5B58;&#x7684;&#x65B9;&#x6848;"></a>&#x7F13;&#x5B58;&#x7684;&#x65B9;&#x6848;</h2><p>&#x4E0A;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x8BA9;&#x6211;&#x4EEC;&#x5927;&#x6982;&#x4E86;&#x89E3;&#x4E86;&#x7F13;&#x5B58;&#x673A;&#x5236;&#x662F;&#x600E;&#x6837;&#x8FD0;&#x884C;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x662F;&#x5982;&#x4F55;&#x5224;&#x65AD;&#x7F13;&#x5B58;&#x662F;&#x5426;&#x5931;&#x6548;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x53D1;&#x9001;&#x4E00;&#x4E9B;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x548C;&#x54CD;&#x5E94;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A;HTTP&#x62A5;&#x6587;&#x3002;&#x62A5;&#x6587;&#x4E2D;&#x5305;&#x542B;&#x9996;&#x90E8;header&#x548C;&#x4E3B;&#x4F53;&#x90E8;&#x5206;body&#x3002;&#x4E0E;&#x7F13;&#x5B58;&#x76F8;&#x5173;&#x7684;&#x89C4;&#x5219;&#x4FE1;&#x606F;&#x5C31;&#x5305;&#x542B;&#x5728;header&#x4E2D;&#x3002;boby&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x662F;HTTP&#x8BF7;&#x6C42;&#x771F;&#x6B63;&#x8981;&#x4F20;&#x8F93;&#x7684;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x7F13;&#x5B58;&#x662F;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x4E2D;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x73AF;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x7F13;&#x5B58;&#x673A;&#x5236;&#x5BF9;&#x5F00;&#x53D1;&#x4E5F;&#x662F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x77E5;&#x8BC6;&#x70B9;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x4EE5;5&#x4E2A;&#x90E8;&#x5206;&#x6765;&#x628A;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x7F13;&#x5B58;&#x673A;&#x5236;&#x8BF4;&#x6E05;&#x695A;&#xFF1A;</p>
+<ul>
+<li><p>&#x5F3A;&#x7F13;&#x5B58;</p>
+</li>
+<li><p>&#x534F;&#x5546;&#x7F13;&#x5B58;</p>
+</li>
+<li><p>&#x7F13;&#x5B58;&#x4F4D;&#x7F6E;</p>
+</li>
+<li><p>&#x7F13;&#x5B58;&#x4F18;&#x70B9;</p>
+</li>
+<li><p>&#x4E0D;&#x540C;&#x5237;&#x65B0;&#x7684;&#x8BF7;&#x6C42;&#x6267;&#x884C;&#x8FC7;&#x7A0B;</p>
+</li>
+</ul>
+<p><img src="/2020/02/10/%E7%BC%93%E5%AD%98/image-20200210151603170.png" alt="image-20200210151603170"></p>
+      
+    </div>
+    
+      
+        <a class= "readmore" href="/2020/02/10/%E7%BC%93%E5%AD%98/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/01/20/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%87%8D%E6%8E%92%E3%80%81%E9%87%8D%E7%BB%98%E4%B8%8E%E5%90%88%E6%88%90/">
+      前端性能优化之重排、重绘与合成
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年1月20日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/01/20/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%87%8D%E6%8E%92%E3%80%81%E9%87%8D%E7%BB%98%E4%B8%8E%E5%90%88%E6%88%90/" class="leancloud_visitors" data-flag-title="前端性能优化之重排、重绘与合成">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/01/20/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%87%8D%E6%8E%92%E3%80%81%E9%87%8D%E7%BB%98%E4%B8%8E%E5%90%88%E6%88%90/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/01/20/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%87%8D%E6%8E%92%E3%80%81%E9%87%8D%E7%BB%98%E4%B8%8E%E5%90%88%E6%88%90/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="reflow"><a href="#reflow" class="headerlink" title="reflow"></a>reflow</h2><p>&#x91CD;&#x6392;(&#x4E5F;&#x79F0;&#x56DE;&#x6D41;)&#xFF0C;&#x6307;&#x7684;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x4E3A;&#x4E86;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x6587;&#x6863;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;&#x548C;&#x51E0;&#x4F55;&#x7ED3;&#x6784;&#x800C;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x90E8;&#x5206;&#x6216;&#x5168;&#x90E8;&#x6587;&#x6863;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x901A;&#x8FC7;JavaScript&#x6216;&#x8005;CSS&#x4FEE;&#x6539;&#x5143;&#x7D20;&#x7684;&#x51E0;&#x4F55;&#x4F4D;&#x7F6E;&#x5C5E;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#x6539;&#x53D8;&#x5143;&#x7D20;&#x7684;&#x5BBD;&#x5EA6;&#x3001;&#x9AD8;&#x5EA6;&#x7B49;&#x5C31;&#x4F1A;&#x5F15;&#x53D1;reflow&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x884C;&#x4E3A;&#x4F1A;&#x5F15;&#x53D1;reflow&#xFF1A;</p>
+<ul>
+<li>&#x9875;&#x9762;&#x6E32;&#x67D3;&#x5668;&#x521D;&#x59CB;&#x5316;</li>
+<li>&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x53EF;&#x89C1;&#x7684;DOM&#x5143;&#x7D20;</li>
+<li>&#x76D2;&#x6A21;&#x578B;&#x76F8;&#x5173;&#x7684;&#x5C5E;&#x6027;&#x6539;&#x53D8;</li>
+<li>&#x5B9A;&#x4F4D;&#x5C5E;&#x6027;&#x53CA;&#x6D6E;&#x52A8;&#x76F8;&#x5173;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x6539;&#x53D8;</li>
+<li>&#x6539;&#x53D8;&#x8282;&#x70B9;&#x5185;&#x90E8;&#x6587;&#x5B57;&#x7ED3;&#x6784;&#x4E5F;&#x4F1A;&#x89E6;&#x53D1;&#x56DE;&#x6D41;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x5927;&#x5C0F;&#x53D1;&#x751F;&#x6539;&#x53D8;</li>
+</ul>
+<h2 id="repaint"><a href="#repaint" class="headerlink" title="repaint"></a>repaint</h2><p>&#x91CD;&#x7ED8;&#xFF0C;&#x6307;&#x7684;&#x662F;&#x5F53;&#x9875;&#x9762;&#x4E2D;&#x5143;&#x7D20;&#x6837;&#x5F0F;&#x7684;&#x6539;&#x53D8;&#x5E76;&#x4E0D;&#x5F71;&#x54CD;&#x5B83;&#x5728;&#x6587;&#x6863;&#x6D41;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x65F6;&#xFF0C;&#x4F8B;&#x5982;&#x901A;&#x8FC7;JavaScript&#x66F4;&#x6539;&#x4E86;&#x5B57;&#x4F53;&#x989C;&#x8272;,&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5C06;&#x65B0;&#x6837;&#x5F0F;&#x8D4B;&#x4E88;&#x7ED9;&#x5143;&#x7D20;&#x5E76;&#x91CD;&#x65B0;&#x7ED8;&#x5236;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x884C;&#x4E3A;&#x4F1A;&#x5F15;&#x53D1;repaint&#xFF1A;</p>
+<ul>
+<li>&#x9875;&#x9762;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x66F4;&#x65B0;&#x6837;&#x5F0F;&#x98CE;&#x683C;&#x76F8;&#x5173;&#x7684;&#x5C5E;&#x6027;&#x3002;</li>
+</ul>
+<p>&#x5982;&#x60F3;&#x77E5;&#x9053;&#x8FD8;&#x6709;&#x54EA;&#x4E9B;&#x5C5E;&#x6027;&#x4F1A;&#x5F15;&#x53D1;reflow&#x6216;&#x8005;repaint<a href="https://csstriggers.com/" target="_blank" rel="noopener">&#x8BF7;&#x67E5;&#x770B;</a></p>
+<h2 id="reflow&#x548C;repaint&#x7684;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;"><a href="#reflow&#x548C;repaint&#x7684;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;" class="headerlink" title="reflow&#x548C;repaint&#x7684;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;"></a>reflow&#x548C;repaint&#x7684;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;</h2><p>&#x5148;&#x770B;&#x770B;&#x6E32;&#x67D3;&#x6D41;&#x7A0B;&#x7EBF;&#xFF1A;</p>
+<p><img src="/2020/01/20/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%87%8D%E6%8E%92%E3%80%81%E9%87%8D%E7%BB%98%E4%B8%8E%E5%90%88%E6%88%90/image-20200122141635901.png" alt="image-20200122141635901"></p>
+<p>&#x6709;&#x4E86;&#x56FE;&#x4E2D;&#x4ECB;&#x7ECD;&#x7684;&#x6E32;&#x67D3;&#x6D41;&#x6C34;&#x7EBF;&#x57FA;&#x7840;(<a href="https://juejin.im/post/5e09e81d51882549a25e0afc" target="_blank" rel="noopener">&#x770B;&#x4E0D;&#x61C2;&#x7684;&#x53EF;&#x4EE5;&#x770B;&#x6211;&#x4E4B;&#x524D;&#x7684;&#x6587;&#x7AE0;</a>)&#xFF0C;&#x6765;&#x770B;&#x770B;reflow&#x548C;repaint&#x5206;&#x522B;&#x5F15;&#x53D1;&#x7684;&#x6E32;&#x67D3;&#x6D41;&#x7A0B;&#x7684;&#x54EA;&#x4E9B;&#x6B65;&#x9AA4;&#x3002;</p>
+<p>1&#x3001; &#x66F4;&#x65B0;&#x4E86;&#x5143;&#x7D20;&#x7684;&#x51E0;&#x4F55;&#x5C5E;&#x6027;&#xFF08;reflow&#xFF09;<br> &#x901A;&#x8FC7;JavaScript&#x6216;&#x8005;CSS&#x4FEE;&#x6539;&#x5143;&#x7D20;&#x7684;&#x51E0;&#x4F55;&#x4F4D;&#x7F6E;&#x5C5E;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#x6539;&#x53D8;&#x5143;&#x7D20;&#x7684;&#x5BBD;&#x5EA6;&#x3001;&#x9AD8;&#x5EA6;&#x7B49;&#xFF0C;&#x90A3;&#x4E48;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x89E6;&#x53D1;&#x91CD;&#x65B0;&#x5E03;&#x5C40;&#xFF0C;&#x89E3;&#x6790;&#x4E4B;&#x540E;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x5B50;&#x9636;&#x6BB5;&#x3002;<strong>&#x65E0;&#x7591;&#xFF0C;&#x91CD;&#x6392;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x5B8C;&#x6574;&#x7684;&#x6E32;&#x67D3;&#x6D41;&#x6C34;&#x7EBF;&#xFF0C;&#x6240;&#x4EE5;&#x5F00;&#x9500;&#x4E5F;&#x662F;&#x6700;&#x5927;&#x7684;</strong>&#x3002;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="/2020/01/20/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%87%8D%E6%8E%92%E3%80%81%E9%87%8D%E7%BB%98%E4%B8%8E%E5%90%88%E6%88%90/image-20200122141553524.png" alt="image-20200122141553524"></p>
+<p>2&#x3001; &#x66F4;&#x65B0;&#x5143;&#x7D20;&#x7684;&#x7ED8;&#x5236;&#x5C5E;&#x6027;&#xFF08;repaint&#xFF09;<br> &#x901A;&#x8FC7;JavaScript&#x6216;&#x8005;CSS&#x4FEE;&#x6539;&#x5143;&#x7D20;&#x7684;&#x80CC;&#x666F;&#x989C;&#x8272;&#xFF0C;&#x90A3;&#x4E48;&#x5E03;&#x5C40;&#x9636;&#x6BB5;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x56E0;&#x4E3A;&#x5E76;&#x6CA1;&#x6709;&#x5F15;&#x8D77;&#x51E0;&#x4F55;&#x4F4D;&#x7F6E;&#x7684;&#x53D8;&#x6362;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x4E86;&#x7ED8;&#x5236;&#x9636;&#x6BB5;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x4E4B;&#x540E;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x5B50;&#x9636;&#x6BB5;&#xFF0C;&#x3002;&#x76F8;&#x8F83;&#x4E8E;&#x91CD;&#x6392;&#x64CD;&#x4F5C;&#xFF0C;<strong>&#x91CD;&#x7ED8;&#x7701;&#x53BB;&#x4E86;&#x5E03;&#x5C40;&#x548C;&#x5206;&#x5C42;&#x9636;&#x6BB5;&#xFF0C;&#x6240;&#x4EE5;&#x6267;&#x884C;&#x6548;&#x7387;&#x4F1A;&#x6BD4;&#x91CD;&#x6392;&#x64CD;&#x4F5C;&#x8981;&#x9AD8;&#x4E00;&#x4E9B;</strong>&#x3002;</p>
+<p><img src="/2020/01/20/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%87%8D%E6%8E%92%E3%80%81%E9%87%8D%E7%BB%98%E4%B8%8E%E5%90%88%E6%88%90/image-20200122141542239.png" alt="image-20200122141542239"></p>
+<p>3&#x3001;&#x76F4;&#x63A5;&#x5408;&#x6210;&#x9636;&#x6BB5;<br> &#x53EF;&#x80FD;&#x90FD;&#x6CE8;&#x610F;&#x5230;&#x4E86;tiles&#x540E;&#x9762;&#x7684;&#x9636;&#x6BB5;&#x4E0D;&#x662F;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x66F4;&#x6539;&#x4E00;&#x4E2A;&#x65E2;&#x4E0D;&#x8981;&#x5E03;&#x5C40;&#x4E5F;&#x4E0D;&#x8981;&#x7ED8;&#x5236;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x6548;&#x7387;&#x662F;&#x6700;&#x9AD8;&#x7684;&#x3002;&#x6BD4;&#x5982;&#x4F7F;&#x7528;CSS&#x7684;transform&#x6765;&#x5B9E;&#x73B0;&#x52A8;&#x753B;&#x6548;&#x679C;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x907F;&#x5F00;&#x91CD;&#x6392;&#x548C;&#x91CD;&#x7ED8;&#x9636;&#x6BB5;&#xFF0C;&#x76F4;&#x63A5;&#x5728;&#x975E;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x6267;&#x884C;&#x5408;&#x6210;&#x52A8;&#x753B;&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x6548;&#x7387;&#x662F;&#x6700;&#x9AD8;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x5728;&#x975E;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x5408;&#x6210;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x5360;&#x7528;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x53E6;&#x5916;&#x4E5F;&#x907F;&#x5F00;&#x4E86;&#x5E03;&#x5C40;&#x548C;&#x7ED8;&#x5236;&#x4E24;&#x4E2A;&#x5B50;&#x9636;&#x6BB5;&#xFF0C;&#x6240;&#x4EE5;&#x76F8;&#x5BF9;&#x4E8E;&#x91CD;&#x7ED8;&#x548C;&#x91CD;&#x6392;&#xFF0C;&#x5408;&#x6210;&#x80FD;&#x5927;&#x5927;&#x63D0;&#x5347;&#x7ED8;&#x5236;&#x6548;&#x7387;&#x3002;</p>
+<p><img src="/2020/01/20/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8B%E9%87%8D%E6%8E%92%E3%80%81%E9%87%8D%E7%BB%98%E4%B8%8E%E5%90%88%E6%88%90/image-20200122141528844.png" alt="image-20200122141528844"></p>
+<h2 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h2><p>&#x5728;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x8981;&#x5C3D;&#x91CF;&#x51CF;&#x5C11;&#x91CD;&#x6392;&#xFF0C;&#x9002;&#x5F53;&#x4F7F;&#x7528;&#x91CD;&#x7ED8;&#xFF0C;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x5408;&#x6210;&#x3002;</p>
+<p>&#x4F5C;&#x8005;&#xFF1A;zhangwinwin<br>&#x94FE;&#x63A5;&#xFF1A;<a href="https://juejin.im/post/5e199d7a6fb9a02ffa6a83e1" target="_blank" rel="noopener">https://juejin.im/post/5e199d7a6fb9a02ffa6a83e1</a><br>&#x6765;&#x6E90;&#xFF1A;&#x6398;&#x91D1;</p>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/01/13/%E8%BF%9B%E5%BA%A6%E6%9D%A1/">
+      进度条
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%A0%B7%E5%BC%8F-css-less/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>样式(css/less...)</p>
     </a>
@@ -353,7 +1043,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2020/01/13/%E8%81%8A%E5%A4%A9%E6%A1%86/" class="leancloud_visitors" data-flag-title="聊天框">
+      <span id="/2020/01/13/%E8%BF%9B%E5%BA%A6%E6%9D%A1/" class="leancloud_visitors" data-flag-title="进度条">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -368,9 +1058,134 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2020/01/13/%E8%81%8A%E5%A4%A9%E6%A1%86/#comments">
+  <a href="/2020/01/13/%E8%BF%9B%E5%BA%A6%E6%9D%A1/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/01/13/%E8%81%8A%E5%A4%A9%E6%A1%86/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/01/13/%E8%BF%9B%E5%BA%A6%E6%9D%A1/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <iframe id="cp_embed_ExaRyKK" src="//codepen.io/xuyongchaos/embed/ExaRyKK?height=300&amp;theme-id=dark&amp;slug-hash=ExaRyKK&amp;default-tab=result" scrolling="no" frameborder="no" height="300" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/01/13/%E8%81%8A%E5%A4%A9%E6%A1%86/">
+      聊天框
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%A0%B7%E5%BC%8F-css-less/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>样式(css/less...)</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年1月13日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/01/13/%E8%81%8A%E5%A4%A9%E6%A1%86/" class="leancloud_visitors" data-flag-title="聊天框">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/01/13/%E8%81%8A%E5%A4%A9%E6%A1%86/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/01/13/%E8%81%8A%E5%A4%A9%E6%A1%86/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -422,7 +1237,7 @@
         
           
   <h2 class="title">
-    <a href="/io/2020/01/10/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C/">
+    <a href="/2020/01/09/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C/">
       前端的常用转换操作
     </a>
   </h2>
@@ -470,7 +1285,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2020/01/10/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C/" class="leancloud_visitors" data-flag-title="前端的常用转换操作">
+      <span id="/2020/01/09/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C/" class="leancloud_visitors" data-flag-title="前端的常用转换操作">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -485,9 +1300,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2020/01/10/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C/#comments">
+  <a href="/2020/01/09/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/01/10/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/01/09/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -520,7 +1335,7 @@
     </div>
     
       
-        <a class= "readmore" href="/io/2020/01/10/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C/">
+        <a class= "readmore" href="/2020/01/09/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
@@ -545,7 +1360,7 @@
         
           
   <h2 class="title">
-    <a href="/io/2020/01/09/%E7%BB%98%E5%88%B6%E6%89%87%E5%BD%A2/">
+    <a href="/2020/01/08/%E7%BB%98%E5%88%B6%E6%89%87%E5%BD%A2/">
       绘制扇形
     </a>
   </h2>
@@ -571,7 +1386,7 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/%E6%A0%B7%E5%BC%8F-css-less/' rel="nofollow">
+    <a href='/categories/%E6%A0%B7%E5%BC%8F-css-less/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>样式(css/less...)</p>
     </a>
@@ -601,7 +1416,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2020/01/09/%E7%BB%98%E5%88%B6%E6%89%87%E5%BD%A2/" class="leancloud_visitors" data-flag-title="绘制扇形">
+      <span id="/2020/01/08/%E7%BB%98%E5%88%B6%E6%89%87%E5%BD%A2/" class="leancloud_visitors" data-flag-title="绘制扇形">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -616,9 +1431,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2020/01/09/%E7%BB%98%E5%88%B6%E6%89%87%E5%BD%A2/#comments">
+  <a href="/2020/01/08/%E7%BB%98%E5%88%B6%E6%89%87%E5%BD%A2/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/01/09/%E7%BB%98%E5%88%B6%E6%89%87%E5%BD%A2/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/01/08/%E7%BB%98%E5%88%B6%E6%89%87%E5%BD%A2/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -669,7 +1484,7 @@
         
           
   <h2 class="title">
-    <a href="/io/2020/01/08/typora%E7%BC%96%E5%86%99markdown/">
+    <a href="/2020/01/08/typora%E7%BC%96%E5%86%99markdown/">
       typora编写markdown
     </a>
   </h2>
@@ -695,7 +1510,7 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/%E6%96%87%E6%A1%A3/' rel="nofollow">
+    <a href='/categories/%E6%96%87%E6%A1%A3/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>文档</p>
     </a>
@@ -725,7 +1540,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2020/01/08/typora%E7%BC%96%E5%86%99markdown/" class="leancloud_visitors" data-flag-title="typora编写markdown">
+      <span id="/2020/01/08/typora%E7%BC%96%E5%86%99markdown/" class="leancloud_visitors" data-flag-title="typora编写markdown">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -740,9 +1555,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2020/01/08/typora%E7%BC%96%E5%86%99markdown/#comments">
+  <a href="/2020/01/08/typora%E7%BC%96%E5%86%99markdown/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/01/08/typora%E7%BC%96%E5%86%99markdown/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/01/08/typora%E7%BC%96%E5%86%99markdown/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -767,297 +1582,7 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-&#x4E0B;&#x8F7D;typora"><a href="#1-&#x4E0B;&#x8F7D;typora" class="headerlink" title="1.&#x4E0B;&#x8F7D;typora"></a>1.&#x4E0B;&#x8F7D;typora</h3><h3 id="2-&#x7136;&#x540E;&#x9700;&#x8981;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x76F4;&#x63A5;&#x7C98;&#x8D34;&#x5C31;&#x884C;"><a href="#2-&#x7136;&#x540E;&#x9700;&#x8981;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x76F4;&#x63A5;&#x7C98;&#x8D34;&#x5C31;&#x884C;" class="headerlink" title="2.&#x7136;&#x540E;&#x9700;&#x8981;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x76F4;&#x63A5;&#x7C98;&#x8D34;&#x5C31;&#x884C;"></a>2.&#x7136;&#x540E;&#x9700;&#x8981;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x76F4;&#x63A5;&#x7C98;&#x8D34;&#x5C31;&#x884C;</h3><p><img src="/io/2020/01/08/typora%E7%BC%96%E5%86%99markdown/image-20200108154349306.png" alt="image-20200108154349306"></p>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2020/01/08/%E7%BA%AFcss%E7%BB%98%E5%88%B6%E9%9B%B7%E8%BE%BE%E6%89%AB%E6%8F%8F%E5%9B%BE/">
-      纯css绘制雷达扫描图
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/%E6%A0%B7%E5%BC%8F-css-less/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>样式(css/less...)</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年1月8日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2020/01/08/%E7%BA%AFcss%E7%BB%98%E5%88%B6%E9%9B%B7%E8%BE%BE%E6%89%AB%E6%8F%8F%E5%9B%BE/" class="leancloud_visitors" data-flag-title="纯css绘制雷达扫描图">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2020/01/08/%E7%BA%AFcss%E7%BB%98%E5%88%B6%E9%9B%B7%E8%BE%BE%E6%89%AB%E6%8F%8F%E5%9B%BE/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/01/08/%E7%BA%AFcss%E7%BB%98%E5%88%B6%E9%9B%B7%E8%BE%BE%E6%89%AB%E6%8F%8F%E5%9B%BE/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <iframe id="cp_embed_rNaJGRW" src="//codepen.io/xuyongchaos/embed/rNaJGRW?height=300&amp;theme-id=dark&amp;slug-hash=rNaJGRW&amp;default-tab=result" scrolling="no" frameborder="no" height="300" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
-
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2020/01/08/hexo%E4%B8%AD%E5%B5%8C%E5%85%A5codepen/">
-      hexo中嵌入codepen
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>js知识库</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年1月8日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2020/01/08/hexo%E4%B8%AD%E5%B5%8C%E5%85%A5codepen/" class="leancloud_visitors" data-flag-title="hexo中嵌入codepen">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2020/01/08/hexo%E4%B8%AD%E5%B5%8C%E5%85%A5codepen/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/01/08/hexo%E4%B8%AD%E5%B5%8C%E5%85%A5codepen/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="&#x5B89;&#x88C5;"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</h3><p>&#x4F7F;&#x7528;npm&#x5B89;&#x88C5;&#x63D2;&#x4EF6;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-codepen --save</span><br></pre></td></tr></table></figure>
-
-<h3 id="&#x8BED;&#x6CD5;"><a href="#&#x8BED;&#x6CD5;" class="headerlink" title="&#x8BED;&#x6CD5;"></a>&#x8BED;&#x6CD5;</h3><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% codepen userId|anonymous|anon slugHash theme [defaultTab [height [width]]] %}</span><br></pre></td></tr></table></figure>
-
-<h3 id="&#x751F;&#x6210;&#x7684;html"><a href="#&#x751F;&#x6210;&#x7684;html" class="headerlink" title="&#x751F;&#x6210;&#x7684;html"></a>&#x751F;&#x6210;&#x7684;html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">data-height</span>=<span class="string">&quot;265&quot;</span> <span class="attr">data-theme-id</span>=<span class="string">&quot;dark&quot;</span> <span class="attr">data-slug-hash</span>=<span class="string">&quot;bgjKKE&quot;</span> <span class="attr">data-default-tab</span>=<span class="string">&quot;css,result&quot;</span> <span class="attr">data-user</span>=<span class="string">&quot;CiTA&quot;</span> <span class="attr">data-embed-version</span>=<span class="string">&quot;2&quot;</span> <span class="attr">data-pen-title</span>=<span class="string">&quot;CSS sidebar toggle&quot;</span> <span class="attr">class</span>=<span class="string">&quot;codepen&quot;</span>&gt;</span>See the Pen <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://codepen.io/CiTA/pen/bgjKKE/&quot;</span>&gt;</span>CSS sidebar toggle<span class="tag">&lt;/<span class="name">a</span>&gt;</span> by Silvestar Bistrovi&#x107; (<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://codepen.io/CiTA&quot;</span>&gt;</span>@CiTA<span class="tag">&lt;/<span class="name">a</span>&gt;</span>) on <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://codepen.io&quot;</span>&gt;</span>CodePen<span class="tag">&lt;/<span class="name">a</span>&gt;</span>.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#x770B;&#x6E90;&#x7801;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x63D2;&#x5165;&#x4E86;&#x4E00;&#x4E2A;iframe</span><br></pre></td></tr></table></figure>
-<h3 id="&#x53C2;&#x6570;&#x4F7F;&#x7528;"><a href="#&#x53C2;&#x6570;&#x4F7F;&#x7528;" class="headerlink" title="&#x53C2;&#x6570;&#x4F7F;&#x7528;"></a>&#x53C2;&#x6570;&#x4F7F;&#x7528;</h3><table>
-<thead>
-<tr>
-<th align="left">&#x53C2;&#x6570;</th>
-<th align="left">&#x503C;</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">userId</td>
-<td align="left">codepen&#x7684;&#x7528;&#x6237;&#x540D;</td>
-</tr>
-<tr>
-<td align="left">slugHash</td>
-<td align="left">&#x5F53;&#x524D;pen url&#x4E0A;&#x7684;hash&#x503C;</td>
-</tr>
-<tr>
-<td align="left">theme</td>
-<td align="left">dark</td>
-</tr>
-<tr>
-<td align="left">defaultTab</td>
-<td align="left">css,result &#x9ED8;&#x8BA4;&#x5C55;&#x73B0;&#x7684;tab</td>
-</tr>
-<tr>
-<td align="left">height</td>
-<td align="left">265</td>
-</tr>
-<tr>
-<td align="left">width</td>
-<td align="left">&#x9ED8;&#x8BA4;100%&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x5E94;&#x8BE5;&#x7531;&#x4E3B;&#x9898;&#x8C03;&#x6574;</td>
-</tr>
-</tbody></table>
-<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">{% <span class="name">codepen</span> xuyongchaos rNaJGRW dark %}</span></span><br></pre></td></tr></table></figure>
-<h3 id="&#x6548;&#x679C;"><a href="#&#x6548;&#x679C;" class="headerlink" title="&#x6548;&#x679C;"></a>&#x6548;&#x679C;</h3><iframe id="cp_embed_rNaJGRW" src="//codepen.io/xuyongchaos/embed/rNaJGRW?height=300&amp;theme-id=dark&amp;slug-hash=rNaJGRW&amp;default-tab=result" scrolling="no" frameborder="no" height="300" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
+        <h3 id="1-&#x4E0B;&#x8F7D;typora"><a href="#1-&#x4E0B;&#x8F7D;typora" class="headerlink" title="1.&#x4E0B;&#x8F7D;typora"></a>1.&#x4E0B;&#x8F7D;typora</h3><h3 id="2-&#x7136;&#x540E;&#x9700;&#x8981;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x76F4;&#x63A5;&#x7C98;&#x8D34;&#x5C31;&#x884C;"><a href="#2-&#x7136;&#x540E;&#x9700;&#x8981;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x76F4;&#x63A5;&#x7C98;&#x8D34;&#x5C31;&#x884C;" class="headerlink" title="2.&#x7136;&#x540E;&#x9700;&#x8981;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x76F4;&#x63A5;&#x7C98;&#x8D34;&#x5C31;&#x884C;"></a>2.&#x7136;&#x540E;&#x9700;&#x8981;&#x56FE;&#x7247;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x76F4;&#x63A5;&#x7C98;&#x8D34;&#x5C31;&#x884C;</h3><p><img src="/2020/01/08/typora%E7%BC%96%E5%86%99markdown/image-20200108154349306.png" alt="image-20200108154349306"></p>
 
       
     </div>
@@ -1077,15 +1602,21 @@
       <br>
       <div class="prev-next">
         
-          <a class="prev" rel="prev" href="/io/archives/2020/page/2/">
+          <a class="prev" rel="prev" href="/archives/2020/page/2/">
             <section class="post prev white-box shadow" >
               <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
             </section>
           </a>
         
         <p class="current">
-          3 / 3
+          3 / 4
         </p>
+        
+          <a class="next" rel="next" href="/archives/2020/page/4/">
+            <section class="post next white-box shadow">
+              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
         
       </div>
     
@@ -1108,7 +1639,7 @@
   <div class='content'>
     
       
-        <a class='avatar flat-box rectangle' href='/io/about/'>
+        <a class='avatar flat-box rectangle' href='/about/'>
           <img no-lazy src='/img/avatar.png'/>
         </a>
       
@@ -1127,7 +1658,7 @@
       <div class="social-wrapper">
         
           
-            <a href="/io/atom.xml"
+            <a href="/atom.xml"
               class="social fas fa-rss flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -1135,7 +1666,7 @@
           
         
           
-            <a href="mailto:me@xxx.com"
+            <a href="mailto:2658553345@qq.com"
               class="social fas fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -1183,69 +1714,84 @@
       <ul class="entry navigation">
         
           <li><a class="flat-box"
-            title="/io/categories/electron/" href="/io/categories/electron/"
-            id="iocategorieselectron"
+            title="/categories/electron/" href="/categories/electron/"
+            id="categorieselectron"
             ><div class='name'>electron</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/git/" href="/io/categories/git/"
-            id="iocategoriesgit"
+            title="/categories/git/" href="/categories/git/"
+            id="categoriesgit"
             ><div class='name'>git</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/graph/" href="/io/categories/graph/"
-            id="iocategoriesgraph"
+            title="/categories/graph/" href="/categories/graph/"
+            id="categoriesgraph"
             ><div class='name'>graph</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/" href="/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/"
-            id="iocategoriesjsE79FA5E8AF86E5BA93"
-            ><div class='name'>js知识库</div><div class='badge'>(38)</div></a></li>
+            title="/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/" href="/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/"
+            id="categoriesjsE79FA5E8AF86E5BA93"
+            ><div class='name'>js知识库</div><div class='badge'>(41)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/nginx/" href="/io/categories/nginx/"
-            id="iocategoriesnginx"
+            title="/categories/nginx/" href="/categories/nginx/"
+            id="categoriesnginx"
             ><div class='name'>nginx</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/node/" href="/io/categories/node/"
-            id="iocategoriesnode"
+            title="/categories/node/" href="/categories/node/"
+            id="categoriesnode"
             ><div class='name'>node</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/svg/" href="/io/categories/svg/"
-            id="iocategoriessvg"
+            title="/categories/svg/" href="/categories/svg/"
+            id="categoriessvg"
             ><div class='name'>svg</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/vue/" href="/io/categories/vue/"
-            id="iocategoriesvue"
-            ><div class='name'>vue</div><div class='badge'>(7)</div></a></li>
+            title="/categories/typescript/" href="/categories/typescript/"
+            id="categoriestypescript"
+            ><div class='name'>typescript</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/webpack/" href="/io/categories/webpack/"
-            id="iocategorieswebpack"
-            ><div class='name'>webpack</div><div class='badge'>(8)</div></a></li>
+            title="/categories/vue/" href="/categories/vue/"
+            id="categoriesvue"
+            ><div class='name'>vue</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E5%85%B6%E4%BB%96/" href="/io/categories/%E5%85%B6%E4%BB%96/"
-            id="iocategoriesE585B6E4BB96"
+            title="/categories/webpack/" href="/categories/webpack/"
+            id="categorieswebpack"
+            ><div class='name'>webpack</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
+            id="categoriesE585B6E4BB96"
             ><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%8F%92%E4%BB%B6/" href="/io/categories/%E6%8F%92%E4%BB%B6/"
-            id="iocategoriesE68F92E4BBB6"
+            title="/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/" href="/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"
+            id="categoriesE5B7A5E7A88BE58C96"
+            ><div class='name'>工程化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%8F%92%E4%BB%B6/" href="/categories/%E6%8F%92%E4%BB%B6/"
+            id="categoriesE68F92E4BBB6"
             ><div class='name'>插件</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%96%87%E6%A1%A3/" href="/io/categories/%E6%96%87%E6%A1%A3/"
-            id="iocategoriesE69687E6A1A3"
+            title="/categories/%E6%96%87%E6%A1%A3/" href="/categories/%E6%96%87%E6%A1%A3/"
+            id="categoriesE69687E6A1A3"
             ><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%A0%B7%E5%BC%8F-css-less/" href="/io/categories/%E6%A0%B7%E5%BC%8F-css-less/"
-            id="iocategoriesE6A0B7E5BC8F-css-less"
+            title="/categories/%E6%A0%B7%E5%BC%8F-css-less/" href="/categories/%E6%A0%B7%E5%BC%8F-css-less/"
+            id="categoriesE6A0B7E5BC8F-css-less"
             ><div class='name'>样式(css/less...)</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%BD%91%E7%BB%9C/" href="/categories/%E7%BD%91%E7%BB%9C/"
+            id="categoriesE7BD91E7BB9C"
+            ><div class='name'>网络</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -1269,7 +1815,7 @@
 
 
     <div class='content'>
-      <a href="/io/tags/F2/" style="font-size: 14px; color: #999">F2</a> <a href="/io/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/io/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/io/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/io/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/io/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/io/tags/css%E5%8A%A8%E7%94%BB/" style="font-size: 15.67px; color: #8e8e8e">css动画</a> <a href="/io/tags/cytoscape/" style="font-size: 15.67px; color: #8e8e8e">cytoscape</a> <a href="/io/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/io/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/io/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/io/tags/git/" style="font-size: 15.67px; color: #8e8e8e">git</a> <a href="/io/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/io/tags/hexo/" style="font-size: 15.67px; color: #8e8e8e">hexo</a> <a href="/io/tags/highcharts/" style="font-size: 17.33px; color: #828282">highcharts</a> <a href="/io/tags/http/" style="font-size: 15.67px; color: #8e8e8e">http</a> <a href="/io/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/io/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/io/tags/lifecycle/" style="font-size: 14px; color: #999">lifecycle</a> <a href="/io/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/io/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/io/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/io/tags/pageshow/" style="font-size: 14px; color: #999">pageshow</a> <a href="/io/tags/performance/" style="font-size: 14px; color: #999">performance</a> <a href="/io/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/io/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/io/tags/vue/" style="font-size: 22.33px; color: #606060">vue</a> <a href="/io/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/io/tags/%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">事件模型</a> <a href="/io/tags/%E6%A8%A1%E6%8B%9F%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/io/tags/%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/" style="font-size: 15.67px; color: #8e8e8e">渲染过程</a> <a href="/io/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/io/tags/%E7%B1%BB%E5%9E%8B/" style="font-size: 15.67px; color: #8e8e8e">类型</a> <a href="/io/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 15.67px; color: #8e8e8e">类型转换</a> <a href="/io/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 17.33px; color: #828282">组件</a>
+      <a href="/tags/F2/" style="font-size: 14px; color: #999">F2</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/tags/css%E5%8A%A8%E7%94%BB/" style="font-size: 15.67px; color: #8e8e8e">css动画</a> <a href="/tags/cytoscape/" style="font-size: 15.67px; color: #8e8e8e">cytoscape</a> <a href="/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/tags/git/" style="font-size: 15.67px; color: #8e8e8e">git</a> <a href="/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/tags/hexo/" style="font-size: 15.67px; color: #8e8e8e">hexo</a> <a href="/tags/highcharts/" style="font-size: 17.33px; color: #828282">highcharts</a> <a href="/tags/http/" style="font-size: 15.67px; color: #8e8e8e">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/lifecycle/" style="font-size: 14px; color: #999">lifecycle</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/pageshow/" style="font-size: 14px; color: #999">pageshow</a> <a href="/tags/performance/" style="font-size: 14px; color: #999">performance</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.33px; color: #606060">vue</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/%E6%A8%A1%E6%8B%9F%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/" style="font-size: 15.67px; color: #8e8e8e">渲染过程</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/%E7%B1%BB%E5%9E%8B/" style="font-size: 15.67px; color: #8e8e8e">类型</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 15.67px; color: #8e8e8e">类型转换</a> <a href="/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 17.33px; color: #828282">组件</a>
     </div>
   </section>
 
@@ -1326,7 +1872,7 @@
         <div class="social-wrapper">
           
             
-              <a href="/io/atom.xml"
+              <a href="/atom.xml"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -1334,7 +1880,7 @@
             
           
             
-              <a href="mailto:me@xxx.com"
+              <a href="mailto:2658553345@qq.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -1415,49 +1961,19 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/over58/over58.github.io/blob/master/(path)
         
         
         
         
-          id="https:volantisjsorgfaqs"
+          id="https:githubcomover58over58githubioblobmaster(path)"
         >
-        <i class='fa fa-question fa-fw'></i> 常见问题
+        <i class='fa fa-question fa-fw'></i> 编辑文章
       </a>
     </li>
   
         
       
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
-        
-        
-        
-        
-          id="https:volantisjsorgexamples"
-        >
-        <i class='fa fa-rss fa-fw'></i> 示例博客
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
-        
-        
-        
-        
-          id="https:volantisjsorgcontributors"
-        >
-        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
-      </a>
-    </li>
-  
         
       
         
@@ -1467,12 +1983,12 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/over58/over58.github.io
         
         
         
         
-          id="https:githubcomvolantis-xvolantis-docs"
+          id="https:githubcomover58over58githubio"
         >
         <i class='fa fa-code-branch fa-fw'></i> 本站源码
       </a>
@@ -1680,7 +2196,7 @@
   <script>
     
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/io/" || "/";
+    var ROOT = "/" || "/";
     if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
@@ -1750,7 +2266,7 @@
 
   
     
-<script src="/io/js/aplayer.js"></script>
+<script src="/js/aplayer.js"></script>
 
   
 
@@ -1759,7 +2275,7 @@
 
   
   
-<script src="/io/js/valine.js"></script>
+<script src="/js/valine.js"></script>
 
 
 <script>
@@ -1944,14 +2460,14 @@
 
 
   
-<script src="/io/js/app.js"></script>
+<script src="/js/app.js"></script>
 
 
 
 
   
     
-<script src="/io/js/search.js"></script>
+<script src="/js/search.js"></script>
 
   
 

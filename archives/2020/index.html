@@ -25,7 +25,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/io/atom.xml" title="over58">
+    <link rel="alternate" href="/atom.xml" title="over58">
   
 
   <!-- import meta -->
@@ -64,7 +64,7 @@
   
   
     
-<link rel="stylesheet" href="/io/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
 
@@ -126,7 +126,7 @@
 		<div class="nav-main">
       
         
-        <a class="title flat-box" target="_self" href='/io/'>
+        <a class="title flat-box" target="_self" href='/'>
           
             <img no-lazy class='logo' src='img/avatar.png'/>
           
@@ -143,11 +143,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="io"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -159,11 +159,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="ioarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -193,11 +193,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="io"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -209,11 +209,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="ioarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -321,7 +321,1027 @@
         
           
   <h2 class="title">
-    <a href="/io/2020/07/30/Vue%E6%98%AF%E4%BB%80%E4%B9%88/">
+    <a href="/2020/12/27/vue2.x%E7%9A%84%E5%90%88%E5%B9%B6%E7%AD%96%E7%95%A5/">
+      vue2.x的合并策略
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/vue/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>vue</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月27日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/12/27/vue2.x%E7%9A%84%E5%90%88%E5%B9%B6%E7%AD%96%E7%95%A5/" class="leancloud_visitors" data-flag-title="vue2.x的合并策略">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/12/27/vue2.x%E7%9A%84%E5%90%88%E5%B9%B6%E7%AD%96%E7%95%A5/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/12/27/vue2.x%E7%9A%84%E5%90%88%E5%B9%B6%E7%AD%96%E7%95%A5/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="data"><a href="#data" class="headerlink" title="data"></a>data</h1><ol>
+<li>&#x6743;&#x91CD;</li>
+</ol>
+<blockquote>
+<p>&#x81EA;&#x5DF1;&#x7684;data&gt; mixins&#x7684;data &gt; mixins&#x7684;mixins&#x7684;data &#x2026; &gt; &#x5168;&#x5C40;&#x7684;mixins&#x7684;data</p>
+</blockquote>
+<ol start="2">
+<li>&#x76F8;&#x540C;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x8BDD;&#xFF0C;&#x5982;&#x679C;&#x53CC;&#x65B9;&#x90FD;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x8BDD;&#xFF0C;&#x5BF9;&#x8C61;&#x4F1A;&#x88AB;&#x9012;&#x5F52;&#x5408;&#x5E76;</li>
+</ol>
+<h1 id="hooks"><a href="#hooks" class="headerlink" title="hooks"></a>hooks</h1><blockquote>
+<p>&#x5408;&#x5E76;&#x4E3A;array</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeHook</span> (<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">  parentVal,</span></span></span><br><span class="line"><span class="function"><span class="params">  childVal</span></span></span><br><span class="line"><span class="function"><span class="params"></span>) </span>{</span><br><span class="line">  <span class="keyword">var</span> res = childVal</span><br><span class="line">    ? parentVal</span><br><span class="line">      ? parentVal.concat(childVal)</span><br><span class="line">      : <span class="built_in">Array</span>.isArray(childVal)</span><br><span class="line">        ? childVal</span><br><span class="line">        : [childVal]</span><br><span class="line">    : parentVal;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">    ? dedupeHooks(res)</span><br><span class="line">    : res</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h1 id="watcher"><a href="#watcher" class="headerlink" title="watcher"></a>watcher</h1><blockquote>
+<p>merged as array</p>
+</blockquote>
+<p>&#x3010;&#x7236;&#x5143;&#x7D20;&#x7684;watcher,&#x81EA;&#x5DF1;&#x7684;watcher&#x2026;&#x3011;</p>
+<h1 id="props-computed-inject-methods"><a href="#props-computed-inject-methods" class="headerlink" title="props, computed, inject, methods"></a>props, computed, inject, methods</h1><p>&#x6B63;&#x5E38;&#x5BF9;&#x8C61;&#x5408;&#x5E76;&#xFF0C;&#x540C;&#x5C5E;&#x6027;&#x540D;&#x65F6;&#xFF0C;&#x81EA;&#x5DF1;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#xFF0C; &#x76F4;&#x63A5;&#x66FF;&#x6362;&#x6389;&#x7236;&#x7EA7;&#x7684;&#x540C;&#x540D;&#x5C5E;&#x6027;</p>
+      
+    </div>
+    
+      
+        <a class= "readmore" href="/2020/12/27/vue2.x%E7%9A%84%E5%90%88%E5%B9%B6%E7%AD%96%E7%95%A5/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/12/27/vue%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E7%9A%84d-ts%E4%B9%A6%E5%86%99%E9%97%AE%E9%A2%98/">
+      vue中自定义属性的d.ts书写问题
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/typescript/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>typescript</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月27日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/12/27/vue%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E7%9A%84d-ts%E4%B9%A6%E5%86%99%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="vue中自定义属性的d.ts书写问题">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/12/27/vue%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E7%9A%84d-ts%E4%B9%A6%E5%86%99%E9%97%AE%E9%A2%98/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/12/27/vue%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E7%9A%84d-ts%E4%B9%A6%E5%86%99%E9%97%AE%E9%A2%98/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="&#x5728;vue&#x7684;instance&#x4E0A;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;"><a href="#&#x5728;vue&#x7684;instance&#x4E0A;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;" class="headerlink" title="&#x5728;vue&#x7684;instance&#x4E0A;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;"></a>&#x5728;vue&#x7684;instance&#x4E0A;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// plugin.ts</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">plugin</span>:PluginInterface = {</span><br><span class="line"></span><br><span class="line">    install (<span class="keyword">app</span>: <span class="keyword">App</span>) {</span><br><span class="line">           <span class="keyword">app</span>.config.<span class="keyword">global</span>.globalProperties.http = http</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//plugin.d.ts</span></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">interface</span> PluginInterface {</span><br><span class="line">  install: PluginInstallFunction,</span><br><span class="line">  initVue: <span class="function">(<span class="params">instance: App, layout: <span class="built_in">any</span></span>) =&gt;</span> App</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="&#x5728;window&#x4E0A;&#x6302;&#x8F7D;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;"><a href="#&#x5728;window&#x4E0A;&#x6302;&#x8F7D;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;" class="headerlink" title="&#x5728;window&#x4E0A;&#x6302;&#x8F7D;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;"></a>&#x5728;window&#x4E0A;&#x6302;&#x8F7D;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> global{</span><br><span class="line">   <span class="built_in"> interface </span>Window {</span><br><span class="line">        webkit: any</span><br><span class="line">        Vue: any,</span><br><span class="line">        _hmt: any,</span><br><span class="line">        msRequestAnimationFrame?:any</span><br><span class="line">        mozRequestAnimationFrame?:any</span><br><span class="line">        WeixinJSBridge: any</span><br><span class="line">        wx: any</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/12/27/require%E5%92%8Cimport%E6%AF%94%E8%BE%83/">
+      require和import比较
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>工程化</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月27日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/12/27/require%E5%92%8Cimport%E6%AF%94%E8%BE%83/" class="leancloud_visitors" data-flag-title="require和import比较">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/12/27/require%E5%92%8Cimport%E6%AF%94%E8%BE%83/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/12/27/require%E5%92%8Cimport%E6%AF%94%E8%BE%83/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="A&#x2013;require-&#x548C;-import&#x6BD4;&#x8F83;"><a href="#A&#x2013;require-&#x548C;-import&#x6BD4;&#x8F83;" class="headerlink" title="A&#x2013;require &#x548C; import&#x6BD4;&#x8F83;"></a>A&#x2013;require &#x548C; import&#x6BD4;&#x8F83;</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>&#x51FA;&#x73B0;&#x65F6;&#x95F4;</th>
+<th>&#x52A0;&#x8F7D;&#x673A;&#x5236;</th>
+<th>&#x8F93;&#x51FA;</th>
+<th>&#x7528;&#x6CD5;</th>
+<th>&#x7279;&#x70B9;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>require</td>
+<td>2009</td>
+<td>&#x8FD0;&#x884C;&#x65F6;&#x52A0;&#x8F7D;</td>
+<td>&#x6D45;&#x62F7;&#x8D1D;</td>
+<td>&#x89C1;&#x4E0B;</td>
+<td>&#x793E;&#x533A;&#x65B9;&#x6848;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x670D;&#x52A1;&#x5668;/&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x6A21;&#x5757;&#x52A0;&#x8F7D;&#x65B9;&#x6848;&#x3002;&#x975E;&#x8BED;&#x8A00;&#x5C42;&#x9762;&#x7684;&#x6807;&#x51C6;&#x3002;&#x53EA;&#x80FD;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x786E;&#x5B9A;&#x6A21;&#x5757;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x53CA;&#x8F93;&#x5165;/&#x8F93;&#x51FA;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x9759;&#x6001;&#x4F18;&#x5316;&#x3002;</td>
+</tr>
+<tr>
+<td>import</td>
+<td>2015</td>
+<td>&#x9759;&#x6001;&#x7F16;&#x8BD1;</td>
+<td>&#x503C;&#x5F15;&#x7528;</td>
+<td>&#x89C1;&#x4E0B;</td>
+<td>&#x8BED;&#x8A00;&#x89C4;&#x683C;&#x5C42;&#x9762;&#x652F;&#x6301;&#x6A21;&#x5757;&#x529F;&#x80FD;&#x3002;&#x652F;&#x6301;&#x7F16;&#x8BD1;&#x65F6;&#x9759;&#x6001;&#x5206;&#x6790;&#xFF0C;&#x4FBF;&#x4E8E;JS&#x5F15;&#x5165;&#x5B8F;&#x548C;&#x7C7B;&#x578B;&#x68C0;&#x9A8C;&#x3002;&#x52A8;&#x6001;&#x7ED1;&#x5B9A;</td>
+</tr>
+</tbody></table>
+<h3 id="B&#x2013;&#x7528;&#x6CD5;&#x6BD4;&#x8F83;"><a href="#B&#x2013;&#x7528;&#x6CD5;&#x6BD4;&#x8F83;" class="headerlink" title="B&#x2013;&#x7528;&#x6CD5;&#x6BD4;&#x8F83;"></a>B&#x2013;&#x7528;&#x6CD5;&#x6BD4;&#x8F83;</h3><ul>
+<li>require<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const <span class="built_in">fs</span> = require(&apos;<span class="built_in">fs</span>&apos;)</span><br><span class="line">exports.<span class="built_in">fs</span> = <span class="built_in">fs</span></span><br><span class="line">module.exports = <span class="built_in">fs</span></span><br></pre></td></tr></table></figure></li>
+<li>import<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import fs <span class="keyword">from</span> <span class="string">&apos;fs&apos;</span></span><br><span class="line">import {default as fs} <span class="keyword">from</span> <span class="string">&apos;fs&apos;</span></span><br><span class="line">import * as fs <span class="keyword">from</span> <span class="string">&apos;fs&apos;</span></span><br><span class="line">import {readFile} <span class="keyword">from</span> <span class="string">&apos;fs&apos;</span></span><br><span class="line">import {readFile as read} <span class="keyword">from</span> <span class="string">&apos;fs&apos;</span></span><br><span class="line">import fs, {readFile} <span class="keyword">from</span> <span class="string">&apos;fs&apos;</span></span><br><span class="line"></span><br><span class="line"><span class="builtin-name">export</span><span class="built_in"> default </span>fs</span><br><span class="line"><span class="builtin-name">export</span> const fs</span><br><span class="line"><span class="builtin-name">export</span> function readFile</span><br><span class="line"><span class="builtin-name">export</span> {readFile, read}</span><br><span class="line"><span class="builtin-name">export</span> * <span class="keyword">from</span> <span class="string">&apos;fs&apos;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="B1&#x2013;&#x652F;&#x6301;&#x5B9E;&#x73B0;&#x5EA6;"><a href="#B1&#x2013;&#x652F;&#x6301;&#x5B9E;&#x73B0;&#x5EA6;" class="headerlink" title="B1&#x2013;&#x652F;&#x6301;&#x5B9E;&#x73B0;&#x5EA6;"></a>B1&#x2013;&#x652F;&#x6301;&#x5B9E;&#x73B0;&#x5EA6;</h3><table>
+<thead>
+<tr>
+<th>&#x6A21;&#x5757;</th>
+<th>&#x6D4F;&#x89C8;&#x5668;</th>
+<th>node</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>require</td>
+<td>x</td>
+<td>&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td>es module</td>
+<td><a href="https://caniuse.com/#search=ES%20modules" target="_blank" rel="noopener">look</a></td>
+<td>node &gt; 13</td>
+</tr>
+</tbody></table>
+<h3 id="C&#x2013;&#x89E3;&#x6790;&#x7ED3;&#x679C;"><a href="#C&#x2013;&#x89E3;&#x6790;&#x7ED3;&#x679C;" class="headerlink" title="C&#x2013;&#x89E3;&#x6790;&#x7ED3;&#x679C;"></a>C&#x2013;&#x89E3;&#x6790;&#x7ED3;&#x679C;</h3><ul>
+<li>require&#x662F;&#x8D4B;&#x503C;&#x8FC7;&#x7A0B;&#xFF0C;&#x5176;&#x5B9E;require&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x5B57;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x51FD;&#x6570;&#x7B49;&#xFF0C;&#x518D;&#x628A;require&#x7684;&#x7ED3;&#x679C;&#x8D4B;&#x503C;&#x7ED9;&#x67D0;&#x4E2A;&#x53D8;&#x91CF;</li>
+<li>import&#x662F;&#x89E3;&#x6784;&#x8FC7;&#x7A0B;&#xFF0C;&#x4F46;&#x662F;&#x76EE;&#x524D;&#x6240;&#x6709;&#x7684;&#x5F15;&#x64CE;&#x90FD;&#x8FD8;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;import&#xFF0C;&#x6211;&#x4EEC;&#x5728;node&#x4E2D;&#x4F7F;&#x7528;babel&#x652F;&#x6301;ES6&#xFF0C;&#x4E5F;&#x4EC5;&#x4EC5;&#x662F;&#x5C06;ES6&#x8F6C;&#x7801;&#x4E3A;ES5&#x518D;&#x6267;&#x884C;&#xFF0C;import&#x8BED;&#x6CD5;&#x4F1A;&#x88AB;&#x8F6C;&#x7801;&#x4E3A;require</li>
+</ul>
+<h3 id="D&#x2013;&#x5F15;&#x7528;&#x5B9E;&#x4F8B;"><a href="#D&#x2013;&#x5F15;&#x7528;&#x5B9E;&#x4F8B;" class="headerlink" title="D&#x2013;&#x5F15;&#x7528;&#x5B9E;&#x4F8B;"></a>D&#x2013;&#x5F15;&#x7528;&#x5B9E;&#x4F8B;</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES2015 modules</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ---------------------------------</span></span><br><span class="line"><span class="comment">// one.js</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&apos;running one.js&apos;</span>);</span><br><span class="line"><span class="keyword">import</span> { hello } <span class="keyword">from</span> <span class="string">&apos;./two.js&apos;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(hello);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ---------------------------------</span></span><br><span class="line"><span class="comment">// two.js</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&apos;running two.js&apos;</span>);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> hello = <span class="string">&apos;Hello from two.js&apos;</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CommonJS modules</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ---------------------------------</span></span><br><span class="line"><span class="comment">// one.js</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&apos;running one.js&apos;</span>);</span><br><span class="line"><span class="keyword">const</span> hello = <span class="built_in">require</span>(<span class="string">&apos;./two.js&apos;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(hello);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ---------------------------------</span></span><br><span class="line"><span class="comment">// two.js</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&apos;running two.js&apos;</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = <span class="string">&apos;Hello from two.js&apos;</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">es6</span><br><span class="line">running <span class="literal">two</span>.js</span><br><span class="line">running <span class="literal">one</span>.js</span><br><span class="line">hello <span class="built_in">from</span> <span class="literal">two</span>.js</span><br><span class="line"></span><br><span class="line">commonjs</span><br><span class="line">running <span class="literal">one</span>.js</span><br><span class="line">running <span class="literal">two</span>.js</span><br><span class="line">hello <span class="built_in">from</span> <span class="literal">two</span>.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="E&#x2013;&#x524D;&#x666F;&#x5C55;&#x671B;&#xFF0C;&#x8C01;&#x4F1A;&#x4E00;&#x7EDF;&#x6A21;&#x5757;&#x6C5F;&#x6E56;"><a href="#E&#x2013;&#x524D;&#x666F;&#x5C55;&#x671B;&#xFF0C;&#x8C01;&#x4F1A;&#x4E00;&#x7EDF;&#x6A21;&#x5757;&#x6C5F;&#x6E56;" class="headerlink" title="E&#x2013;&#x524D;&#x666F;&#x5C55;&#x671B;&#xFF0C;&#x8C01;&#x4F1A;&#x4E00;&#x7EDF;&#x6A21;&#x5757;&#x6C5F;&#x6E56;"></a>E&#x2013;&#x524D;&#x666F;&#x5C55;&#x671B;&#xFF0C;&#x8C01;&#x4F1A;&#x4E00;&#x7EDF;&#x6A21;&#x5757;&#x6C5F;&#x6E56;</h3><ol>
+<li>node &gt; 13 &#x5DF2;&#x7ECF;&#x5168;&#x9762;&#x652F;&#x6301; <a href="https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_enabling" target="_blank" rel="noopener">link</a>,&#x76EE;&#x524D;&#x662F;&#x5171;&#x5B58;&#x5C40;&#x9762;</li>
+<li>deno &#x4F7F;&#x7528;es&#x6A21;&#x5757;<a href="http://www.ruanyifeng.com/blog/2020/01/deno-intro.html" target="_blank" rel="noopener">deno</a></li>
+<li>&#x4E24;&#x79CD;&#x540C;&#x4E8B;&#x5B58;&#x5728;&#x7684;&#x53EF;&#x80FD;&#x6027;&#xFF0C;&#x4E0D;&#x662F;&#x5F88;&#x5927;&#xFF0C;es6&#x6A21;&#x5757;&#x4F1A;&#x8D8A;&#x6765;&#x8D8A;&#x666E;&#x53CA;&#xFF0C;&#x5EFA;&#x8BAE;&#x4EE5;&#x540E;&#x90FD;&#x4F7F;&#x7528;es6&#x6A21;&#x5757;&#x673A;&#x5236;</li>
+</ol>
+<h3 id="F&#x2013;&#x8D44;&#x6E90;&#x5206;&#x4EAB;-es-module-in-browser"><a href="#F&#x2013;&#x8D44;&#x6E90;&#x5206;&#x4EAB;-es-module-in-browser" class="headerlink" title="F&#x2013;&#x8D44;&#x6E90;&#x5206;&#x4EAB; es module in browser"></a>F&#x2013;&#x8D44;&#x6E90;&#x5206;&#x4EAB; <a href="https://www.zhangxinxu.com/wordpress/2018/08/browser-native-es6-export-import-module/" target="_blank" rel="noopener">es module in browser</a></h3>
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/12/27/%E6%B7%B1%E5%85%8B%E9%9A%86%E5%92%8C%E6%B5%85%E5%85%8B%E9%9A%86/">
+      深克隆和浅克隆
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月27日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/12/27/%E6%B7%B1%E5%85%8B%E9%9A%86%E5%92%8C%E6%B5%85%E5%85%8B%E9%9A%86/" class="leancloud_visitors" data-flag-title="深克隆和浅克隆">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/12/27/%E6%B7%B1%E5%85%8B%E9%9A%86%E5%92%8C%E6%B5%85%E5%85%8B%E9%9A%86/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/12/27/%E6%B7%B1%E5%85%8B%E9%9A%86%E5%92%8C%E6%B5%85%E5%85%8B%E9%9A%86/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="&#x6982;&#x5FF5;"><a href="#&#x6982;&#x5FF5;" class="headerlink" title="&#x6982;&#x5FF5;"></a>&#x6982;&#x5FF5;</h3><h4 id="&#x6D45;&#x62F7;&#x8D1D;"><a href="#&#x6D45;&#x62F7;&#x8D1D;" class="headerlink" title="&#x6D45;&#x62F7;&#x8D1D;"></a>&#x6D45;&#x62F7;&#x8D1D;</h4><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6709;&#x7740;&#x5BF9;&#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x7684;&#x4E00;&#x4EFD;&#x62F7;&#x8D1D;&#x3002;&#x5982;&#x679C;&#x5C5E;&#x6027;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF0C;&#x62F7;&#x8D1D;&#x7684;&#x5C31;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF1B;&#x5982;&#x679C;&#x662F;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#xFF0C;&#x62F7;&#x8D1D;&#x7684;&#x662F;&#x5730;&#x5740;&#x3002;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6539;&#x53D8;&#x4E86;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#xFF0C;&#x5C31;&#x662F;&#x5F71;&#x54CD;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</p>
+<h4 id="&#x6DF1;&#x62F7;&#x8D1D;"><a href="#&#x6DF1;&#x62F7;&#x8D1D;" class="headerlink" title="&#x6DF1;&#x62F7;&#x8D1D;"></a>&#x6DF1;&#x62F7;&#x8D1D;</h4><p>&#x5C06;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x5B8C;&#x6574;&#x7684;&#x62F7;&#x8D1D;&#x4E00;&#x4EFD;&#x51FA;&#x6765;&#xFF0C;&#x4ECE;&#x5806;&#x4E2D;&#x5F00;&#x8F9F;&#x51FA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x533A;&#x57DF;&#x6765;&#x5B58;&#x653E;&#x65B0;&#x5BF9;&#x8C61;&#xFF0C;&#x4E14;&#x4FEE;&#x6539;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x539F;&#x5BF9;&#x8C61;</p>
+<h3 id="&#x7B80;&#x6613;&#x7248;-&#x5B9E;&#x9645;&#x4E0A;&#x4E5F;&#x662F;&#x9879;&#x76EE;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;"><a href="#&#x7B80;&#x6613;&#x7248;-&#x5B9E;&#x9645;&#x4E0A;&#x4E5F;&#x662F;&#x9879;&#x76EE;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;" class="headerlink" title="&#x7B80;&#x6613;&#x7248;(&#x5B9E;&#x9645;&#x4E0A;&#x4E5F;&#x662F;&#x9879;&#x76EE;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;)"></a>&#x7B80;&#x6613;&#x7248;(&#x5B9E;&#x9645;&#x4E0A;&#x4E5F;&#x662F;&#x9879;&#x76EE;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;)</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="module-access"><span class="module"><span class="identifier">JSON</span>.</span></span>parse(<span class="module-access"><span class="module"><span class="identifier">JSON</span>.</span></span>stringify(&#x539F;&#x5BF9;&#x8C61;))</span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x57FA;&#x7840;&#x7248;"><a href="#&#x57FA;&#x7840;&#x7248;" class="headerlink" title="&#x57FA;&#x7840;&#x7248;"></a>&#x57FA;&#x7840;&#x7248;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> deep_clone1 (<span class="built_in">source</span>) {</span><br><span class="line">  <span class="keyword">if</span> (typeof <span class="built_in">source</span> === <span class="string">&apos;object&apos;</span>) {</span><br><span class="line">    <span class="built_in">let</span> target = {}</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> key <span class="keyword">in</span> <span class="built_in">source</span>) {</span><br><span class="line">      target[key] = <span class="built_in">clone</span>(<span class="built_in">source</span>[key])</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">return</span> target</span><br><span class="line">  }<span class="keyword">else</span>{</span><br><span class="line">    <span class="built_in">return</span> <span class="built_in">source</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x4F46;&#x662F;&#x5F88;&#x663E;&#x7136;&#xFF0C;&#x8FD8;&#x5B58;&#x5728;&#x5F88;&#x591A;&#x95EE;&#x9898;&#xFF0C;&#x6BD4;&#x5982;&#x5E76;&#x6CA1;&#x6709;&#x8003;&#x8651;&#x6570;&#x7EC4;&#x3001;&#x5FAA;&#x73AF;&#x5F15;&#x7528;</p>
+<h3 id="&#x8003;&#x8651;&#x6570;&#x7EC4;"><a href="#&#x8003;&#x8651;&#x6570;&#x7EC4;" class="headerlink" title="&#x8003;&#x8651;&#x6570;&#x7EC4;"></a>&#x8003;&#x8651;&#x6570;&#x7EC4;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> deep_clone2 (<span class="built_in">source</span>) {</span><br><span class="line">  <span class="keyword">if</span> (typeof <span class="built_in">source</span> === <span class="string">&apos;object&apos;</span>) {</span><br><span class="line">    <span class="built_in">let</span> target = Array.isArray(<span class="built_in">source</span>) ? [] : {}</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> key <span class="keyword">in</span> <span class="built_in">source</span>) {</span><br><span class="line">      target[key] = <span class="built_in">clone</span>(<span class="built_in">source</span>[key])</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">return</span> target</span><br><span class="line">  }<span class="keyword">else</span>{</span><br><span class="line">    <span class="built_in">return</span> <span class="built_in">source</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x6570;&#x7EC4;&#x548C;&#x5BF9;&#x8C61;&#x7684;&#x904D;&#x5386;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x4E00;&#x81F4;&#xFF0C;&#x5C31;&#x662F;&#x5B58;&#x50A8;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x540C;&#xFF0C;[]&#x548C;{}</p>
+<h3 id="&#x5904;&#x7406;&#x5FAA;&#x73AF;&#x5F15;&#x7528;"><a href="#&#x5904;&#x7406;&#x5FAA;&#x73AF;&#x5F15;&#x7528;" class="headerlink" title="&#x5904;&#x7406;&#x5FAA;&#x73AF;&#x5F15;&#x7528;"></a>&#x5904;&#x7406;&#x5FAA;&#x73AF;&#x5F15;&#x7528;</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deep_clone3</span> <span class="params">(source, map = new Map()</span>) {</span></span><br><span class="line">  <span class="keyword">if</span> (typeof <span class="keyword">source</span> === <span class="string">&apos;object&apos;</span>) {</span><br><span class="line">    <span class="keyword">let</span> target = Array.isArray(<span class="keyword">source</span>) ? [] : {}</span><br><span class="line">    // &#x4E13;&#x95E8;&#x5904;&#x7406;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x95EE;&#x9898;&#xFF08;object&#x7C7B;&#x578B;)</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">map</span>.<span class="built_in">get</span>(<span class="keyword">source</span>)) {</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">map</span>.<span class="built_in">get</span>(<span class="keyword">source</span>)</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">map</span>.<span class="keyword">set</span>(<span class="keyword">source</span>, target)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key in <span class="keyword">source</span>) {</span><br><span class="line">      target[key] = deep_clone3(<span class="keyword">source</span>[key], <span class="keyword">map</span>)</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> target</span><br><span class="line">  }<span class="keyword">else</span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">source</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="&#x4F7F;&#x7528;WeakMap&#x753B;&#x9F99;&#x70B9;&#x775B;"><a href="#&#x4F7F;&#x7528;WeakMap&#x753B;&#x9F99;&#x70B9;&#x775B;" class="headerlink" title="&#x4F7F;&#x7528;WeakMap&#x753B;&#x9F99;&#x70B9;&#x775B;"></a>&#x4F7F;&#x7528;WeakMap&#x753B;&#x9F99;&#x70B9;&#x775B;</h3><p>WeakMap &#x5BF9;&#x8C61;&#x662F;&#x4E00;&#x7EC4;&#x952E;/&#x503C;&#x5BF9;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x952E;&#x662F;&#x5F31;&#x5F15;&#x7528;&#x7684;&#x3002;&#x5176;&#x952E;&#x5FC5;&#x987B;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x7684;&#x3002;</p>
+<p>&#x4EC0;&#x4E48;&#x662F;&#x5F31;&#x5F15;&#x7528;&#x5462;&#xFF1F;</p>
+<pre><code>&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x4E2D;&#xFF0C;&#x5F31;&#x5F15;&#x7528;&#x4E0E;&#x5F3A;&#x5F15;&#x7528;&#x76F8;&#x5BF9;&#xFF0C;&#x662F;&#x6307;&#x4E0D;&#x80FD;&#x786E;&#x4FDD;&#x5176;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x4E0D;&#x4F1A;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x56DE;&#x6536;&#x7684;&#x5F15;&#x7528;&#x3002; &#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x82E5;&#x53EA;&#x88AB;&#x5F31;&#x5F15;&#x7528;&#x6240;&#x5F15;&#x7528;&#xFF0C;&#x5219;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#xFF08;&#x6216;&#x5F31;&#x53EF;&#x8BBF;&#x95EE;&#xFF09;&#x7684;&#xFF0C;&#x5E76;&#x56E0;&#x6B64;&#x53EF;&#x80FD;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x523B;&#x88AB;&#x56DE;&#x6536;&#x3002;</code></pre><p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;<br>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;Map&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x8C61;&#x95F4;&#x662F;&#x5B58;&#x5728;&#x5F3A;&#x5F15;&#x7528;&#x5173;&#x7CFB;&#x7684;&#xFF1A;</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = { name : <span class="string">&apos;ConardLi&apos;</span>}</span><br><span class="line"><span class="keyword">const</span> target = <span class="keyword">new</span> Map();</span><br><span class="line">target.<span class="keyword">set</span>(obj,<span class="string">&apos;code&#x79D8;&#x5BC6;&#x82B1;&#x56ED;&apos;</span>);</span><br><span class="line">obj = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<p>&#x590D;&#x5236;&#x4EE3;&#x7801;&#x867D;&#x7136;&#x6211;&#x4EEC;&#x624B;&#x52A8;&#x5C06;obj&#xFF0C;&#x8FDB;&#x884C;&#x91CA;&#x653E;&#xFF0C;&#x7136;&#x662F;target&#x4F9D;&#x7136;&#x5BF9;obj&#x5B58;&#x5728;&#x5F3A;&#x5F15;&#x7528;&#x5173;&#x7CFB;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x90E8;&#x5206;&#x5185;&#x5B58;&#x4F9D;&#x7136;&#x65E0;&#x6CD5;&#x88AB;&#x91CA;&#x653E;&#x3002;<br>&#x518D;&#x6765;&#x770B;WeakMap&#xFF1A;</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = { name : <span class="string">&apos;ConardLi&apos;</span>}</span><br><span class="line"><span class="keyword">const</span> target = <span class="keyword">new</span> WeakMap();</span><br><span class="line">target.<span class="keyword">set</span>(obj,<span class="string">&apos;code&#x79D8;&#x5BC6;&#x82B1;&#x56ED;&apos;</span>);</span><br><span class="line">obj = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<p>&#x590D;&#x5236;&#x4EE3;&#x7801;&#x5982;&#x679C;&#x662F;WeakMap&#x7684;&#x8BDD;&#xFF0C;target&#x548C;obj&#x5B58;&#x5728;&#x7684;&#x5C31;&#x662F;&#x5F31;&#x5F15;&#x7528;&#x5173;&#x7CFB;&#xFF0C;&#x5F53;&#x4E0B;&#x4E00;&#x6B21;&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x8FD9;&#x5757;&#x5185;&#x5B58;&#x5C31;&#x4F1A;&#x88AB;&#x91CA;&#x653E;&#x6389;&#x3002;<br>&#x8BBE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x62F7;&#x8D1D;&#x7684;&#x5BF9;&#x8C61;&#x975E;&#x5E38;&#x5E9E;&#x5927;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;Map&#x4F1A;&#x5BF9;&#x5185;&#x5B58;&#x9020;&#x6210;&#x975E;&#x5E38;&#x5927;&#x7684;&#x989D;&#x5916;&#x6D88;&#x8017;&#xFF0C;&#x800C;&#x4E14;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x624B;&#x52A8;&#x6E05;&#x9664;Map&#x7684;&#x5C5E;&#x6027;&#x624D;&#x80FD;&#x91CA;&#x653E;&#x8FD9;&#x5757;&#x5185;&#x5B58;&#xFF0C;&#x800C;WeakMap&#x4F1A;&#x5E2E;&#x6211;&#x4EEC;&#x5DE7;&#x5999;&#x5316;&#x89E3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<blockquote>
+<p>&#x5F15;&#x7528;ConardLi&#xFF1A;<a href="https://juejin.im/post/5d6aa4f96fb9a06b112ad5b1" target="_blank" rel="noopener">https://juejin.im/post/5d6aa4f96fb9a06b112ad5b1</a></p>
+</blockquote>
+<h3 id="&#x6027;&#x80FD;&#x4F18;&#x5316;"><a href="#&#x6027;&#x80FD;&#x4F18;&#x5316;" class="headerlink" title="&#x6027;&#x80FD;&#x4F18;&#x5316;"></a>&#x6027;&#x80FD;&#x4F18;&#x5316;</h3><p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x904D;&#x5386;&#x6570;&#x7EC4;&#x548C;&#x5BF9;&#x8C61;&#x90FD;&#x4F7F;&#x7528;&#x4E86;for in&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;for in&#x5728;&#x904D;&#x5386;&#x65F6;&#x6548;&#x7387;&#x662F;&#x975E;&#x5E38;&#x4F4E;&#x7684;.&#x7ECF;&#x8FC7;&#x6BD4;&#x8F83;&#x6267;&#x884C;&#x6548;&#x7387; while &gt; for &gt; for in<br>&#x5148;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;forEach &#x5FAA;&#x73AF;&#xFF0C; iterate &#x662F;&#x904D;&#x5386;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C; &#x6BCF;&#x6B21;&#x63A5;&#x6536;value&#x548C;index&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="keyword">forEach</span>(arr, iterate) {</span><br><span class="line">  let <span class="keyword">index</span> = <span class="number">-1</span></span><br><span class="line">  const len = <span class="keyword">array</span>.length</span><br><span class="line">  <span class="keyword">while</span>(++<span class="keyword">index</span> &lt; len&gt;) {</span><br><span class="line">    iterate(<span class="keyword">array</span>[<span class="keyword">index</span>], <span class="keyword">index</span>)</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">array</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x7136;&#x540E;&#x5BF9;&#x4E4B;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x8C03;&#x6574;</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deep_clone3</span> <span class="params">(source, map = new Map()</span>) {</span></span><br><span class="line">  <span class="keyword">if</span> (typeof <span class="keyword">source</span> === <span class="string">&apos;object&apos;</span>) {</span><br><span class="line">    const isArray = Array.isArray(<span class="keyword">source</span>)</span><br><span class="line">    <span class="keyword">let</span> target = isArray ? [] : {}</span><br><span class="line">    // &#x4E13;&#x95E8;&#x5904;&#x7406;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x95EE;&#x9898;&#xFF08;object&#x7C7B;&#x578B;)</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">map</span>.<span class="built_in">get</span>(<span class="keyword">source</span>)) {</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">map</span>.<span class="built_in">get</span>(<span class="keyword">source</span>)</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">map</span>.<span class="keyword">set</span>(<span class="keyword">source</span>, target)</span><br><span class="line"></span><br><span class="line">    const <span class="built_in">keys</span> = isArray ? undefined ? Object.<span class="built_in">keys</span>(<span class="keyword">source</span>)</span><br><span class="line"></span><br><span class="line">    forEach(<span class="built_in">keys</span> || <span class="keyword">source</span>, (value, <span class="built_in">index</span>)) {</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">keys</span>) { // &#x5904;&#x7406;&#x5BF9;&#x8C61;&#xFF0C; value&#x5C31;&#x662F;&#x5BF9;&#x8C61;key</span><br><span class="line">        key = value</span><br><span class="line">      }</span><br><span class="line">      target[key] = deep_clone3(<span class="keyword">source</span>[key], <span class="keyword">map</span>)</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> target</span><br><span class="line">  }<span class="keyword">else</span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">source</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x5176;&#x4ED6;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a href="#&#x5176;&#x4ED6;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="&#x5176;&#x4ED6;&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>&#x5176;&#x4ED6;&#x6570;&#x636E;&#x7C7B;&#x578B;</h3><h4 id="&#x53EF;&#x7EE7;&#x7EED;&#x904D;&#x5386;&#x7684;&#x7C7B;&#x578B;"><a href="#&#x53EF;&#x7EE7;&#x7EED;&#x904D;&#x5386;&#x7684;&#x7C7B;&#x578B;" class="headerlink" title="&#x53EF;&#x7EE7;&#x7EED;&#x904D;&#x5386;&#x7684;&#x7C7B;&#x578B;"></a>&#x53EF;&#x7EE7;&#x7EED;&#x904D;&#x5386;&#x7684;&#x7C7B;&#x578B;</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mapTag = <span class="string">&apos;[object Map]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> setTag = <span class="string">&apos;[object Set]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> arrayTag = <span class="string">&apos;[object Array]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> objectTag = <span class="string">&apos;[object Object]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> argsTag = <span class="string">&apos;[object Arguments]&apos;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> deepTag = [mapTag, setTag, arrayTag, objectTag, argsTag];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">forEach</span>(<span class="params">array, iteratee</span>) </span>{</span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> length = array.length;</span><br><span class="line">    <span class="keyword">while</span> (++index &lt; length) {</span><br><span class="line">        iteratee(array[index], index);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isObject</span>(<span class="params">target</span>) </span>{</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">type</span> = <span class="keyword">typeof</span> target;</span><br><span class="line">    <span class="keyword">return</span> target !== <span class="literal">null</span> &amp;&amp; (<span class="keyword">type</span> === <span class="string">&apos;object&apos;</span> || <span class="keyword">type</span> === <span class="string">&apos;function&apos;</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getType</span>(<span class="params">target</span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(target);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInit</span>(<span class="params">target</span>) </span>{</span><br><span class="line">    <span class="keyword">const</span> Ctor = target.<span class="keyword">constructor</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Ctor();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">target, map = <span class="keyword">new</span> WeakMap()</span>) </span>{</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x514B;&#x9686;&#x539F;&#x59CB;&#x7C7B;&#x578B;</span></span><br><span class="line">    <span class="keyword">if</span> (!isObject(target)) {</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x521D;&#x59CB;&#x5316;</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">type</span> = getType(target);</span><br><span class="line">    <span class="keyword">let</span> cloneTarget;</span><br><span class="line">    <span class="keyword">if</span> (deepTag.includes(<span class="keyword">type</span>)) {</span><br><span class="line">        cloneTarget = getInit(target, <span class="keyword">type</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x9632;&#x6B62;&#x5FAA;&#x73AF;&#x5F15;&#x7528;</span></span><br><span class="line">    <span class="keyword">if</span> (map.get(target)) {</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    }</span><br><span class="line">    map.set(target, cloneTarget);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x514B;&#x9686;set</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">type</span> === setTag) {</span><br><span class="line">        target.forEach(<span class="function"><span class="params">value</span> =&gt;</span> {</span><br><span class="line">            cloneTarget.add(clone(value));</span><br><span class="line">        });</span><br><span class="line">        <span class="keyword">return</span> cloneTarget;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x514B;&#x9686;map</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">type</span> === mapTag) {</span><br><span class="line">        target.forEach(<span class="function">(<span class="params">value, key</span>) =&gt;</span> {</span><br><span class="line">            cloneTarget.set(key, clone(value));</span><br><span class="line">        });</span><br><span class="line">        <span class="keyword">return</span> cloneTarget;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x514B;&#x9686;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x7EC4;</span></span><br><span class="line">    <span class="keyword">const</span> keys = <span class="keyword">type</span> === arrayTag ? <span class="literal">undefined</span> : <span class="built_in">Object</span>.keys(target);</span><br><span class="line">    forEach(keys || target, <span class="function">(<span class="params">value, key</span>) =&gt;</span> {</span><br><span class="line">        <span class="keyword">if</span> (keys) {</span><br><span class="line">            key = value;</span><br><span class="line">        }</span><br><span class="line">        cloneTarget[key] = clone(target[key], map);</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> cloneTarget;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="&#x4E0D;&#x53EF;&#x7EE7;&#x7EED;&#x904D;&#x5386;&#x7684;&#x7C7B;&#x578B;"><a href="#&#x4E0D;&#x53EF;&#x7EE7;&#x7EED;&#x904D;&#x5386;&#x7684;&#x7C7B;&#x578B;" class="headerlink" title="&#x4E0D;&#x53EF;&#x7EE7;&#x7EED;&#x904D;&#x5386;&#x7684;&#x7C7B;&#x578B;"></a>&#x4E0D;&#x53EF;&#x7EE7;&#x7EED;&#x904D;&#x5386;&#x7684;&#x7C7B;&#x578B;</h4><p>Bool&#x3001;Number&#x3001;String&#x3001;Symbol&#x3001;Date&#x3001;Error&#x8FD9;&#x51E0;&#x79CD;&#x7C7B;&#x578B;&#x6211;&#x4EEC;&#x90FD;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x548C;&#x539F;&#x59CB;&#x6570;&#x636E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cloneOtherType</span>(<span class="params">targe, <span class="keyword">type</span></span>) </span>{</span><br><span class="line">    <span class="keyword">const</span> Ctor = targe.<span class="keyword">constructor</span>;</span><br><span class="line">    <span class="keyword">switch</span> (<span class="keyword">type</span>) {</span><br><span class="line">        <span class="keyword">case</span> boolTag:</span><br><span class="line">        <span class="keyword">case</span> numberTag:</span><br><span class="line">        <span class="keyword">case</span> stringTag:</span><br><span class="line">        <span class="keyword">case</span> errorTag:</span><br><span class="line">        <span class="keyword">case</span> dateTag:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Ctor(targe);</span><br><span class="line">        <span class="keyword">case</span> regexpTag:</span><br><span class="line">            <span class="keyword">return</span> cloneReg(targe);</span><br><span class="line">        <span class="keyword">case</span> symbolTag:</span><br><span class="line">            <span class="keyword">return</span> cloneSymbol(targe);</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cloneSymbol</span>(<span class="params">targe</span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>(Symbol.prototype.valueOf.call(targe));</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">&#x514B;&#x9686;&#x6B63;&#x5219;&#xFF1A;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cloneReg</span>(<span class="params">targe</span>) </span>{</span><br><span class="line">    <span class="keyword">const</span> reFlags = <span class="regexp">/\w*$/</span>;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">new</span> targe.<span class="keyword">constructor</span>(<span class="params">targe.source, reFlags.exec(targe)</span>);</span><br><span class="line">    result.lastIndex = targe.lastIndex;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">&#x4F5C;&#x8005;&#xFF1A;ConardLi</span><br><span class="line">&#x94FE;&#x63A5;&#xFF1A;https:<span class="comment">//juejin.im/post/5d6aa4f96fb9a06b112ad5b1</span></span><br><span class="line">&#x6765;&#x6E90;&#xFF1A;&#x6398;&#x91D1;</span><br><span class="line">&#x8457;&#x4F5C;&#x6743;&#x5F52;&#x4F5C;&#x8005;&#x6240;&#x6709;&#x3002;&#x5546;&#x4E1A;&#x8F6C;&#x8F7D;&#x8BF7;&#x8054;&#x7CFB;&#x4F5C;&#x8005;&#x83B7;&#x5F97;&#x6388;&#x6743;&#xFF0C;&#x975E;&#x5546;&#x4E1A;&#x8F6C;&#x8F7D;&#x8BF7;&#x6CE8;&#x660E;&#x51FA;&#x5904;&#x3002;</span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x5B8C;&#x6574;&#x7248;"><a href="#&#x5B8C;&#x6574;&#x7248;" class="headerlink" title="&#x5B8C;&#x6574;&#x7248;"></a>&#x5B8C;&#x6574;&#x7248;</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mapTag = <span class="string">&apos;[object Map]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> setTag = <span class="string">&apos;[object Set]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> arrayTag = <span class="string">&apos;[object Array]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> objectTag = <span class="string">&apos;[object Object]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> argsTag = <span class="string">&apos;[object Arguments]&apos;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> boolTag = <span class="string">&apos;[object Boolean]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> dateTag = <span class="string">&apos;[object Date]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> numberTag = <span class="string">&apos;[object Number]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> stringTag = <span class="string">&apos;[object String]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> symbolTag = <span class="string">&apos;[object Symbol]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> errorTag = <span class="string">&apos;[object Error]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> regexpTag = <span class="string">&apos;[object RegExp]&apos;</span>;</span><br><span class="line"><span class="keyword">const</span> funcTag = <span class="string">&apos;[object Function]&apos;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> deepTag = [mapTag, setTag, arrayTag, objectTag, argsTag];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">forEach</span>(<span class="params">array, iteratee</span>) </span>{</span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> length = array.length;</span><br><span class="line">    <span class="keyword">while</span> (++index &lt; length) {</span><br><span class="line">        iteratee(array[index], index);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isObject</span>(<span class="params">target</span>) </span>{</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">type</span> = <span class="keyword">typeof</span> target;</span><br><span class="line">    <span class="keyword">return</span> target !== <span class="literal">null</span> &amp;&amp; (<span class="keyword">type</span> === <span class="string">&apos;object&apos;</span> || <span class="keyword">type</span> === <span class="string">&apos;function&apos;</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getType</span>(<span class="params">target</span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(target);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInit</span>(<span class="params">target</span>) </span>{</span><br><span class="line">    <span class="keyword">const</span> Ctor = target.<span class="keyword">constructor</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Ctor();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cloneSymbol</span>(<span class="params">targe</span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>(Symbol.prototype.valueOf.call(targe));</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cloneReg</span>(<span class="params">targe</span>) </span>{</span><br><span class="line">    <span class="keyword">const</span> reFlags = <span class="regexp">/\w*$/</span>;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">new</span> targe.<span class="keyword">constructor</span>(<span class="params">targe.source, reFlags.exec(targe)</span>);</span><br><span class="line">    result.lastIndex = targe.lastIndex;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cloneFunction</span>(<span class="params">func</span>) </span>{</span><br><span class="line">    <span class="keyword">const</span> bodyReg = <span class="regexp">/(?&lt;={)(.|\n)+(?=})/m</span>;</span><br><span class="line">    <span class="keyword">const</span> paramReg = <span class="regexp">/(?&lt;=\().+(?=\)\s+{)/</span>;</span><br><span class="line">    <span class="keyword">const</span> funcString = func.toString();</span><br><span class="line">    <span class="keyword">if</span> (func.prototype) {</span><br><span class="line">        <span class="keyword">const</span> param = paramReg.exec(funcString);</span><br><span class="line">        <span class="keyword">const</span> body = bodyReg.exec(funcString);</span><br><span class="line">        <span class="keyword">if</span> (body) {</span><br><span class="line">            <span class="keyword">if</span> (param) {</span><br><span class="line">                <span class="keyword">const</span> paramArr = param[<span class="number">0</span>].split(<span class="string">&apos;,&apos;</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Function</span>(...paramArr, body[<span class="number">0</span>]);</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Function</span>(body[<span class="number">0</span>]);</span><br><span class="line">            }</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        }</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">eval</span>(funcString);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cloneOtherType</span>(<span class="params">targe, <span class="keyword">type</span></span>) </span>{</span><br><span class="line">    <span class="keyword">const</span> Ctor = targe.<span class="keyword">constructor</span>;</span><br><span class="line">    <span class="keyword">switch</span> (<span class="keyword">type</span>) {</span><br><span class="line">        <span class="keyword">case</span> boolTag:</span><br><span class="line">        <span class="keyword">case</span> numberTag:</span><br><span class="line">        <span class="keyword">case</span> stringTag:</span><br><span class="line">        <span class="keyword">case</span> errorTag:</span><br><span class="line">        <span class="keyword">case</span> dateTag:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Ctor(targe);</span><br><span class="line">        <span class="keyword">case</span> regexpTag:</span><br><span class="line">            <span class="keyword">return</span> cloneReg(targe);</span><br><span class="line">        <span class="keyword">case</span> symbolTag:</span><br><span class="line">            <span class="keyword">return</span> cloneSymbol(targe);</span><br><span class="line">        <span class="keyword">case</span> funcTag:</span><br><span class="line">            <span class="keyword">return</span> cloneFunction(targe);</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">target, map = <span class="keyword">new</span> WeakMap()</span>) </span>{</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x514B;&#x9686;&#x539F;&#x59CB;&#x7C7B;&#x578B;</span></span><br><span class="line">    <span class="keyword">if</span> (!isObject(target)) {</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x521D;&#x59CB;&#x5316;</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">type</span> = getType(target);</span><br><span class="line">    <span class="keyword">let</span> cloneTarget;</span><br><span class="line">    <span class="keyword">if</span> (deepTag.includes(<span class="keyword">type</span>)) {</span><br><span class="line">        cloneTarget = getInit(target, <span class="keyword">type</span>);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="keyword">return</span> cloneOtherType(target, <span class="keyword">type</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x9632;&#x6B62;&#x5FAA;&#x73AF;&#x5F15;&#x7528;</span></span><br><span class="line">    <span class="keyword">if</span> (map.get(target)) {</span><br><span class="line">        <span class="keyword">return</span> map.get(target);</span><br><span class="line">    }</span><br><span class="line">    map.set(target, cloneTarget);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x514B;&#x9686;set</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">type</span> === setTag) {</span><br><span class="line">        target.forEach(<span class="function"><span class="params">value</span> =&gt;</span> {</span><br><span class="line">            cloneTarget.add(clone(value, map));</span><br><span class="line">        });</span><br><span class="line">        <span class="keyword">return</span> cloneTarget;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x514B;&#x9686;map</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">type</span> === mapTag) {</span><br><span class="line">        target.forEach(<span class="function">(<span class="params">value, key</span>) =&gt;</span> {</span><br><span class="line">            cloneTarget.set(key, clone(value, map));</span><br><span class="line">        });</span><br><span class="line">        <span class="keyword">return</span> cloneTarget;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x514B;&#x9686;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x7EC4;</span></span><br><span class="line">    <span class="keyword">const</span> keys = <span class="keyword">type</span> === arrayTag ? <span class="literal">undefined</span> : <span class="built_in">Object</span>.keys(target);</span><br><span class="line">    forEach(keys || target, <span class="function">(<span class="params">value, key</span>) =&gt;</span> {</span><br><span class="line">        <span class="keyword">if</span> (keys) {</span><br><span class="line">            key = value;</span><br><span class="line">        }</span><br><span class="line">        cloneTarget[key] = clone(target[key], map);</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> cloneTarget;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = {</span><br><span class="line">    clone</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<p><img src="evernotecid://B523EDB5-ACD0-47DC-84DB-C3486D121165/appyinxiangcom/18473567/ENResource/p79" alt="dea1cd004b1671e6f32254abf47ee7d7.png"></p>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/12/27/%E7%BB%8F%E5%85%B8%E7%9A%84%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/">
+      经典的代码片段
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月27日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/12/27/%E7%BB%8F%E5%85%B8%E7%9A%84%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/" class="leancloud_visitors" data-flag-title="经典的代码片段">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/12/27/%E7%BB%8F%E5%85%B8%E7%9A%84%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/12/27/%E7%BB%8F%E5%85%B8%E7%9A%84%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="reduce&#x7528;&#x6765;&#x5220;&#x9664;&#x5BF9;&#x8C61;&#x7684;key-value"><a href="#reduce&#x7528;&#x6765;&#x5220;&#x9664;&#x5BF9;&#x8C61;&#x7684;key-value" class="headerlink" title="reduce&#x7528;&#x6765;&#x5220;&#x9664;&#x5BF9;&#x8C61;&#x7684;key-value"></a>reduce&#x7528;&#x6765;&#x5220;&#x9664;&#x5BF9;&#x8C61;&#x7684;key-value</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> clean = <span class="function">(<span class="params">obj</span>) =&gt;</span> {</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.keys(obj).reduce(<span class="function">(<span class="params">acc, key</span>) =&gt;</span> {</span><br><span class="line">        <span class="keyword">const</span> value = obj[key];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (value === <span class="literal">undefined</span> || value === <span class="literal">null</span>) {</span><br><span class="line">            <span class="keyword">return</span> acc;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(value) &amp;&amp; !value.length) {</span><br><span class="line">            <span class="keyword">return</span> acc;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (</span><br><span class="line">            <span class="built_in">Object</span>.prototype.toString.call(value) === <span class="string">&apos;[object Object]&apos;</span> &amp;&amp;</span><br><span class="line">            !<span class="built_in">Object</span>.keys(value).length</span><br><span class="line">        ) {</span><br><span class="line">            <span class="keyword">return</span> acc;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        acc[key] = value;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> acc;</span><br><span class="line">    }, {})</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(</span><br><span class="line">    clean({</span><br><span class="line">        name: <span class="string">&apos;sex&apos;</span>,</span><br><span class="line">        age: <span class="number">0</span>,</span><br><span class="line">        hubbies: [],</span><br><span class="line">        friends: <span class="literal">null</span>,</span><br><span class="line">        likes: {}</span><br><span class="line">    })</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> clean2 = <span class="function">(<span class="params">obj, keys= []</span>) =&gt;</span> {</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.keys(obj).reduce(<span class="function">(<span class="params">acc, key</span>) =&gt;</span> {</span><br><span class="line">        <span class="keyword">const</span> value = obj[key];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(keys.includes(key)) {</span><br><span class="line">            <span class="keyword">return</span> acc</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        acc[key] = value;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> acc;</span><br><span class="line">    }, {})</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(</span><br><span class="line">    clean2({</span><br><span class="line">        name: <span class="string">&apos;sex&apos;</span>,</span><br><span class="line">        age: <span class="number">0</span>,</span><br><span class="line">        hubbies: [],</span><br><span class="line">        friends: <span class="literal">null</span>,</span><br><span class="line">        likes: {}</span><br><span class="line">    }, [<span class="string">&apos;name&apos;</span>, <span class="string">&apos;sex&apos;</span>, <span class="string">&apos;likes&apos;</span>])</span><br><span class="line">    </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h1 id="when&#x64CD;&#x4F5C;"><a href="#when&#x64CD;&#x4F5C;" class="headerlink" title="when&#x64CD;&#x4F5C;"></a>when&#x64CD;&#x4F5C;</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">when(</span><br><span class="line">    condition,</span><br><span class="line">    whenTruthy = <span class="built_in">Function</span>.prototype,</span><br><span class="line">    whenFalsy = <span class="built_in">Function</span>.prototype,</span><br><span class="line">  ) {</span><br><span class="line">    <span class="keyword">if</span> (condition) {</span><br><span class="line">      whenTruthy(<span class="keyword">this</span>);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">      whenFalsy(<span class="keyword">this</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">  }</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/08/26/%E8%87%AA%E5%A2%9Eversion%E7%9A%84%E8%84%9A%E6%9C%AC/">
+      自增version的脚本
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年8月26日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/08/26/%E8%87%AA%E5%A2%9Eversion%E7%9A%84%E8%84%9A%E6%9C%AC/" class="leancloud_visitors" data-flag-title="自增version的脚本">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/08/26/%E8%87%AA%E5%A2%9Eversion%E7%9A%84%E8%84%9A%E6%9C%AC/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/08/26/%E8%87%AA%E5%A2%9Eversion%E7%9A%84%E8%84%9A%E6%9C%AC/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x5F00;&#x53D1;&#x4E00;&#x4E9B;&#x4E2A;npm&#x5305;&#x7684;&#x65F6;&#x5019;&#x7ECF;&#x5E38;&#x5FD8;&#x4E86;&#x66F4;&#x6539;version, &#x7136;&#x540E;&#x5199;&#x4E86;&#x4E2A;&#x6253;&#x5305;&#x65F6;&#x81EA;&#x589E;version&#x7684;&#x5C0F;&#x811A;&#x672C;</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &#x81EA;&#x52A8;&#x7684;&#x589E;&#x52A0;&#x4E00;&#x4E2A;version patch</span></span><br><span class="line"><span class="comment"> * version: major.minor.patch</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> fse = <span class="built_in">require</span>(<span class="string">&apos;fs-extra&apos;</span>)</span><br><span class="line"><span class="keyword">const</span> semver = <span class="built_in">require</span>(<span class="string">&apos;semver&apos;</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&apos;path&apos;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fileName = path.join(__dirname,<span class="string">&apos;../package.json&apos;</span>)</span><br><span class="line">fse.readJSON(fileName,{throws:<span class="literal">false</span>})</span><br><span class="line">.then(<span class="function"><span class="params">packageJson</span> =&gt;</span> {</span><br><span class="line">  packageJson.version = semver.inc(packageJson.version, <span class="string">&apos;patch&apos;</span>)</span><br><span class="line">  fse.writeJSONSync(fileName, packageJson, {spaces: <span class="string">&apos;  &apos;</span>, EOL: <span class="string">&apos;\n&apos;</span>,  encoding:<span class="string">&apos;utf-8&apos;</span>}, <span class="function"><span class="params">err</span> =&gt;</span>{</span><br><span class="line">    <span class="keyword">if</span>(err) {</span><br><span class="line">      <span class="built_in">console</span>.error(err)</span><br><span class="line">      process.exit(<span class="number">-1</span>)</span><br><span class="line">    }</span><br><span class="line">  })</span><br><span class="line">}).catch(<span class="function"><span class="params">err</span> =&gt;</span>{</span><br><span class="line">  <span class="built_in">console</span>.log(err);</span><br><span class="line">  process.exit(<span class="number">-1</span>)</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/08/16/%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/">
+      浏览器页面渲染过程
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年8月16日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/08/16/%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/" class="leancloud_visitors" data-flag-title="浏览器页面渲染过程">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/08/16/%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/08/16/%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x591A;&#x8FDB;&#x7A0B;&#x67B6;&#x6784;"><a href="#&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x591A;&#x8FDB;&#x7A0B;&#x67B6;&#x6784;" class="headerlink" title="&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x591A;&#x8FDB;&#x7A0B;&#x67B6;&#x6784;"></a>&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x591A;&#x8FDB;&#x7A0B;&#x67B6;&#x6784;</h2><p><img src="/2020/08/16/%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/image-20200816180907630.png" alt="image-20200816180907630"></p>
+<h2 id="&#x9875;&#x9762;&#x6E32;&#x67D3;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x7684;&#x6B65;&#x9AA4;"><a href="#&#x9875;&#x9762;&#x6E32;&#x67D3;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x7684;&#x6B65;&#x9AA4;" class="headerlink" title="&#x9875;&#x9762;&#x6E32;&#x67D3;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x7684;&#x6B65;&#x9AA4;"></a>&#x9875;&#x9762;&#x6E32;&#x67D3;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x7684;&#x6B65;&#x9AA4;</h2><p><img src="/2020/08/16/%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A1%B5%E9%9D%A2%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/image-20200816180946562.png" alt="image-20200816180946562"></p>
+<ol>
+<li>&#x7F51;&#x7EDC;&#x8FDB;&#x7A0B;&#x83B7;&#x53D6;&#x5230;html&#x4E4B;&#x540E;&#x901A;&#x8FC7;ipc&#x4F20;&#x9012;&#x5230;&#x6E32;&#x67D3;&#x5668;&#x4E3B;&#x8FDB;&#x7A0B;</li>
+<li>&#x89E3;&#x6790;html &#x521B;&#x5EFA;dom&#x6811;</li>
+<li>&#x89E3;&#x6790;css&#x8FDB;&#x884C;&#x6837;&#x5F0F;&#x8BA1;&#x7B97;</li>
+<li>&#x7ED3;&#x5408;dom&#x6811;&#x548C;&#x6837;&#x5F0F;&#x8BA1;&#x7B97;&#x540E;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x786E;&#x5B9A;&#x8282;&#x70B9;&#x7684;&#x5927;&#x5C0F;&#x548C;&#x4F4D;&#x7F6E;&#xFF0C;&#x5F62;&#x6210;layout tree</li>
+<li><strong>paint</strong> - &#x904D;&#x5386;layout tree &#x786E;&#x5B9A;&#x8282;&#x70B9;&#x7684;&#x7ED8;&#x5236;&#x987A;&#x5E8F;&#x5C42;&#x7EA7;&#x8868;</li>
+<li><strong>laryer</strong> - &#x5E03;&#x5C40; &#x7136;&#x540E;&#x6839;&#x636E;&#x4E3B;&#x8FDB;&#x7A0B;&#x5C06;layoutTree &#x548C;&#x7ED8;&#x5236;&#x4FE1;&#x606F;&#x8868;&#x4F20;&#x7ED9;&#x5408;&#x6210;&#x5668;&#x7EBF;&#x7A0B;</li>
+<li>&#x5408;&#x6210;&#x5668;&#x7EBF;&#x7A0B; - &#x5C06;&#x5F97;&#x5230;&#x7684;&#x4FE1;&#x606F;&#x5206;&#x56FE;&#x5C42;&#x5206;&#x6210;&#x66F4;&#x5C0F;&#x7684;&#x56FE;&#x5757;</li>
+<li>&#x6805;&#x683C;&#x7EBF;&#x7A0B; - &#x5C06;&#x66F4;&#x5C0F;&#x7684;&#x56FE;&#x5757;&#x8FDB;&#x884C;&#x6805;&#x683C;&#x5316;raster&#xFF0C;&#x8FD4;&#x8FD8;&#x7ED9;&#x5408;&#x6210;&#x5668;&#x7EBF;&#x7A0B;draw quads&#x56FE;&#x5757;&#x4FE1;&#x606F; &#x5B58;&#x50A8;&#x5728;GPU&#x4E2D;</li>
+<li>frame &#x5408;&#x6210;&#x5668;&#x5C06;&#x6805;&#x683C;&#x7EBF;&#x7A0B;&#x8FD4;&#x56DE;&#x7684;&#x56FE;&#x5757;&#x5408;&#x6210;&#x5E27;&#x4EA4;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x8FDB;&#x7A0B;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x8FDB;&#x7A0B; &#x6536;&#x5230;&#x4E00;&#x5E27;&#x7684;&#x56FE;&#x50CF;&#x540E;&#x4F20;&#x7ED9;GPU&#x8FDB;&#x884C;&#x6E32;&#x67D3;</li>
+</ol>
+<h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x907F;&#x514D;&#x5927;&#x91CF;&#x7684;&#x91CD;&#x6392;&#x548C;&#x91CD;&#x7ED8;&#xFF0C;&#x4EE5;&#x53CA;&#x4E3A;&#x5565;&#x4F7F;&#x7528;tranform&#x5C31;&#x597D;"><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x907F;&#x514D;&#x5927;&#x91CF;&#x7684;&#x91CD;&#x6392;&#x548C;&#x91CD;&#x7ED8;&#xFF0C;&#x4EE5;&#x53CA;&#x4E3A;&#x5565;&#x4F7F;&#x7528;tranform&#x5C31;&#x597D;" class="headerlink" title="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x907F;&#x514D;&#x5927;&#x91CF;&#x7684;&#x91CD;&#x6392;&#x548C;&#x91CD;&#x7ED8;&#xFF0C;&#x4EE5;&#x53CA;&#x4E3A;&#x5565;&#x4F7F;&#x7528;tranform&#x5C31;&#x597D;"></a>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x907F;&#x514D;&#x5927;&#x91CF;&#x7684;&#x91CD;&#x6392;&#x548C;&#x91CD;&#x7ED8;&#xFF0C;&#x4EE5;&#x53CA;&#x4E3A;&#x5565;&#x4F7F;&#x7528;tranform&#x5C31;&#x597D;</h2><p>&#x91CD;&#x6392;&#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x9875;&#x9762;&#x91CD;&#x65B0;&#x8D70;&#x4E00;&#x904D;&#x4E0A;&#x9762;&#x7684;&#x6240;&#x6709;&#x6D41;&#x7A0B;</p>
+<p>&#x91CD;&#x7ED8;&#x7684;&#x8BDD;&#xFF08;&#x6BD4;&#x5982;&#x6539;&#x989C;&#x8272;&#xFF09;&#xFF0C; &#x53EA;&#x8D70;&#x4E86;layout , layer &#x548C;&#x4E4B;&#x540E;&#x7684;&#x6D41;&#x7A0B;</p>
+<p>transform&#x7684;&#x8BDD;&#xFF0C; &#x4E0D;&#x5360;&#x7528;&#x4E3B;&#x7EBF;&#x7A0B;(&#x4E0D;&#x5361;&#x987F;)&#xFF0C;&#x76F4;&#x63A5;&#x5C31;&#x662F;&#x5408;&#x6210;&#x5668;&#x7EBF;&#x7A0B;&#x548C;&#x6805;&#x683C;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;(&#x5C11;&#x4E86;&#x5927;&#x91CF;&#x8BA1;&#x7B97;)</p>
+<h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;requestAnimationFrame&#x5462;"><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;requestAnimationFrame&#x5462;" class="headerlink" title="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;requestAnimationFrame&#x5462;"></a>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;requestAnimationFrame&#x5462;</h2><p>&#x6211;&#x4EEC;&#x90FD;&#x77E5;&#x9053;&#xFF0C;&#x9875;&#x9762;&#x7684;&#x5237;&#x65B0;&#x9891;&#x7387;&#x6700;&#x8D77;&#x7801;&#x8FBE;&#x5230;60ms&#x4E00;&#x5E27;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x624D;&#x4E0D;&#x4F1A;&#x89C9;&#x5F97;&#x9875;&#x9762;&#x5361;&#x987F;&#x3002;&#x5982;&#x679C;&#x8BF4;&#x6211;&#x4EEC;&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x6781;&#x5176;&#x8017;&#x8D39;&#x65F6;&#x95F4;&#x7684;js&#x64CD;&#x4F5C;&#xFF0C;&#x5BFC;&#x81F4;&#x4E0B;&#x4E00;&#x5E27;&#x5E94;&#x8BE5;&#x6E32;&#x67D3;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7531;&#x4E8E;js&#x8BA1;&#x7B97;&#x5360;&#x636E;&#x8FD9;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x90A3;&#x4E48;&#x539F;&#x672C;&#x7684;&#x90A3;&#x4E00;&#x5E27;&#x5E76;&#x6CA1;&#x6709;&#x6E32;&#x67D3;&#xFF0C;&#x8FD9;&#x79F0;&#x4E4B;&#x4E3A;&#x6389;&#x5E27;&#x3002;&#x4F7F;&#x7528;requestAnimationFrame&#x7684;&#x597D;&#x5904;&#x5C31;&#x662F;&#x5462;&#xFF0C; &#x4F1A;&#x5C06;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x4EFB;&#x52A1;&#x5206;&#x6563;&#x5230;&#x6BCF;&#x4E00;&#x5E27;&#x7684;&#x95F4;&#x9694;&#xFF0C;&#x5230;&#x4E86;&#x8BE5;&#x6E32;&#x67D3;&#x4E0B;&#x4E00;&#x5E27;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5148;&#x628A;&#x5DE5;&#x4F5C;&#x6682;&#x505C;&#x4E0B;&#x6765;&#xFF0C;&#x7B49;&#x5F85;&#x6E32;&#x67D3;&#x7ED3;&#x675F;&#x540E;&#x8BA1;&#x7B97;&#x8BA1;&#x7B97;&#xFF0C;&#x4ECE;&#x800C;&#x4E0D;&#x5F71;&#x54CD;&#x52A8;&#x753B;&#x7684;&#x6D41;&#x7A0B;</p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#x81EA;<a href="https://www.bilibili.com/video/BV1x54y1B7RE?from=search&amp;seid=4107892898942828381" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1x54y1B7RE?from=search&amp;seid=4107892898942828381</a></p>
+</blockquote>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/07/30/Vue%E6%98%AF%E4%BB%80%E4%B9%88/">
       Vue是什么
     </a>
   </h2>
@@ -347,7 +1367,7 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/vue/' rel="nofollow">
+    <a href='/categories/vue/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>vue</p>
     </a>
@@ -377,7 +1397,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2020/07/30/Vue%E6%98%AF%E4%BB%80%E4%B9%88/" class="leancloud_visitors" data-flag-title="Vue是什么">
+      <span id="/2020/07/30/Vue%E6%98%AF%E4%BB%80%E4%B9%88/" class="leancloud_visitors" data-flag-title="Vue是什么">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -392,9 +1412,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2020/07/30/Vue%E6%98%AF%E4%BB%80%E4%B9%88/#comments">
+  <a href="/2020/07/30/Vue%E6%98%AF%E4%BB%80%E4%B9%88/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/07/30/Vue%E6%98%AF%E4%BB%80%E4%B9%88/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/07/30/Vue%E6%98%AF%E4%BB%80%E4%B9%88/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -424,7 +1444,7 @@
     </div>
     
       
-        <a class= "readmore" href="/io/2020/07/30/Vue%E6%98%AF%E4%BB%80%E4%B9%88/">
+        <a class= "readmore" href="/2020/07/30/Vue%E6%98%AF%E4%BB%80%E4%B9%88/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
@@ -449,7 +1469,7 @@
         
           
   <h2 class="title">
-    <a href="/io/2020/07/08/video%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9/">
+    <a href="/2020/07/08/video%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9/">
       video基本知识点
     </a>
   </h2>
@@ -475,7 +1495,7 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>js知识库</p>
     </a>
@@ -505,7 +1525,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2020/07/08/video%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9/" class="leancloud_visitors" data-flag-title="video基本知识点">
+      <span id="/2020/07/08/video%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9/" class="leancloud_visitors" data-flag-title="video基本知识点">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -520,9 +1540,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2020/07/08/video%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9/#comments">
+  <a href="/2020/07/08/video%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/07/08/video%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/07/08/video%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -606,7 +1626,7 @@
     </div>
     
       
-        <a class= "readmore" href="/io/2020/07/08/video%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9/">
+        <a class= "readmore" href="/2020/07/08/video%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
@@ -631,131 +1651,7 @@
         
           
   <h2 class="title">
-    <a href="/io/2020/06/20/webpack%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
-      webpack运行机制
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/webpack/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>webpack</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月20日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2020/06/20/webpack%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="leancloud_visitors" data-flag-title="webpack运行机制">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2020/06/20/webpack%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/06/20/webpack%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2020/06/19/emit%E4%B8%AD%E6%98%AF%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E5%90%8E%E6%9C%BA%E4%BC%9A/">
+    <a href="/2020/06/19/emit%E4%B8%AD%E6%98%AF%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E5%90%8E%E6%9C%BA%E4%BC%9A/">
       emit中是修改文件的最后机会
     </a>
   </h2>
@@ -781,9 +1677,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+    <a href='/categories/webpack/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>js知识库</p>
+      <p>webpack</p>
     </a>
   </div>
 
@@ -811,7 +1707,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2020/06/19/emit%E4%B8%AD%E6%98%AF%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E5%90%8E%E6%9C%BA%E4%BC%9A/" class="leancloud_visitors" data-flag-title="emit中是修改文件的最后机会">
+      <span id="/2020/06/19/emit%E4%B8%AD%E6%98%AF%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E5%90%8E%E6%9C%BA%E4%BC%9A/" class="leancloud_visitors" data-flag-title="emit中是修改文件的最后机会">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -826,9 +1722,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2020/06/19/emit%E4%B8%AD%E6%98%AF%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E5%90%8E%E6%9C%BA%E4%BC%9A/#comments">
+  <a href="/2020/06/19/emit%E4%B8%AD%E6%98%AF%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E5%90%8E%E6%9C%BA%E4%BC%9A/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/06/19/emit%E4%B8%AD%E6%98%AF%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E5%90%8E%E6%9C%BA%E4%BC%9A/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/06/19/emit%E4%B8%AD%E6%98%AF%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E5%90%8E%E6%9C%BA%E4%BC%9A/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -868,795 +1764,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2020/06/19/%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F%E4%B8%8B%E8%8E%B7%E5%8F%96%E5%88%B0%E6%9B%B4%E6%94%B9%E7%9A%84%E6%96%87%E4%BB%B6/">
-      监听模式下获取到更改的文件
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/webpack/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>webpack</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月19日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2020/06/19/%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F%E4%B8%8B%E8%8E%B7%E5%8F%96%E5%88%B0%E6%9B%B4%E6%94%B9%E7%9A%84%E6%96%87%E4%BB%B6/" class="leancloud_visitors" data-flag-title="监听模式下获取到更改的文件">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2020/06/19/%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F%E4%B8%8B%E8%8E%B7%E5%8F%96%E5%88%B0%E6%9B%B4%E6%94%B9%E7%9A%84%E6%96%87%E4%BB%B6/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/06/19/%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F%E4%B8%8B%E8%8E%B7%E5%8F%96%E5%88%B0%E6%9B%B4%E6%94%B9%E7%9A%84%E6%96%87%E4%BB%B6/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x76F4;&#x5230;&#x89E6;&#x53D1;&#x6B64;&#x6B21; <strong>compilation</strong> &#x7684;&#x6587;&#x4EF6;&#x662F;&#x54EA;&#x4E2A;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;<strong>watch</strong> &#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x6DFB;&#x52A0;<strong>watchRun</strong> &#x94A9;&#x5B50;&#x51FD;&#x6570;&#xFF0C;&#x83B7;&#x5F97;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">myWebpackPlugin.prototype.apply = <span class="function"><span class="keyword">function</span>(<span class="params">compiler</span>) </span>{</span><br><span class="line">  compiler.hooks.watchRun.tapAsync(<span class="string">&apos;watchRun&apos;</span>, (compiler, callback) =&gt; {</span><br><span class="line">    <span class="comment">// &#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x66F4;&#x6539;&#x7684;&#x6587;&#x4EF6;, &#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x505A;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x4E8B;&#x60C5;</span></span><br><span class="line">    <span class="built_in">console</span>.log(compiler.watchFileSystem.watcher.mtimes)</span><br><span class="line">    callback()</span><br><span class="line">  })</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2020/05/26/iview%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/">
-      iview组件探索
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>js知识库</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年5月25日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2020/05/26/iview%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/" class="leancloud_visitors" data-flag-title="iview组件探索">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2020/05/26/iview%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/05/26/iview%E7%BB%84%E4%BB%B6%E6%8E%A2%E7%B4%A2/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="directives"><a href="#directives" class="headerlink" title="directives"></a>directives</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">&apos;clickoutside&apos;</span>, {</span><br><span class="line">  bind (el, binding,  vnode) {</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">documentHandler</span>(<span class="params">e</span>)</span>{</span><br><span class="line">      <span class="keyword">if</span>(el.contains(e.target)) {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span>(binding.value) {</span><br><span class="line">        binding.value(e)</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    el.__vueClickOutside__ = documentHandler</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">&apos;click&apos;</span>, documentHandler)</span><br><span class="line">  },</span><br><span class="line">  unbind(el, binding){</span><br><span class="line">    <span class="built_in">document</span>.removeEventListener(<span class="string">&apos;click&apos;</span>, el.__vueClickOutside__)</span><br><span class="line">    <span class="keyword">delete</span> el.__vueClickOutside__</span><br><span class="line">  }</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
-
-<h3 id="utils"><a href="#utils" class="headerlink" title="utils"></a>utils</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">camelcaseToHyphen</span> (<span class="params">str</span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/([a-z])([A-Z])/g</span>, <span class="string">&apos;$1-$2&apos;</span>).toLowerCase();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">scrollTop</span>(<span class="params">el, from = <span class="number">0</span>, to, duration = <span class="number">500</span>, endCallback</span>) </span>{</span><br><span class="line">	  <span class="keyword">let</span> ratio = <span class="number">50</span>; <span class="comment">// &#x968F;&#x610F;&#x8BBE;&#x7F6E;&#x7684;&#x56E0;&#x5B50;&#xFF0C;&#x6839;&#x636E;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x8BBE;&#x7F6E;&#x7684;&#xFF0C;&#x65E0;&#x5B9E;&#x9645;&#x903B;&#x8F91;&#x610F;&#x4E49;&#xFF0C;&#x65E0;&#x9700;&#x7EA0;&#x7ED3;</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (!<span class="built_in">window</span>.requestAnimationFrame) {</span><br><span class="line">        <span class="built_in">window</span>.requestAnimationFrame = (</span><br><span class="line">          <span class="built_in">window</span>.webkitRequestAnimationFrame ||</span><br><span class="line">          <span class="built_in">window</span>.mozRequestAnimationFrame ||</span><br><span class="line">          <span class="built_in">window</span>.msRequestAnimationFrame ||</span><br><span class="line">          <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>{</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">window</span>.setTimeout(callback, <span class="number">1000</span> / <span class="number">60</span>);</span><br><span class="line">          }</span><br><span class="line">        );</span><br><span class="line">      }</span><br><span class="line">      <span class="keyword">const</span> difference = <span class="built_in">Math</span>.abs(<span class="keyword">from</span> - to);</span><br><span class="line">      <span class="keyword">const</span> step = <span class="built_in">Math</span>.ceil(difference / duration * ratio);</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">scroll</span>(<span class="params">start, end, step</span>) </span>{</span><br><span class="line">        <span class="keyword">if</span> (start === end) {</span><br><span class="line">          endCallback &amp;&amp; endCallback();</span><br><span class="line">          <span class="keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> d = (start + step &gt; end) ? end : start + step;</span><br><span class="line">        <span class="keyword">if</span> (start &gt; end) {</span><br><span class="line">          d = (start - step &lt; end) ? end : start - step;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (el === <span class="built_in">window</span>) {</span><br><span class="line">          <span class="built_in">window</span>.scrollTo(d, d);</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">          el.scrollTop = d;</span><br><span class="line">        }</span><br><span class="line">        <span class="built_in">window</span>.requestAnimationFrame(<span class="function"><span class="params">()</span> =&gt;</span> scroll(d, end, step));</span><br><span class="line">      }</span><br><span class="line">      scroll(<span class="keyword">from</span>, to, step);</span><br><span class="line">    }</span><br></pre></td></tr></table></figure>
-
-<h3 id="&#x67E5;&#x627E;&#x7EC4;&#x4EF6;&#x7684;&#x76F8;&#x5173;&#x51FD;&#x6570;"><a href="#&#x67E5;&#x627E;&#x7EC4;&#x4EF6;&#x7684;&#x76F8;&#x5173;&#x51FD;&#x6570;" class="headerlink" title="&#x67E5;&#x627E;&#x7EC4;&#x4EF6;&#x7684;&#x76F8;&#x5173;&#x51FD;&#x6570;"></a>&#x67E5;&#x627E;&#x7EC4;&#x4EF6;&#x7684;&#x76F8;&#x5173;&#x51FD;&#x6570;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findComponentDownward</span>(<span class="params">context, componentName</span>) </span>{</span><br><span class="line">  <span class="keyword">const</span> childrens = context.children</span><br><span class="line">  <span class="keyword">let</span> children = <span class="literal">null</span></span><br><span class="line">  <span class="keyword">if</span>(childrens.length) {</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> child <span class="keyword">of</span> childrens) {</span><br><span class="line">      <span class="keyword">const</span> {name} = child.$options</span><br><span class="line">      <span class="keyword">if</span>(name === componentName) {</span><br><span class="line">        children = child</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">      }<span class="keyword">else</span>{</span><br><span class="line">        <span class="comment">// &#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;</span></span><br><span class="line">        children = findComponentDownward(child, componentName)</span><br><span class="line">        <span class="keyword">if</span>(children) <span class="keyword">break</span></span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> children</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// ignoreComponnetNames&#x6307;&#x7684;&#x662F;&#x4E0D;&#x518D;&#x5F80;&#x4E0B;&#x627E;&#x4E86;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findComponentsDownward</span>(<span class="params">context, componentName, ignoreComponnetNames = []</span>)</span>{</span><br><span class="line">  <span class="keyword">if</span>(!<span class="built_in">Array</span>.isArray(ignoreComponnetNames)) {</span><br><span class="line">    ignoreComponnetNames = [ignoreComponnetNames]</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> context.$children.reduce(<span class="function">(<span class="params">components, child</span>) =&gt;</span> {</span><br><span class="line">    <span class="keyword">if</span>(child.$options.name === componentName) {</span><br><span class="line">      components.push(child)</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span>(ignoreComponnetNames.indexOf(child.$options.name) &lt; <span class="number">0</span>) {</span><br><span class="line">      <span class="keyword">const</span> foundChilds = findComponentDownward(child, componentName)</span><br><span class="line">      <span class="keyword">return</span> components.concat(foundChilds)</span><br><span class="line">    }<span class="keyword">else</span>{</span><br><span class="line">      <span class="keyword">return</span> components</span><br><span class="line">    }</span><br><span class="line">  }, [])</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findComponentUpward</span>(<span class="params">context, componentName</span>) </span>{</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> componentName === <span class="string">&apos;string&apos;</span>) {</span><br><span class="line">    componentNames = [componentName]</span><br><span class="line">  }<span class="keyword">else</span>{</span><br><span class="line">    componentNames = componentName</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">let</span> parent = context.$parent</span><br><span class="line">  <span class="keyword">let</span> name = parent.$options.name</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span>(parent &amp;&amp; (!name || componentNames.indexOf(componentName)&lt;<span class="number">0</span>)){</span><br><span class="line">    parent = parent.$parent</span><br><span class="line">    <span class="keyword">if</span>(parent) name = parent.$optins.name</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> parent</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#x9012;&#x5F52;&#x5411;&#x4E0A;&#x67E5;&#x627E;</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findComponentsUpward</span>(<span class="params">context, componentName, ignoreComponnetNames</span>) </span>{</span><br><span class="line">  <span class="keyword">let</span> parents = []</span><br><span class="line">  <span class="keyword">const</span> parent = context.$parent</span><br><span class="line">  <span class="keyword">if</span>(parent) {</span><br><span class="line">    <span class="keyword">if</span>(parent.$options.name === componentName) parents.push(parent)</span><br><span class="line">    <span class="keyword">return</span> parents.concat(findComponentsDownward(parent, componentName))</span><br><span class="line">  }<span class="keyword">else</span>{</span><br><span class="line">    <span class="keyword">return</span> []</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findBrothersComponents</span> (<span class="params">context, componentName, exceptMe = ture</span>) </span>{</span><br><span class="line">  <span class="keyword">let</span> res = context.$parent.$children.filter(<span class="function"><span class="params">item</span> =&gt;</span> {</span><br><span class="line">    <span class="keyword">return</span> item.$options.name === componentName</span><br><span class="line">  })</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> index = res.findIndex(<span class="function"><span class="params">item</span> =&gt;</span> item._uid === context._uid)</span><br><span class="line">  <span class="keyword">if</span>(exceptMe) res.splice(index,<span class="number">1</span>)</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="dom-&#x4E0A;&#x6DFB;&#x52A0;&#x76D1;&#x542C;&#x548C;&#x79FB;&#x9664;&#x76D1;&#x542C;&#x7684;&#x7B80;&#x5355;&#x5C01;&#x88C5;"><a href="#dom-&#x4E0A;&#x6DFB;&#x52A0;&#x76D1;&#x542C;&#x548C;&#x79FB;&#x9664;&#x76D1;&#x542C;&#x7684;&#x7B80;&#x5355;&#x5C01;&#x88C5;" class="headerlink" title="dom &#x4E0A;&#x6DFB;&#x52A0;&#x76D1;&#x542C;&#x548C;&#x79FB;&#x9664;&#x76D1;&#x542C;&#x7684;&#x7B80;&#x5355;&#x5C01;&#x88C5;"></a>dom &#x4E0A;&#x6DFB;&#x52A0;&#x76D1;&#x542C;&#x548C;&#x79FB;&#x9664;&#x76D1;&#x542C;&#x7684;&#x7B80;&#x5355;&#x5C01;&#x88C5;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> on = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">document</span>.addEventListener) {</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">element, event, handler, useCapture = true</span>) </span>{</span><br><span class="line">      element.addEventListener(event, handler, useCapture)</span><br><span class="line">    }</span><br><span class="line">  }<span class="keyword">else</span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">element, event, handler</span>) </span>{</span><br><span class="line">      <span class="keyword">if</span>(element &amp;&amp; event &amp;&amp; handler) {</span><br><span class="line">        element.attchEvent(<span class="string">&apos;on&apos;</span>+ event, handler)</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">})()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> off = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">document</span>.removeEventListener) {</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">element, event, handler, useCapture = true</span>) </span>{</span><br><span class="line">      element.removeEventListener(event, handler, useCapture)</span><br><span class="line">    }</span><br><span class="line">  }<span class="keyword">else</span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">element, event, handler</span>) </span>{</span><br><span class="line">      <span class="keyword">if</span>(element &amp;&amp; event &amp;&amp; handler) {</span><br><span class="line">        element.detachEvent(<span class="string">&apos;on&apos;</span>+ event, handler)</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">})()</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2020/05/02/git-reset%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
-      git-reset的基本操作
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/git/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>git</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年5月2日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2020/05/02/git-reset%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="leancloud_visitors" data-flag-title="git-reset的基本操作">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2020/05/02/git-reset%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/05/02/git-reset%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#x6709;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x7528;Git&#x7684;&#x65F6;&#x5019;&#x6709;&#x53EF;&#x80FD;commit&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x540E;&#xFF0C;&#x53D1;&#x73B0;&#x8FD9;&#x4E00;&#x6B21;commit&#x7684;&#x5185;&#x5BB9;&#x662F;&#x6709;&#x9519;&#x8BEF;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x6709;&#x4E24;&#x79CD;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#xFF1A;<br> 1&#x3001;&#x4FEE;&#x6539;&#x9519;&#x8BEF;&#x5185;&#x5BB9;&#xFF0C;&#x518D;&#x6B21;commit&#x4E00;&#x6B21; 2&#x3001;&#x4F7F;&#x7528;<strong>git reset</strong> &#x547D;&#x4EE4;&#x64A4;&#x9500;&#x8FD9;&#x4E00;&#x6B21;&#x9519;&#x8BEF;&#x7684;commit<br> &#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x6BD4;&#x8F83;&#x76F4;&#x63A5;&#xFF0C;&#x4F46;&#x4F1A;&#x591A;&#x6B21;&#x4E00;&#x6B21;commit&#x8BB0;&#x5F55;&#x3002;<br> &#x800C;&#x6211;&#x4E2A;&#x4EBA;&#x66F4;&#x503E;&#x5411;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x9519;&#x8BEF;&#x7684;commit&#x6CA1;&#x5FC5;&#x8981;&#x4FDD;&#x7559;&#x4E0B;&#x6765;&#x3002;<br> &#x90A3;&#x4E48;&#x4ECA;&#x5929;&#x6765;&#x8BF4;&#x4E00;&#x4E0B;<strong>git reset</strong>&#x3002;&#x5B83;&#x7684;&#x4E00;&#x53E5;&#x8BDD;&#x6982;&#x62EC;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git-reset - Reset current HEAD to the specified state</span><br></pre></td></tr></table></figure>
-
-<p>&#x610F;&#x601D;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x8BA9;HEAD&#x8FD9;&#x4E2A;&#x6307;&#x9488;&#x6307;&#x5411;&#x5176;&#x4ED6;&#x7684;&#x5730;&#x65B9;&#x3002;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x6B21;commit&#x4E0D;&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x6EE1;&#x610F;&#xFF0C;&#x9700;&#x8981;&#x56DE;&#x5230;&#x4E0A;&#x4E00;&#x6B21;&#x7684;Commit&#x91CC;&#x9762;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x901A;&#x8FC7;reset&#xFF0C;&#x628A;HEAD&#x6307;&#x9488;&#x6307;&#x5411;&#x4E0A;&#x4E00;&#x6B21;&#x7684;commit&#x7684;&#x70B9;&#x3002;<br> &#x5B83;&#x6709;&#x4E09;&#x79CD;&#x6A21;&#x5F0F;&#xFF0C;soft,mixed,hard&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x4E0B;&#x9762;&#x8FD9;&#x5F20;&#x56FE;&#xFF0C;&#x5C55;&#x793A;&#x7684;&#x5F88;&#x5168;&#x9762;&#x4E86;&#x3002;</p>
-<p><img src="/io/2020/05/02/git-reset%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20200502123630313.png" alt="image-20200502123630313"></p>
-<h3 id="reset-&#x4E0D;&#x52A0;&#x53C2;&#x6570;-mixed-&#xFF1A;&#x4FDD;&#x7559;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x6E05;&#x7A7A;&#x6682;&#x5B58;&#x533A;"><a href="#reset-&#x4E0D;&#x52A0;&#x53C2;&#x6570;-mixed-&#xFF1A;&#x4FDD;&#x7559;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x6E05;&#x7A7A;&#x6682;&#x5B58;&#x533A;" class="headerlink" title="reset &#x4E0D;&#x52A0;&#x53C2;&#x6570;(mixed)&#xFF1A;&#x4FDD;&#x7559;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x6E05;&#x7A7A;&#x6682;&#x5B58;&#x533A;"></a>reset &#x4E0D;&#x52A0;&#x53C2;&#x6570;(mixed)&#xFF1A;&#x4FDD;&#x7559;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x6E05;&#x7A7A;&#x6682;&#x5B58;&#x533A;</h3><pre><code>reset &#x5982;&#x679C;&#x4E0D;&#x52A0;&#x53C2;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528; --mixed &#x53C2;&#x6570;&#x3002;&#x5B83;&#x7684;&#x884C;&#x4E3A;&#x662F;&#xFF1A;&#x4FDD;&#x7559;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x4E14;&#x6E05;&#x7A7A;&#x6682;&#x5B58;&#x533A;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x7684;&#x4FEE;&#x6539;&#x3001;&#x6682;&#x5B58;&#x533A;&#x7684;&#x5185;&#x5BB9;&#x4EE5;&#x53CA;&#x7531; reset &#x6240;&#x5BFC;&#x81F4;&#x7684;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x5DEE;&#x5F02;&#xFF0C;&#x90FD;&#x4F1A;&#x88AB;&#x653E;&#x8FDB;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x3002;&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x5C31;&#x662F;&#x300C;&#x628A;&#x6240;&#x6709;&#x5DEE;&#x5F02;&#x90FD;&#x6DF7;&#x5408;&#xFF08;mixed&#xFF09;&#x653E;&#x5728;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x4E2D;&#x300D;&#x3002;</code></pre><h3 id="reset-&#x2013;soft"><a href="#reset-&#x2013;soft" class="headerlink" title="reset &#x2013;soft"></a>reset &#x2013;soft</h3><pre><code>&#x4FDD;&#x7559;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x628A;&#x91CD;&#x7F6E; HEAD &#x6240;&#x5E26;&#x6765;&#x7684;&#x65B0;&#x7684;&#x5DEE;&#x5F02;&#x653E;&#x8FDB;&#x6682;&#x5B58;&#x533A;(staged)</code></pre><h3 id="reset-&#x2013;hard-&#x91CD;&#x7F6E;stage&#x533A;&#x548C;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;"><a href="#reset-&#x2013;hard-&#x91CD;&#x7F6E;stage&#x533A;&#x548C;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;" class="headerlink" title="reset &#x2013;hard  &#x91CD;&#x7F6E;stage&#x533A;&#x548C;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;"></a>reset &#x2013;hard  &#x91CD;&#x7F6E;stage&#x533A;&#x548C;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</h3><pre><code>reset --hard &#x4F1A;&#x5728;&#x91CD;&#x7F6E; HEAD &#x548C;branch&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x91CD;&#x7F6E;stage&#x533A;&#x548C;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x91CC;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x5F53;&#x4F60;&#x5728; reset &#x540E;&#x9762;&#x52A0;&#x4E86; --hard &#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x4F60;&#x7684;stage&#x533A;&#x548C;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x91CC;&#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x88AB;&#x5B8C;&#x5168;&#x91CD;&#x7F6E;&#x4E3A;&#x548C;HEAD&#x7684;&#x65B0;&#x4F4D;&#x7F6E;&#x76F8;&#x540C;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x4F60;&#x7684;&#x6CA1;&#x6709;commit&#x7684;&#x4FEE;&#x6539;&#x4F1A;&#x88AB;&#x5168;&#x90E8;&#x64E6;&#x6389;&#x3002;</code></pre>
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2020/05/02/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
-      git基本操作
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/git/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>git</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年5月2日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2020/05/02/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="leancloud_visitors" data-flag-title="git基本操作">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2020/05/02/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/05/02/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="&#x6700;&#x8FD1;&#x4E00;&#x6B21;-Commit-&#x7684;&#x4EE3;&#x7801;&#x6709;&#x95EE;&#x9898;"><a href="#&#x6700;&#x8FD1;&#x4E00;&#x6B21;-Commit-&#x7684;&#x4EE3;&#x7801;&#x6709;&#x95EE;&#x9898;" class="headerlink" title="&#x6700;&#x8FD1;&#x4E00;&#x6B21; Commit &#x7684;&#x4EE3;&#x7801;&#x6709;&#x95EE;&#x9898;"></a>&#x6700;&#x8FD1;&#x4E00;&#x6B21; Commit &#x7684;&#x4EE3;&#x7801;&#x6709;&#x95EE;&#x9898;</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span> &#x6211;&#x662F;&#x4FEE;&#x6539;&#x5185;&#x5BB9;.txt</span><br><span class="line">git <span class="keyword">commit</span> <span class="comment">--amend</span></span><br></pre></td></tr></table></figure>
-<p>&#x3010;amend&#x3011;&#x4FEE;&#x6B63;&#xFF0C;&#x4F1A;&#x5BF9;&#x6700;&#x65B0;&#x4E00;&#x6761; commit &#x8FDB;&#x884C;&#x4FEE;&#x6B63;&#xFF0C;&#x4F1A;&#x628A;&#x5F53;&#x524D; commit &#x91CC;&#x7684;&#x5185;&#x5BB9;&#x548C;&#x6682;&#x5B58;&#x533A;&#xFF08;stageing area&#xFF09;&#x91CC;&#x7684;&#x5185;&#x5BB9;&#x5408;&#x5E76;&#x8D77;&#x6765;&#x540E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; commit&#xFF0C;&#x7528;&#x8FD9;&#x4E2A;&#x65B0;&#x7684; commit &#x628A;&#x5F53;&#x524D; commit &#x66FF;&#x6362;&#x6389;&#x3002;</p>
-<p>&#x8F93;&#x5165;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x540E;&#xFF0C;Git &#x4F1A;&#x8FDB;&#x5165;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&#x7F16;&#x8F91;&#x754C;&#x9762;&#xFF0C;&#x7136;&#x540E;&#x4F60;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x7684; changeId&#xFF0C;&#x5E76;&#x4E14;&#x4FEE;&#x6539;&#x6216;&#x8005;&#x4FDD;&#x7559;&#x4E4B;&#x524D;&#x7684;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&#xFF0C;:wq &#x4FDD;&#x5B58;&#x6309;&#x4E0B;&#x56DE;&#x8F66;&#x540E;&#xFF0C;&#x4F60;&#x7684; commit &#x5C31;&#x88AB;&#x66F4;&#x65B0;&#x4E86;&#x3002;<br>&#x5BF9;&#x4E8E; amend &#x8FD8;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x51E0;&#x79CD;&#x5C0F;&#x95EE;&#x9898;&#xFF0C;&#x4E0B;&#x9762;&#x5217;&#x4E3E;&#x4E0B;&#xFF1A;</p>
-<h4 id="&#x521A;&#x521A;&#x5199;&#x7684;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x60F3;&#x4FEE;&#x6539;&#x600E;&#x4E48;&#x529E;&#xFF1F;"><a href="#&#x521A;&#x521A;&#x5199;&#x7684;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x60F3;&#x4FEE;&#x6539;&#x600E;&#x4E48;&#x529E;&#xFF1F;" class="headerlink" title="&#x521A;&#x521A;&#x5199;&#x7684;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x60F3;&#x4FEE;&#x6539;&#x600E;&#x4E48;&#x529E;&#xFF1F;"></a>&#x521A;&#x521A;&#x5199;&#x7684;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x60F3;&#x4FEE;&#x6539;&#x600E;&#x4E48;&#x529E;&#xFF1F;</h4><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git </span><span class="string">commit </span><span class="built_in">--amend</span> -m <span class="string">&quot;&#x65B0;&#x7684;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="&#x521A;&#x521A;&#x63D0;&#x4EA4;&#x5B8C;&#x4EE3;&#x7801;&#x53D1;&#x73B0;&#xFF0C;&#x6211;&#x6709;&#x4E2A;&#x6587;&#x4EF6;&#x6CA1;&#x4FDD;&#x5B58;&#xFF0C;&#x6F0F;&#x4E86;&#x63D0;&#x4EA4;&#x4E0A;&#x53BB;&#x600E;&#x4E48;&#x529E;&#xFF1F;"><a href="#&#x521A;&#x521A;&#x63D0;&#x4EA4;&#x5B8C;&#x4EE3;&#x7801;&#x53D1;&#x73B0;&#xFF0C;&#x6211;&#x6709;&#x4E2A;&#x6587;&#x4EF6;&#x6CA1;&#x4FDD;&#x5B58;&#xFF0C;&#x6F0F;&#x4E86;&#x63D0;&#x4EA4;&#x4E0A;&#x53BB;&#x600E;&#x4E48;&#x529E;&#xFF1F;" class="headerlink" title="&#x521A;&#x521A;&#x63D0;&#x4EA4;&#x5B8C;&#x4EE3;&#x7801;&#x53D1;&#x73B0;&#xFF0C;&#x6211;&#x6709;&#x4E2A;&#x6587;&#x4EF6;&#x6CA1;&#x4FDD;&#x5B58;&#xFF0C;&#x6F0F;&#x4E86;&#x63D0;&#x4EA4;&#x4E0A;&#x53BB;&#x600E;&#x4E48;&#x529E;&#xFF1F;"></a>&#x521A;&#x521A;&#x63D0;&#x4EA4;&#x5B8C;&#x4EE3;&#x7801;&#x53D1;&#x73B0;&#xFF0C;&#x6211;&#x6709;&#x4E2A;&#x6587;&#x4EF6;&#x6CA1;&#x4FDD;&#x5B58;&#xFF0C;&#x6F0F;&#x4E86;&#x63D0;&#x4EA4;&#x4E0A;&#x53BB;&#x600E;&#x4E48;&#x529E;&#xFF1F;</h4><p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x518D;&#x6B21; commit&#xFF1A;</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span>  commit -m <span class="string">&quot;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>&#x53E6;&#x4E00;&#x4E2D;&#x65B9;&#x5F0F;,&#x4F7F;&#x7528;&#x2013;no-edit&#xFF0C;&#x5B83;&#x8868;&#x793A;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;&#x4E0D;&#x4F1A;&#x66F4;&#x6539;&#xFF0C;&#x5728; git &#x4E0A;&#x4EC5;&#x4E3A;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x3002;</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add changgeFile <span class="string">//</span> changeFile &#x521A;&#x521A;&#x6F0F;&#x4E86;&#x63D0;&#x4EA4;&#x7684;&#x6587;&#x4EF6;</span><br><span class="line">git commit <span class="params">--amend</span> <span class="params">--no-edit</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/io/2020/05/02/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2020/04/30/%E5%A6%82%E4%BD%95%E4%B8%BA%E7%BD%91%E7%AB%99%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/">
-      如何为网站接入百度统计
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>js知识库</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年4月29日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2020/04/30/%E5%A6%82%E4%BD%95%E4%B8%BA%E7%BD%91%E7%AB%99%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/" class="leancloud_visitors" data-flag-title="如何为网站接入百度统计">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2020/04/30/%E5%A6%82%E4%BD%95%E4%B8%BA%E7%BD%91%E7%AB%99%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/04/30/%E5%A6%82%E4%BD%95%E4%B8%BA%E7%BD%91%E7%AB%99%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/io/2020/04/30/%E5%A6%82%E4%BD%95%E4%B8%BA%E7%BD%91%E7%AB%99%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/image-20200429195549105.png" alt="image-20200429195549105"></p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/io/2020/04/30/%E5%A6%82%E4%BD%95%E4%B8%BA%E7%BD%91%E7%AB%99%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2020/04/29/electron%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/">
-      electron间的通信
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <img no-lazy src="">
-    <p></p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/electron/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>electron</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年4月29日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2020/04/29/electron%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/" class="leancloud_visitors" data-flag-title="electron间的通信">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2020/04/29/electron%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2020/04/29/electron%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="&#x793A;&#x610F;&#x56FE;"><a href="#&#x793A;&#x610F;&#x56FE;" class="headerlink" title="&#x793A;&#x610F;&#x56FE;"></a>&#x793A;&#x610F;&#x56FE;</h3><h3 id="&#x4E3B;&#x8FDB;&#x7A0B;&#x548C;&#x5B50;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;"><a href="#&#x4E3B;&#x8FDB;&#x7A0B;&#x548C;&#x5B50;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;" class="headerlink" title="&#x4E3B;&#x8FDB;&#x7A0B;&#x548C;&#x5B50;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;"></a>&#x4E3B;&#x8FDB;&#x7A0B;&#x548C;&#x5B50;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;</h3><h4 id="&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#x2014;-gt-&#x4E3B;&#x8FDB;&#x7A0B;-&#x5229;&#x7528;-ipcMain-ipcRenderer&#x548C;-webContents-send"><a href="#&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#x2014;-gt-&#x4E3B;&#x8FDB;&#x7A0B;-&#x5229;&#x7528;-ipcMain-ipcRenderer&#x548C;-webContents-send" class="headerlink" title="&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#x2014;-&gt;&#x4E3B;&#x8FDB;&#x7A0B;(&#x5229;&#x7528; ipcMain, ipcRenderer&#x548C; webContents.send)"></a>&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#x2014;-&gt;&#x4E3B;&#x8FDB;&#x7A0B;(&#x5229;&#x7528; ipcMain, ipcRenderer&#x548C; webContents.send)</h4><h5 id="&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#xFF1A;"><a href="#&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#xFF1A;" class="headerlink" title="&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#xFF1A;"></a>&#x6E32;&#x67D3;&#x8FDB;&#x7A0B;&#xFF1A;</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> {ipcRenderer} = <span class="built_in">require</span>(<span class="string">&apos;electron&apos;</span>)</span><br><span class="line">ipcRenderer.send(<span class="string">&apos;custom-event&apos;</span>, <span class="string">&apos;I am renderer process&apos;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="&#x4E3B;&#x8FDB;&#x7A0B;"><a href="#&#x4E3B;&#x8FDB;&#x7A0B;" class="headerlink" title="&#x4E3B;&#x8FDB;&#x7A0B;"></a>&#x4E3B;&#x8FDB;&#x7A0B;</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> {ipcMain} = <span class="built_in">require</span>(<span class="string">&apos;electron&apos;</span>)</span><br><span class="line">ipcMain.on(<span class="string">&apos;custom-event&apos;</span>, ({sender}, args)=&gt;{</span><br><span class="line">  sender.send(<span class="string">&apos;reply&apos;</span>, <span class="string">&apos;&#x6211;&#x6536;&#x5230;&#x4E86;&apos;</span>)</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/io/2020/04/29/electron%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1665,10 +1772,10 @@
       <div class="prev-next">
         
         <p class="current">
-          1 / 3
+          1 / 4
         </p>
         
-          <a class="next" rel="next" href="/io/archives/2020/page/2/">
+          <a class="next" rel="next" href="/archives/2020/page/2/">
             <section class="post next white-box shadow">
               &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
             </section>
@@ -1695,7 +1802,7 @@
   <div class='content'>
     
       
-        <a class='avatar flat-box rectangle' href='/io/about/'>
+        <a class='avatar flat-box rectangle' href='/about/'>
           <img no-lazy src='/img/avatar.png'/>
         </a>
       
@@ -1714,7 +1821,7 @@
       <div class="social-wrapper">
         
           
-            <a href="/io/atom.xml"
+            <a href="/atom.xml"
               class="social fas fa-rss flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -1722,7 +1829,7 @@
           
         
           
-            <a href="mailto:me@xxx.com"
+            <a href="mailto:2658553345@qq.com"
               class="social fas fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -1770,69 +1877,84 @@
       <ul class="entry navigation">
         
           <li><a class="flat-box"
-            title="/io/categories/electron/" href="/io/categories/electron/"
-            id="iocategorieselectron"
+            title="/categories/electron/" href="/categories/electron/"
+            id="categorieselectron"
             ><div class='name'>electron</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/git/" href="/io/categories/git/"
-            id="iocategoriesgit"
+            title="/categories/git/" href="/categories/git/"
+            id="categoriesgit"
             ><div class='name'>git</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/graph/" href="/io/categories/graph/"
-            id="iocategoriesgraph"
+            title="/categories/graph/" href="/categories/graph/"
+            id="categoriesgraph"
             ><div class='name'>graph</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/" href="/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/"
-            id="iocategoriesjsE79FA5E8AF86E5BA93"
-            ><div class='name'>js知识库</div><div class='badge'>(38)</div></a></li>
+            title="/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/" href="/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/"
+            id="categoriesjsE79FA5E8AF86E5BA93"
+            ><div class='name'>js知识库</div><div class='badge'>(41)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/nginx/" href="/io/categories/nginx/"
-            id="iocategoriesnginx"
+            title="/categories/nginx/" href="/categories/nginx/"
+            id="categoriesnginx"
             ><div class='name'>nginx</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/node/" href="/io/categories/node/"
-            id="iocategoriesnode"
+            title="/categories/node/" href="/categories/node/"
+            id="categoriesnode"
             ><div class='name'>node</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/svg/" href="/io/categories/svg/"
-            id="iocategoriessvg"
+            title="/categories/svg/" href="/categories/svg/"
+            id="categoriessvg"
             ><div class='name'>svg</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/vue/" href="/io/categories/vue/"
-            id="iocategoriesvue"
-            ><div class='name'>vue</div><div class='badge'>(7)</div></a></li>
+            title="/categories/typescript/" href="/categories/typescript/"
+            id="categoriestypescript"
+            ><div class='name'>typescript</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/webpack/" href="/io/categories/webpack/"
-            id="iocategorieswebpack"
-            ><div class='name'>webpack</div><div class='badge'>(8)</div></a></li>
+            title="/categories/vue/" href="/categories/vue/"
+            id="categoriesvue"
+            ><div class='name'>vue</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E5%85%B6%E4%BB%96/" href="/io/categories/%E5%85%B6%E4%BB%96/"
-            id="iocategoriesE585B6E4BB96"
+            title="/categories/webpack/" href="/categories/webpack/"
+            id="categorieswebpack"
+            ><div class='name'>webpack</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
+            id="categoriesE585B6E4BB96"
             ><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%8F%92%E4%BB%B6/" href="/io/categories/%E6%8F%92%E4%BB%B6/"
-            id="iocategoriesE68F92E4BBB6"
+            title="/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/" href="/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"
+            id="categoriesE5B7A5E7A88BE58C96"
+            ><div class='name'>工程化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%8F%92%E4%BB%B6/" href="/categories/%E6%8F%92%E4%BB%B6/"
+            id="categoriesE68F92E4BBB6"
             ><div class='name'>插件</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%96%87%E6%A1%A3/" href="/io/categories/%E6%96%87%E6%A1%A3/"
-            id="iocategoriesE69687E6A1A3"
+            title="/categories/%E6%96%87%E6%A1%A3/" href="/categories/%E6%96%87%E6%A1%A3/"
+            id="categoriesE69687E6A1A3"
             ><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%A0%B7%E5%BC%8F-css-less/" href="/io/categories/%E6%A0%B7%E5%BC%8F-css-less/"
-            id="iocategoriesE6A0B7E5BC8F-css-less"
+            title="/categories/%E6%A0%B7%E5%BC%8F-css-less/" href="/categories/%E6%A0%B7%E5%BC%8F-css-less/"
+            id="categoriesE6A0B7E5BC8F-css-less"
             ><div class='name'>样式(css/less...)</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%BD%91%E7%BB%9C/" href="/categories/%E7%BD%91%E7%BB%9C/"
+            id="categoriesE7BD91E7BB9C"
+            ><div class='name'>网络</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -1856,7 +1978,7 @@
 
 
     <div class='content'>
-      <a href="/io/tags/F2/" style="font-size: 14px; color: #999">F2</a> <a href="/io/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/io/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/io/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/io/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/io/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/io/tags/css%E5%8A%A8%E7%94%BB/" style="font-size: 15.67px; color: #8e8e8e">css动画</a> <a href="/io/tags/cytoscape/" style="font-size: 15.67px; color: #8e8e8e">cytoscape</a> <a href="/io/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/io/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/io/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/io/tags/git/" style="font-size: 15.67px; color: #8e8e8e">git</a> <a href="/io/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/io/tags/hexo/" style="font-size: 15.67px; color: #8e8e8e">hexo</a> <a href="/io/tags/highcharts/" style="font-size: 17.33px; color: #828282">highcharts</a> <a href="/io/tags/http/" style="font-size: 15.67px; color: #8e8e8e">http</a> <a href="/io/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/io/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/io/tags/lifecycle/" style="font-size: 14px; color: #999">lifecycle</a> <a href="/io/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/io/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/io/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/io/tags/pageshow/" style="font-size: 14px; color: #999">pageshow</a> <a href="/io/tags/performance/" style="font-size: 14px; color: #999">performance</a> <a href="/io/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/io/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/io/tags/vue/" style="font-size: 22.33px; color: #606060">vue</a> <a href="/io/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/io/tags/%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">事件模型</a> <a href="/io/tags/%E6%A8%A1%E6%8B%9F%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/io/tags/%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/" style="font-size: 15.67px; color: #8e8e8e">渲染过程</a> <a href="/io/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/io/tags/%E7%B1%BB%E5%9E%8B/" style="font-size: 15.67px; color: #8e8e8e">类型</a> <a href="/io/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 15.67px; color: #8e8e8e">类型转换</a> <a href="/io/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 17.33px; color: #828282">组件</a>
+      <a href="/tags/F2/" style="font-size: 14px; color: #999">F2</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/tags/css%E5%8A%A8%E7%94%BB/" style="font-size: 15.67px; color: #8e8e8e">css动画</a> <a href="/tags/cytoscape/" style="font-size: 15.67px; color: #8e8e8e">cytoscape</a> <a href="/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/tags/git/" style="font-size: 15.67px; color: #8e8e8e">git</a> <a href="/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/tags/hexo/" style="font-size: 15.67px; color: #8e8e8e">hexo</a> <a href="/tags/highcharts/" style="font-size: 17.33px; color: #828282">highcharts</a> <a href="/tags/http/" style="font-size: 15.67px; color: #8e8e8e">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/lifecycle/" style="font-size: 14px; color: #999">lifecycle</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/pageshow/" style="font-size: 14px; color: #999">pageshow</a> <a href="/tags/performance/" style="font-size: 14px; color: #999">performance</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.33px; color: #606060">vue</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/%E6%A8%A1%E6%8B%9F%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/" style="font-size: 15.67px; color: #8e8e8e">渲染过程</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/%E7%B1%BB%E5%9E%8B/" style="font-size: 15.67px; color: #8e8e8e">类型</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 15.67px; color: #8e8e8e">类型转换</a> <a href="/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 17.33px; color: #828282">组件</a>
     </div>
   </section>
 
@@ -1913,7 +2035,7 @@
         <div class="social-wrapper">
           
             
-              <a href="/io/atom.xml"
+              <a href="/atom.xml"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -1921,7 +2043,7 @@
             
           
             
-              <a href="mailto:me@xxx.com"
+              <a href="mailto:2658553345@qq.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -2002,49 +2124,19 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/over58/over58.github.io/blob/master/(path)
         
         
         
         
-          id="https:volantisjsorgfaqs"
+          id="https:githubcomover58over58githubioblobmaster(path)"
         >
-        <i class='fa fa-question fa-fw'></i> 常见问题
+        <i class='fa fa-question fa-fw'></i> 编辑文章
       </a>
     </li>
   
         
       
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
-        
-        
-        
-        
-          id="https:volantisjsorgexamples"
-        >
-        <i class='fa fa-rss fa-fw'></i> 示例博客
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
-        
-        
-        
-        
-          id="https:volantisjsorgcontributors"
-        >
-        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
-      </a>
-    </li>
-  
         
       
         
@@ -2054,12 +2146,12 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/over58/over58.github.io
         
         
         
         
-          id="https:githubcomvolantis-xvolantis-docs"
+          id="https:githubcomover58over58githubio"
         >
         <i class='fa fa-code-branch fa-fw'></i> 本站源码
       </a>
@@ -2267,7 +2359,7 @@
   <script>
     
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/io/" || "/";
+    var ROOT = "/" || "/";
     if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
@@ -2337,7 +2429,7 @@
 
   
     
-<script src="/io/js/aplayer.js"></script>
+<script src="/js/aplayer.js"></script>
 
   
 
@@ -2346,7 +2438,7 @@
 
   
   
-<script src="/io/js/valine.js"></script>
+<script src="/js/valine.js"></script>
 
 
 <script>
@@ -2531,14 +2623,14 @@
 
 
   
-<script src="/io/js/app.js"></script>
+<script src="/js/app.js"></script>
 
 
 
 
   
     
-<script src="/io/js/search.js"></script>
+<script src="/js/search.js"></script>
 
   
 

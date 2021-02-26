@@ -25,7 +25,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/io/atom.xml" title="over58">
+    <link rel="alternate" href="/atom.xml" title="over58">
   
 
   <!-- import meta -->
@@ -64,7 +64,7 @@
   
   
     
-<link rel="stylesheet" href="/io/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
 
@@ -126,7 +126,7 @@
 		<div class="nav-main">
       
         
-        <a class="title flat-box" target="_self" href='/io/'>
+        <a class="title flat-box" target="_self" href='/'>
           
             <img no-lazy class='logo' src='img/avatar.png'/>
           
@@ -143,11 +143,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="io"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -159,11 +159,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="ioarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -193,11 +193,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="io"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -209,11 +209,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/io/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="ioarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -299,7 +299,563 @@
         
           
   <h2 class="title">
-    <a href="/io/2019/06/12/%E7%BC%93%E5%AD%98memorize/">
+    <a href="/2019/08/15/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">
+      深度优先遍历和广度优先遍历
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年8月15日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2019/08/15/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/" class="leancloud_visitors" data-flag-title="深度优先遍历和广度优先遍历">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2019/08/15/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2019/08/15/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;"><a href="#&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;" class="headerlink" title="&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;"></a>&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;</h4><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> traverse(<span class="type">node</span>) {</span><br><span class="line">  <span class="keyword">let</span> stack = []</span><br><span class="line">  <span class="keyword">let</span> nodes = []</span><br><span class="line">  <span class="keyword">if</span>(<span class="type">node</span>) {</span><br><span class="line">    stack.push(<span class="type">node</span>)</span><br><span class="line">    while(stack.length) {</span><br><span class="line">      <span class="keyword">let</span> <span class="type">item</span> = stack.shift()</span><br><span class="line">      <span class="keyword">let</span> children = <span class="type">item</span>.children</span><br><span class="line">      nodes.push(<span class="type">item</span>)</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;children.length;i++) {</span><br><span class="line">        stack.push(children[i])</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> nodes</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h4 id="&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;"><a href="#&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;" class="headerlink" title="&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;"></a>&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;</h4><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function deepTraverse(<span class="keyword">node</span><span class="title">, ret</span>) {</span><br><span class="line">  if(<span class="keyword">node</span> <span class="title">!== null</span>) {</span><br><span class="line">    ret.push(<span class="keyword">node</span><span class="title">)</span></span><br><span class="line"><span class="title">    let</span> children = <span class="keyword">node</span>.<span class="title">children</span></span><br><span class="line">    for(let i=<span class="number">0</span>;i<span class="tag">&lt;children.length;i++) {</span></span><br><span class="line"><span class="tag">      deepTraverse(children[i], ret)</span></span><br><span class="line"><span class="tag">    }</span></span><br><span class="line"><span class="tag">  }</span></span><br><span class="line"><span class="tag">  return ret</span></span><br><span class="line"><span class="tag">}</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2019/07/15/code%E8%87%AA%E5%AE%9A%E4%B9%89iview%E8%AF%AD%E6%B3%95%E6%8F%90%E7%A4%BA/">
+      code自定义iview语法提示
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年7月15日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2019/07/15/code%E8%87%AA%E5%AE%9A%E4%B9%89iview%E8%AF%AD%E6%B3%95%E6%8F%90%E7%A4%BA/" class="leancloud_visitors" data-flag-title="code自定义iview语法提示">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2019/07/15/code%E8%87%AA%E5%AE%9A%E4%B9%89iview%E8%AF%AD%E6%B3%95%E6%8F%90%E7%A4%BA/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2019/07/15/code%E8%87%AA%E5%AE%9A%E4%B9%89iview%E8%AF%AD%E6%B3%95%E6%8F%90%E7%A4%BA/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vscode &#x4E2D;&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x6CD5;&#x63D0;&#x793A;&#xFF0C;&#x4E8E;&#x662F;&#x6211;&#x5C31;&#x5C06;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x4EE3;&#x7801;&#x6A21;&#x5757;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#xFF0C;&#x5F00;&#x53D1;&#x65F6;&#x53EA;&#x8981;&#x8F93;&#x5165;&#x5C11;&#x91CF;&#x4EE3;&#x7801;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x6574;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x63D0;&#x9AD8;&#x4E86;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x3002;</p>
+      
+    </div>
+    
+      
+        <a class= "readmore" href="/2019/07/15/code%E8%87%AA%E5%AE%9A%E4%B9%89iview%E8%AF%AD%E6%B3%95%E6%8F%90%E7%A4%BA/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2019/07/08/amd-cmd-commonjs%E5%92%8Ces6%E7%9A%84%E7%AE%80%E5%8D%95%E5%AF%B9%E6%AF%94/">
+      amd/cmd/commonjs和es6的简单对比
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年7月8日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2019/07/08/amd-cmd-commonjs%E5%92%8Ces6%E7%9A%84%E7%AE%80%E5%8D%95%E5%AF%B9%E6%AF%94/" class="leancloud_visitors" data-flag-title="amd/cmd/commonjs和es6的简单对比">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2019/07/08/amd-cmd-commonjs%E5%92%8Ces6%E7%9A%84%E7%AE%80%E5%8D%95%E5%AF%B9%E6%AF%94/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2019/07/08/amd-cmd-commonjs%E5%92%8Ces6%E7%9A%84%E7%AE%80%E5%8D%95%E5%AF%B9%E6%AF%94/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h3><p>AMD&#x662F;RequireJS&#x5728;&#x63A8;&#x5E7F;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x5BF9;&#x6A21;&#x5757;&#x5B9A;&#x4E49;&#x7684;&#x89C4;&#x8303;&#x5316;&#x4EA7;&#x51FA;&#x3002;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x6A21;&#x5757;&#xFF0C;&#x4F9D;&#x8D56;&#x524D;&#x7F6E;</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">&quot;package/lib&quot;</span>, function(<span class="class"><span class="keyword">lib</span>){</span></span><br><span class="line">  function () foo{</span><br><span class="line">    <span class="class"><span class="keyword">lib</span>.<span class="title">log</span>(&quot;<span class="title">hello</span> <span class="title">world</span>)</span></span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> {</span><br><span class="line">    <span class="symbol">foo:</span> foo</span><br><span class="line">  }</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p>CMD&#x662F;SeaJS&#x5728;&#x63A8;&#x5E7F;&#x8FC7;&#x7A0B;&#x4E2D;&#x5BF9;&#x6A21;&#x5757;&#x5B9A;&#x4E49;&#x7684;&#x89C4;&#x8303;&#x5316;&#x4EA7;&#x51FA;&#x3002; &#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#xFF0C; &#x4F9D;&#x8D56;&#x5C31;&#x8FD1;</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, exports, <span class="built_in">module</span></span>)</span>{})</span><br><span class="line"></span><br><span class="line"><span class="comment">//&#x901A;&#x8FC7;require&#x5F15;&#x5165;&#x4F9D;&#x8D56;</span></span><br><span class="line"><span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">&quot;jquery&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> Spinning = <span class="built_in">require</span>(<span class="string">&quot;./Spinning&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>CommonJS&#x89C4;&#x8303; - module.exports &#x9002;&#x7528;&#x4E8E;&#x670D;&#x52A1;&#x7AEF;</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exports.area = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">  <span class="keyword">return</span> Math.<span class="literal">PI</span> * r * r</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h3 id="ES6-import-export"><a href="#ES6-import-export" class="headerlink" title="ES6 - import/export"></a>ES6 - import/export</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> $ from &apos;jquery&apos;</span><br><span class="line"></span><br><span class="line"><span class="title">export</span> <span class="keyword">default</span>{</span><br><span class="line">  <span class="class"><span class="keyword">data</span> () {</span></span><br><span class="line"><span class="class">    <span class="title">return</span> {</span></span><br><span class="line"><span class="class">    }</span></span><br><span class="line">  },</span><br><span class="line">  methods:{</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2019/06/17/macrotask%E5%92%8Cmicrotask%E4%BB%A5%E5%8F%8Aeventloop%E7%9A%84%E4%BB%8B%E7%BB%8D/">
+      macrotask和microtask以及eventloop的介绍
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>js知识库</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年6月17日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2019/06/17/macrotask%E5%92%8Cmicrotask%E4%BB%A5%E5%8F%8Aeventloop%E7%9A%84%E4%BB%8B%E7%BB%8D/" class="leancloud_visitors" data-flag-title="macrotask和microtask以及eventloop的介绍">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2019/06/17/macrotask%E5%92%8Cmicrotask%E4%BB%A5%E5%8F%8Aeventloop%E7%9A%84%E4%BB%8B%E7%BB%8D/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2019/06/17/macrotask%E5%92%8Cmicrotask%E4%BB%A5%E5%8F%8Aeventloop%E7%9A%84%E4%BB%8B%E7%BB%8D/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><p>&#x63D0;&#x8D77;js,&#x6709;&#x8FD9;&#x4E48;&#x51E0;&#x4E2A;&#x6982;&#x5FF5;&#x975E;&#x4E86;&#x89E3;&#x4E0D;&#x53EF;&#x3002;&#x5355;&#x7EBF;&#x7A0B; &#x3001;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3001;&#x975E;&#x963B;&#x585E;&#x3001;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x3001;&#x8C03;&#x7528;&#x6808;&#x3001;&#x4E0A;&#x4E0B;&#x6587;&#x3001;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x3001;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3002;</p>
+<h3 id="&#x5355;&#x7EBF;&#x7A0B;"><a href="#&#x5355;&#x7EBF;&#x7A0B;" class="headerlink" title="&#x5355;&#x7EBF;&#x7A0B;"></a>&#x5355;&#x7EBF;&#x7A0B;</h3><p>one thread = one call stack == one thing at a time<br>&#x89E3;&#x91CA;&#x6765;&#x8BB2;&#x5C31;&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#x610F;&#x5473;&#x7740;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x8C03;&#x7528;&#x6808;&#xFF0C;&#x5728;&#x540C;&#x4E00;&#x65F6;&#x523B;&#x53EA;&#x80FD;&#x505A;&#x4E00;&#x4EF6;&#x4E8B;&#x513F;</p>
+<h3 id="&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;"><a href="#&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;" class="headerlink" title="&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;"></a>&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;</h3><p>&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5C31;&#x662F;&#x5F53;&#x524D;JavaScript&#x4EE3;&#x7801;&#x88AB;&#x89E3;&#x6790;&#x548C;&#x6267;&#x884C;&#x662F;&#x6240;&#x5728;&#x73AF;&#x5883;&#x7684;&#x62BD;&#x8C61;&#x6982;&#x5FF5;&#xFF0C;JavaScript&#x4E2D;&#x8FD0;&#x884C;&#x4EFB;&#x4F55;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x662F;&#x5728;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x603B;&#x5171;&#x6709;&#x4E09;&#x7C7B;<br>  1.&#x5168;&#x5C40;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF1A;&#x8FD9;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#xFF0C;&#x6700;&#x57FA;&#x7840;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x3002;&#x4E0D;&#x5728;&#x4EFB;&#x4F55;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x4F4D;&#x4E8E;&#x5168;&#x5C40;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x3002;&#x5171;&#x6709;&#x4E24;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF1A;<br>    - .&#x521B;&#x5EFA;&#x6709;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8FD9;&#x4E2A;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x5C31;&#x662F;window&#x5BF9;&#x8C61;&#x3002;<br>    - .&#x5C06;this&#x6307;&#x9488;&#x6307;&#x5411;&#x8FD9;&#x4E2A;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x3002;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x4E2D;&#x53EA;&#x80FD;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x3002;<br>  2.&#x51FD;&#x6570;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF1A;&#x6BCF;&#x6B21;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x4E3A;&#x8BE5;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x3002;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x90FD;&#x62E5;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x6709;&#x5728;&#x51FD;&#x6570;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x88AB;&#x521B;&#x5EFA;&#x3002;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x4E2D;&#x53EF;&#x4EE5;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x51FD;&#x6570;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x6309;&#x7167;&#x7279;&#x5B9A;&#x7684;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x4E00;&#x7CFB;&#x5217;&#x6B65;&#x9AA4;&#xFF0C;&#x540E;&#x6587;&#x5177;&#x4F53;&#x8BA8;&#x8BBA;&#x3002;<br>  3.Eval&#x51FD;&#x6570;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF1A;&#x8FD0;&#x884C;&#x5728;eval&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x4E5F;&#x83B7;&#x5F97;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;Eval&#x8F83;&#x4E3A;&#x5C11;&#x7528;&#x5230;&#xFF0C;&#x4E5F;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#xFF0C;&#x5C31;&#x4E0D;&#x53BB;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#x4E86;&#x3002;&#x3002;&#x3002;&#xFF08;eval&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5BF9;&#x811A;&#x672C;&#x8FDB;&#x884C;&#x89E3;&#x91CA;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x666E;&#x901A;&#x7684;javascript&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x9884;&#x5904;&#x7406;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x6240;&#x4EE5;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x6027;&#x80FD;&#x4E0A;&#x7684;&#x635F;&#x5931;&#xFF1B;eval&#x4E5F;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x5B89;&#x5168;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4F20;&#x7ED9;&#x5B83;&#x7684;&#x4EFB;&#x4F55;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6240;&#x4EE5;&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x4F20;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x8005;&#x6765;&#x5386;&#x4E0D;&#x660E;&#x548C;&#x4E0D;&#x53D7;&#x4FE1;&#x4EFB;&#x6E90;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<h3 id="&#xFF08;&#x6267;&#x884C;&#x6808;&#xFF09;&#x8C03;&#x7528;&#x6808;"><a href="#&#xFF08;&#x6267;&#x884C;&#x6808;&#xFF09;&#x8C03;&#x7528;&#x6808;" class="headerlink" title="&#xFF08;&#x6267;&#x884C;&#x6808;&#xFF09;&#x8C03;&#x7528;&#x6808;"></a>&#xFF08;&#x6267;&#x884C;&#x6808;&#xFF09;&#x8C03;&#x7528;&#x6808;</h3><p>&#x6267;&#x884C;&#x6808;&#xFF0C;&#x4E5F;&#x53EB;&#x8C03;&#x7528;&#x6808;&#xFF0C;&#x5177;&#x6709;LIFO&#xFF08;Last in, First out &#x540E;&#x8FDB;&#x5148;&#x51FA;&#xFF09;&#x7ED3;&#x6784;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5728;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x671F;&#x95F4;&#x521B;&#x5EFA;&#x7684;&#x6240;&#x6709;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x3002;<br>&#x5F53;JavaScript&#x5F15;&#x64CE;&#x9996;&#x6B21;&#x8BFB;&#x53D6;&#x811A;&#x672C;&#x65F6;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5E76;&#x5C06;&#x5176;Push&#x5230;&#x5F53;&#x524D;&#x6267;&#x884C;&#x6808;&#x4E2D;&#x3002;&#x6BCF;&#x5F53;&#x53D1;&#x751F;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x5F15;&#x64CE;&#x90FD;&#x4F1A;&#x4E3A;&#x8BE5;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5E76;Push&#x5230;&#x5F53;&#x524D;&#x6267;&#x884C;&#x6808;&#x7684;&#x6808;&#x9876;&#x3002;<br>&#x5F15;&#x64CE;&#x4F1A;&#x8FD0;&#x884C;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5728;&#x6267;&#x884C;&#x6808;&#x6808;&#x9876;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x6839;&#x636E;LIFO&#x89C4;&#x5219;&#xFF0C;&#x5F53;&#x6B64;&#x51FD;&#x6570;&#x8FD0;&#x884C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5C06;&#x4F1A;&#x4ECE;&#x6267;&#x884C;&#x6808;&#x4E2D;Pop&#x51FA;&#xFF0C;&#x4E0A;&#x4E0B;&#x6587;&#x63A7;&#x5236;&#x6743;&#x5C06;&#x8F6C;&#x5230;&#x5F53;&#x524D;&#x6267;&#x884C;&#x6808;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x3002; </p>
+<h3 id="&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3001;macrotask&#x3001;mircotask"><a href="#&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3001;macrotask&#x3001;mircotask" class="headerlink" title="&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3001;macrotask&#x3001;mircotask"></a>&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3001;macrotask&#x3001;mircotask</h3><h4 id="&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x548C;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;"><a href="#&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x548C;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;" class="headerlink" title="&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x548C;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;"></a>&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x548C;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;</h4><p>&#x56E0; <strong>js&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#x8BED;&#x8A00;</strong> &#xFF0C; &#x5B58;&#x5728;&#x5927;&#x91CF;&#x7684;IO&#x7B49;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x201C;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x201D;&#x548C;&#x201C;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x201D;&#x7684;&#x533A;&#x5206;<br>&#x540C;&#x6B65;&#x4EFB;&#x52A1;</p>
+<blockquote>
+<p>&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x6392;&#x961F;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x524D;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x624D;&#x80FD;&#x6267;&#x884C;&#x540E;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF1B;<br>&#x5F02;&#x6B65;&#x4EFB;&#x52A1;<br>&#x4E0D;&#x8FDB;&#x5165;&#x4E3B;&#x7EBF;&#x7A0B;&#x3001;&#x800C;&#x8FDB;&#x5165;&#x201D;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x201D;&#xFF08;task queue&#xFF09;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x53EA;&#x6709;&#x201D;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x201D;&#x901A;&#x77E5;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x67D0;&#x4E2A;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4E86;&#xFF0C;&#x8BE5;&#x4EFB;&#x52A1;&#x624D;&#x4F1A;&#x8FDB;&#x5165;&#x4E3B;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x3002;<br>&#x603B;&#x4E4B;<br>&#x53EA;&#x8981;&#x4E3B;&#x7EBF;&#x7A0B;&#x7A7A;&#x4E86;&#xFF0C;&#x5C31;&#x4F1A;&#x53BB;&#x8BFB;&#x53D6;&#x201D;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x201D;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;JavaScript&#x7684;&#x8FD0;&#x884C;&#x673A;&#x5236;,&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x662F;&#x5FAA;&#x73AF;&#x5F80;&#x590D;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E5F;&#x53EB;&#x505A;Event Loop&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;</p>
+</blockquote>
+<h4 id="macrotask&#x3001;mircotask&#x961F;&#x5217;"><a href="#macrotask&#x3001;mircotask&#x961F;&#x5217;" class="headerlink" title="macrotask&#x3001;mircotask&#x961F;&#x5217;"></a>macrotask&#x3001;mircotask&#x961F;&#x5217;</h4><p>microtasks:</p>
+<ul>
+<li>process.nextTick</li>
+<li>promise</li>
+<li>Object.observe</li>
+<li>MutationObserver</li>
+</ul>
+<p>macrotasks:</p>
+<ul>
+<li>setTimeout</li>
+<li>setInterval</li>
+<li>setImmediate</li>
+<li>I/O</li>
+<li>UI&#x6E32;&#x67D3;</li>
+</ul>
+<p>&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x6709;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#xFF0C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x662F;&#x4EFB;&#x52A1;&#x7684;<strong>&#x96C6;&#x5408;</strong><br>whatwg&#x89C4;&#x8303;&#xFF1A;<a href="https://html.spec.whatwg.org/multipage/webappapis.html#task-queue" target="_blank" rel="noopener">https://html.spec.whatwg.org/multipage/webappapis.html#task-queue</a></p>
+<ul>
+<li>task queue &#x5C31;&#x662F; macrotask queue</li>
+<li>&#x6BCF;&#x4E00;&#x4E2A; event loop &#x90FD;&#x6709;&#x4E00;&#x4E2A; microtask queue</li>
+<li>task queue == macrotask queue != microtask queue</li>
+<li>&#x4E00;&#x4E2A;&#x4EFB;&#x52A1; task &#x53EF;&#x4EE5;&#x653E;&#x5165; macrotask queue &#x4E5F;&#x53EF;&#x4EE5;&#x653E;&#x5165; microtask queue &#x4E2D;</li>
+</ul>
+<p>&#x7406;&#x89E3;&#x4E86;&#x8FD9;&#x4E9B;&#x5B9A;&#x4E49;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x770B;&#x6267;&#x884C;&#x539F;&#x7406;&#xFF1A;</p>
+<blockquote>
+<p>&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x51B3;&#x5B9A;&#x4E86;JavaScript&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x3002;&#x5B83;&#x4ECE;script(&#x6574;&#x4F53;&#x4EE3;&#x7801;)&#x5F00;&#x59CB;&#x7B2C;&#x4E00;&#x6B21;&#x5FAA;&#x73AF;&#x3002;&#x4E4B;&#x540E;&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x8FDB;&#x5165;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808;&#x3002;&#x76F4;&#x5230;&#x8C03;&#x7528;&#x6808;&#x6E05;&#x7A7A;(&#x53EA;&#x5269;&#x5168;&#x5C40;)&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x6240;&#x6709;&#x7684;micro-task&#x3002;&#x5F53;&#x6240;&#x6709;&#x53EF;&#x6267;&#x884C;&#x7684;micro-task&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x3002;&#x5FAA;&#x73AF;&#x518D;&#x6B21;&#x4ECE;macro-task&#x5F00;&#x59CB;&#xFF0C;&#x627E;&#x5230;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6267;&#x884C;&#x6240;&#x6709;&#x7684;micro-task&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x76F4;&#x5FAA;&#x73AF;&#x4E0B;&#x53BB;&#x3002;<br>&#x66F4;&#x4E3A;&#x5F62;&#x8C61;&#x7684;&#x663E;&#x793A;&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#xFF0C;&#x8BF7;&#x770B;<a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/" target="_blank" rel="noopener">https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/</a></p>
+</blockquote>
+<p>&#x8FD8;&#x8981;&#x6CE8;&#x610F;&#x4E00;&#x70B9;&#xFF1A;</p>
+<blockquote>
+<p>&#x5305;&#x88F9;&#x5728;&#x4E00;&#x4E2A; script &#x6807;&#x7B7E;&#x4E2D;&#x7684;js&#x4EE3;&#x7801;&#x4E5F;&#x662F;&#x4E00;&#x4E2A; task &#x786E;&#x5207;&#x8BF4;&#x662F; macrotask&#x3002;</p>
+</blockquote>
+<h3 id="&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;"><a href="#&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;" class="headerlink" title="&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;"></a>&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;</h3><p>&#x6267;&#x884C;&#x6808;&#x4E2D;&#x6267;&#x884C;&#x5B8C;&#x4E4B;&#x540E;&#x4F1A;&#x4ECE;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;task&#x8FDB;&#x884C;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x662F;&#x5FAA;&#x73AF;&#x7684;&#xFF0C;&#x79F0;&#x4E4B;&#x4E3A; &#x201C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x201D;</p>
+<h3 id="&#x975E;&#x963B;&#x585E;"><a href="#&#x975E;&#x963B;&#x585E;" class="headerlink" title="&#x975E;&#x963B;&#x585E;"></a>&#x975E;&#x963B;&#x585E;</h3><p>&#x9047;&#x5230;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x4F1A;&#x7EE7;&#x7EED;&#x5904;&#x7406;&#x540E;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5F53;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x4EE5;&#x540E;&#x5728;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#xFF08;task&#xFF09;&#x4E2D;&#x6DFB;&#x52A0;&#x4E8B;&#x4EF6;</p>
+<hr>
+<p>&#x4F5C;&#x8005;&#xFF1A;BenjaminShih<br>&#x6765;&#x6E90;&#xFF1A;CSDN<br>&#x539F;&#x6587;&#xFF1A;<a href="https://blog.csdn.net/sjn0503/article/details/76087631" target="_blank" rel="noopener">https://blog.csdn.net/sjn0503/article/details/76087631</a><br>&#x7248;&#x6743;&#x58F0;&#x660E;&#xFF1A;&#x672C;&#x6587;&#x4E3A;&#x535A;&#x4E3B;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x8F6C;&#x8F7D;&#x8BF7;&#x9644;&#x4E0A;&#x535A;&#x6587;&#x94FE;&#x63A5;&#xFF01;</p>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2019/06/11/%E7%BC%93%E5%AD%98memorize/">
       缓存memorize
     </a>
   </h2>
@@ -325,7 +881,7 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>js知识库</p>
     </a>
@@ -355,7 +911,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2019/06/12/%E7%BC%93%E5%AD%98memorize/" class="leancloud_visitors" data-flag-title="缓存memorize">
+      <span id="/2019/06/11/%E7%BC%93%E5%AD%98memorize/" class="leancloud_visitors" data-flag-title="缓存memorize">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -370,9 +926,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2019/06/12/%E7%BC%93%E5%AD%98memorize/#comments">
+  <a href="/2019/06/11/%E7%BC%93%E5%AD%98memorize/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/06/12/%E7%BC%93%E5%AD%98memorize/">0</span>
+    <span class="valine-comment-count" data-xid="/2019/06/11/%E7%BC%93%E5%AD%98memorize/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -425,7 +981,7 @@
         
           
   <h2 class="title">
-    <a href="/io/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/">
+    <a href="/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/">
       节流和防抖
     </a>
   </h2>
@@ -451,7 +1007,7 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>js知识库</p>
     </a>
@@ -481,7 +1037,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/" class="leancloud_visitors" data-flag-title="节流和防抖">
+      <span id="/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/" class="leancloud_visitors" data-flag-title="节流和防抖">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -496,9 +1052,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/#comments">
+  <a href="/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/">0</span>
+    <span class="valine-comment-count" data-xid="/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -534,7 +1090,7 @@
     </div>
     
       
-        <a class= "readmore" href="/io/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/">
+        <a class= "readmore" href="/2019/06/11/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
@@ -559,7 +1115,7 @@
         
           
   <h2 class="title">
-    <a href="/io/2019/04/30/js%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">
+    <a href="/2019/04/30/js%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">
       变量、作用域和内存问题
     </a>
   </h2>
@@ -585,7 +1141,7 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>js知识库</p>
     </a>
@@ -615,7 +1171,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2019/04/30/js%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" class="leancloud_visitors" data-flag-title="变量、作用域和内存问题">
+      <span id="/2019/04/30/js%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" class="leancloud_visitors" data-flag-title="变量、作用域和内存问题">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -630,9 +1186,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2019/04/30/js%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/#comments">
+  <a href="/2019/04/30/js%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/04/30/js%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">0</span>
+    <span class="valine-comment-count" data-xid="/2019/04/30/js%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -666,7 +1222,7 @@
     </div>
     
       
-        <a class= "readmore" href="/io/2019/04/30/js%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">
+        <a class= "readmore" href="/2019/04/30/js%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
@@ -691,148 +1247,7 @@
         
           
   <h2 class="title">
-    <a href="/io/2019/03/29/%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8-001/">
-      前端入门--001
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>请设置文章作者</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>js知识库</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年3月28日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2019/03/29/%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8-001/" class="leancloud_visitors" data-flag-title="前端入门--001">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2019/03/29/%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8-001/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/03/29/%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8-001/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="htnl"><a href="#htnl" class="headerlink" title="htnl"></a>htnl</h3><h4 id="&#x6807;&#x7B7E;&#x5206;&#x7C7B;"><a href="#&#x6807;&#x7B7E;&#x5206;&#x7C7B;" class="headerlink" title="&#x6807;&#x7B7E;&#x5206;&#x7C7B;"></a>&#x6807;&#x7B7E;&#x5206;&#x7C7B;</h4><ol>
-<li>block &#x5757;&#x7EA7;&#x6807;&#x7B7E;    &#x7279;&#x70B9;&#xFF1A; &#x4E00;&#x884C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x6709;&#x7A7A;&#x95F4;&#x5C5E;&#x6027;&#xFF08;&#x53EF;&#x8BBE;&#x7F6E;height, width&#xFF09;&#x4F8B;&#x5982;&#xFF1A;div&#x3001;h&#x3001;section </li>
-<li>inline &#x5185;&#x8054;&#x6807;&#x7B7E;   &#x7279;&#x70B9;&#xFF1A; &#x4E00;&#x884C;&#x53EF;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x65E0;&#x7A7A;&#x95F4;&#x5C5E;&#x6027;  &#x4F8B;&#x5982;&#xFF1A;span &#x3001;b&#x3001;em&#x3001;strong</li>
-<li>inline-block     &#x7279;&#x70B9;&#xFF1A; &#x4E00;&#x884C;&#x53EF;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x6709;&#x7A7A;&#x95F4;&#x5C5E;&#x6027;&#xFF08;&#x53EF;&#x8BBE;&#x7F6E;height, width&#xFF09;&#x4F8B;&#x5982;&#xFF1A;img</li>
-<li>table <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">caption</span>&gt;</span>&#x8868;&#x683C;&#x6807;&#x9898;<span class="tag">&lt;/<span class="name">caption</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span><span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tfoot</span>&gt;</span><span class="tag">&lt;/<span class="name">tfoot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h4 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;"><a href="#&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="headerlink" title="&#x57FA;&#x672C;&#x6982;&#x5FF5;"></a>&#x57FA;&#x672C;&#x6982;&#x5FF5;</h4><p>&#x6BCF;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x6BCF;&#x4E00;&#x5BF9;&#x6807;&#x7B7E;&#x79F0;&#x4E4B;&#x4E3A;&#x5143;&#x7D20;(element),&#x5143;&#x7D20;&#x4E2D;&#x6709;&#x5C5E;&#x6027;(attribute)&#x548C;&#x4E8B;&#x4EF6;(event), &#x8FD8;&#x53EF;&#x4EE5;&#x5728;style&#x4E2D;&#x5B9A;&#x4E49;csss&#x5C5E;&#x6027;</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">a</span> href=<span class="string">&quot;http://www.baidu.com&quot;</span> onclick=<span class="string">&quot;handleClick()&quot;</span> style=<span class="string">&quot;color:blue&quot;</span>&gt;&#x94FE;&#x63A5;&#x6587;&#x5B57;&lt;/<span class="keyword">a</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="keyword">a</span>&gt;&lt;/<span class="keyword">a</span>&gt;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;href&#x5C31;&#x662F;&#x5C5E;&#x6027;&#xFF0C; onclick&#x5C31;&#x662F;&#x4E8B;&#x4EF6;, style=<span class="string">&quot;color:blue&quot;</span> &#x8BBE;&#x7F6E;&#x6587;&#x5B57;&#x4E3A;&#x84DD;&#x8272;</span><br></pre></td></tr></table></figure>
-
-<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><h4 id="&#x5F15;&#x5165;Css&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;"><a href="#&#x5F15;&#x5165;Css&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;" class="headerlink" title="&#x5F15;&#x5165;Css&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;"></a>&#x5F15;&#x5165;Css&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">2. <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">3. &#x5143;&#x7D20;&#x7684;style=&quot;&quot;</span><br></pre></td></tr></table></figure>
-
-<h4 id="&#x989C;&#x8272;"><a href="#&#x989C;&#x8272;" class="headerlink" title="&#x989C;&#x8272;"></a>&#x989C;&#x8272;</h4><p>1.rgb(0-255,0-255,0-255)<br>  red green blue<br>2.rgba(0-255,0-255,0-255, 0-1)<br>  red green blue alpha(&#x900F;&#x660E;&#x5EA6;)<br>3.#AD2342 &#x6216;&#x8005; #3df(#33ddff&#x7684;&#x7F29;&#x5199;)</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/io/2019/03/29/%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8-001/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2019/03/26/%E6%89%A7%E8%A1%8C%E6%A0%88%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/">
+    <a href="/2019/03/26/%E6%89%A7%E8%A1%8C%E6%A0%88%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/">
       执行栈和执行上下文
     </a>
   </h2>
@@ -858,7 +1273,7 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>js知识库</p>
     </a>
@@ -888,7 +1303,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2019/03/26/%E6%89%A7%E8%A1%8C%E6%A0%88%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/" class="leancloud_visitors" data-flag-title="执行栈和执行上下文">
+      <span id="/2019/03/26/%E6%89%A7%E8%A1%8C%E6%A0%88%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/" class="leancloud_visitors" data-flag-title="执行栈和执行上下文">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -903,9 +1318,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2019/03/26/%E6%89%A7%E8%A1%8C%E6%A0%88%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/#comments">
+  <a href="/2019/03/26/%E6%89%A7%E8%A1%8C%E6%A0%88%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/03/26/%E6%89%A7%E8%A1%8C%E6%A0%88%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/">0</span>
+    <span class="valine-comment-count" data-xid="/2019/03/26/%E6%89%A7%E8%A1%8C%E6%A0%88%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -949,7 +1364,7 @@
     </div>
     
       
-        <a class= "readmore" href="/io/2019/03/26/%E6%89%A7%E8%A1%8C%E6%A0%88%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/">
+        <a class= "readmore" href="/2019/03/26/%E6%89%A7%E8%A1%8C%E6%A0%88%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
@@ -974,7 +1389,7 @@
         
           
   <h2 class="title">
-    <a href="/io/2019/03/16/%E4%BB%8Ejs%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%8F%8F%E8%BF%B0vue-js%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E8%A7%86%E5%9B%BE/">
+    <a href="/2019/03/15/%E4%BB%8Ejs%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%8F%8F%E8%BF%B0vue-js%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E8%A7%86%E5%9B%BE/">
       从js的属性描述符描述vue.js的响应式视图
     </a>
   </h2>
@@ -1000,7 +1415,7 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>js知识库</p>
     </a>
@@ -1030,7 +1445,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2019/03/16/%E4%BB%8Ejs%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%8F%8F%E8%BF%B0vue-js%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E8%A7%86%E5%9B%BE/" class="leancloud_visitors" data-flag-title="从js的属性描述符描述vue.js的响应式视图">
+      <span id="/2019/03/15/%E4%BB%8Ejs%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%8F%8F%E8%BF%B0vue-js%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E8%A7%86%E5%9B%BE/" class="leancloud_visitors" data-flag-title="从js的属性描述符描述vue.js的响应式视图">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -1045,9 +1460,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2019/03/16/%E4%BB%8Ejs%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%8F%8F%E8%BF%B0vue-js%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E8%A7%86%E5%9B%BE/#comments">
+  <a href="/2019/03/15/%E4%BB%8Ejs%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%8F%8F%E8%BF%B0vue-js%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E8%A7%86%E5%9B%BE/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/03/16/%E4%BB%8Ejs%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%8F%8F%E8%BF%B0vue-js%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E8%A7%86%E5%9B%BE/">0</span>
+    <span class="valine-comment-count" data-xid="/2019/03/15/%E4%BB%8Ejs%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%8F%8F%E8%BF%B0vue-js%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E8%A7%86%E5%9B%BE/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -1097,7 +1512,7 @@
     </div>
     
       
-        <a class= "readmore" href="/io/2019/03/16/%E4%BB%8Ejs%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%8F%8F%E8%BF%B0vue-js%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E8%A7%86%E5%9B%BE/">
+        <a class= "readmore" href="/2019/03/15/%E4%BB%8Ejs%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%8F%8F%E8%BF%B0vue-js%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E8%A7%86%E5%9B%BE/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
@@ -1122,7 +1537,7 @@
         
           
   <h2 class="title">
-    <a href="/io/2019/03/13/stringify%E7%9A%84%E4%BD%BF%E7%94%A8/">
+    <a href="/2019/03/13/stringify%E7%9A%84%E4%BD%BF%E7%94%A8/">
       stringify的使用
     </a>
   </h2>
@@ -1148,7 +1563,7 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
+    <a href='/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
       <p>js知识库</p>
     </a>
@@ -1178,7 +1593,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/io/2019/03/13/stringify%E7%9A%84%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="stringify的使用">
+      <span id="/2019/03/13/stringify%E7%9A%84%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="stringify的使用">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -1193,9 +1608,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/io/2019/03/13/stringify%E7%9A%84%E4%BD%BF%E7%94%A8/#comments">
+  <a href="/2019/03/13/stringify%E7%9A%84%E4%BD%BF%E7%94%A8/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/03/13/stringify%E7%9A%84%E4%BD%BF%E7%94%A8/">0</span>
+    <span class="valine-comment-count" data-xid="/2019/03/13/stringify%E7%9A%84%E4%BD%BF%E7%94%A8/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -1263,138 +1678,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/io/2019/03/10/%E5%B0%86%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96%E5%B9%B6%E5%8E%BB%E9%99%A4%E5%85%B6%E4%B8%AD%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%9C%80%E7%BB%88%E5%BE%97%E5%88%B0%E4%B8%80%E4%B8%AA%E5%8D%87%E5%BA%8F%E4%B8%94%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E7%BB%84/">
-      将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>请设置文章作者</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>js知识库</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019年3月9日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/io/2019/03/10/%E5%B0%86%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96%E5%B9%B6%E5%8E%BB%E9%99%A4%E5%85%B6%E4%B8%AD%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%9C%80%E7%BB%88%E5%BE%97%E5%88%B0%E4%B8%80%E4%B8%AA%E5%8D%87%E5%BA%8F%E4%B8%94%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E7%BB%84/" class="leancloud_visitors" data-flag-title="将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/io/2019/03/10/%E5%B0%86%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96%E5%B9%B6%E5%8E%BB%E9%99%A4%E5%85%B6%E4%B8%AD%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%9C%80%E7%BB%88%E5%BE%97%E5%88%B0%E4%B8%80%E4%B8%AA%E5%8D%87%E5%BA%8F%E4%B8%94%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E7%BB%84/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/io/2019/03/10/%E5%B0%86%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96%E5%B9%B6%E5%8E%BB%E9%99%A4%E5%85%B6%E4%B8%AD%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%9C%80%E7%BB%88%E5%BE%97%E5%88%B0%E4%B8%80%E4%B8%AA%E5%8D%87%E5%BA%8F%E4%B8%94%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E7%BB%84/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [ [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>], [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, [<span class="number">11</span>, <span class="number">12</span>, [<span class="number">12</span>, <span class="number">13</span>, [<span class="number">14</span>] ] ] ], <span class="number">10</span>];</span><br></pre></td></tr></table></figure>
-
-<h3 id="&#x89E3;&#x51B3;&#x65B9;&#x6CD5;1"><a href="#&#x89E3;&#x51B3;&#x65B9;&#x6CD5;1" class="headerlink" title="&#x89E3;&#x51B3;&#x65B9;&#x6CD5;1"></a>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;1</h3><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="name">...new</span> Set(<span class="name">arr.flat</span>(<span class="name">Infinity</span>).sort((<span class="name">a</span>,b) =&gt; a-b))]</span><br></pre></td></tr></table></figure>
-
-<h3 id="&#x89E3;&#x51B3;&#x65B9;&#x6CD5;2"><a href="#&#x89E3;&#x51B3;&#x65B9;&#x6CD5;2" class="headerlink" title="&#x89E3;&#x51B3;&#x65B9;&#x6CD5;2"></a>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;2</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[...new <span class="built_in">Set</span>(arr.toString().split(<span class="string">&apos;,&apos;</span>).map(<span class="built_in">Number</span>).sort(<span class="function">(<span class="params">a,b</span>) =&gt;</span> a-b))]</span><br><span class="line">or</span><br><span class="line">Arrary.froms(<span class="keyword">new</span> <span class="built_in">Set</span>(arr.toString().split(<span class="string">&apos;,&apos;</span>).map(<span class="built_in">Number</span>).sort(<span class="function">(<span class="params">a,b</span>) =&gt;</span> a-b)))</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/io/2019/03/10/%E5%B0%86%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96%E5%B9%B6%E5%8E%BB%E9%99%A4%E5%85%B6%E4%B8%AD%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%9C%80%E7%BB%88%E5%BE%97%E5%88%B0%E4%B8%80%E4%B8%AA%E5%8D%87%E5%BA%8F%E4%B8%94%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E7%BB%84/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1402,15 +1685,21 @@
       <br>
       <div class="prev-next">
         
-          <a class="prev" rel="prev" href="/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/page/3/">
+          <a class="prev" rel="prev" href="/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/page/3/">
             <section class="post prev white-box shadow" >
               <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
             </section>
           </a>
         
         <p class="current">
-          4 / 4
+          4 / 5
         </p>
+        
+          <a class="next" rel="next" href="/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/page/5/">
+            <section class="post next white-box shadow">
+              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
         
       </div>
     
@@ -1435,7 +1724,7 @@
   <div class='content'>
     
       
-        <a class='avatar flat-box rectangle' href='/io/about/'>
+        <a class='avatar flat-box rectangle' href='/about/'>
           <img no-lazy src='/img/avatar.png'/>
         </a>
       
@@ -1454,7 +1743,7 @@
       <div class="social-wrapper">
         
           
-            <a href="/io/atom.xml"
+            <a href="/atom.xml"
               class="social fas fa-rss flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -1462,7 +1751,7 @@
           
         
           
-            <a href="mailto:me@xxx.com"
+            <a href="mailto:2658553345@qq.com"
               class="social fas fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -1510,69 +1799,84 @@
       <ul class="entry navigation">
         
           <li><a class="flat-box"
-            title="/io/categories/electron/" href="/io/categories/electron/"
-            id="iocategorieselectron"
+            title="/categories/electron/" href="/categories/electron/"
+            id="categorieselectron"
             ><div class='name'>electron</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/git/" href="/io/categories/git/"
-            id="iocategoriesgit"
+            title="/categories/git/" href="/categories/git/"
+            id="categoriesgit"
             ><div class='name'>git</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/graph/" href="/io/categories/graph/"
-            id="iocategoriesgraph"
+            title="/categories/graph/" href="/categories/graph/"
+            id="categoriesgraph"
             ><div class='name'>graph</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/" href="/io/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/"
-            id="iocategoriesjsE79FA5E8AF86E5BA93"
-            ><div class='name'>js知识库</div><div class='badge'>(38)</div></a></li>
+            title="/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/" href="/categories/js%E7%9F%A5%E8%AF%86%E5%BA%93/"
+            id="categoriesjsE79FA5E8AF86E5BA93"
+            ><div class='name'>js知识库</div><div class='badge'>(41)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/nginx/" href="/io/categories/nginx/"
-            id="iocategoriesnginx"
+            title="/categories/nginx/" href="/categories/nginx/"
+            id="categoriesnginx"
             ><div class='name'>nginx</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/node/" href="/io/categories/node/"
-            id="iocategoriesnode"
+            title="/categories/node/" href="/categories/node/"
+            id="categoriesnode"
             ><div class='name'>node</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/svg/" href="/io/categories/svg/"
-            id="iocategoriessvg"
+            title="/categories/svg/" href="/categories/svg/"
+            id="categoriessvg"
             ><div class='name'>svg</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/vue/" href="/io/categories/vue/"
-            id="iocategoriesvue"
-            ><div class='name'>vue</div><div class='badge'>(7)</div></a></li>
+            title="/categories/typescript/" href="/categories/typescript/"
+            id="categoriestypescript"
+            ><div class='name'>typescript</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/webpack/" href="/io/categories/webpack/"
-            id="iocategorieswebpack"
-            ><div class='name'>webpack</div><div class='badge'>(8)</div></a></li>
+            title="/categories/vue/" href="/categories/vue/"
+            id="categoriesvue"
+            ><div class='name'>vue</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E5%85%B6%E4%BB%96/" href="/io/categories/%E5%85%B6%E4%BB%96/"
-            id="iocategoriesE585B6E4BB96"
+            title="/categories/webpack/" href="/categories/webpack/"
+            id="categorieswebpack"
+            ><div class='name'>webpack</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
+            id="categoriesE585B6E4BB96"
             ><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%8F%92%E4%BB%B6/" href="/io/categories/%E6%8F%92%E4%BB%B6/"
-            id="iocategoriesE68F92E4BBB6"
+            title="/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/" href="/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"
+            id="categoriesE5B7A5E7A88BE58C96"
+            ><div class='name'>工程化</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%8F%92%E4%BB%B6/" href="/categories/%E6%8F%92%E4%BB%B6/"
+            id="categoriesE68F92E4BBB6"
             ><div class='name'>插件</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%96%87%E6%A1%A3/" href="/io/categories/%E6%96%87%E6%A1%A3/"
-            id="iocategoriesE69687E6A1A3"
+            title="/categories/%E6%96%87%E6%A1%A3/" href="/categories/%E6%96%87%E6%A1%A3/"
+            id="categoriesE69687E6A1A3"
             ><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/io/categories/%E6%A0%B7%E5%BC%8F-css-less/" href="/io/categories/%E6%A0%B7%E5%BC%8F-css-less/"
-            id="iocategoriesE6A0B7E5BC8F-css-less"
+            title="/categories/%E6%A0%B7%E5%BC%8F-css-less/" href="/categories/%E6%A0%B7%E5%BC%8F-css-less/"
+            id="categoriesE6A0B7E5BC8F-css-less"
             ><div class='name'>样式(css/less...)</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%BD%91%E7%BB%9C/" href="/categories/%E7%BD%91%E7%BB%9C/"
+            id="categoriesE7BD91E7BB9C"
+            ><div class='name'>网络</div><div class='badge'>(2)</div></a></li>
         
       </ul>
     </div>
@@ -1596,7 +1900,7 @@
 
 
     <div class='content'>
-      <a href="/io/tags/F2/" style="font-size: 14px; color: #999">F2</a> <a href="/io/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/io/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/io/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/io/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/io/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/io/tags/css%E5%8A%A8%E7%94%BB/" style="font-size: 15.67px; color: #8e8e8e">css动画</a> <a href="/io/tags/cytoscape/" style="font-size: 15.67px; color: #8e8e8e">cytoscape</a> <a href="/io/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/io/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/io/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/io/tags/git/" style="font-size: 15.67px; color: #8e8e8e">git</a> <a href="/io/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/io/tags/hexo/" style="font-size: 15.67px; color: #8e8e8e">hexo</a> <a href="/io/tags/highcharts/" style="font-size: 17.33px; color: #828282">highcharts</a> <a href="/io/tags/http/" style="font-size: 15.67px; color: #8e8e8e">http</a> <a href="/io/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/io/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/io/tags/lifecycle/" style="font-size: 14px; color: #999">lifecycle</a> <a href="/io/tags/mysql/" style="font-size: 14px; color: #999">mysql</a> <a href="/io/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/io/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/io/tags/pageshow/" style="font-size: 14px; color: #999">pageshow</a> <a href="/io/tags/performance/" style="font-size: 14px; color: #999">performance</a> <a href="/io/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/io/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/io/tags/vue/" style="font-size: 22.33px; color: #606060">vue</a> <a href="/io/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/io/tags/%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">事件模型</a> <a href="/io/tags/%E6%A8%A1%E6%8B%9F%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/io/tags/%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/" style="font-size: 15.67px; color: #8e8e8e">渲染过程</a> <a href="/io/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/io/tags/%E7%B1%BB%E5%9E%8B/" style="font-size: 15.67px; color: #8e8e8e">类型</a> <a href="/io/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 15.67px; color: #8e8e8e">类型转换</a> <a href="/io/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 17.33px; color: #828282">组件</a>
+      <a href="/tags/F2/" style="font-size: 14px; color: #999">F2</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/codemirror/" style="font-size: 14px; color: #999">codemirror</a> <a href="/tags/components/" style="font-size: 14px; color: #999">components</a> <a href="/tags/css/" style="font-size: 20.67px; color: #6c6c6c">css</a> <a href="/tags/css%E5%8A%A8%E7%94%BB/" style="font-size: 15.67px; color: #8e8e8e">css动画</a> <a href="/tags/cytoscape/" style="font-size: 15.67px; color: #8e8e8e">cytoscape</a> <a href="/tags/dataTable/" style="font-size: 14px; color: #999">dataTable</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">echarts</a> <a href="/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/tags/git/" style="font-size: 15.67px; color: #8e8e8e">git</a> <a href="/tags/graph/" style="font-size: 19px; color: #777">graph</a> <a href="/tags/hexo/" style="font-size: 15.67px; color: #8e8e8e">hexo</a> <a href="/tags/highcharts/" style="font-size: 17.33px; color: #828282">highcharts</a> <a href="/tags/http/" style="font-size: 15.67px; color: #8e8e8e">http</a> <a href="/tags/jquery/" style="font-size: 14px; color: #999">jquery</a> <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/lifecycle/" style="font-size: 14px; color: #999">lifecycle</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/pageshow/" style="font-size: 14px; color: #999">pageshow</a> <a href="/tags/performance/" style="font-size: 14px; color: #999">performance</a> <a href="/tags/ubuntu/" style="font-size: 14px; color: #999">ubuntu</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 22.33px; color: #606060">vue</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">事件模型</a> <a href="/tags/%E6%A8%A1%E6%8B%9F%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">模拟函数</a> <a href="/tags/%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B/" style="font-size: 15.67px; color: #8e8e8e">渲染过程</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/%E7%B1%BB%E5%9E%8B/" style="font-size: 15.67px; color: #8e8e8e">类型</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 15.67px; color: #8e8e8e">类型转换</a> <a href="/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 17.33px; color: #828282">组件</a>
     </div>
   </section>
 
@@ -1645,7 +1949,7 @@
         <div class="social-wrapper">
           
             
-              <a href="/io/atom.xml"
+              <a href="/atom.xml"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -1653,7 +1957,7 @@
             
           
             
-              <a href="mailto:me@xxx.com"
+              <a href="mailto:2658553345@qq.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -1734,49 +2038,19 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/over58/over58.github.io/blob/master/(path)
         
         
         
         
-          id="https:volantisjsorgfaqs"
+          id="https:githubcomover58over58githubioblobmaster(path)"
         >
-        <i class='fa fa-question fa-fw'></i> 常见问题
+        <i class='fa fa-question fa-fw'></i> 编辑文章
       </a>
     </li>
   
         
       
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
-        
-        
-        
-        
-          id="https:volantisjsorgexamples"
-        >
-        <i class='fa fa-rss fa-fw'></i> 示例博客
-      </a>
-    </li>
-  
-        
-      
-        
-          
-    <li>
-      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
-        
-        
-        
-        
-          id="https:volantisjsorgcontributors"
-        >
-        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
-      </a>
-    </li>
-  
         
       
         
@@ -1786,12 +2060,12 @@
         
           
     <li>
-      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/over58/over58.github.io
         
         
         
         
-          id="https:githubcomvolantis-xvolantis-docs"
+          id="https:githubcomover58over58githubio"
         >
         <i class='fa fa-code-branch fa-fw'></i> 本站源码
       </a>
@@ -1999,7 +2273,7 @@
   <script>
     
     var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/io/" || "/";
+    var ROOT = "/" || "/";
     if (!ROOT.endsWith('/')) ROOT += '/';
   </script>
 
@@ -2069,7 +2343,7 @@
 
   
     
-<script src="/io/js/aplayer.js"></script>
+<script src="/js/aplayer.js"></script>
 
   
 
@@ -2078,7 +2352,7 @@
 
   
   
-<script src="/io/js/valine.js"></script>
+<script src="/js/valine.js"></script>
 
 
 <script>
@@ -2263,14 +2537,14 @@
 
 
   
-<script src="/io/js/app.js"></script>
+<script src="/js/app.js"></script>
 
 
 
 
   
     
-<script src="/io/js/search.js"></script>
+<script src="/js/search.js"></script>
 
   
 
