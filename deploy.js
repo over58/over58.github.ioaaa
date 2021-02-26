@@ -7,6 +7,7 @@ spinner.text = 'loading'
 spinner.color = "yellow"
 
 let commands = [
+  
   'git add .',
   'git commit -m "feat: update artcile"',
   'git push origin myblog'
