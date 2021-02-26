@@ -4,7 +4,7 @@ author:
   - 徐勇超
 tags: [css动画]
 categories:
-  - 样式(css/less...)
+  - style
 comments: true
 date: 2020-01-08 12:30:16
 updated: 2020-01-08 12:30:16

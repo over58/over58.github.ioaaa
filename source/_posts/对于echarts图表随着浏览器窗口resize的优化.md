@@ -1,7 +1,8 @@
 ---
 title: 对于echarts图表随着浏览器窗口resize的优化
 date: 2019-03-04 19:07:32
-tags: [vue]
+tags: [vue, echarts]
+categories: [可视化]
 ---
 
 说明： 有时候项目中会显示一些图表，而且width可能并不是固定的（可能100%），那么当浏览器窗口变化的时候，图表的大小应该跟随着变大或变小，称之为resize

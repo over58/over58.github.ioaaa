@@ -2,8 +2,7 @@
 title: 封装line和pie简单组件
 date: 2019-04-29 10:13:37
 tags: [highcharts]
-categories:
-  - vue
+categories: [可视化]
 ---
 
 ### 效果图:

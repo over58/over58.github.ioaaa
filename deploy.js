@@ -9,7 +9,7 @@ spinner.color = "yellow"
 let commands = [
 
   'git add .',
-  'git commit -m "feat: test"',
+  'git commit -m "feat: update article"',
   'git push origin myblog'
 ]
 

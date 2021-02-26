@@ -6,7 +6,7 @@ tags:
   - css
 date: 2019-09-16 00:11:25
 categories:
-  - 样式(css/less...)
+  - style
 ---
 
 ### 权重
