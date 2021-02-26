@@ -3,6 +3,7 @@ title: 'visibilty:hidden、display:none、opacity:0的区别'
 author: 徐勇超
 date: 2019-08-19 13:22:30
 tags:
+	- css
 categories:
 ---
 
@@ -22,7 +23,7 @@ categories:
 4.继 承：会被子元素继承，子元素可以通过设置 visibility: visible; 来取消隐藏；
 5.transition：transition 不支持 display。
 
-###opacity: 0;
+### opacity: 0
 1.DOM 结构：透明度为 100%，元素隐藏，占据空间；
 2.事件监听：可以进行 DOM 事件监听；
 3.性 能：提升为合成层，不会触发重绘，性能较高；

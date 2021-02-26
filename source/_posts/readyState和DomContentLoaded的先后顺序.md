@@ -10,7 +10,13 @@ date: 2019-12-30 15:42:08
 updated: 2019-12-30 15:42:08
 ---
 
+### 结论
+
+![image-20210225190144323](/Users/xuyongchao/Library/Application Support/typora-user-images/image-20210225190144323.png)
+
+
 ### 快速了解document.readyState
+
 document.readyState是一个只读属性，可以返回当前文档的准备状态。
 
 语法
@@ -173,9 +179,8 @@ if (document.readyState != 'loading') {
 
 
 ### load/readState/DomContentLoaded/pageshow执行的先后顺序
-![image-20200824110347927](readyState和DomContentLoaded的先后顺序/image-20200824110347927.png)
+![执行顺序](readyState和DomContentLoaded的先后顺序/js加载时候各个事件执行的先后顺序.png)
 
 
 
 >摘自 https://www.zhangxinxu.com/wordpress/2019/10/document-readystate/
->强烈建议看看这篇文章https://javascript.info/onload-ondomcontentloaded#domcontentloaded

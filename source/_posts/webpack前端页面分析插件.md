@@ -26,8 +26,9 @@ cnpm install webpack-bundle-analyzer -save
 ```
 
 3.scripts中添加
+
 ```
-  "analyz": "NODE_ENV=production analyze=true npm run build"
+"analyz": "NODE_ENV=production analyze=true npm run build"
 ```
 
 4. 运行
